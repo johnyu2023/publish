@@ -4,6 +4,7 @@ export default defineConfig({
   title: "我的技术博客",
   description: "分享技术心得和学习笔记",
   lang: 'zh-CN',
+  cleanUrls: true,
   
   themeConfig: {
     siteTitle: '我的技术博客',

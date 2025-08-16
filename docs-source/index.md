@@ -1,9 +1,9 @@
 ---
 layout: home
 hero:
-  name: 我的技术博客
+  name: 我的技术博客 2025
   text: 分享技术心得和学习笔记
-  tagline: 记录学习过程，分享技术见解
+  tagline: 记录学习过程，分享技术见解 AI
   actions:
     - theme: brand
       text: 开始阅读
