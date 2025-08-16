@@ -27,7 +27,7 @@ export default defineConfig({
     },
     
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/yourusername' }
+      { icon: 'github', link: 'https://github.com/johnyu2023' }
     ],
     
     footer: {

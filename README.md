@@ -137,8 +137,8 @@ MIT License
 
 ## 📞 联系
 
-- 邮箱：your.email@example.com
-- GitHub：[@yourusername](https://github.com/yourusername)
+- 邮箱：johnyu2023@example.com
+- GitHub：[@johnyu2023](https://github.com/johnyu2023)
 
 ---
 

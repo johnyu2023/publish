@@ -67,10 +67,10 @@
 
 如果你有任何问题或建议，欢迎通过以下方式联系我：
 
-- 📧 **邮箱**: your.email@example.com
-- 🐦 **GitHub**: [@yourusername](https://github.com/yourusername)
-- 💬 **微信**: your_wechat_id
-- 🐦 **微博**: [@your_weibo](https://weibo.com/your_weibo)
+- 📧 **邮箱**: johnyu2023@example.com
+- 🐦 **GitHub**: [@johnyu2023](https://github.com/johnyu2023)
+- 💬 **微信**: johnyu2023
+- 🐦 **微博**: [@johnyu2023](https://weibo.com/johnyu2023)
 
 ## 📊 博客统计
 
