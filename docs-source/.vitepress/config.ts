@@ -4,7 +4,7 @@ export default defineConfig({
   title: "我的技术博客",
   description: "分享技术心得和学习笔记",
   lang: 'zh-CN',
-  base: '/publish/',
+  base: '/',
   cleanUrls: true,
   
   themeConfig: {
@@ -23,6 +23,15 @@ export default defineConfig({
           items: [
             { text: '开始使用 VitePress', link: '/posts/getting-started' },
             { text: 'Markdown 语法指南', link: '/posts/markdown-guide' }
+          ]
+        }
+      ],
+      '/ai/': [
+        {
+          text: 'AI 相关',
+          items: [
+            { text: 'Function Calling 的原始形态', link: '/ai/function_calling' },
+            { text: '代码相关', link: '/ai/code' }
           ]
         }
       ]

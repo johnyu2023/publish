@@ -7,8 +7,9 @@
   "scripts": {
     "docs:dev": "vitepress dev docs-source",
     "docs:build": "vitepress build docs-source",
+    "docs:build:prod": "cross-env NODE_ENV=production vitepress build docs-source",
     "docs:preview": "vitepress preview docs-source",
-    "deploy": "npm run docs:build && xcopy \"docs-source\\.vitepress\\dist\\*\" \"docs\\\" /E /I /Y"
+    "deploy": "npm run docs:build:prod && xcopy \"docs-source\\.vitepress\\dist\\*\" \"docs\\\" /E /I /Y"
   },
   "keywords": ["blog", "vitepress", "technology"],
   "author": "Your Name",

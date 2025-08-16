@@ -1,9 +1,9 @@
 ---
 layout: home
 hero:
-  name: 我的技术博客 2025
+  name: 我的技术博客
   text: 分享技术心得和学习笔记
-  tagline: 记录学习过程，分享技术见解 AI
+  tagline: 记录学习过程，分享技术见解
   actions:
     - theme: brand
       text: 开始阅读
@@ -30,6 +30,7 @@ features:
   <div class="custom-block">
     <h3>📖 最近更新</h3>
     <ul>
+      <li><a href="/ai/function_calling">Function Calling 的原始形态</a> - 2024-01-01</li>
       <li><a href="/posts/getting-started">开始使用 VitePress 搭建技术博客</a> - 2024-01-01</li>
       <li><a href="/posts/markdown-guide">Markdown 语法完全指南</a> - 2024-01-01</li>
     </ul>
