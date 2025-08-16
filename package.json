@@ -1,0 +1,19 @@
+{
+  "name": "tech-blog",
+  "version": "1.0.0",
+  "description": "个人技术博客",
+  "main": "index.js",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs",
+    "deploy": "npm run docs:build && gh-pages -d docs/.vitepress/dist"
+  },
+  "keywords": ["blog", "vitepress", "technology"],
+  "author": "Your Name",
+  "license": "MIT",
+  "devDependencies": {
+    "vitepress": "^1.0.0-rc.44",
+    "gh-pages": "^6.1.1"
+  }
+}
