@@ -30,12 +30,12 @@ features:
   <div class="custom-block">
     <h3>📖 最近更新</h3>
     <ul>
-      <li><a href="/ai/function_calling">Function Calling 的原始形态</a> - 2024-01-01</li>
-      <li><a href="/posts/getting-started">开始使用 VitePress 搭建技术博客</a> - 2024-01-01</li>
-      <li><a href="/posts/markdown-guide">Markdown 语法完全指南</a> - 2024-01-01</li>
+      <li><a href="ai/function_calling">Function Calling 的原始形态</a> - 2024-01-01</li>
+      <li><a href="posts/getting-started">开始使用 VitePress 搭建技术博客</a> - 2024-01-01</li>
+      <li><a href="posts/markdown-guide">Markdown 语法完全指南</a> - 2024-01-01</li>
     </ul>
     <div class="rss-subscribe">
-      <p>📡 <a href="/rss.xml">订阅 RSS Feed</a> 获取最新文章更新</p>
+      <p>📡 <a href="rss.xml">订阅 RSS Feed</a> 获取最新文章更新</p>
     </div>
   </div>
 </div>

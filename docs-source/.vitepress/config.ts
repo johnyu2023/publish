@@ -4,16 +4,16 @@ export default defineConfig({
   title: "我的技术博客",
   description: "分享技术心得和学习笔记",
   lang: 'zh-CN',
-  base: '/',
+  base: '',
   cleanUrls: true,
   
   themeConfig: {
     siteTitle: '我的技术博客',
     
     nav: [
-      { text: '首页', link: '/' },
-      { text: '文章', link: '/posts/' },
-      { text: '关于', link: '/about' }
+      { text: '首页', link: './' },
+      { text: '文章', link: './posts/' },
+      { text: '关于', link: './about' }
     ],
     
     sidebar: {
@@ -21,8 +21,8 @@ export default defineConfig({
         {
           text: '文章列表',
           items: [
-            { text: '开始使用 VitePress', link: '/posts/getting-started' },
-            { text: 'Markdown 语法指南', link: '/posts/markdown-guide' }
+            { text: '开始使用 VitePress', link: './posts/getting-started' },
+            { text: 'Markdown 语法指南', link: './posts/markdown-guide' }
           ]
         }
       ],
@@ -30,8 +30,8 @@ export default defineConfig({
         {
           text: 'AI 相关',
           items: [
-            { text: 'Function Calling 的原始形态', link: '/ai/function_calling' },
-            { text: '代码相关', link: '/ai/code' }
+            { text: 'Function Calling 的原始形态', link: './ai/function_calling' },
+            { text: '代码相关', link: './ai/code' }
           ]
         }
       ]
@@ -39,7 +39,7 @@ export default defineConfig({
     
     socialLinks: [
       { icon: 'github', link: 'https://github.com/johnyu2023' },
-      { icon: 'rss', link: '/rss.xml' }
+      { icon: 'rss', link: './rss.xml' }
     ],
     
     footer: {
