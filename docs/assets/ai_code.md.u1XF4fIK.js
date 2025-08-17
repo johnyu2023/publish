@@ -1,24 +1,4 @@
-<!DOCTYPE html>
-<html lang="zh-CN" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>AI 辅助编程 | 我的技术博客</title>
-    <meta name="description" content="分享技术心得和学习笔记">
-    <meta name="generator" content="VitePress v1.6.4">
-    <link rel="preload stylesheet" href="/docs/assets/style.BQ60yb_g.css" as="style">
-    <link rel="preload stylesheet" href="/docs/vp-icons.css" as="style">
-    
-    <script type="module" src="/docs/assets/app.DBMmqrZc.js"></script>
-    <link rel="preload" href="/docs/assets/inter-roman-latin.Di8DUHzh.woff2" as="font" type="font/woff2" crossorigin="">
-    <link rel="modulepreload" href="/docs/assets/chunks/theme.DLsodERQ.js">
-    <link rel="modulepreload" href="/docs/assets/chunks/framework.bdwBUuqg.js">
-    <link rel="modulepreload" href="/docs/assets/ai_code.md.u1XF4fIK.lean.js">
-    <script id="check-dark-mode">(()=>{const e=localStorage.getItem("vitepress-theme-appearance")||"auto",a=window.matchMedia("(prefers-color-scheme: dark)").matches;(!e||e==="auto"?a:e==="dark")&&document.documentElement.classList.add("dark")})();</script>
-    <script id="check-mac-os">document.documentElement.classList.toggle("mac",/Mac|iPhone|iPod|iPad/i.test(navigator.platform));</script>
-  </head>
-  <body>
-    <div id="app"><div class="Layout" data-v-5d98c3a5><!--[--><!--]--><!--[--><span tabindex="-1" data-v-0b0ada53></span><a href="#VPContent" class="VPSkipLink visually-hidden" data-v-0b0ada53>Skip to content</a><!--]--><!----><header class="VPNav" data-v-5d98c3a5 data-v-ae24b3ad><div class="VPNavBar" data-v-ae24b3ad data-v-6aa21345><div class="wrapper" data-v-6aa21345><div class="container" data-v-6aa21345><div class="title" data-v-6aa21345><div class="VPNavBarTitle has-sidebar" data-v-6aa21345 data-v-1168a8e4><a class="title" href="/docs/" data-v-1168a8e4><!--[--><!--]--><!----><span data-v-1168a8e4>我的技术博客</span><!--[--><!--]--></a></div></div><div class="content" data-v-6aa21345><div class="content-body" data-v-6aa21345><!--[--><!--]--><div class="VPNavBarSearch search" data-v-6aa21345><!----></div><nav aria-labelledby="main-nav-aria-label" class="VPNavBarMenu menu" data-v-6aa21345 data-v-dc692963><span id="main-nav-aria-label" class="visually-hidden" data-v-dc692963> Main Navigation </span><!--[--><!--[--><a class="VPLink link VPNavBarMenuLink" href="./" tabindex="0" data-v-dc692963 data-v-e56f3d57><!--[--><span data-v-e56f3d57>首页</span><!--]--></a><!--]--><!--[--><a class="VPLink link VPNavBarMenuLink" href="./posts/" tabindex="0" data-v-dc692963 data-v-e56f3d57><!--[--><span data-v-e56f3d57>文章</span><!--]--></a><!--]--><!--[--><a class="VPLink link VPNavBarMenuLink" href="./about" tabindex="0" data-v-dc692963 data-v-e56f3d57><!--[--><span data-v-e56f3d57>关于</span><!--]--></a><!--]--><!--]--></nav><!----><div class="VPNavBarAppearance appearance" data-v-6aa21345 data-v-6c893767><button class="VPSwitch VPSwitchAppearance" type="button" role="switch" title aria-checked="false" data-v-6c893767 data-v-5337faa4 data-v-1d5665e3><span class="check" data-v-1d5665e3><span class="icon" data-v-1d5665e3><!--[--><span class="vpi-sun sun" data-v-5337faa4></span><span class="vpi-moon moon" data-v-5337faa4></span><!--]--></span></span></button></div><div class="VPSocialLinks VPNavBarSocialLinks social-links" data-v-6aa21345 data-v-0394ad82 data-v-7bc22406><!--[--><a class="VPSocialLink no-icon" href="https://github.com/johnyu2023" aria-label="github" target="_blank" rel="noopener" data-v-7bc22406 data-v-bd121fe5><span class="vpi-social-github"></span></a><a class="VPSocialLink no-icon" href="./rss.xml" aria-label="rss" target="_blank" rel="noopener" data-v-7bc22406 data-v-bd121fe5><span class="vpi-social-rss"></span></a><!--]--></div><div class="VPFlyout VPNavBarExtra extra" data-v-6aa21345 data-v-bb2aa2f0 data-v-cf11d7a2><button type="button" class="button" aria-haspopup="true" aria-expanded="false" aria-label="extra navigation" data-v-cf11d7a2><span class="vpi-more-horizontal icon" data-v-cf11d7a2></span></button><div class="menu" data-v-cf11d7a2><div class="VPMenu" data-v-cf11d7a2 data-v-b98bc113><!----><!--[--><!--[--><!----><div class="group" data-v-bb2aa2f0><div class="item appearance" data-v-bb2aa2f0><p class="label" data-v-bb2aa2f0>Appearance</p><div class="appearance-action" data-v-bb2aa2f0><button class="VPSwitch VPSwitchAppearance" type="button" role="switch" title aria-checked="false" data-v-bb2aa2f0 data-v-5337faa4 data-v-1d5665e3><span class="check" data-v-1d5665e3><span class="icon" data-v-1d5665e3><!--[--><span class="vpi-sun sun" data-v-5337faa4></span><span class="vpi-moon moon" data-v-5337faa4></span><!--]--></span></span></button></div></div></div><div class="group" data-v-bb2aa2f0><div class="item social-links" data-v-bb2aa2f0><div class="VPSocialLinks social-links-list" data-v-bb2aa2f0 data-v-7bc22406><!--[--><a class="VPSocialLink no-icon" href="https://github.com/johnyu2023" aria-label="github" target="_blank" rel="noopener" data-v-7bc22406 data-v-bd121fe5><span class="vpi-social-github"></span></a><a class="VPSocialLink no-icon" href="./rss.xml" aria-label="rss" target="_blank" rel="noopener" data-v-7bc22406 data-v-bd121fe5><span class="vpi-social-rss"></span></a><!--]--></div></div></div><!--]--><!--]--></div></div></div><!--[--><!--]--><button type="button" class="VPNavBarHamburger hamburger" aria-label="mobile navigation" aria-expanded="false" aria-controls="VPNavScreen" data-v-6aa21345 data-v-e5dd9c1c><span class="container" data-v-e5dd9c1c><span class="top" data-v-e5dd9c1c></span><span class="middle" data-v-e5dd9c1c></span><span class="bottom" data-v-e5dd9c1c></span></span></button></div></div></div></div><div class="divider" data-v-6aa21345><div class="divider-line" data-v-6aa21345></div></div></div><!----></header><div class="VPLocalNav has-sidebar empty" data-v-5d98c3a5 data-v-a6f0e41e><div class="container" data-v-a6f0e41e><button class="menu" aria-expanded="false" aria-controls="VPSidebarNav" data-v-a6f0e41e><span class="vpi-align-left menu-icon" data-v-a6f0e41e></span><span class="menu-text" data-v-a6f0e41e>Menu</span></button><div class="VPLocalNavOutlineDropdown" style="--vp-vh:0px;" data-v-a6f0e41e data-v-8a42e2b4><button data-v-8a42e2b4>Return to top</button><!----></div></div></div><aside class="VPSidebar" data-v-5d98c3a5 data-v-319d5ca6><div class="curtain" data-v-319d5ca6></div><nav class="nav" id="VPSidebarNav" aria-labelledby="sidebar-aria-label" tabindex="-1" data-v-319d5ca6><span class="visually-hidden" id="sidebar-aria-label" data-v-319d5ca6> Sidebar Navigation </span><!--[--><!--]--><!--[--><div class="no-transition group" data-v-c40bc020><section class="VPSidebarItem level-0" data-v-c40bc020 data-v-b3fd67f8><div class="item" role="button" tabindex="0" data-v-b3fd67f8><div class="indicator" data-v-b3fd67f8></div><h2 class="text" data-v-b3fd67f8>AI 相关</h2><!----></div><div class="items" data-v-b3fd67f8><!--[--><div class="VPSidebarItem level-1 is-link" data-v-b3fd67f8 data-v-b3fd67f8><div class="item" data-v-b3fd67f8><div class="indicator" data-v-b3fd67f8></div><a class="VPLink link link" href="./ai/function_calling" data-v-b3fd67f8><!--[--><p class="text" data-v-b3fd67f8>Function Calling 的原始形态</p><!--]--></a><!----></div><!----></div><div class="VPSidebarItem level-1 is-link" data-v-b3fd67f8 data-v-b3fd67f8><div class="item" data-v-b3fd67f8><div class="indicator" data-v-b3fd67f8></div><a class="VPLink link link" href="./ai/code" data-v-b3fd67f8><!--[--><p class="text" data-v-b3fd67f8>代码相关</p><!--]--></a><!----></div><!----></div><!--]--></div></section></div><!--]--><!--[--><!--]--></nav></aside><div class="VPContent has-sidebar" id="VPContent" data-v-5d98c3a5 data-v-1428d186><div class="VPDoc has-sidebar has-aside" data-v-1428d186 data-v-39a288b8><!--[--><!--]--><div class="container" data-v-39a288b8><div class="aside" data-v-39a288b8><div class="aside-curtain" data-v-39a288b8></div><div class="aside-container" data-v-39a288b8><div class="aside-content" data-v-39a288b8><div class="VPDocAside" data-v-39a288b8 data-v-3f215769><!--[--><!--]--><!--[--><!--]--><nav aria-labelledby="doc-outline-aria-label" class="VPDocAsideOutline" data-v-3f215769 data-v-a5bbad30><div class="content" data-v-a5bbad30><div class="outline-marker" data-v-a5bbad30></div><div aria-level="2" class="outline-title" id="doc-outline-aria-label" role="heading" data-v-a5bbad30>On this page</div><ul class="VPDocOutlineItem root" data-v-a5bbad30 data-v-b933a997><!--[--><!--]--></ul></div></nav><!--[--><!--]--><div class="spacer" data-v-3f215769></div><!--[--><!--]--><!----><!--[--><!--]--><!--[--><!--]--></div></div></div></div><div class="content" data-v-39a288b8><div class="content-container" data-v-39a288b8><!--[--><!--]--><main class="main" data-v-39a288b8><div style="position:relative;" class="vp-doc _docs_ai_code" data-v-39a288b8><div><h1 id="ai-辅助编程" tabindex="-1">AI 辅助编程 <a class="header-anchor" href="#ai-辅助编程" aria-label="Permalink to &quot;AI 辅助编程&quot;">​</a></h1><p>[toc]</p><h2 id="_1-windows下截屏的小工具" tabindex="-1">1. windows下截屏的小工具 <a class="header-anchor" href="#_1-windows下截屏的小工具" aria-label="Permalink to &quot;1. windows下截屏的小工具&quot;">​</a></h2><p>改了很多次，开始用 Trae CN ，但程序有很多问题 后来试过 Linma ，才试成功</p><h2 id="_2-python-函数行号检查器" tabindex="-1">2. python 函数行号检查器 <a class="header-anchor" href="#_2-python-函数行号检查器" aria-label="Permalink to &quot;2. python 函数行号检查器&quot;">​</a></h2><h3 id="_2-1-需求来源" tabindex="-1">2.1. 需求来源 <a class="header-anchor" href="#_2-1-需求来源" aria-label="Permalink to &quot;2.1. 需求来源&quot;">​</a></h3><ul><li>在完成一个使用 Cursor 对代码库进行分析的项目时，发现的一个需求。</li><li>在 github 代码库中找一个 python 项目，使用 Cursor 对代码库进行分析。整理出项目情况分析、测试用例分析等，给 Trae 团队提供测试数据。</li><li>AI 对 python 代码中函数的起始行号和结束行号的分析时，总是不准。如果让它多次检查，能每次都给出不一样的错误情况，完全没有可用性。</li><li>所以考虑用代码自己写一个检查器。</li></ul><h3 id="_2-2-实践经验" tabindex="-1">2.2. 实践经验 <a class="header-anchor" href="#_2-2-实践经验" aria-label="Permalink to &quot;2.2. 实践经验&quot;">​</a></h3><ul><li><p>开始简单让AI进行编程，但实际得出的效果并不好，对函数的结束行号的判断总是有偏差。</p></li><li><p>对一个项目中所有 test 目录下的代码中函数的起始行号和结束行号的数据手工进行了整理，并给出一份MD文件，试图以此作为标准，对AI进行的编程进行验证。</p></li><li><p>尝试了很多次，效果极差，速度极慢，很多时候长时间无响应，无法判断是不是 cursor 的问题。</p></li><li><p>换了 CodeBuddy 软件，速度上按理说应该不差了，但很多步骤依旧很慢，于是意识到这应该不是模型的问题，而是此任务大模型不擅长，导致的通病。</p></li><li><p>改成对每个测试文件用一个 json 来描述，然后让AI对代码进行验证，速度快了不少，终于能够跑通了所有的测试数据。</p></li><li><p>想要让AI对代码做整体重构，结果出了问题，捅了马蜂窝了，测试数据很多跑不通了。</p></li><li><p>需要重新尝试。</p></li><li><p>经过多次迭代后，它终于意识到用通过 AST 模块进行分析，最终结果是理想的。</p></li></ul><h3 id="_2-3-新的重构尝试" tabindex="-1">2.3. 新的重构尝试 <a class="header-anchor" href="#_2-3-新的重构尝试" aria-label="Permalink to &quot;2.3. 新的重构尝试&quot;">​</a></h3><h4 id="_2-3-1-重构代码" tabindex="-1">2.3.1. 重构代码 <a class="header-anchor" href="#_2-3-1-重构代码" aria-label="Permalink to &quot;2.3.1. 重构代码&quot;">​</a></h4><div class="language-prompt vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">prompt</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span></span></span>
+import{_ as n,c as a,o as p,ae as e}from"./chunks/framework.bdwBUuqg.js";const j=JSON.parse('{"title":"AI 辅助编程","description":"","frontmatter":{},"headers":[],"relativePath":"ai/code.md","filePath":"ai/code.md"}'),l={name:"ai/code.md"};function t(i,s,c,o,u,m){return p(),a("div",null,s[0]||(s[0]=[e(`<h1 id="ai-辅助编程" tabindex="-1">AI 辅助编程 <a class="header-anchor" href="#ai-辅助编程" aria-label="Permalink to &quot;AI 辅助编程&quot;">​</a></h1><p>[toc]</p><h2 id="_1-windows下截屏的小工具" tabindex="-1">1. windows下截屏的小工具 <a class="header-anchor" href="#_1-windows下截屏的小工具" aria-label="Permalink to &quot;1. windows下截屏的小工具&quot;">​</a></h2><p>改了很多次，开始用 Trae CN ，但程序有很多问题 后来试过 Linma ，才试成功</p><h2 id="_2-python-函数行号检查器" tabindex="-1">2. python 函数行号检查器 <a class="header-anchor" href="#_2-python-函数行号检查器" aria-label="Permalink to &quot;2. python 函数行号检查器&quot;">​</a></h2><h3 id="_2-1-需求来源" tabindex="-1">2.1. 需求来源 <a class="header-anchor" href="#_2-1-需求来源" aria-label="Permalink to &quot;2.1. 需求来源&quot;">​</a></h3><ul><li>在完成一个使用 Cursor 对代码库进行分析的项目时，发现的一个需求。</li><li>在 github 代码库中找一个 python 项目，使用 Cursor 对代码库进行分析。整理出项目情况分析、测试用例分析等，给 Trae 团队提供测试数据。</li><li>AI 对 python 代码中函数的起始行号和结束行号的分析时，总是不准。如果让它多次检查，能每次都给出不一样的错误情况，完全没有可用性。</li><li>所以考虑用代码自己写一个检查器。</li></ul><h3 id="_2-2-实践经验" tabindex="-1">2.2. 实践经验 <a class="header-anchor" href="#_2-2-实践经验" aria-label="Permalink to &quot;2.2. 实践经验&quot;">​</a></h3><ul><li><p>开始简单让AI进行编程，但实际得出的效果并不好，对函数的结束行号的判断总是有偏差。</p></li><li><p>对一个项目中所有 test 目录下的代码中函数的起始行号和结束行号的数据手工进行了整理，并给出一份MD文件，试图以此作为标准，对AI进行的编程进行验证。</p></li><li><p>尝试了很多次，效果极差，速度极慢，很多时候长时间无响应，无法判断是不是 cursor 的问题。</p></li><li><p>换了 CodeBuddy 软件，速度上按理说应该不差了，但很多步骤依旧很慢，于是意识到这应该不是模型的问题，而是此任务大模型不擅长，导致的通病。</p></li><li><p>改成对每个测试文件用一个 json 来描述，然后让AI对代码进行验证，速度快了不少，终于能够跑通了所有的测试数据。</p></li><li><p>想要让AI对代码做整体重构，结果出了问题，捅了马蜂窝了，测试数据很多跑不通了。</p></li><li><p>需要重新尝试。</p></li><li><p>经过多次迭代后，它终于意识到用通过 AST 模块进行分析，最终结果是理想的。</p></li></ul><h3 id="_2-3-新的重构尝试" tabindex="-1">2.3. 新的重构尝试 <a class="header-anchor" href="#_2-3-新的重构尝试" aria-label="Permalink to &quot;2.3. 新的重构尝试&quot;">​</a></h3><h4 id="_2-3-1-重构代码" tabindex="-1">2.3.1. 重构代码 <a class="header-anchor" href="#_2-3-1-重构代码" aria-label="Permalink to &quot;2.3.1. 重构代码&quot;">​</a></h4><div class="language-prompt vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">prompt</span><pre class="shiki shiki-themes github-light github-dark vp-code" tabindex="0"><code><span class="line"><span></span></span>
 <span class="line"><span>根据你之前的结论，重新设计 temp6/check-function-num.py 的代码结构。</span></span>
 <span class="line"><span>新生成的代码保存在  temp7/check-function-num.py ，版本为 1.5.0</span></span>
 <span class="line"><span></span></span>
@@ -44,9 +24,9 @@
 <span class="line"><span></span></span>
 <span class="line"><span>---</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>检查现有代码 temp7\batch_analyze.py，temp7/check-function-num.py 是否满足要求：</span></span>
+<span class="line"><span>检查现有代码 temp7\\batch_analyze.py，temp7/check-function-num.py 是否满足要求：</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>temp7\batch_analyze.py，用于驱动 temp7/check-function-num.py 来对 test 目录下的 python 文件进行函数行号统计。目标是：</span></span>
+<span class="line"><span>temp7\\batch_analyze.py，用于驱动 temp7/check-function-num.py 来对 test 目录下的 python 文件进行函数行号统计。目标是：</span></span>
 <span class="line"><span>检查 test 目录下的所有 .py 文件，只要其中含有函数定义的，就用 temp7/check-function-num.py 来统计函数的行号，并将结果保存到 temp7/test-result 目录下一个与这个 py 文件同名的 json 文件中。</span></span>
 <span class="line"><span>如：test/test_read.py 的行数统计结果保存在 temp7/test-result/test_read.json 中。</span></span>
 <span class="line"><span></span></span>
@@ -86,7 +66,7 @@
 <span class="line"><span>检查 justext.json 中每个函数的起始行号和结束行号，和 temp7/test-result 目录下同名的 json 文件中函数的起始行号和结束行号相比，如果不一致就说明 justext.json 中的行号是错误的。</span></span>
 <span class="line"><span>如果 justext.json 中的行号是有错误的，则生成一个 justext-fix-v2.json 文件，里面将函数的起始行号和结束行号修改为正确的行号，不过要注意的是， justext-fix-v2.json 的内容格式应该和 justext.json 严格一致，只有函数的起始行号和结束行号被修正为正确的值。</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>为此，你之前生成了 temp7\compare_and_fix_v2.py ，但执行过程中超时中断了，请检查该程序是否能符合这个要求。如果不符合要求，请修复它。如果符合要求，则继续执行，最终生成 justext-fix-v2.json 。</span></span>
+<span class="line"><span>为此，你之前生成了 temp7\\compare_and_fix_v2.py ，但执行过程中超时中断了，请检查该程序是否能符合这个要求。如果不符合要求，请修复它。如果符合要求，则继续执行，最终生成 justext-fix-v2.json 。</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>---</span></span>
 <span class="line"><span>格式还是有问题，换行和以前不一致。</span></span>
@@ -104,10 +84,10 @@
 <span class="line"><span>---</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>分析 以下文件：</span></span>
-<span class="line"><span>temp7\batch_analyze.py</span></span>
-<span class="line"><span>temp7\check-function-num.py</span></span>
-<span class="line"><span>temp7\compare_and_fix.py</span></span>
-<span class="line"><span>temp7\compare_line_numbers.py</span></span>
+<span class="line"><span>temp7\\batch_analyze.py</span></span>
+<span class="line"><span>temp7\\check-function-num.py</span></span>
+<span class="line"><span>temp7\\compare_and_fix.py</span></span>
+<span class="line"><span>temp7\\compare_line_numbers.py</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>如果我想将他们一起做为一组能在其他项目中使用的工具，是否可以，是否存在非工具化的逻辑？</span></span>
 <span class="line"><span></span></span>
@@ -117,22 +97,22 @@
 <span class="line"><span>---</span></span>
 <span class="line"><span>进行工具化</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>创建文件 temp7\config.json 里面存放工具化后的配置信息</span></span>
+<span class="line"><span>创建文件 temp7\\config.json 里面存放工具化后的配置信息</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>修改 temp7\check-function-num.py ：</span></span>
+<span class="line"><span>修改 temp7\\check-function-num.py ：</span></span>
 <span class="line"><span>1. 改名为 check_function_num.py</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>修改 temp7\batch_analyze.py：</span></span>
-<span class="line"><span>1. 硬编码了test目录路径，且结果保存到固定的test-result目录 -- 修改为读取配置文件 temp7\config.json</span></span>
+<span class="line"><span>修改 temp7\\batch_analyze.py：</span></span>
+<span class="line"><span>1. 硬编码了test目录路径，且结果保存到固定的test-result目录 -- 修改为读取配置文件 temp7\\config.json</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>修改 temp7\compare_line_numbers.py：</span></span>
-<span class="line"><span>1. 硬编码了justext.json文件名 -- 修改为读取配置文件 temp7\config.json</span></span>
-<span class="line"><span>2. 硬编码了temp7/test-result目录 -- 修改为读取配置文件 temp7\config.json</span></span>
-<span class="line"><span>3. 硬编码了输出文件名justext-fix.json -- 修改为读取配置文件 temp7\config.json</span></span>
+<span class="line"><span>修改 temp7\\compare_line_numbers.py：</span></span>
+<span class="line"><span>1. 硬编码了justext.json文件名 -- 修改为读取配置文件 temp7\\config.json</span></span>
+<span class="line"><span>2. 硬编码了temp7/test-result目录 -- 修改为读取配置文件 temp7\\config.json</span></span>
+<span class="line"><span>3. 硬编码了输出文件名justext-fix.json -- 修改为读取配置文件 temp7\\config.json</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>---</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>将 工具化 之后的使用说明，写在 temp7\readme.md 中</span></span>
+<span class="line"><span>将 工具化 之后的使用说明，写在 temp7\\readme.md 中</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>---</span></span>
 <span class="line"><span></span></span>
@@ -141,7 +121,7 @@
 <span class="line"><span>---</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>以下功能怎么没在工具化的说明中存在，是没做工具化，还是只是漏写了？</span></span>
-<span class="line"><span>这个功能是否已经在现有某个 py 文件中实现？如果是的话，请补出使用说明到 temp7\readme.md 中</span></span>
+<span class="line"><span>这个功能是否已经在现有某个 py 文件中实现？如果是的话，请补出使用说明到 temp7\\readme.md 中</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>---</span></span>
 <span class="line"><span></span></span>
@@ -150,11 +130,11 @@
 <span class="line"><span></span></span>
 <span class="line"><span>---</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>检查 temp7\compare_line_numbers.py 实现了工具化了吗？是否是从 temp7\config.json 中读取参数的？</span></span>
+<span class="line"><span>检查 temp7\\compare_line_numbers.py 实现了工具化了吗？是否是从 temp7\\config.json 中读取参数的？</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>---</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>对 temp7\compare_line_numbers.py 实现工具化吧，改成从 temp7\config.json 中读取参数</span></span>
+<span class="line"><span>对 temp7\\compare_line_numbers.py 实现工具化吧，改成从 temp7\\config.json 中读取参数</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>---</span></span>
 <span class="line"><span></span></span>
@@ -184,7 +164,7 @@
 <span class="line"><span></span></span>
 <span class="line"><span>---</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>temp7/compare_line_numbers.py 对 temp7\config.json 的配置内容理解有误。</span></span>
+<span class="line"><span>temp7/compare_line_numbers.py 对 temp7\\config.json 的配置内容理解有误。</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>  &quot;files&quot;: {</span></span>
 <span class="line"><span>    &quot;reference_file&quot;: &quot;justext-test.json&quot;,</span></span>
@@ -197,7 +177,7 @@
 <span class="line"><span></span></span>
 <span class="line"><span>---</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>修改 temp7\readme.md ：</span></span>
+<span class="line"><span>修改 temp7\\readme.md ：</span></span>
 <span class="line"><span>增加 compare_line_numbers.py 读取配置文件的内容，读的是 project_json_file 节点，并解释该节点的2个属性的含义</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>---</span></span>
@@ -208,16 +188,16 @@
 <span class="line"><span></span></span>
 <span class="line"><span>已知我们的全套工具集，由如下几个文件组成：</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>1. `check_function_num.py` - 核心分析工具，用于分析单个Python文件中的函数行号</span></span>
-<span class="line"><span>2. `batch_analyze.py` - 批量分析工具，用于分析指定目录下的所有Python文件</span></span>
-<span class="line"><span>3. `merge_results.py` - 结果合并工具，用于将多个分析结果合并为一个统一的JSON文件</span></span>
-<span class="line"><span>4. `compare_line_numbers.py` - 行号比较工具，用于比较和修正 justext.json 中的函数行号</span></span>
-<span class="line"><span>5. `config.json` - 配置文件，用于设置工具的各种参数</span></span>
+<span class="line"><span>1. \`check_function_num.py\` - 核心分析工具，用于分析单个Python文件中的函数行号</span></span>
+<span class="line"><span>2. \`batch_analyze.py\` - 批量分析工具，用于分析指定目录下的所有Python文件</span></span>
+<span class="line"><span>3. \`merge_results.py\` - 结果合并工具，用于将多个分析结果合并为一个统一的JSON文件</span></span>
+<span class="line"><span>4. \`compare_line_numbers.py\` - 行号比较工具，用于比较和修正 justext.json 中的函数行号</span></span>
+<span class="line"><span>5. \`config.json\` - 配置文件，用于设置工具的各种参数</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>但 temp7 目录下还有以下3个文件，不知道它们和上述文件是否有关系，如果没有关系的，是否可以从本目录中去除，而保持以上5个文件的正常运行？</span></span>
-<span class="line"><span> temp7\compare_and_fix.py</span></span>
-<span class="line"><span> temp7\fix_json_format.py</span></span>
-<span class="line"><span> temp7\fix_line_numbers.py</span></span>
+<span class="line"><span> temp7\\compare_and_fix.py</span></span>
+<span class="line"><span> temp7\\fix_json_format.py</span></span>
+<span class="line"><span> temp7\\fix_line_numbers.py</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>为保险起见，你不要将他们直接删除，新建一个temp711 目录，并将这3个文件移动到 temp711 目录下。</span></span>
 <span class="line"><span></span></span>
@@ -233,11 +213,11 @@
 <span class="line"><span></span></span>
 <span class="line"><span>---</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>检查 temp7\check_function_num.py 中是否有写死的路径，我们的要求是所有路径要么是当前目录，要么是项目的根目录，要么是从配置文件 temp7/config.json 中读取的</span></span>
+<span class="line"><span>检查 temp7\\check_function_num.py 中是否有写死的路径，我们的要求是所有路径要么是当前目录，要么是项目的根目录，要么是从配置文件 temp7/config.json 中读取的</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>检查 temp7\batch_analyze.py 中是否有写死的路径，我们的要求是所有路径要么是当前目录，要么是项目的根目录，要么是从配置文件 temp7/config.json 中读取的</span></span>
+<span class="line"><span>检查 temp7\\batch_analyze.py 中是否有写死的路径，我们的要求是所有路径要么是当前目录，要么是项目的根目录，要么是从配置文件 temp7/config.json 中读取的</span></span>
 <span class="line"><span></span></span>
-<span class="line"><span>检查 temp7\merge_results.py 中是否有写死路径，我们的要求是所有路径要么是当前目录，要么是项目的根目录，要么是从配置文件 temp7/config.json 中读取的</span></span>
+<span class="line"><span>检查 temp7\\merge_results.py 中是否有写死路径，我们的要求是所有路径要么是当前目录，要么是项目的根目录，要么是从配置文件 temp7/config.json 中读取的</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>---</span></span>
 <span class="line"><span></span></span>
@@ -246,11 +226,7 @@
 <span class="line"><span>请将逻辑修改为所有路径都是从同级目录下的 config.json 中读取</span></span>
 <span class="line"><span></span></span>
 <span class="line"><span>涉及到的文件有：</span></span>
-<span class="line"><span>temp7\check_function_num.py</span></span>
-<span class="line"><span>temp7\batch_analyze.py</span></span>
-<span class="line"><span>temp7\merge_results.py</span></span>
-<span class="line"><span>temp7\compare_line_numbers.py</span></span></code></pre></div></div></div></main><footer class="VPDocFooter" data-v-39a288b8 data-v-e257564d><!--[--><!--]--><!----><nav class="prev-next" aria-labelledby="doc-footer-aria-label" data-v-e257564d><span class="visually-hidden" id="doc-footer-aria-label" data-v-e257564d>Pager</span><div class="pager" data-v-e257564d><!----></div><div class="pager" data-v-e257564d><a class="VPLink link pager-link next" href="./ai/function_calling" data-v-e257564d><!--[--><span class="desc" data-v-e257564d>Next page</span><span class="title" data-v-e257564d>Function Calling 的原始形态</span><!--]--></a></div></nav></footer><!--[--><!--]--></div></div></div><!--[--><!--]--></div></div><footer class="VPFooter has-sidebar" data-v-5d98c3a5 data-v-e315a0ad><div class="container" data-v-e315a0ad><p class="message" data-v-e315a0ad>基于 MIT 协议发布</p><p class="copyright" data-v-e315a0ad>Copyright © 2024-present</p></div></footer><!--[--><!--]--></div></div>
-    <script>window.__VP_HASH_MAP__=JSON.parse("{\"about.md\":\"CGxW6MBn\",\"ai_code.md\":\"u1XF4fIK\",\"ai_function_calling.md\":\"DmCS3hw3\",\"index.md\":\"C10E1UM-\",\"posts_getting-started.md\":\"CumCj0eU\",\"posts_index.md\":\"DEAhsGO8\",\"posts_markdown-guide.md\":\"nyk58cTf\"}");window.__VP_SITE_DATA__=JSON.parse("{\"lang\":\"zh-CN\",\"dir\":\"ltr\",\"title\":\"我的技术博客\",\"description\":\"分享技术心得和学习笔记\",\"base\":\"/docs/\",\"head\":[],\"router\":{\"prefetchLinks\":true},\"appearance\":true,\"themeConfig\":{\"siteTitle\":\"我的技术博客\",\"nav\":[{\"text\":\"首页\",\"link\":\"./\"},{\"text\":\"文章\",\"link\":\"./posts/\"},{\"text\":\"关于\",\"link\":\"./about\"}],\"sidebar\":{\"/posts/\":[{\"text\":\"文章列表\",\"items\":[{\"text\":\"开始使用 VitePress\",\"link\":\"./posts/getting-started\"},{\"text\":\"Markdown 语法指南\",\"link\":\"./posts/markdown-guide\"}]}],\"/ai/\":[{\"text\":\"AI 相关\",\"items\":[{\"text\":\"Function Calling 的原始形态\",\"link\":\"./ai/function_calling\"},{\"text\":\"代码相关\",\"link\":\"./ai/code\"}]}]},\"socialLinks\":[{\"icon\":\"github\",\"link\":\"https://github.com/johnyu2023\"},{\"icon\":\"rss\",\"link\":\"./rss.xml\"}],\"footer\":{\"message\":\"基于 MIT 协议发布\",\"copyright\":\"Copyright © 2024-present\"}},\"locales\":{},\"scrollOffset\":134,\"cleanUrls\":true}");</script>
-    
-  </body>
-</html>
+<span class="line"><span>temp7\\check_function_num.py</span></span>
+<span class="line"><span>temp7\\batch_analyze.py</span></span>
+<span class="line"><span>temp7\\merge_results.py</span></span>
+<span class="line"><span>temp7\\compare_line_numbers.py</span></span></code></pre></div>`,16)]))}const _=n(l,[["render",t]]);export{j as __pageData,_ as default};

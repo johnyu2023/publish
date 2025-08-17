@@ -1,1 +1,0 @@
-import{_ as n,c as a,o as p,ae as e}from"./chunks/framework.Cd-3tpCq.js";const j=JSON.parse('{"title":"AI 辅助编程","description":"","frontmatter":{},"headers":[],"relativePath":"ai/code.md","filePath":"ai/code.md"}'),l={name:"ai/code.md"};function t(i,s,c,o,u,m){return p(),a("div",null,s[0]||(s[0]=[e("",16)]))}const _=n(l,[["render",t]]);export{j as __pageData,_ as default};

@@ -1,10 +1,20 @@
 import { defineConfig } from 'vitepress'
 
+// 根据部署环境设置不同的 base 路径
+const isProd = process.env.NODE_ENV === 'production'
+// 检查是否为预览模式（vitepress preview）
+const isPreview = process.argv.includes('preview')
+// 检查是否为 GitHub Pages 环境（通过环境变量或其他方式判断）
+// 本地开发和预览时使用 '/'，GitHub Pages 使用 '/docs/'
+const isGitHubPages = process.env.DEPLOY_ENV === 'GITHUB_PAGES'
+
 export default defineConfig({
   title: "我的技术博客",
   description: "分享技术心得和学习笔记",
   lang: 'zh-CN',
-  base: '',
+  // 设置基础路径
+  // 本地开发和预览使用 '/'，GitHub Pages 使用 '/docs/'
+  base: isGitHubPages ? '/docs/' : '/',
   cleanUrls: true,
   
   themeConfig: {
