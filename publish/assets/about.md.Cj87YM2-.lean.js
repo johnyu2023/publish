@@ -1,0 +1,1 @@
+import{_ as l,c as r,o as i,ae as e}from"./chunks/framework.hcSmgRPt.js";const c=JSON.parse('{"title":"关于我","description":"","frontmatter":{},"headers":[],"relativePath":"about.md","filePath":"about.md"}'),t={name:"about.md"};function o(n,a,h,s,u,d){return i(),r("div",null,a[0]||(a[0]=[e("",47)]))}const b=l(t,[["render",o]]);export{c as __pageData,b as default};
