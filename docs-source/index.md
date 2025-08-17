@@ -34,6 +34,9 @@ features:
       <li><a href="/posts/getting-started">开始使用 VitePress 搭建技术博客</a> - 2024-01-01</li>
       <li><a href="/posts/markdown-guide">Markdown 语法完全指南</a> - 2024-01-01</li>
     </ul>
+    <div class="rss-subscribe">
+      <p>📡 <a href="/rss.xml">订阅 RSS Feed</a> 获取最新文章更新</p>
+    </div>
   </div>
 </div>
 
@@ -66,6 +69,28 @@ features:
 }
 
 .custom-block a:hover {
+  text-decoration: underline;
+}
+
+.rss-subscribe {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--vp-c-divider);
+}
+
+.rss-subscribe p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--vp-c-text-2);
+}
+
+.rss-subscribe a {
+  color: var(--vp-c-brand);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.rss-subscribe a:hover {
   text-decoration: underline;
 }
 </style>

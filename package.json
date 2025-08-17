@@ -11,11 +11,18 @@
     "docs:preview": "vitepress preview docs-source",
     "deploy": "npm run docs:build:prod && xcopy \"docs-source\\.vitepress\\dist\\*\" \"docs\\\" /E /I /Y"
   },
-  "keywords": ["blog", "vitepress", "technology"],
+  "keywords": [
+    "blog",
+    "vitepress",
+    "technology"
+  ],
   "author": "Your Name",
   "license": "MIT",
   "devDependencies": {
-    "vitepress": "^1.0.0-rc.44",
-    "gh-pages": "^6.1.1"
+    "gh-pages": "^6.1.1",
+    "vitepress": "^1.0.0-rc.44"
+  },
+  "dependencies": {
+    "vitepress-plugin-rss": "^0.3.1"
   }
 }

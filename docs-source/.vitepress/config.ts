@@ -38,7 +38,8 @@ export default defineConfig({
     },
     
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/johnyu2023' }
+      { icon: 'github', link: 'https://github.com/johnyu2023' },
+      { icon: 'rss', link: '/rss.xml' }
     ],
     
     footer: {
