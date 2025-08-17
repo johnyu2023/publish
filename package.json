@@ -10,7 +10,7 @@
     "docs:build:github": "cross-env NODE_ENV=production DEPLOY_ENV=GITHUB_PAGES vitepress build docs-source",
     "docs:preview": "vitepress preview docs-source",
     "docs:preview:github": "cross-env DEPLOY_ENV=GITHUB_PAGES vitepress preview docs-source",
-    "deploy": "npm run docs:build:github && xcopy \"docs-source\\.vitepress\\dist\\*\" \"docs\\\" /E /I /Y",
+    "deploy": "npm run docs:build:github && xcopy \"docs-source\\.vitepress\\dist\\*\" \"publish\\\" /E /I /Y",
     "clean": "rimraf docs/* publish"
   },
   "keywords": [
