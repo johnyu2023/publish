@@ -1,7 +1,7 @@
 ---
 layout: home
 hero:
-  name: 我的技术博客
+  name: AI时代的技术之旅
   text: 分享技术心得和学习笔记
   tagline: 记录学习过程，分享技术见解
   actions:
@@ -30,9 +30,11 @@ features:
   <div class="custom-block">
     <h3>📖 最近更新</h3>
     <ul>
-      <li><a href="ai/function_calling">Function Calling 的原始形态</a> - 2024-01-01</li>
-      <li><a href="posts/getting-started">开始使用 VitePress 搭建技术博客</a> - 2024-01-01</li>
-      <li><a href="posts/markdown-guide">Markdown 语法完全指南</a> - 2024-01-01</li>
+      <li><a href="/ai/coding_01">AI 辅助编程的注意事项</a> - 2025-08-18</li>
+      <li><a href="/ai/function_calling">Function Calling 的原始形态</a> - 2025-07-16</li>
+      <li><a href="/ai/code">AI 辅助编程</a> - 2025-06-15</li>
+      <li><a href="/posts/markdown-guide">Markdown 语法完全指南</a> - 2025-01-16</li>
+      <li><a href="/posts/getting-started">开始使用 VitePress 搭建技术博客</a> - 2025-01-15</li>
     </ul>
     <div class="rss-subscribe">
       <p>📡 <a href="rss.xml">订阅 RSS Feed</a> 获取最新文章更新</p>

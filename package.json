@@ -8,10 +8,9 @@
     "docs:dev": "vitepress dev docs-source",
     "docs:build": "cross-env NODE_ENV=production vitepress build docs-source",
     "docs:build:github": "cross-env NODE_ENV=production DEPLOY_ENV=GITHUB_PAGES vitepress build docs-source",
-    "docs:preview": "vitepress preview docs-source",
-    "docs:preview:github": "cross-env DEPLOY_ENV=GITHUB_PAGES vitepress preview docs-source",
     "deploy": "npm run docs:build && xcopy \"docs-source\\.vitepress\\dist\\*\" \"docs\\\" /E /I /Y && copy \"docs-source\\rss.xml\" \"docs\\rss.xml\"",
-    "clean": "rimraf docs/* publish"
+    "deploy:github": "npm run docs:build:github && xcopy \"docs-source\\.vitepress\\dist\\*\" \"docs\\\" /E /I /Y && copy \"docs-source\\rss.xml\" \"docs\\rss.xml\"",
+    "clean": "rimraf docs/*"
   },
   "keywords": [
     "blog",
@@ -22,6 +21,7 @@
   "license": "MIT",
   "devDependencies": {
     "cross-env": "^10.0.0",
+    "gray-matter": "^4.0.3",
     "rimraf": "^6.0.1",
     "vitepress": "^1.0.0-rc.44"
   },

@@ -6,7 +6,7 @@
     <link>https://johnyu2023.github.io/publish</link>
     <atom:link href="https://johnyu2023.github.io/publish/rss.xml" rel="self" type="application/rss+xml"/>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 18 Aug 2024 09:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 18 Aug 2025 09:00:00 +0800</lastBuildDate>
     <ttl>60</ttl>
     
     <item>
@@ -14,7 +14,7 @@
       <description>探讨使用AI辅助编程的最佳实践和常见陷阱</description>
       <link>https://johnyu2023.github.io/publish/ai/coding_01</link>
       <guid>https://johnyu2023.github.io/publish/ai/coding_01</guid>
-      <pubDate>Sun, 18 Aug 2024 09:00:00 +0800</pubDate>
+      <pubDate>Sun, 18 Aug 2025 09:00:00 +0800</pubDate>
       <category>AI</category>
       <category>编程</category>
       <category>最佳实践</category>
@@ -25,7 +25,7 @@
       <description>探索 Function Calling 技术的基础原理和实现方式</description>
       <link>https://johnyu2023.github.io/publish/ai/function_calling</link>
       <guid>https://johnyu2023.github.io/publish/ai/function_calling</guid>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0800</pubDate>
+      <pubDate>Sun, 18 Aug 2025 09:00:00 +0800</pubDate>
       <category>AI</category>
       <category>技术</category>
     </item>
@@ -35,7 +35,7 @@
       <description>详细介绍如何使用 VitePress 搭建个人技术博客，包括配置、部署和自定义主题</description>
       <link>https://johnyu2023.github.io/publish/posts/getting-started</link>
       <guid>https://johnyu2023.github.io/publish/posts/getting-started</guid>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0800</pubDate>
+      <pubDate>Sun, 18 Aug 2025 09:00:00 +0800</pubDate>
       <category>技术</category>
       <category>前端</category>
     </item>

@@ -1,6 +1,11 @@
+---
+date: 2025-07-16
+title: Function Calling 的原始形态
+description: 探索大语言模型函数调用的基本实现方式
+---
+
 # Function Calling 的原始形态
 
-[toc]
 
 ## 1. 一个示例程序
 

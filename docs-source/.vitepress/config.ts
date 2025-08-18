@@ -4,7 +4,7 @@ import { defineConfig } from 'vitepress'
 const isProduction = process.env.NODE_ENV === 'production'
 
 export default defineConfig({
-  title: "我的技术博客",
+  title: "AI时代的技术分享",
   description: "分享技术心得和学习笔记",
   lang: 'zh-CN',
   // 设置基础路径
@@ -13,12 +13,12 @@ export default defineConfig({
   cleanUrls: true,
   
   themeConfig: {
-    siteTitle: '我的技术博客',
+    siteTitle: 'AI时代的编程之路',
     
     nav: [
-      { text: '首页', link: './' },
-      { text: '文章', link: './posts/' },
-      { text: '关于', link: './about' }
+      { text: '首页', link: '/' },
+      { text: '文章', link: '/posts/' },
+      { text: '关于', link: '/about' }
     ],
     
     sidebar: {
@@ -26,8 +26,8 @@ export default defineConfig({
         {
           text: '文章列表',
           items: [
-            { text: '开始使用 VitePress', link: './posts/getting-started' },
-            { text: 'Markdown 语法指南', link: './posts/markdown-guide' }
+            { text: '开始使用 VitePress', link: '/posts/getting-started' },
+            { text: 'Markdown 语法指南', link: '/posts/markdown-guide' }
           ]
         }
       ],
@@ -35,9 +35,9 @@ export default defineConfig({
         {
           text: 'AI 相关',
           items: [
-            { text: 'Function Calling 的原始形态', link: './ai/function_calling' },
-            { text: '代码相关', link: './ai/code' },
-            { text: '编程实践', link: './ai/coding_01' }
+            { text: 'Function Calling 的原始形态', link: '/ai/function_calling' },
+            { text: '代码相关', link: '/ai/code' },
+            { text: '编程实践', link: '/ai/coding_01' }
           ]
         }
       ]

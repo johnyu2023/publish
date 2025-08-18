@@ -1,6 +1,11 @@
+---
+date: 2025-06-15
+title: AI 辅助编程
+description: AI辅助编程工具的使用经验和实践案例
+---
+
 # AI 辅助编程
 
-[toc]
 
 ## 1. windows下截屏的小工具
 
