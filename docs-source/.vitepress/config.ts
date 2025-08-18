@@ -8,8 +8,8 @@ export default defineConfig({
   description: "分享技术心得和学习笔记",
   lang: 'zh-CN',
   // 设置基础路径
-  // 开发时 base 为 '/'，生产构建时 base 为 '/'
-  base: '/',
+  // 开发时 base 为 '/'，生产构建时 base 为 '/publish/'
+  base: isProduction ? '/publish/' : '/',
   cleanUrls: true,
   
   themeConfig: {
