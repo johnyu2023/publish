@@ -36,7 +36,8 @@ export default defineConfig({
           text: 'AI 相关',
           items: [
             { text: 'Function Calling 的原始形态', link: './ai/function_calling' },
-            { text: '代码相关', link: './ai/code' }
+            { text: '代码相关', link: './ai/code' },
+            { text: '编程实践', link: './ai/coding_01' }
           ]
         }
       ]
