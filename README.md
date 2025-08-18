@@ -122,6 +122,20 @@ git push
 + 部署网站（包含自动更新 RSS）：
 `npm run deploy:github`
 
+## 部署流程回顾
+当你需要更新网站时，请按照以下步骤操作：
+
+编辑或添加 Markdown 文件（注意：文件名最好使用连字符 - 而不是下划线 _）
+运行 npm run deploy:github 命令（这会自动更新 RSS 文件并构建网站）
+提交更改：git add . 和 git commit -m "更新信息"
+推送到 GitHub：git push origin main
+GitHub Pages 会自动部署 docs 目录中的内容，使你的网站保持最新状态。
+
+现在你的网站应该完全正常工作了，所有链接都应该指向正确的页面。
+
+
+
+
 
 ## 🎨 自定义
 
