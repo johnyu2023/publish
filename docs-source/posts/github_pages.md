@@ -1,11 +1,11 @@
 ---
-title: 使用 GitHub Pages 部署静态网页的网站
-description: 如何使用 GitHub Pages 部署静态网页的网站
+title: 使用 GitHub Pages 部署静态网站
+description: 如何使用 GitHub Pages 部署静态网站
 date: 2025-08-15
 tags: [github, pages]
 ---
 
-# 使用 GitHub Pages 部署静态网页的网站
+# 使用 GitHub Pages 部署静态网站
 
 
 ## GitHub Pages 是什么

@@ -6,58 +6,63 @@
     <link>https://johnyu2023.github.io/publish</link>
     <atom:link href="https://johnyu2023.github.io/publish/rss.xml" rel="self" type="application/rss+xml"/>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 18 Aug 2025 09:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 18 Aug 2025 15:56:04 GMT</lastBuildDate>
     <ttl>60</ttl>
-    
-    <item>
-      <title>使用 GitHub Pages 部署静态网页的网站</title>
-      <description>如何使用 GitHub Pages 部署静态网页的网站</description>
-      <link>https://johnyu2023.github.io/publish/posts/github_pages</link>
-      <guid>https://johnyu2023.github.io/publish/posts/github_pages</guid>
-      <pubDate>Sun, 15 Aug 2025 09:00:00 +0800</pubDate>
-      <category>github</category>
-      <category>pages</category>
-    </item>
     
     <item>
       <title>AI 辅助编程的注意事项</title>
       <description>探讨使用AI辅助编程的最佳实践和常见陷阱</description>
       <link>https://johnyu2023.github.io/publish/ai/coding_01</link>
       <guid>https://johnyu2023.github.io/publish/ai/coding_01</guid>
-      <pubDate>Sun, 18 Aug 2025 09:00:00 +0800</pubDate>
-      <category>AI</category>
-      <category>编程</category>
-      <category>最佳实践</category>
+      <pubDate>Mon, 18 Aug 2025 00:00:00 GMT</pubDate>
+
+    </item>
+    
+    <item>
+      <title>使用 GitHub Pages 部署静态网站</title>
+      <description>如何使用 GitHub Pages 部署静态网站</description>
+      <link>https://johnyu2023.github.io/publish/posts/github_pages</link>
+      <guid>https://johnyu2023.github.io/publish/posts/github_pages</guid>
+      <pubDate>Fri, 15 Aug 2025 00:00:00 GMT</pubDate>
+      <category>github</category>
+      <category>pages</category>
     </item>
     
     <item>
       <title>Function Calling 的原始形态</title>
-      <description>探索 Function Calling 技术的基础原理和实现方式</description>
+      <description>探索大语言模型函数调用的基本实现方式</description>
       <link>https://johnyu2023.github.io/publish/ai/function_calling</link>
       <guid>https://johnyu2023.github.io/publish/ai/function_calling</guid>
-      <pubDate>Sun, 18 Aug 2025 09:00:00 +0800</pubDate>
-      <category>AI</category>
-      <category>技术</category>
+      <pubDate>Wed, 16 Jul 2025 00:00:00 GMT</pubDate>
+
     </item>
     
     <item>
-      <title>开始使用 VitePress 搭建技术博客</title>
-      <description>详细介绍如何使用 VitePress 搭建个人技术博客，包括配置、部署和自定义主题</description>
-      <link>https://johnyu2023.github.io/publish/posts/getting-started</link>
-      <guid>https://johnyu2023.github.io/publish/posts/getting-started</guid>
-      <pubDate>Sun, 18 Aug 2025 09:00:00 +0800</pubDate>
-      <category>技术</category>
-      <category>前端</category>
+      <title>AI 辅助编程</title>
+      <description>AI辅助编程工具的使用经验和实践案例</description>
+      <link>https://johnyu2023.github.io/publish/ai/code</link>
+      <guid>https://johnyu2023.github.io/publish/ai/code</guid>
+      <pubDate>Sun, 15 Jun 2025 00:00:00 GMT</pubDate>
+
     </item>
     
     <item>
       <title>Markdown 语法完全指南</title>
-      <description>全面的 Markdown 语法教程，包含基础语法和高级技巧</description>
+      <description>全面介绍Markdown语法及其在技术写作中的应用</description>
       <link>https://johnyu2023.github.io/publish/posts/markdown-guide</link>
       <guid>https://johnyu2023.github.io/publish/posts/markdown-guide</guid>
-      <pubDate>Mon, 01 Jan 2024 00:00:00 +0800</pubDate>
-      <category>技术</category>
-      <category>写作</category>
+      <pubDate>Thu, 16 Jan 2025 00:00:00 GMT</pubDate>
+
     </item>
+    
+    <item>
+      <title>开始使用 VitePress 搭建技术博客</title>
+      <description>从零开始学习如何使用VitePress搭建个人技术博客</description>
+      <link>https://johnyu2023.github.io/publish/posts/getting-started</link>
+      <guid>https://johnyu2023.github.io/publish/posts/getting-started</guid>
+      <pubDate>Wed, 15 Jan 2025 00:00:00 GMT</pubDate>
+
+    </item>
+    
   </channel>
 </rss>
