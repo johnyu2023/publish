@@ -5,7 +5,7 @@ const isProduction = process.env.NODE_ENV === 'production'
 
 export default defineConfig({
   title: "AI时代的技术分享",
-  description: "分享技术心得和学习笔记",
+  description: "分享技术心得",
   lang: 'zh-CN',
   // 设置基础路径
   // 开发时 base 为 '/'，生产构建时 base 为 '/publish/'
