@@ -23,7 +23,7 @@ export default defineConfig({
     
     sidebar: {
       '/posts/': [
-            { text: '使用 GitHub Pages 部署静态网页的网站', link: '/posts/github_pages' },
+            { text: '使用 GitHub Pages 部署静态网页的网站', link: '/posts/github-pages' },
             { text: 'Markdown 语法完全指南', link: '/posts/markdown-guide' },
             { text: '开始使用 VitePress 搭建技术博客', link: '/posts/getting-started' }
           ],

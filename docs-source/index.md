@@ -24,7 +24,7 @@ features:
   - icon: 💡
     title: 经验分享
     details: 分享项目开发中的经验和最佳实践
-    link: /posts/github_pages
+    link: /posts/github-pages
 ---
 
 ## 最新文章
@@ -34,7 +34,7 @@ features:
     <h3>📖 最近更新</h3>
     <ul>
       <li><a href="/ai/coding_01">AI 辅助编程的注意事项</a> - 2025-08-18</li>
-      <li><a href="/posts/github_pages">使用 GitHub Pages 部署静态网页的网站</a> - 2025-08-15</li>
+      <li><a href="/posts/github-pages">使用 GitHub Pages 部署静态网页的网站</a> - 2025-08-15</li>
       <li><a href="/ai/function_calling">Function Calling 的原始形态</a> - 2025-07-16</li>
       <li><a href="/ai/code">AI 辅助编程</a> - 2025-06-15</li>
       <li><a href="/posts/markdown-guide">Markdown 语法完全指南</a> - 2025-01-16</li>
