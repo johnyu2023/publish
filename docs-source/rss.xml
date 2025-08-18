@@ -1,13 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>我的技术博客</title>
-    <description>分享技术心得和学习笔记</description>
+    <title>AI时代的技术分享</title>
+    <description>分享技术心得</description>
     <link>https://johnyu2023.github.io/publish</link>
     <atom:link href="https://johnyu2023.github.io/publish/rss.xml" rel="self" type="application/rss+xml"/>
     <language>zh-CN</language>
     <lastBuildDate>Sun, 18 Aug 2025 09:00:00 +0800</lastBuildDate>
     <ttl>60</ttl>
+    
+    <item>
+      <title>使用 GitHub Pages 部署静态网页的网站</title>
+      <description>如何使用 GitHub Pages 部署静态网页的网站</description>
+      <link>https://johnyu2023.github.io/publish/posts/github_pages</link>
+      <guid>https://johnyu2023.github.io/publish/posts/github_pages</guid>
+      <pubDate>Sun, 15 Aug 2025 09:00:00 +0800</pubDate>
+      <category>github</category>
+      <category>pages</category>
+    </item>
     
     <item>
       <title>AI 辅助编程的注意事项</title>
