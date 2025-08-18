@@ -8,32 +8,32 @@ export default defineConfig({
   description: "分享技术心得",
   lang: 'zh-CN',
   // 设置基础路径
-  // 开发时 base 为 '/'，生产构建时 base 为 '/publish/'
-  base: isProduction ? '/publish/' : '/',
+  // 统一使用 '/publish/' 作为基础路径，确保链接一致性
+  base: '/publish/',
   cleanUrls: true,
   
   themeConfig: {
     siteTitle: 'AI时代的编程之路',
     
     nav: [
-      { text: '首页', link: '/' },
-      { text: '文章', link: '/posts/' },
-      { text: '关于', link: '/about' }
+      { text: '首页', link: '/publish/' },
+      { text: '文章', link: '/publish/posts/' },
+      { text: '关于', link: '/publish/about' }
     ],
     
     sidebar: {
       '/posts/': [
-            { text: '使用 GitHub Pages 部署静态网站', link: '/posts/github-pages' },
-            { text: 'Markdown 语法完全指南', link: '/posts/markdown-guide' },
-            { text: '开始使用 VitePress 搭建技术博客', link: '/posts/getting-started' }
+            { text: '使用 GitHub Pages 部署静态网站', link: '/publish/posts/github-pages' },
+            { text: 'Markdown 语法完全指南', link: '/publish/posts/markdown-guide' },
+            { text: '开始使用 VitePress 搭建技术博客', link: '/publish/posts/getting-started' }
           ],
       '/ai/': [
         {
           text: 'AI 相关',
           items: [
-            { text: 'Function Calling 的原始形态', link: '/ai/function-calling' },
-            { text: '代码相关', link: '/ai/code' },
-            { text: '编程实践', link: '/ai/coding-01' }
+            { text: 'Function Calling 的原始形态', link: '/publish/ai/function-calling' },
+            { text: '代码相关', link: '/publish/ai/code' },
+            { text: '编程实践', link: '/publish/ai/coding-01' }
           ]
         }
       ]

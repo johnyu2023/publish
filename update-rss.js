@@ -35,11 +35,14 @@ function parseMarkdownFiles(files) {
     const content = fs.readFileSync(file, 'utf8');
     const { data } = matter(content);
     // 处理路径，确保使用正斜杠并移除 docs-source 前缀
-    const relativePath = file
+    let relativePath = file
       .replace(/^docs-source[\/\\]/, '') // 移除开头的 docs-source/ 或 docs-source\
       .replace('.md', '')
       .replace(/\\/g, '/')
       .replace(/_/g, '-'); // 将下划线替换为连字符
+    
+    // 始终添加 publish 前缀
+    relativePath = `publish/${relativePath}`;
     
     // 跳过索引文件
     if (path.basename(file) === 'index.md') {

@@ -65,7 +65,9 @@ async function updateIndex() {
   // 生成最近更新列表
   let recentPostsList = posts.slice(0, 5).map(post => {
     const dateStr = post.date.toISOString().split('T')[0];
-    return `      <li><a href="${post.path}">${post.title}</a> - ${dateStr}</li>`;
+    // 始终添加 /publish 前缀
+    const linkPath = `/publish${post.path}`;
+    return `      <li><a href="${linkPath}">${post.title}</a> - ${dateStr}</li>`;
   }).join('\n');
   
   // 替换最近更新列表
@@ -108,7 +110,9 @@ async function updateSidebar() {
     // 为每个类别生成 sidebar 项
     const categoryPosts = postsByCategory[category];
     let sidebarItems = categoryPosts.map(post => {
-      return `            { text: '${post.title}', link: '/${category}/${path.basename(post.path)}' }`;
+      // 始终添加 /publish 前缀
+      const linkPath = `/publish/${category}/${path.basename(post.path)}`;
+      return `            { text: '${post.title}', link: '${linkPath}' }`;
     }).join(',\n');
     
     // 查找并替换 sidebar 配置
