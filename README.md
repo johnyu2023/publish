@@ -1,4 +1,4 @@
-# 我的技术博客
+# AI时代的技术博客
 
 基于 VitePress 构建的个人技术博客，分享技术心得和学习笔记。
 
@@ -15,18 +15,20 @@
 
 ```
 .
-├── docs/                    # 文档目录
+├── docs/                    # 构建输出目录（GitHub Pages 部署目录）
+├── docs-source/             # 源文件目录
 │   ├── .vitepress/         # VitePress 配置
 │   │   └── config.ts       # 配置文件
 │   ├── posts/              # 博客文章
 │   │   ├── index.md        # 文章列表页
 │   │   ├── getting-started.md
 │   │   └── markdown-guide.md
+│   ├── ai/                 # AI 相关文章
+│   │   ├── code.md
+│   │   ├── coding_01.md
+│   │   └── function_calling.md
 │   ├── about.md            # 关于页面
 │   └── index.md            # 首页
-├── .github/                # GitHub 配置
-│   └── workflows/          # GitHub Actions
-│       └── deploy.yml      # 自动部署配置
 ├── package.json            # 项目配置
 └── README.md               # 项目说明
 ```
@@ -58,17 +60,17 @@ npm run docs:dev
 npm run docs:build
 ```
 
-### 预览生产版本
+### 构建并部署到 GitHub Pages
 
 ```bash
-npm run docs:preview
+npm run deploy:github
 ```
 
 ## 📝 写作指南
 
 ### 创建新文章
 
-1. 在 `docs/posts/` 目录下创建新的 `.md` 文件
+1. 在 `docs-source/posts/` 或 `docs-source/ai/` 目录下创建新的 `.md` 文件
 2. 在文件开头添加 frontmatter：
 
 ```markdown
@@ -80,8 +82,8 @@ tags: [标签1, 标签2]
 ---
 ```
 
-3. 在 `docs/.vitepress/config.ts` 中的 sidebar 配置中添加文章链接
-4. 在 `docs/posts/index.md` 中添加文章到列表
+3. 在 `docs-source/.vitepress/config.ts` 中的 sidebar 配置中添加文章链接
+4. 在 `docs-source/index.md` 中的"最近更新"部分添加文章链接
 
 ### 文章格式规范
 
@@ -92,21 +94,26 @@ tags: [标签1, 标签2]
 
 ## 🚀 部署
 
-### 自动部署（推荐）
-
-项目已配置 GitHub Actions，推送代码到 main 分支会自动部署到 GitHub Pages。
-
-### 手动部署
+### 部署到 GitHub Pages
 
 ```bash
-npm run deploy
+# 清理旧的构建文件（可选）
+npm run clean
+
+# 构建并部署到 GitHub Pages
+npm run deploy:github
+
+# 提交并推送到 GitHub
+git add .
+git commit -m "更新网站内容"
+git push
 ```
 
 ## 🎨 自定义
 
 ### 修改配置
 
-编辑 `docs/.vitepress/config.ts` 文件：
+编辑 `docs-source/.vitepress/config.ts` 文件：
 
 - 修改网站标题和描述
 - 调整导航菜单
@@ -115,11 +122,7 @@ npm run deploy
 
 ### 自定义样式
 
-在 `docs/.vitepress/theme/` 目录下创建自定义主题文件。
-
-### 添加组件
-
-在 `docs/.vitepress/theme/` 目录下创建 Vue 组件。
+在 `docs-source/.vitepress/theme/` 目录下创建自定义主题文件。
 
 ## 📚 相关资源
 
@@ -127,18 +130,9 @@ npm run deploy
 - [Markdown 语法指南](https://markdown.com.cn/)
 - [GitHub Pages 文档](https://pages.github.com/)
 
-## 🤝 贡献
-
-欢迎提交 Issue 和 Pull Request！
-
 ## 📄 许可证
 
 MIT License
-
-## 📞 联系
-
-- 邮箱：johnyu2023@example.com
-- GitHub：[@johnyu2023](https://github.com/johnyu2023)
 
 ---
 
