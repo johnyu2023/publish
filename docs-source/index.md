@@ -40,7 +40,7 @@ features:
       <li><a href="/posts/markdown-guide">Markdown 语法完全指南</a> - 2025-01-16</li>
     </ul>
     <div class="rss-subscribe">
-      <p>📡 <a href="/publish/rss.xml">订阅 RSS Feed</a> 获取最新文章更新</p>
+      <p>📡 <a href="/rss.xml">订阅 RSS Feed</a> 获取最新文章更新</p>
     </div>
   </div>
 </div>

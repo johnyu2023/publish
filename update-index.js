@@ -10,6 +10,9 @@ const __dirname = path.dirname(__filename);
 // 文章目录
 const directories = ['docs-source/posts', 'docs-source/ai'];
 
+// GitHub Pages 仓库名称
+const repoName = 'publish';
+
 // 获取所有文章
 async function getAllPosts() {
   let posts = [];
