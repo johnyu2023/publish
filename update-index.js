@@ -27,10 +27,14 @@ async function getAllPosts() {
             const content = fs.readFileSync(filePath, 'utf8');
             const { data } = matter(content);
             
+            // 确保 URL 路径中使用连字符而不是下划线
+            const fileName = path.basename(file, '.md');
+            const urlPath = fileName.replace(/_/g, '-');
+            
             posts.push({
-              title: data.title || path.basename(file, '.md'),
+              title: data.title || fileName,
               date: data.date ? new Date(data.date) : new Date(0),
-              path: `/${dir.replace('docs-source/', '')}/${path.basename(file, '.md')}`,
+              path: `/${dir.replace('docs-source/', '')}/${urlPath}`,
               filePath,
               category: dir.replace('docs-source/', '')
             });

@@ -38,7 +38,8 @@ function parseMarkdownFiles(files) {
     const relativePath = file
       .replace(/^docs-source[\/\\]/, '') // 移除开头的 docs-source/ 或 docs-source\
       .replace('.md', '')
-      .replace(/\\/g, '/');
+      .replace(/\\/g, '/')
+      .replace(/_/g, '-'); // 将下划线替换为连字符
     
     // 跳过索引文件
     if (path.basename(file) === 'index.md') {
