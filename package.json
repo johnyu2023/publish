@@ -8,8 +8,9 @@
     "docs:dev": "vitepress dev docs-source",
     "docs:build": "cross-env NODE_ENV=production vitepress build docs-source",
     "docs:build:github": "cross-env NODE_ENV=production DEPLOY_ENV=GITHUB_PAGES vitepress build docs-source",
-    "deploy": "npm run docs:build && xcopy \"docs-source\\.vitepress\\dist\\*\" \"docs\\\" /E /I /Y && copy \"docs-source\\rss.xml\" \"docs\\rss.xml\"",
-    "deploy:github": "npm run docs:build:github && xcopy \"docs-source\\.vitepress\\dist\\*\" \"docs\\\" /E /I /Y && copy \"docs-source\\rss.xml\" \"docs\\rss.xml\"",
+    "update:rss": "node update-rss.js",
+    "deploy": "npm run update:rss && npm run docs:build && xcopy \"docs-source\\.vitepress\\dist\\*\" \"docs\\\" /E /I /Y && copy \"docs-source\\rss.xml\" \"docs\\rss.xml\"",
+    "deploy:github": "npm run update:rss && npm run docs:build:github && xcopy \"docs-source\\.vitepress\\dist\\*\" \"docs\\\" /E /I /Y && copy \"docs-source\\rss.xml\" \"docs\\rss.xml\"",
     "clean": "rimraf docs/*"
   },
   "keywords": [
