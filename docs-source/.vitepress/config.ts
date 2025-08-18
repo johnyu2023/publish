@@ -23,14 +23,10 @@ export default defineConfig({
     
     sidebar: {
       '/posts/': [
-        {
-          text: '文章列表',
-          items: [
-            { text: '开始使用 VitePress', link: '/posts/getting-started' },
-            { text: 'Markdown 语法指南', link: '/posts/markdown-guide' }
-          ]
-        }
-      ],
+            { text: '使用 GitHub Pages 部署静态网页的网站', link: '/posts/github_pages' },
+            { text: 'Markdown 语法完全指南', link: '/posts/markdown-guide' },
+            { text: '开始使用 VitePress 搭建技术博客', link: '/posts/getting-started' }
+          ],
       '/ai/': [
         {
           text: 'AI 相关',
@@ -45,7 +41,7 @@ export default defineConfig({
     
     socialLinks: [
       { icon: 'github', link: 'https://github.com/johnyu2023' },
-      { icon: 'rss', link: './rss.xml' }
+      { icon: 'rss', link: isProduction ? '/publish/rss.xml' : '/rss.xml' }
     ],
     
     footer: {

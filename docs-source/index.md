@@ -16,12 +16,15 @@ features:
   - icon: 📝
     title: 技术文章
     details: 分享前端、后端、DevOps 等技术领域的文章和心得
+    link: /posts/
   - icon: 🚀
     title: 学习笔记
     details: 记录学习新技术的过程和遇到的问题
+    link: /ai/code
   - icon: 💡
     title: 经验分享
     details: 分享项目开发中的经验和最佳实践
+    link: /posts/github_pages
 ---
 
 ## 最新文章
@@ -30,14 +33,14 @@ features:
   <div class="custom-block">
     <h3>📖 最近更新</h3>
     <ul>
-      <li><a href="./ai/coding_01">AI 辅助编程的注意事项</a> - 2025-08-18</li>
-      <li><a href="./ai/function_calling">Function Calling 的原始形态</a> - 2025-07-16</li>
-      <li><a href="./ai/code">AI 辅助编程</a> - 2025-06-15</li>
-      <li><a href="./posts/markdown-guide">Markdown 语法完全指南</a> - 2025-01-16</li>
-      <li><a href="./posts/getting-started">开始使用 VitePress 搭建技术博客</a> - 2025-01-15</li>
+      <li><a href="/ai/coding_01">AI 辅助编程的注意事项</a> - 2025-08-18</li>
+      <li><a href="/posts/github_pages">使用 GitHub Pages 部署静态网页的网站</a> - 2025-08-15</li>
+      <li><a href="/ai/function_calling">Function Calling 的原始形态</a> - 2025-07-16</li>
+      <li><a href="/ai/code">AI 辅助编程</a> - 2025-06-15</li>
+      <li><a href="/posts/markdown-guide">Markdown 语法完全指南</a> - 2025-01-16</li>
     </ul>
     <div class="rss-subscribe">
-      <p>📡 <a href="rss.xml">订阅 RSS Feed</a> 获取最新文章更新</p>
+      <p>📡 <a href="/publish/rss.xml">订阅 RSS Feed</a> 获取最新文章更新</p>
     </div>
   </div>
 </div>

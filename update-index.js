@@ -27,14 +27,13 @@ async function getAllPosts() {
             const content = fs.readFileSync(filePath, 'utf8');
             const { data } = matter(content);
             
-            if (data.date) {
-              posts.push({
-                title: data.title || path.basename(file, '.md'),
-                date: new Date(data.date),
-                path: `/${dir.replace('docs-source/', '')}/${path.basename(file, '.md')}`,
-                filePath
-              });
-            }
+            posts.push({
+              title: data.title || path.basename(file, '.md'),
+              date: data.date ? new Date(data.date) : new Date(0),
+              path: `/${dir.replace('docs-source/', '')}/${path.basename(file, '.md')}`,
+              filePath,
+              category: dir.replace('docs-source/', '')
+            });
           } catch (e) {
             console.error(`Error processing ${filePath}:`, e);
           }
@@ -81,7 +80,60 @@ async function updateIndex() {
   }
 }
 
+// 更新 VitePress 配置中的 sidebar
+async function updateSidebar() {
+  const configPath = 'docs-source/.vitepress/config.ts';
+  let configContent = fs.readFileSync(configPath, 'utf8');
+  
+  const posts = await getAllPosts();
+  
+  // 按类别分组文章
+  const postsByCategory = {};
+  posts.forEach(post => {
+    if (!postsByCategory[post.category]) {
+      postsByCategory[post.category] = [];
+    }
+    postsByCategory[post.category].push(post);
+  });
+  
+  // 更新 sidebar 配置
+  for (const category in postsByCategory) {
+    // 为每个类别生成 sidebar 项
+    const categoryPosts = postsByCategory[category];
+    let sidebarItems = categoryPosts.map(post => {
+      return `            { text: '${post.title}', link: '/${category}/${path.basename(post.path)}' }`;
+    }).join(',\n');
+    
+    // 查找并替换 sidebar 配置
+    const categoryRegex = new RegExp(`sidebar:\\s*{[^}]*'\\/${category}\\/':.*?items:\\s*\\[(.*?)\\]`, 's');
+    const match = configContent.match(categoryRegex);
+    
+    if (match) {
+      // 找到现有的 sidebar 配置，替换 items 数组
+      const itemsStartIndex = match.index + match[0].indexOf('[');
+      const itemsEndIndex = match.index + match[0].indexOf(']') + 1;
+      
+      const newConfig = configContent.substring(0, itemsStartIndex) + 
+                        '[\n' + sidebarItems + '\n          ]' + 
+                        configContent.substring(itemsEndIndex);
+      
+      configContent = newConfig;
+    }
+  }
+  
+  fs.writeFileSync(configPath, configContent, 'utf8');
+  console.log('VitePress 配置中的 sidebar 已更新！');
+}
+
 // 执行更新
-updateIndex().catch(err => {
-  console.error('更新首页时出错:', err);
-});
+async function updateAll() {
+  try {
+    await updateIndex();
+    await updateSidebar();
+    console.log('所有更新完成！');
+  } catch (err) {
+    console.error('更新过程中出错:', err);
+  }
+}
+
+updateAll();
