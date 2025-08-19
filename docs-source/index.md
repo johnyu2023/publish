@@ -23,7 +23,7 @@ import { withBase } from 'vitepress'
   <div class="custom-block">
     <h3>📖 最近更新</h3>
     <ul>
-      <li><a :href="withBase('/ai/function-calling-02')">Function Calling 详解</a> - 2025-08-19</li>
+      <li><a :href="withBase('/ai/function-calling-02')">Function Calling VS MCP</a> - 2025-08-19</li>
       <li><a :href="withBase('/ai/coding-01')">AI 辅助编程的注意事项</a> - 2025-08-18</li>
       <li><a :href="withBase('/posts/github-pages')">使用 GitHub Pages 部署静态网站</a> - 2025-08-14</li>
       <li><a :href="withBase('/ai/function-calling')">Function Calling 的原始形态</a> - 2025-07-16</li>

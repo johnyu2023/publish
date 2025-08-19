@@ -6,7 +6,7 @@ export default {
       "collapsed": false,
       "items": [
         {
-          "text": "Function Calling 详解",
+          "text": "Function Calling VS MCP",
           "link": "/ai/function-calling-02"
         },
         {
