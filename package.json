@@ -5,13 +5,16 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "docs:dev": "vitepress dev docs-source",
-    "docs:build": "cross-env NODE_ENV=production vitepress build docs-source",
-    "docs:build:github": "cross-env NODE_ENV=production DEPLOY_ENV=GITHUB_PAGES vitepress build docs-source",
-    "update:rss": "node update-rss.js",
-    "deploy": "npm run update:rss && npm run docs:build && xcopy \"docs-source\\.vitepress\\dist\\*\" \"docs\\\" /E /I /Y && copy \"docs-source\\rss.xml\" \"docs\\rss.xml\"",
-    "deploy:github": "npm run update:rss && npm run docs:build:github && xcopy \"docs-source\\.vitepress\\dist\\*\" \"docs\\\" /E /I /Y && copy \"docs-source\\rss.xml\" \"docs\\rss.xml\"",
-    "clean": "rimraf docs/*"
+    "dev": "npm run update:sidebar && npm run update:recent && vitepress dev docs-source",
+    "preview": "cross-env DEPLOY_ENV=LOCAL_PREVIEW npm run update:sidebar && npm run update:recent && cross-env DEPLOY_ENV=LOCAL_PREVIEW npm run update:rss && vitepress build docs-source && npm run copy:to publish && npx http-server -p 5174 .",
+    "build": "cross-env NODE_ENV=production DEPLOY_ENV=GITHUB_PAGES npm run update:sidebar && npm run update:recent && cross-env NODE_ENV=production DEPLOY_ENV=GITHUB_PAGES npm run update:rss && vitepress build docs-source && npm run copy:to docs",
+    "update:sidebar": "node tools/update-sidebar.js",
+    "update:recent": "node tools/update-recent-posts.js",
+    "update:rss": "cross-env DEPLOY_ENV=LOCAL_PREVIEW node tools/update-rss.js",
+    "update:rss:preview": "cross-env DEPLOY_ENV=LOCAL_PREVIEW node tools/update-rss.js",
+    "update:rss:prod": "cross-env NODE_ENV=production DEPLOY_ENV=GITHUB_PAGES node tools/update-rss.js",
+    "copy:to": "node tools/copy-dist.js",
+    "clean": "node tools/clean.js"
   },
   "keywords": [
     "blog",
@@ -21,6 +24,7 @@
   "author": "Your Name",
   "license": "MIT",
   "devDependencies": {
+    "@types/node": "^20.11.0",
     "cross-env": "^10.0.0",
     "gray-matter": "^4.0.3",
     "rimraf": "^6.0.1",

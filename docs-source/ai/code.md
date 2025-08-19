@@ -4,6 +4,8 @@ title: AI 辅助编程
 description: AI辅助编程工具的使用经验和实践案例
 ---
 
+<BlogPost>
+
 # AI 辅助编程
 
 
@@ -39,8 +41,7 @@ description: AI辅助编程工具的使用经验和实践案例
 
 #### 2.3.1. 重构代码
 
-``` prompt
-
+```
 根据你之前的结论，重新设计 temp6/check-function-num.py 的代码结构。
 新生成的代码保存在  temp7/check-function-num.py ，版本为 1.5.0
 
@@ -54,242 +55,15 @@ description: AI辅助编程工具的使用经验和实践案例
 2. 高优先级：将 save_results() 封装到 FileHandler 类
 3. 中优先级：将 save_comparison_report() 封装到 ReportGenerator 类
 4. 低优先级：考虑创建主控制器类来协调各个组件
-
 ```
 
 #### 2.3.2. 增加功能
 
-``` prompt
-
+```
 在原有代码 temp7/check-function-num.py 的基础上增加功能：
 指定一个文件地址，读取这个文件中所有定义的函数，给出该函数的起始行号和结束行号，将相关信息保存到一个 json 文件中。
 生成的 json 文件中的结构，参考 test-case/test_readme.json 的内容结构。
 生成的 json 文件，保存在目录 result 目录中。  
-
----
-
-写一个 Python 脚本，保存在 temp7 目录下，驱动 temp7/check-function-num.py 来对 test 目录下的 python 文件进行函数行号统计。目标是：
-检查 test 目录下的所有 .py 文件，只要其中含有函数定义的，就用 temp7/check-function-num.py 来统计函数的行号，并将结果保存到 temp7/test-result 目录下一个 json 文件中。
-
----
-
-检查现有代码 temp7\batch_analyze.py，temp7/check-function-num.py 是否满足要求：
-
-temp7\batch_analyze.py，用于驱动 temp7/check-function-num.py 来对 test 目录下的 python 文件进行函数行号统计。目标是：
-检查 test 目录下的所有 .py 文件，只要其中含有函数定义的，就用 temp7/check-function-num.py 来统计函数的行号，并将结果保存到 temp7/test-result 目录下一个与这个 py 文件同名的 json 文件中。
-如：test/test_read.py 的行数统计结果保存在 temp7/test-result/test_read.json 中。
-
----
-
-使用 batch_analyze.py 对 test 目录下的 test/test_readme.py 文件，进行分析，并将生成的结果和 test-case/test_readme.json 对比。
-已知 test-case 目录下的同名文件是手工检查后的正确结果，如果 temp7/test-result 中的同名文件和它不一致，就说明 temp7/check-function-num.py 中的逻辑有错误，请修正，直到改到二者内容一致为止。如果对二者文件的对比有疑问，请指出。
-
----
-
-使用 batch_analyze.py 对 test 目录下的 test/test_unidecode.py 文件，进行分析，并将生成的结果和 test-case/test_unidecode.json 对比。
-已知 test-case 目录下的同名文件是手工检查后的正确结果，如果 temp7/test-result 中的同名文件和它不一致，就说明 temp7/check-function-num.py 中的逻辑有错误，请修正，直到改到二者内容一致为止。如果对二者文件的对比有疑问，请指出。
-
----
-
-使用 batch_analyze.py 对 test 目录下的 test/test_utility.py 文件，进行分析，并将生成的结果和 test-case/test_utility.json 对比。
-已知 test-case 目录下的同名文件是手工检查后的正确结果，如果 temp7/test-result 中的同名文件和它不一致，就说明 temp7/check-function-num.py 中的逻辑有错误，请修正，直到改到二者内容一致为止。如果对二者文件的对比有疑问，请指出。
-
----
-
-检查 unidecode.json 中每个函数的起始行号和结束行号，和 temp7/test-result 目录下同名的 json 文件中函数的起始行号和结束行号相比，如果不一致就说明 unidecode.json 中的行号是错误的。如果 unidecode.json 中的行号是有错误的， 请生成一个副本文件 unidecode-fix.json，将其中所有的行号都纠正。
-最后，检查 unidecode-fix.json 中每个函数的起始行号和结束行号，和 temp7/test-result 目录下同名的 json 文件中函数的起始行号和结束行号相比，二者应该完全一致。
-
 ```
 
-#### 2.3.4. 在 jusText 项目中的使用
-
-``` prompt
-
-使用 temp7/batch_analyze.py 对 tests 目录下的 .py 文件，进行分析。
-
----
-
-tests 目录下有多个 .py 文件，为什么只在 temp7/test-result 下生成了3个文件，是不是 temp7/batch_analyze.py 的逻辑出错了，请检查并修正错误。
-
----
-
-检查 justext.json 中每个函数的起始行号和结束行号，和 temp7/test-result 目录下同名的 json 文件中函数的起始行号和结束行号相比，如果不一致就说明 justext.json 中的行号是错误的。如果 justext.json 中的行号是有错误的， 请生成一个副本文件 justext-fix.json，将其中所有的行号都纠正。
-最后，检查 justext-fix.json 中每个函数的起始行号和结束行号，和 temp7/test-result 目录下同名的 json 文件中函数的起始行号和结束行号相比，二者应该完全一致。
-
----
-格式有点问题，发生了变化，想保持原有格式，只修改行号。
-
-检查 justext.json 中每个函数的起始行号和结束行号，和 temp7/test-result 目录下同名的 json 文件中函数的起始行号和结束行号相比，如果不一致就说明 justext.json 中的行号是错误的。
-如果 justext.json 中的行号是有错误的，则生成一个 justext-fix-v2.json 文件，里面将函数的起始行号和结束行号修改为正确的行号，不过要注意的是， justext-fix-v2.json 的内容格式应该和 justext.json 严格一致，只有函数的起始行号和结束行号被修正为正确的值。
-
-为此，你之前生成了 temp7\compare_and_fix_v2.py ，但执行过程中超时中断了，请检查该程序是否能符合这个要求。如果不符合要求，请修复它。如果符合要求，则继续执行，最终生成 justext-fix-v2.json 。
-
----
-格式还是有问题，换行和以前不一致。
-
-检查 justext.json 中每个函数的起始行号和结束行号，和 temp7/test-result 目录下同名的 json 文件中函数的起始行号和结束行号相比，如果不一致就说明 justext.json 中的行号是错误的。
-如果 justext.json 中的行号是有错误的，则生成一个 justext-fix-v3.json 文件，里面将函数的起始行号和结束行号修改为正确的行号，不过要注意的是， justext-fix-v2.json 的内容格式应该和 justext.json 严格一致，只有函数的起始行号和结束行号被修正为正确的值，并且连换行符也必须保持不变。
-
----
-将替换JSON的程序工具化，使之可复用
-
-分析 temp7/compare_and_fix_v2.py ，使之成一个工具程序，可以在其他项目中复用。它的版本升级为1.1版本。
-支持对指定 json 文件进行处理，并将结果生成另一个符合命名规则的 json文件。例如：
-指定它对 justext.json 文件进行处理，生成 justext_fix.json 文件。如果发现  justext_fix.json  已经存在，则生成 justext_fix_v2.json。如果发现  justext_fix_v2.json  已经存在，则生成 justext_fix_v3.json。命名规则依此类推。
-
----
-
-分析 以下文件：
-temp7\batch_analyze.py
-temp7\check-function-num.py
-temp7\compare_and_fix.py
-temp7\compare_line_numbers.py
-
-如果我想将他们一起做为一组能在其他项目中使用的工具，是否可以，是否存在非工具化的逻辑？
-
-请给出在其他项目中使用这组工具的最简易的使用指令。
-
-
----
-进行工具化
-
-创建文件 temp7\config.json 里面存放工具化后的配置信息
-
-修改 temp7\check-function-num.py ：
-1. 改名为 check_function_num.py
-
-修改 temp7\batch_analyze.py：
-1. 硬编码了test目录路径，且结果保存到固定的test-result目录 -- 修改为读取配置文件 temp7\config.json
-
-修改 temp7\compare_line_numbers.py：
-1. 硬编码了justext.json文件名 -- 修改为读取配置文件 temp7\config.json
-2. 硬编码了temp7/test-result目录 -- 修改为读取配置文件 temp7\config.json
-3. 硬编码了输出文件名justext-fix.json -- 修改为读取配置文件 temp7\config.json
-
----
-
-将 工具化 之后的使用说明，写在 temp7\readme.md 中
-
----
-
-使用 temp7 里的工具，进行指定目录中的批量分析Python文件，找出函数的起始行号和结束行号
-
----
-
-以下功能怎么没在工具化的说明中存在，是没做工具化，还是只是漏写了？
-这个功能是否已经在现有某个 py 文件中实现？如果是的话，请补出使用说明到 temp7\readme.md 中
-
----
-
-检查 justext.json 中每个函数的起始行号和结束行号，和 temp7/test-result2 目录下同名的 json 文件中函数的起始行号和结束行号相比，如果不一致就说明 justext.json 中的行号是错误的。
-如果 justext.json 中的行号是有错误的，则生成一个修正的副本文件，例如 justext-fix.json 文件，里面将函数的起始行号和结束行号修改为正确的行号，不过要注意的是， justext-fix.json 的内容格式应该和 justext.json 严格一致，只有函数的起始行号和结束行号被修正为正确的值，并且连换行符也必须保持不变。
-
----
-
-检查 temp7\compare_line_numbers.py 实现了工具化了吗？是否是从 temp7\config.json 中读取参数的？
-
----
-
-对 temp7\compare_line_numbers.py 实现工具化吧，改成从 temp7\config.json 中读取参数
-
----
-
-使用 temp7 里的工具，比较和修正函数行号
-
----
-
-按要求， 重新生成的 justext_fix_cb_llm.json 内容与作为对照的原始文件 justext_test.json 内容上应该除了行号外完全一致，为什么现在总行数发生了变化，增加了很多换行呢？请检查相关逻辑，并修改这个问题。
-
-compare_line_numbers.py 生成出来的 justext_fix_cb_llm.json 内容与作为对照的原始文件 justext_test.json 内容相比，多了很多换行符，需要修复这个问题
-
----
-
-修改 temp7/compare_line_numbers.py 中的逻辑。要求：
-
-1. 在生成 json 文件时，不要重新生成全部内容，因为这样会导致格式的不一致，特别是每个细节处的换行符的不一致。
-2. 先将原始 json 文件整个复制新的文件中，然后在其中修改需要修改的行，修改的只可能是含有行号的行。每个含有行号的行，保持只有单行的形式。
-
----
-
-temp7/compare_line_numbers.py 生成的 json 文件，和原始 json 文件并不完全一致。
-原始json 文件 justext-test.json 有效行数 240
-生成的 json 文件 justext_fix_cb_large.json 有效行数 174
-按我们的要求，2个文件，行数应该是完全一致的，修改的只是含有行号的行。所以现在的生成并更新 json 文件的那段逻辑肯定有问题，请修正。
-
-temp7/compare_line_numbers.py 生成的 json 文件路径和文件名是什么，我怎么找不到了
-
----
-
-temp7/compare_line_numbers.py 对 temp7\config.json 的配置内容理解有误。
-
-  "files": {
-    "reference_file": "justext-test.json",
-    "output_file_prefix": "justext_fix_cb_large"
-  },
-
-这段里面的 "reference_file" 的值是 "justext-test.json"，应该理解为在项目根目录下去寻找 justext-test.json 文件，同样的道理，生成的 json 文件也应放在根目录下。
-
-此外，为了便于理解，这里要将 "files" 改名为"project_json_file"，这样更容易让人理解它指的是项目整体的 json 文件，更容易理解它指的是项目根目录下的 json 文件。
-
----
-
-修改 temp7\readme.md ：
-增加 compare_line_numbers.py 读取配置文件的内容，读的是 project_json_file 节点，并解释该节点的2个属性的含义
-
----
-
-compare_line_numbers.py 中读取配置文件，应该读的是和它在同一个目录下的 config.json 文件，而不是写死的 temp7/config.json 。请修正这个问题，并修改 readme.md 文件，使其更准确。
-
----
-
-已知我们的全套工具集，由如下几个文件组成：
-
-1. `check_function_num.py` - 核心分析工具，用于分析单个Python文件中的函数行号
-2. `batch_analyze.py` - 批量分析工具，用于分析指定目录下的所有Python文件
-3. `merge_results.py` - 结果合并工具，用于将多个分析结果合并为一个统一的JSON文件
-4. `compare_line_numbers.py` - 行号比较工具，用于比较和修正 justext.json 中的函数行号
-5. `config.json` - 配置文件，用于设置工具的各种参数
-
-但 temp7 目录下还有以下3个文件，不知道它们和上述文件是否有关系，如果没有关系的，是否可以从本目录中去除，而保持以上5个文件的正常运行？
- temp7\compare_and_fix.py
- temp7\fix_json_format.py
- temp7\fix_line_numbers.py
-
-为保险起见，你不要将他们直接删除，新建一个temp711 目录，并将这3个文件移动到 temp711 目录下。
-
----
-
-temp7 目录下是一套工具集，readme.md 里有说明，temp7/config.json 是这个工具集用到的配置文件。
-temp7/config.json 里的一段配置如下，请分析这3个属性是干嘛用的，是不是有属性是多余的：
-  "paths": {
-    "source_dir": "tests",
-    "result_dir": "test-result2",
-    "temp_dir": "result2"
-  },
-
----
-
-检查 temp7\check_function_num.py 中是否有写死的路径，我们的要求是所有路径要么是当前目录，要么是项目的根目录，要么是从配置文件 temp7/config.json 中读取的
-
-检查 temp7\batch_analyze.py 中是否有写死的路径，我们的要求是所有路径要么是当前目录，要么是项目的根目录，要么是从配置文件 temp7/config.json 中读取的
-
-检查 temp7\merge_results.py 中是否有写死路径，我们的要求是所有路径要么是当前目录，要么是项目的根目录，要么是从配置文件 temp7/config.json 中读取的
-
----
-
-我觉得现在对目录的处理太乱了，应该修改逻辑。
-现有的逻辑是：所有路径要么是当前目录，要么是项目的根目录，要么是从配置文件 temp7/config.json 中读取的。这样的原则太宽泛了，容易出问题。
-请将逻辑修改为所有路径都是从同级目录下的 config.json 中读取
-
-涉及到的文件有：
-temp7\check_function_num.py
-temp7\batch_analyze.py
-temp7\merge_results.py
-temp7\compare_line_numbers.py
-
-```
-
-
-
-
-
+</BlogPost>

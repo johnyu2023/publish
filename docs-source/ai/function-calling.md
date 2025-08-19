@@ -4,6 +4,8 @@ title: Function Calling 的原始形态
 description: 探索大语言模型函数调用的基本实现方式
 ---
 
+<BlogPost>
+
 # Function Calling 的原始形态
 
 
@@ -187,4 +189,6 @@ if __name__ == "__main__":
         print("对话执行失败")
 
 ```
+
+</BlogPost>
 

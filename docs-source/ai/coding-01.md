@@ -4,6 +4,8 @@ title: AI 辅助编程的注意事项
 description: 探讨使用AI辅助编程的最佳实践和常见陷阱
 ---
 
+<BlogPost>
+
 # AI 辅助编程的注意事项
 
 
@@ -28,3 +30,5 @@ Cursor，Trae CN，Lingma, CodeBuddy
 + 使用Git来追踪代码，保证代码的正确性
 + 提供一份完整的测试数据，用于验证
 + 熟练掌握AI的使用方式，以及各种限制条件
+
+</BlogPost>

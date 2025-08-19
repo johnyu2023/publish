@@ -6,26 +6,16 @@ hero:
   tagline: 记录学习过程，分享技术见解
   actions:
     - theme: brand
-      text: 开始阅读
-      link: /publish/posts/
+      text: AI编程
+      link: /ai/code
     - theme: alt
-      text: 关于我
-      link: /publish/about
-
-features:
-  - icon: 📝
-    title: 技术文章
-    details: 分享前端、后端、DevOps 等技术领域的文章和心得
-    link: /publish/posts/
-  - icon: 🚀
-    title: 学习笔记
-    details: 记录学习新技术的过程和遇到的问题
-    link: /publish/ai/code
-  - icon: 💡
-    title: 经验分享
-    details: 分享项目开发中的经验和最佳实践
-    link: /publish/posts/github-pages
+      text: github pages
+      link: /posts/github-pages
 ---
+
+<script setup>
+import { withBase } from 'vitepress'
+</script>
 
 ## 最新文章
 
@@ -33,14 +23,14 @@ features:
   <div class="custom-block">
     <h3>📖 最近更新</h3>
     <ul>
-      <li><a href="/publish/ai/coding-01">AI 辅助编程的注意事项</a> - 2025-08-18</li>
-      <li><a href="/publish/posts/github-pages">使用 GitHub Pages 部署静态网站</a> - 2025-08-15</li>
-      <li><a href="/publish/ai/function-calling">Function Calling 的原始形态</a> - 2025-07-16</li>
-      <li><a href="/publish/ai/code">AI 辅助编程</a> - 2025-06-15</li>
-      <li><a href="/publish/posts/markdown-guide">Markdown 语法完全指南</a> - 2025-01-16</li>
+      <li><a :href="withBase('/ai/coding-01')">AI 辅助编程的注意事项</a> - 2025-08-18</li>
+      <li><a :href="withBase('/posts/github-pages')">使用 GitHub Pages 部署静态网站</a> - 2025-08-14</li>
+      <li><a :href="withBase('/ai/function-calling')">Function Calling 的原始形态</a> - 2025-07-16</li>
+      <li><a :href="withBase('/ai/code')">AI 辅助编程</a> - 2025-06-15</li>
+      <li><a :href="withBase('/posts/markdown-guide')">Markdown 语法完全指南</a> - 2025-01-16</li>
     </ul>
     <div class="rss-subscribe">
-      <p>📡 <a href="/publish/rss.xml">订阅 RSS Feed</a> 获取最新文章更新</p>
+      <p>📡 <a href="./rss.xml">订阅 RSS Feed</a> 获取最新文章更新</p>
     </div>
   </div>
 </div>

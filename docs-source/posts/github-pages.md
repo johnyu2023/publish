@@ -1,7 +1,7 @@
 ---
 title: 使用 GitHub Pages 部署静态网站
 description: 如何使用 GitHub Pages 部署静态网站
-date: 2025-08-15
+date: 2025-08-14
 tags: [github, pages]
 ---
 
