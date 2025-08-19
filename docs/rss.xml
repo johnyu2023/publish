@@ -6,8 +6,17 @@
     <link>https://johnyu2023.github.io/publish</link>
     <atom:link href="https://johnyu2023.github.io/publish/rss.xml" rel="self" type="application/rss+xml"/>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 19 Aug 2025 12:02:25 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 19 Aug 2025 13:33:12 GMT</lastBuildDate>
     <ttl>60</ttl>
+    
+    <item>
+      <title>Function Calling 详解</title>
+      <description>Function Calling 解析</description>
+      <link>https://johnyu2023.github.io/publish/ai/function-calling-02</link>
+      <guid>https://johnyu2023.github.io/publish/ai/function-calling-02</guid>
+      <pubDate>Tue, 19 Aug 2025 00:00:00 GMT</pubDate>
+
+    </item>
     
     <item>
       <title>AI 辅助编程的注意事项</title>

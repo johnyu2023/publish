@@ -6,6 +6,10 @@ export default {
       "collapsed": false,
       "items": [
         {
+          "text": "Function Calling 详解",
+          "link": "/ai/function-calling-02"
+        },
+        {
           "text": "AI 辅助编程的注意事项",
           "link": "/ai/coding-01"
         },
