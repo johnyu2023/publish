@@ -111,16 +111,16 @@ git commit -m "更新网站内容"
 git push
 ```
 
-## RSS 文件不是自动生成的，而是手动维护的
+## RSS 文件生成
 
-+ RSS 文件不是自动生成的，而是手动维护的
-+ 在执行 npm run deploy:github 命令时，通过以下脚本复制到 docs 目录
++ RSS 文件会在构建过程中自动生成，使用生产环境的域名和地址
++ 在执行 npm run preview 或 npm run build 命令时，会自动更新 RSS 文件
 
 + 手动更新 RSS：
 `npm run update:rss` 
 
 + 部署网站（包含自动更新 RSS）：
-`npm run deploy:github`
+`npm run build` 或 `npm run preview`
 
 ## 部署流程回顾
 当你需要更新网站时，请按照以下步骤操作：

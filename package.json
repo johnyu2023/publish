@@ -6,13 +6,11 @@
   "main": "index.js",
   "scripts": {
     "dev": "npm run update:sidebar && npm run update:recent && vitepress dev docs-source",
-    "preview": "cross-env DEPLOY_ENV=LOCAL_PREVIEW npm run update:sidebar && npm run update:recent && cross-env DEPLOY_ENV=LOCAL_PREVIEW npm run update:rss && vitepress build docs-source && npm run copy:to publish && npx http-server -p 5174 .",
-    "build": "cross-env NODE_ENV=production DEPLOY_ENV=GITHUB_PAGES npm run update:sidebar && npm run update:recent && cross-env NODE_ENV=production DEPLOY_ENV=GITHUB_PAGES npm run update:rss && vitepress build docs-source && npm run copy:to docs",
+    "preview": "cross-env DEPLOY_ENV=LOCAL_PREVIEW npm run update:sidebar && npm run update:recent && npm run update:rss && vitepress build docs-source && npm run copy:to publish && npx http-server -p 5174 .",
+    "build": "cross-env NODE_ENV=production DEPLOY_ENV=GITHUB_PAGES npm run update:sidebar && npm run update:recent && npm run update:rss && vitepress build docs-source && npm run copy:to docs",
     "update:sidebar": "node tools/update-sidebar.js",
     "update:recent": "node tools/update-recent-posts.js",
-    "update:rss": "cross-env DEPLOY_ENV=LOCAL_PREVIEW node tools/update-rss.js",
-    "update:rss:preview": "cross-env DEPLOY_ENV=LOCAL_PREVIEW node tools/update-rss.js",
-    "update:rss:prod": "cross-env NODE_ENV=production DEPLOY_ENV=GITHUB_PAGES node tools/update-rss.js",
+    "update:rss": "cross-env NODE_ENV=production DEPLOY_ENV=GITHUB_PAGES node tools/update-rss.js",
     "copy:to": "node tools/copy-dist.js",
     "clean": "node tools/clean.js"
   },
