@@ -6,8 +6,17 @@
     <link>https://johnyu2023.github.io/publish</link>
     <atom:link href="https://johnyu2023.github.io/publish/rss.xml" rel="self" type="application/rss+xml"/>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 20 Aug 2025 15:44:02 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 20 Aug 2025 16:30:49 GMT</lastBuildDate>
     <ttl>60</ttl>
+    
+    <item>
+      <title>AI草莽时代，产品经理应该是怎样的人担当</title>
+      <description>AI 产品经理</description>
+      <link>https://johnyu2023.github.io/publish/think/pm</link>
+      <guid>https://johnyu2023.github.io/publish/think/pm</guid>
+      <pubDate>Wed, 20 Aug 2025 00:00:00 GMT</pubDate>
+
+    </item>
     
     <item>
       <title>Function Calling vs MCP</title>

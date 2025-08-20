@@ -22,7 +22,7 @@ const config = {
   language: 'zh-CN',
   ttl: 60,
   rssFile: 'docs-source/rss.xml',
-  contentDirs: ['docs-source/posts', 'docs-source/ai'],
+  contentDirs: ['docs-source/posts', 'docs-source/ai', 'docs-source/think'],
   // 根据环境设置不同的基础路径
   base: isProduction || deployEnv === 'LOCAL_PREVIEW' ? '/publish/' : '/'
 };
