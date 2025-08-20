@@ -19,6 +19,12 @@ export default defineConfig({
   // 设置基础路径
   base,
   
+  // 添加RSS链接到HTML头部
+  head: [
+    ['link', { rel: 'alternate', type: 'application/rss+xml', href: isLocalDev ? '/rss.xml' : '/publish/rss.xml', title: 'RSS Feed for AI时代的技术分享' }],
+    ['meta', { name: 'referrer', content: 'no-referrer-when-downgrade' }],
+  ],
+  
   // 添加全局变量，用于构建链接
   vite: {
     define: {
