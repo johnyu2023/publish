@@ -56,3 +56,7 @@ jspm_packages/
 
 # Yarn Integrity file
 .yarn-integrity
+
+# Local preview directory
+publish/
+
