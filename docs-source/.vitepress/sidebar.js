@@ -2,7 +2,7 @@
 export default {
   "/ai/": [
     {
-      "text": "AI 相关",
+      "text": "学习笔记",
       "collapsed": false,
       "items": [
         {
@@ -26,7 +26,7 @@ export default {
   ],
   "/posts/": [
     {
-      "text": "文章",
+      "text": "技术文章",
       "collapsed": false,
       "items": [
         {
@@ -40,6 +40,18 @@ export default {
         {
           "text": "开始使用 VitePress 搭建技术博客",
           "link": "/posts/getting-started"
+        }
+      ]
+    }
+  ],
+  "/think/": [
+    {
+      "text": "观察思考",
+      "collapsed": false,
+      "items": [
+        {
+          "text": "AI草莽时代，产品经理应该是怎样的人担当",
+          "link": "/think/pm"
         }
       ]
     }

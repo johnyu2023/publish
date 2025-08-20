@@ -136,7 +136,7 @@ function generateSidebar() {
   if (fs.existsSync(aiDir)) {
     sidebar['/ai/'] = [
       {
-        text: 'AI 相关',
+        text: '学习笔记',
         collapsed: false,
         items: generateSidebarForDir(aiDir, '/ai/')
       }
@@ -148,9 +148,21 @@ function generateSidebar() {
   if (fs.existsSync(postsDir)) {
     sidebar['/posts/'] = [
       {
-        text: '文章',
+        text: '技术文章',
         collapsed: false,
         items: generateSidebarForDir(postsDir, '/posts/')
+      }
+    ];
+  }
+  
+  // 处理思考文章
+  const thinkDir = path.join(docsSourceDir, 'think');
+  if (fs.existsSync(thinkDir)) {
+    sidebar['/think/'] = [
+      {
+        text: '观察思考',
+        collapsed: false,
+        items: generateSidebarForDir(thinkDir, '/think/')
       }
     ];
   }

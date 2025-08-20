@@ -11,6 +11,22 @@ hero:
     - theme: alt
       text: github pages
       link: /posts/github-pages
+
+features:
+  - icon: 🚀
+    title: 学习笔记
+    details: 记录AI学习笔记
+    link: /ai/code
+
+  - icon: 📝
+    title: 技术文章
+    details: 分享传统技术的文章心得
+    link: /posts/github-pages
+
+  - icon: 💡
+    title: 观察思考
+    details: 分享对现在和未来的一些思考
+    link: /think/pm
 ---
 
 <script setup>
@@ -23,11 +39,11 @@ import { withBase } from 'vitepress'
   <div class="custom-block">
     <h3>📖 最近更新</h3>
     <ul>
+      <li><a :href="withBase('/think/pm')">AI草莽时代，产品经理应该是怎样的人担当</a> - 2025-08-20</li>
       <li><a :href="withBase('/ai/function-calling-vs-mcp')">Function Calling vs MCP</a> - 2025-08-19</li>
       <li><a :href="withBase('/ai/coding-01')">AI 辅助编程的注意事项</a> - 2025-08-18</li>
       <li><a :href="withBase('/posts/github-pages')">使用 GitHub Pages 部署静态网站</a> - 2025-08-14</li>
       <li><a :href="withBase('/ai/function-calling')">Function Calling 的原始形态</a> - 2025-07-16</li>
-      <li><a :href="withBase('/ai/code')">AI 辅助编程</a> - 2025-06-15</li>
     </ul>
     <div class="rss-subscribe">
       <p>📡 <a href="./rss.xml">订阅 RSS Feed</a> 获取最新文章更新</p>
