@@ -6,8 +6,8 @@ export default {
       "collapsed": false,
       "items": [
         {
-          "text": "Function Calling VS MCP",
-          "link": "/ai/function-calling-02"
+          "text": "Function Calling vs MCP",
+          "link": "/ai/function-calling-vs-mcp"
         },
         {
           "text": "AI 辅助编程的注意事项",

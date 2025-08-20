@@ -6,14 +6,14 @@
     <link>https://johnyu2023.github.io/publish</link>
     <atom:link href="https://johnyu2023.github.io/publish/rss.xml" rel="self" type="application/rss+xml"/>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 19 Aug 2025 16:51:08 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 20 Aug 2025 02:00:30 GMT</lastBuildDate>
     <ttl>60</ttl>
     
     <item>
-      <title>Function Calling VS MCP</title>
+      <title>Function Calling vs MCP</title>
       <description>Function Calling 和 MCP 的关系和区别</description>
-      <link>https://johnyu2023.github.io/publish/ai/function-calling-02</link>
-      <guid>https://johnyu2023.github.io/publish/ai/function-calling-02</guid>
+      <link>https://johnyu2023.github.io/publish/ai/function-calling-vs-mcp</link>
+      <guid>https://johnyu2023.github.io/publish/ai/function-calling-vs-mcp</guid>
       <pubDate>Tue, 19 Aug 2025 00:00:00 GMT</pubDate>
 
     </item>

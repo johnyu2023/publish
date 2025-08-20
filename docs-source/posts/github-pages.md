@@ -5,6 +5,8 @@ date: 2025-08-14
 tags: [github, pages]
 ---
 
+<BlogPost>
+
 # 使用 GitHub Pages 部署静态网站
 
 
@@ -37,3 +39,15 @@ GitHub Pages 是 GitHub 提供的一项免费服务，用于托管静态网页�
 + 编译后的内容保存在 docs 目录下
 + github 中 Pages 设置，指向 main 分支的 docs 目录
 + 每次提交后，自动出发 github 默认的 Action 将 docs 目录下的内容发布到 pages 里
+
+## 注意事项
+
++ 由于 GitHub Pages 的限制，你只能使用 GitHub 的默认域名（`username.github.io`）或自定义域名来访问你的网站。如果你想使用其他域名，你需要购买一个域名并配置 DNS 解析。
++ GitHub Actions 并不总是成功，可能会莫名失败的。
+
++ 下面两张图展示了出错的情形
+<img src="../assets/other/github-pages/github-action-fail-01.png" alt="Failed" class="content-image" />
+
+<img src="../assets/other/github-pages/github-action-fail-02.png" alt="Failed" class="content-image" />
+
+</BlogPost>
