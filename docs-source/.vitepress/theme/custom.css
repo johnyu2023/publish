@@ -34,11 +34,11 @@
 
 /* 调整标题样式，使其更小更淡 */
 .post-title h1 {
-  font-size: 1.5rem !important;
+  font-size: 1.3rem !important; /* 调整字体大小 */
   color: #666 !important;
   margin-top: 0;
   margin-bottom: 10px;
-  font-weight: 500;
+  font-weight: bold; /* 加粗 */
 }
 
 .post-meta {

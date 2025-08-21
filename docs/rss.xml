@@ -6,8 +6,26 @@
     <link>https://johnyu2023.github.io/publish</link>
     <atom:link href="https://johnyu2023.github.io/publish/rss.xml" rel="self" type="application/rss+xml"/>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 20 Aug 2025 16:30:49 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 21 Aug 2025 16:22:15 GMT</lastBuildDate>
     <ttl>60</ttl>
+    
+    <item>
+      <title>浅谈数据清洗</title>
+      <description>数据清洗</description>
+      <link>https://johnyu2023.github.io/publish/ai/data-cleaning</link>
+      <guid>https://johnyu2023.github.io/publish/ai/data-cleaning</guid>
+      <pubDate>Thu, 21 Aug 2025 00:00:00 GMT</pubDate>
+
+    </item>
+    
+    <item>
+      <title>数据科学与AI应用开发的关系</title>
+      <description>数据科学 数据探索 数据清洗 特征工程</description>
+      <link>https://johnyu2023.github.io/publish/ai/data-science</link>
+      <guid>https://johnyu2023.github.io/publish/ai/data-science</guid>
+      <pubDate>Thu, 21 Aug 2025 00:00:00 GMT</pubDate>
+
+    </item>
     
     <item>
       <title>AI草莽时代，产品经理应该是怎样的人担当</title>
