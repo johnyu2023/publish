@@ -1,28 +1,114 @@
-/* 自定义样式 */
-.post-date {
-  display: inline-flex;
-  align-items: center;
-  margin-bottom: 1rem;
-  color: var(--vp-c-text-2);
-  font-size: 0.9rem;
+/* 确保 Mermaid 图表正确显示 */
+.mermaid {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 20px auto; /* 居中 */
+  text-align: center; /* 文本居中 */
+  display: flex; /* 使用 flexbox */
+  justify-content: center; /* 水平居中 */
 }
 
-.date-icon {
-  margin-right: 0.25rem;
+/* 改进 BlogPost 组件样式 */
+.blog-post {
+  max-width: 100%;
+  margin: 0 auto;
 }
 
-.post-title {
-  margin-bottom: 0.5rem;
+/* 确保 Mermaid 图表正确显示 */
+.mermaid {
+  background-color: #f9f9f9;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 20px 0;
+}
+
+/* 创建一个头部容器 */
+.blog-post-header {
+  background-color: #f8f8f8;
+  border: 1px solid #eaeaea;
+  border-radius: 6px;
+  padding: 16px 20px;
+  margin-bottom: 30px;
+}
+
+/* 调整标题样式，使其更小更淡 */
+.post-title h1 {
+  font-size: 1.5rem !important;
+  color: #666 !important;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-weight: 500;
 }
 
 .post-meta {
-  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  color: #666;
+}
+
+.post-date {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.date-icon {
+  margin-right: 5px;
 }
 
 .post-description {
-  margin-top: 0.5rem;
-  margin-bottom: 2rem;
-  color: var(--vp-c-text-2);
-  font-size: 1.1rem;
   font-style: italic;
+  margin-bottom: 0;
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* 确保内容区域不受影响 */
+.post-content {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+
+/* 调整博客文章整体样式 */
+.blog-post {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* 调整标题样式，使其更小更淡 */
+.post-title h1 {
+  font-size: 1.5rem !important;
+  color: #666 !important;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.post-meta {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  color: #666;
+}
+
+.post-date {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #777;
+}
+
+.date-icon {
+  margin-right: 5px;
+}
+
+.post-description {
+  font-style: italic;
+  margin-bottom: 15px;
+  color: #555;
+  font-size: 0.95rem;
 }

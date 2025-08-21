@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress'
 import type { DefaultTheme } from 'vitepress'
+import { withMermaid } from 'vitepress-plugin-mermaid'
 import sidebarConfig from './sidebar.js'
 
 // 检测环境
@@ -12,7 +13,7 @@ const isLocalDev = !isProduction && deployEnv !== 'LOCAL_PREVIEW'
 // 本地预览和生产环境: '/publish/'
 const base = isLocalDev ? '/' : '/publish/'
 
-export default defineConfig({
+export default withMermaid(defineConfig({
   title: "AI时代的技术分享",
   description: "分享技术心得",
   lang: 'zh-CN',
@@ -54,5 +55,10 @@ export default defineConfig({
       message: '基于 MIT 协议发布',
       copyright: 'Copyright © 2024-present'
     }
+  },
+  
+  // Mermaid 配置
+  mermaid: {
+    theme: 'default',
   }
-})
+}))

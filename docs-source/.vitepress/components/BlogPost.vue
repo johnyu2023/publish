@@ -18,17 +18,19 @@ const formattedDate = computed(() => {
 
 <template>
   <div class="blog-post">
-    <div v-if="frontmatter.title" class="post-title">
-      <h1>{{ frontmatter.title }}</h1>
-    </div>
-    <div class="post-meta">
-      <div v-if="frontmatter.date" class="post-date">
-        <span class="date-icon">📅</span>
-        <time :datetime="frontmatter.date">{{ formattedDate }}</time>
+    <div class="blog-post-header">
+      <div v-if="frontmatter.title" class="post-title">
+        <h1>{{ frontmatter.title }}</h1>
       </div>
-    </div>
-    <div v-if="frontmatter.description" class="post-description">
-      {{ frontmatter.description }}
+      <div class="post-meta">
+        <div v-if="frontmatter.date" class="post-date">
+          <span class="date-icon">📅</span>
+          <time :datetime="frontmatter.date">{{ formattedDate }}</time>
+        </div>
+      </div>
+      <div v-if="frontmatter.description" class="post-description">
+        {{ frontmatter.description }}
+      </div>
     </div>
     <div class="post-content">
       <slot />

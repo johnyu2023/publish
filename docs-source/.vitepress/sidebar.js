@@ -6,6 +6,14 @@ export default {
       "collapsed": false,
       "items": [
         {
+          "text": "浅谈数据清洗",
+          "link": "/ai/data-cleaning"
+        },
+        {
+          "text": "数据科学与AI应用开发的关系",
+          "link": "/ai/data-science"
+        },
+        {
           "text": "Function Calling vs MCP",
           "link": "/ai/function-calling-vs-mcp"
         },
