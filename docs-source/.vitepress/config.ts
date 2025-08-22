@@ -35,7 +35,7 @@ export default withMermaid(defineConfig({
   cleanUrls: true,
   
   themeConfig: {
-    siteTitle: 'AI时代的编程之路',
+    siteTitle: 'AI时代开发之旅',
     
     nav: [
       { text: '首页', link: '/' },

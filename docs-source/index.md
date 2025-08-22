@@ -1,9 +1,9 @@
 ---
 layout: home
 hero:
-  name: AI时代技术之旅
-  text: 分享技术心得
-  tagline: 记录学习过程，分享技术见解
+  name: AI时代开发思考之旅
+  text: Learn in Public
+  tagline: 费曼学习法的实践
   actions:
     - theme: brand
       text: AI编程
