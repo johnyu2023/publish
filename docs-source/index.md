@@ -33,21 +33,23 @@ features:
 import { withBase } from 'vitepress'
 </script>
 
-## 最新文章
+<div class="article-section">
+  <h2>最新文章</h2>
 
-<div class="vp-raw">
+  <div class="vp-raw">
   <div class="custom-block">
     <h3>📖 最近更新</h3>
     <ul>
       <li><a :href="withBase('/ai/data-cleaning')">浅谈数据清洗</a> - 2025-08-21</li>
       <li><a :href="withBase('/ai/data-science')">数据科学与AI应用开发的关系</a> - 2025-08-21</li>
+      <li><a :href="withBase('/ai/machine-learning')">机器学习，深度学习，强化学习的关系</a> - 2025-08-21</li>
       <li><a :href="withBase('/think/pm')">AI草莽时代，产品经理应该是怎样的人担当</a> - 2025-08-20</li>
       <li><a :href="withBase('/ai/function-calling-vs-mcp')">Function Calling vs MCP</a> - 2025-08-19</li>
-      <li><a :href="withBase('/ai/coding-01')">AI 辅助编程的注意事项</a> - 2025-08-18</li>
     </ul>
     <div class="rss-subscribe">
       <p>📡 <a href="./rss.xml">订阅 RSS Feed</a> 获取最新文章更新</p>
     </div>
+  </div>
   </div>
 </div>
 

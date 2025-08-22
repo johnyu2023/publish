@@ -14,6 +14,10 @@ export default {
           "link": "/ai/data-science"
         },
         {
+          "text": "机器学习，深度学习，强化学习的关系",
+          "link": "/ai/machine-learning"
+        },
+        {
           "text": "Function Calling vs MCP",
           "link": "/ai/function-calling-vs-mcp"
         },

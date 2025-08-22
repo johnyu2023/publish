@@ -6,7 +6,7 @@
     <link>https://johnyu2023.github.io/publish</link>
     <atom:link href="https://johnyu2023.github.io/publish/rss.xml" rel="self" type="application/rss+xml"/>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 22 Aug 2025 03:15:27 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 22 Aug 2025 08:21:21 GMT</lastBuildDate>
     <ttl>60</ttl>
     
     <item>
@@ -23,6 +23,15 @@
       <description>数据科学 数据探索 数据清洗 特征工程</description>
       <link>https://johnyu2023.github.io/publish/ai/data-science</link>
       <guid>https://johnyu2023.github.io/publish/ai/data-science</guid>
+      <pubDate>Thu, 21 Aug 2025 00:00:00 GMT</pubDate>
+
+    </item>
+    
+    <item>
+      <title>机器学习，深度学习，强化学习的关系</title>
+      <description>机器学习 深度学习 强化学习</description>
+      <link>https://johnyu2023.github.io/publish/ai/machine-learning</link>
+      <guid>https://johnyu2023.github.io/publish/ai/machine-learning</guid>
       <pubDate>Thu, 21 Aug 2025 00:00:00 GMT</pubDate>
 
     </item>

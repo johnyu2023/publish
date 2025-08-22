@@ -1,3 +1,196 @@
+/* 增加内容区域宽度 */
+:root {
+  --vp-layout-max-width: 1800px !important; /* 大幅增加最大宽度 */
+  --vp-content-width: 1400px !important; /* 设置内容宽度 */
+  --vp-sidebar-width: 272px !important; /* 侧边栏宽度 */
+}
+
+/* 强制扩大正文区域宽度 */
+.vp-doc {
+  max-width: none !important;
+}
+
+.vp-doc .container {
+  max-width: 1400px !important;
+  padding: 0 24px !important;
+}
+
+/* 确保顶部导航栏不透明 */
+.VPNav {
+  background-color: var(--vp-nav-bg-color) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* 确保顶部导航栏和侧边栏对齐 */
+.VPNavBar.has-sidebar .container {
+  margin: 0 !important;
+  max-width: 100% !important;
+  padding-left: 0 !important;
+}
+
+/* 调整顶部导航栏的标题位置，使其与侧边栏对齐 */
+.VPNavBar.has-sidebar .title {
+  padding-left: 32px !important;
+}
+
+/* 确保顶部导航栏内容区域不透明 */
+.VPNavBar {
+  background-color: var(--vp-nav-bg-color) !important;
+  border-bottom: 1px solid var(--vp-c-divider) !important;
+}
+
+/* 确保顶部导航栏在滚动时不透明 */
+.VPNavBar.has-sidebar {
+  background-color: var(--vp-nav-bg-color) !important;
+}
+
+/* 调整主内容区域宽度 */
+.VPContent {
+  --vp-content-width: 1500px !important; /* 增加内容区域宽度 */
+}
+
+/* 调整文档内容区域宽度 */
+.VPDoc .content-container {
+  max-width: 1500px !important; /* 增加内容区域最大宽度 */
+  margin: 0 auto;
+}
+
+/* 确保侧边栏正常显示 */
+.VPSidebar {
+  width: 272px !important; /* 标准宽度 */
+  padding-left: 32px !important;
+  padding-right: 32px !important;
+}
+
+/* 调整右侧目录宽度和位置 */
+.VPDocAside {
+  width: 280px !important; /* 增加宽度 */
+  position: fixed !important;
+  right: 32px !important; /* 向左移动一些 */
+  padding-right: 0 !important;
+}
+
+/* 彻底重新定义正文区域宽度 - 最激进的方法 */
+.VPDoc .content {
+  max-width: none !important;
+  width: calc(100vw - 350px) !important; /* 大幅减少右侧空间 */
+  padding-right: 0 !important; /* 移除右侧内边距 */
+  margin-right: 0 !important;
+}
+
+/* 重新定位右侧目录 */
+.VPDocAside {
+  width: 250px !important;
+  position: fixed !important;
+  right: 20px !important;
+  top: 80px !important;
+  height: calc(100vh - 100px) !important;
+  overflow-y: auto !important;
+  z-index: 10 !important;
+}
+
+/* 确保文档容器占满可用空间 */
+.VPDoc .container {
+  max-width: none !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* 强制正文内容使用更大宽度 */
+.vp-doc {
+  max-width: none !important;
+  width: 100% !important;
+  padding: 32px !important;
+}
+
+/* 确保所有内容元素使用全宽 */
+.vp-doc > * {
+  max-width: none !important;
+}
+
+/* 确保内容区域在小屏幕上也能正常显示 */
+@media (max-width: 1440px) {
+  .VPDoc .content {
+    max-width: calc(100vw - 350px) !important; /* 动态计算宽度 */
+  }
+}
+
+/* 确保代码块能够完整显示 */
+.vp-doc div[class*='language-'] {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 16px 0;
+  overflow-x: auto;
+  position: relative;
+}
+
+/* 代码块行号样式 */
+.vp-doc div[class*='language-'] .line-numbers-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  padding: 12px 0;
+  width: 36px;
+  text-align: center;
+  color: var(--vp-code-line-number-color, #999);
+  background-color: var(--vp-code-block-bg);
+  border-right: 1px solid var(--vp-code-line-number-divider-color, #333);
+  font-size: 12px;
+  line-height: 1.4;
+  user-select: none;
+}
+
+.vp-doc div[class*='language-'] .line-numbers-wrapper .line-number {
+  display: block;
+  height: 1.4em;
+}
+
+/* 为有行号的代码块调整内容区域 */
+.vp-doc div[class*='language-'].line-numbers-mode pre {
+  padding-left: 48px !important;
+}
+
+.vp-doc div[class*='language-'].line-numbers-mode .highlight-lines .highlighted {
+  margin-left: -48px;
+  padding-left: 48px;
+}
+
+/* 启用行号显示 */
+.vp-doc div[class*='language-'] {
+  counter-reset: line-number;
+}
+
+.vp-doc div[class*='language-'] pre code .line::before {
+  counter-increment: line-number;
+  content: counter(line-number);
+  position: absolute;
+  left: 0;
+  width: 36px;
+  text-align: center;
+  color: var(--vp-code-line-number-color, #999);
+  font-size: 12px;
+  user-select: none;
+}
+
+.vp-doc div[class*='language-'] pre code .line {
+  position: relative;
+  padding-left: 48px;
+}
+
+/* 确保右侧目录内容可见 */
+.VPDocAsideOutline .content {
+  width: 100% !important;
+  padding-right: 0 !important;
+}
+
+/* 确保内容区域不会被侧边栏遮挡 */
+.VPContent.has-sidebar {
+  padding-left: 272px !important; /* 与侧边栏宽度一致 */
+}
+
 /* 确保 Mermaid 图表正确显示 */
 .mermaid {
   background-color: #f9f9f9;
@@ -23,13 +216,34 @@
   margin: 20px 0;
 }
 
-/* 创建一个头部容器 */
+/* 保留头部信息组件，确保完全可见 */
 .blog-post-header {
   background-color: #f8f8f8;
   border: 1px solid #eaeaea;
   border-radius: 6px;
-  padding: 16px 20px;
-  margin-bottom: 30px;
+  padding: 12px 20px;
+  margin-bottom: 20px;
+  margin-top: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+/* 确保头部组件元素不被遮挡 */
+.post-title,
+.post-meta,
+.post-date,
+.post-description {
+  position: relative;
+  z-index: 2;
+}
+
+/* 确保文档顶部有足够空间显示头部组件 */
+.VPDoc {
+  padding-top: 16px !important;
+}
+
+.VPContent {
+  padding-top: 16px !important;
 }
 
 /* 调整标题样式，使其更小更淡 */
@@ -111,4 +325,17 @@
   margin-bottom: 15px;
   color: #555;
   font-size: 0.95rem;
+}
+
+/* 限制首页最新文章部分的宽度 */
+.article-section {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.article-section .vp-raw .custom-block {
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
 }
