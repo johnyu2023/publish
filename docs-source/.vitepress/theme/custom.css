@@ -329,13 +329,29 @@
 
 /* 限制首页最新文章部分的宽度 */
 .article-section {
-  max-width: 1400px;
+  max-width: 1152px;
   margin: 0 auto;
   padding: 0 24px;
 }
 
 .article-section .vp-raw .custom-block {
   width: 100%;
-  max-width: 100%;
-  margin: 0;
+  max-width: 640px;
+  margin: 0 auto;
 }
+
+/* 确保首页最新文章部分与上方内容对齐 */
+.VPHome .VPHomeHero .container,
+.VPHome .VPHomeFeatures .container,
+.article-section {
+  max-width: 1152px;
+  margin: 0 auto;
+}
+
+.VPHome .VPHomeHero .main,
+.VPHome .VPHomeFeatures .items,
+.article-section .vp-raw .custom-block {
+  max-width: 640px;
+  margin: 0 auto;
+}
+
