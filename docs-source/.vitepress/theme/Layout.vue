@@ -15,6 +15,9 @@ let scrollHandler = null
 
 // 更新标题的函数
 const updateTitle = async () => {
+  // 确保只在客户端执行
+  if (typeof window === 'undefined') return
+  
   await nextTick()
   // 等待DOM更新
   setTimeout(() => {
