@@ -327,31 +327,41 @@
   font-size: 0.95rem;
 }
 
-/* 限制首页最新文章部分的宽度 */
+/* 调整首页最新文章部分的宽度为70% */
 .article-section {
-  max-width: 1152px;
+  max-width: 70%;
   margin: 0 auto;
   padding: 0 24px;
 }
 
 .article-section .vp-raw .custom-block {
   width: 100%;
-  max-width: 640px;
+  max-width: 100%;
   margin: 0 auto;
 }
 
-/* 确保首页最新文章部分与上方内容对齐 */
+/* 确保首页内容占据70%宽度 */
 .VPHome .VPHomeHero .container,
 .VPHome .VPHomeFeatures .container,
 .article-section {
-  max-width: 1152px;
+  max-width: 70%;
   margin: 0 auto;
 }
 
 .VPHome .VPHomeHero .main,
 .VPHome .VPHomeFeatures .items,
 .article-section .vp-raw .custom-block {
-  max-width: 640px;
+  max-width: 100%;
   margin: 0 auto;
+}
+
+/* 调整首页英雄区域宽度 */
+.VPHome .VPHomeHero {
+  width: 100%;
+}
+
+/* 调整首页特性区域宽度 */
+.VPHome .VPHomeFeatures {
+  width: 100%;
 }
 
