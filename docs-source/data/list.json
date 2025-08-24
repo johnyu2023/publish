@@ -1,0 +1,122 @@
+{
+  "directories": [
+    "ai",
+    "posts",
+    "think",
+    "web"
+  ],
+  "articles": [
+    {
+      "directory": "ai",
+      "title": "浅谈数据清洗",
+      "url": "/ai/data-cleaning",
+      "date": "2025-08-21",
+      "description": "数据清洗",
+      "tags": []
+    },
+    {
+      "directory": "ai",
+      "title": "数据科学与AI应用开发的关系",
+      "url": "/ai/data-science",
+      "date": "2025-08-21",
+      "description": "数据科学 数据探索 数据清洗 特征工程",
+      "tags": []
+    },
+    {
+      "directory": "think",
+      "title": "AI草莽时代，产品经理应该是怎样的人担当",
+      "url": "/think/pm",
+      "date": "2025-08-20",
+      "description": "AI 产品经理",
+      "tags": []
+    },
+    {
+      "directory": "ai",
+      "title": "Function Calling vs MCP",
+      "url": "/ai/function-calling-vs-mcp",
+      "date": "2025-08-19",
+      "description": "Function Calling 和 MCP 的关系和区别",
+      "tags": []
+    },
+    {
+      "directory": "ai",
+      "title": "AI 辅助编程的注意事项",
+      "url": "/ai/coding-01",
+      "date": "2025-08-18",
+      "description": "探讨使用AI辅助编程的最佳实践和常见陷阱",
+      "tags": []
+    },
+    {
+      "directory": "posts",
+      "title": "使用 GitHub Pages 部署静态网站",
+      "url": "/posts/github-pages",
+      "date": "2025-08-14",
+      "description": "如何使用 GitHub Pages 部署静态网站",
+      "tags": [
+        "github",
+        "pages"
+      ]
+    },
+    {
+      "directory": "web",
+      "title": "web 网站的混合渲染",
+      "url": "/web/hybrid-rendering",
+      "date": "2025-08-01",
+      "description": "在一个 Web 应用中结合使用多种渲染策略，例如同时使用服务端渲染（SSR）、静态站点生成（SSG）和客户端渲染（CSR），并根据不同页面或组件的需求选择最合适的方式。",
+      "tags": [
+        "github",
+        "pages"
+      ]
+    },
+    {
+      "directory": "ai",
+      "title": "Function Calling 的原始形态",
+      "url": "/ai/function-calling",
+      "date": "2025-07-16",
+      "description": "探索大语言模型函数调用的基本实现方式",
+      "tags": []
+    },
+    {
+      "directory": "ai",
+      "title": "AI 辅助编程",
+      "url": "/ai/code",
+      "date": "2025-06-15",
+      "description": "AI辅助编程工具的使用经验和实践案例",
+      "tags": []
+    },
+    {
+      "directory": "ai",
+      "title": "机器学习，深度学习，强化学习",
+      "url": "/ai/machine-learning",
+      "date": "2025-03-01",
+      "description": "机器学习 深度学习 强化学习",
+      "tags": []
+    },
+    {
+      "directory": "posts",
+      "title": "Markdown 语法完全指南",
+      "url": "/posts/markdown-guide",
+      "date": "2025-01-16",
+      "description": "全面介绍Markdown语法及其在技术写作中的应用",
+      "tags": []
+    },
+    {
+      "directory": "posts",
+      "title": "开始使用 VitePress 搭建技术博客",
+      "url": "/posts/getting-started",
+      "date": "2025-01-15",
+      "description": "从零开始学习如何使用VitePress搭建个人技术博客",
+      "tags": []
+    },
+    {
+      "directory": "posts",
+      "title": "ssh 原理图",
+      "url": "/posts/ssh",
+      "date": "2024-11-11",
+      "description": "ssh 动态原理图",
+      "tags": [
+        "ssh"
+      ]
+    }
+  ]
+}

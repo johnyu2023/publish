@@ -1,0 +1,101 @@
+{
+  "articles": [
+    {
+      "directory": "ai",
+      "title": "浅谈数据清洗",
+      "url": "/ai/data-cleaning",
+      "date": "2025-08-21",
+      "tags": []
+    },
+    {
+      "directory": "ai",
+      "title": "数据科学与AI应用开发的关系",
+      "url": "/ai/data-science",
+      "date": "2025-08-21",
+      "tags": []
+    },
+    {
+      "directory": "think",
+      "title": "AI草莽时代，产品经理应该是怎样的人担当",
+      "url": "/think/pm",
+      "date": "2025-08-20",
+      "tags": []
+    },
+    {
+      "directory": "ai",
+      "title": "Function Calling vs MCP",
+      "url": "/ai/function-calling-vs-mcp",
+      "date": "2025-08-19",
+      "tags": []
+    },
+    {
+      "directory": "ai",
+      "title": "AI 辅助编程的注意事项",
+      "url": "/ai/coding-01",
+      "date": "2025-08-18",
+      "tags": []
+    },
+    {
+      "directory": "posts",
+      "title": "使用 GitHub Pages 部署静态网站",
+      "url": "/posts/github-pages",
+      "date": "2025-08-14",
+      "tags": []
+    },
+    {
+      "directory": "web",
+      "title": "web 网站的混合渲染",
+      "url": "/web/hybrid-rendering",
+      "date": "2025-08-01",
+      "tags": []
+    },
+    {
+      "directory": "ai",
+      "title": "Function Calling 的原始形态",
+      "url": "/ai/function-calling",
+      "date": "2025-07-16",
+      "tags": []
+    },
+    {
+      "directory": "ai",
+      "title": "AI 辅助编程",
+      "url": "/ai/code",
+      "date": "2025-06-15",
+      "tags": []
+    },
+    {
+      "directory": "ai",
+      "title": "机器学习，深度学习，强化学习",
+      "url": "/ai/machine-learning",
+      "date": "2025-03-01",
+      "tags": []
+    },
+    {
+      "directory": "posts",
+      "title": "Markdown 语法完全指南",
+      "url": "/posts/markdown-guide",
+      "date": "2025-01-16",
+      "tags": []
+    },
+    {
+      "directory": "posts",
+      "title": "开始使用 VitePress 搭建技术博客",
+      "url": "/posts/getting-started",
+      "date": "2025-01-15",
+      "tags": []
+    },
+    {
+      "directory": "posts",
+      "title": "ssh 原理图",
+      "url": "/posts/ssh",
+      "date": "2024-11-11",
+      "tags": []
+    }
+  ],
+  "directories": [
+    "ai",
+    "think",
+    "posts",
+    "web"
+  ]
+}

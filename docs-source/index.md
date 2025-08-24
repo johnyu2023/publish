@@ -36,64 +36,25 @@ features:
 
 <script setup>
 import { withBase } from 'vitepress'
+import RecentArticles from './.vitepress/components/RecentArticles.vue'
 </script>
 
-<div class="article-section">
-  <h2><a :href="withBase('/list')">最新文章</a></h2>
-
-  <div class="vp-raw">
-  <div class="custom-block">
-    <h3>📖 最近更新</h3>
-    <ul>
-      <li><a :href="withBase('/ai/data-cleaning')">浅谈数据清洗</a> - 2025-08-21</li>
-      <li><a :href="withBase('/ai/data-science')">数据科学与AI应用开发的关系</a> - 2025-08-21</li>
-      <li><a :href="withBase('/think/pm')">AI草莽时代，产品经理应该是怎样的人担当</a> - 2025-08-20</li>
-      <li><a :href="withBase('/ai/function-calling-vs-mcp')">Function Calling vs MCP</a> - 2025-08-19</li>
-      <li><a :href="withBase('/ai/coding-01')">AI 辅助编程的注意事项</a> - 2025-08-18</li>
-    </ul>
-    <div class="rss-subscribe">
-      <p>📡 <a href="./rss.xml">订阅 RSS Feed</a> 获取最新文章更新</p>
-    </div>
-  </div>
-  </div>
-</div>
+<RecentArticles />
 
 <style>
-.custom-block {
-  padding: 1rem;
-  border-radius: 8px;
-  background: var(--vp-c-bg-soft);
-  border: 1px solid var(--vp-c-divider);
+.article-section {
+  margin-top: 2rem;
 }
 
-.custom-block h3 {
-  margin-top: 0;
+.article-section h2 {
   margin-bottom: 1rem;
-  color: var(--vp-c-text-1);
-}
-
-.custom-block ul {
-  margin: 0;
-  padding-left: 1.5rem;
-}
-
-.custom-block li {
-  margin-bottom: 0.5rem;
-}
-
-.custom-block a {
-  color: var(--vp-c-brand);
-  text-decoration: none;
-}
-
-.custom-block a:hover {
-  text-decoration: underline;
 }
 
 .rss-subscribe {
   margin-top: 1rem;
   padding-top: 1rem;
   border-top: 1px solid var(--vp-c-divider);
+  text-align: center;
 }
 
 .rss-subscribe p {

@@ -120,23 +120,29 @@ function updateAllPostsList(posts) {
     groupedPosts[year][month].push(post);
   }
   
-  // 生成按年份和月份分组的文章列表HTML
+  // 生成按年份和月份分组的文章列表HTML，添加折叠功能
   let allPostsHtml = '';
   
   // 获取所有年份并降序排序
   const years = Object.keys(groupedPosts).sort((a, b) => b - a);
   
   for (const year of years) {
-    allPostsHtml += `<div class="year-section">\n`;
-    allPostsHtml += `  <h2 class="year-title">${year}年</h2>\n`;
+    allPostsHtml += `  <div class="year-section">\n`;
+    allPostsHtml += `    <h2 class="year-title" @click="toggleYear('${year}年')">\n`;
+    allPostsHtml += `      ${year}年\n`;
+    allPostsHtml += `      <span class="toggle-icon" :class="{ 'collapsed': yearCollapsed['${year}年'] }">\n`;
+    allPostsHtml += `        {{ yearCollapsed['${year}年'] ? '▶' : '▼' }}\n`;
+    allPostsHtml += `      </span>\n`;
+    allPostsHtml += `    </h2>\n`;
+    allPostsHtml += `    <div class="year-content" :class="{ 'hidden': yearCollapsed['${year}年'] }">\n`;
     
     // 获取当前年份的所有月份并降序排序
     const months = Object.keys(groupedPosts[year]).sort((a, b) => b - a);
     
     for (const month of months) {
-      allPostsHtml += `  <div class="month-section">\n`;
-      allPostsHtml += `    <h3 class="month-title">${month}月</h3>\n`;
-      allPostsHtml += `    <ul>\n`;
+      allPostsHtml += `      <div class="month-section">\n`;
+      allPostsHtml += `        <h3 class="month-title">${month}月</h3>\n`;
+      allPostsHtml += `        <ul>\n`;
       
       // 当月的所有文章
       const monthPosts = groupedPosts[year][month];
@@ -146,17 +152,18 @@ function updateAllPostsList(posts) {
       
       for (const post of monthPosts) {
         const day = new Date(post.date).getDate();
-        allPostsHtml += `      <li>\n`;
-        allPostsHtml += `        <span class="article-date">${month}-${day.toString().padStart(2, '0')}</span>\n`;
-        allPostsHtml += `        <span class="article-title"><a :href="withBase('${post.link}')">${post.title}</a></span>\n`;
-        allPostsHtml += `      </li>\n`;
+        allPostsHtml += `          <li>\n`;
+        allPostsHtml += `            <span class="article-date">${month}-${day.toString().padStart(2, '0')}</span>\n`;
+        allPostsHtml += `            <span class="article-title"><a :href="withBase('${post.link}')">${post.title}</a></span>\n`;
+        allPostsHtml += `          </li>\n`;
       }
       
-      allPostsHtml += `    </ul>\n`;
-      allPostsHtml += `  </div>\n`;
+      allPostsHtml += `        </ul>\n`;
+      allPostsHtml += `      </div>\n`;
     }
     
-    allPostsHtml += `</div>\n`;
+    allPostsHtml += `    </div>\n`;
+    allPostsHtml += `  </div>\n`;
   }
   
   // 更新全部文章列表页面
