@@ -7,6 +7,17 @@
   ],
   "articles": [
     {
+      "directory": "think",
+      "title": "AI时代，初级岗位是否存在？",
+      "url": "/think/junior",
+      "date": "2025-08-24",
+      "description": "应届生找不到工作，是错配，还是误解。",
+      "tags": [
+        "AI",
+        "初级岗位"
+      ]
+    },
+    {
       "directory": "ai",
       "title": "浅谈数据清洗",
       "url": "/ai/data-cleaning",
@@ -27,8 +38,11 @@
       "title": "AI草莽时代，产品经理应该是怎样的人担当",
       "url": "/think/pm",
       "date": "2025-08-20",
-      "description": "AI 产品经理",
-      "tags": []
+      "description": "在新技术尚未形成共识的早期阶段，产品经理是否还能提出可靠的产品方向。",
+      "tags": [
+        "AI",
+        "产品经理"
+      ]
     },
     {
       "directory": "ai",
@@ -64,8 +78,10 @@
       "date": "2025-08-01",
       "description": "在一个 Web 应用中结合使用多种渲染策略，例如同时使用服务端渲染（SSR）、静态站点生成（SSG）和客户端渲染（CSR），并根据不同页面或组件的需求选择最合适的方式。",
       "tags": [
-        "github",
-        "pages"
+        "CSR",
+        "SSR",
+        "SSG",
+        "ISR"
       ]
     },
     {

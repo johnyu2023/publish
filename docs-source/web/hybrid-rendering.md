@@ -2,7 +2,7 @@
 title: web 网站的混合渲染
 description: 在一个 Web 应用中结合使用多种渲染策略，例如同时使用服务端渲染（SSR）、静态站点生成（SSG）和客户端渲染（CSR），并根据不同页面或组件的需求选择最合适的方式。
 date: 2025-08-01
-tags: [github, pages]
+tags: [CSR, SSR, SSG, ISR]
 ---
 
 <BlogPost>
@@ -63,13 +63,13 @@ tags: [github, pages]
 2. **开发复杂度提高**：需要考虑服务端和客户端的代码兼容性。
 3. **页面交互延迟**：完整的交互功能需要等待JavaScript加载和执行。
 
-### SSG - Static Site Generation（静态站点生成）
+## SSG - Static Site Generation（静态站点生成）
 
 静态站点生成（Static Site Generation）是在构建时预先生成所有页面的HTML文件。与传统的动态网站不同，SSG在部署前就已经生成了所有页面，用户访问时直接获取预渲染的HTML文件。
 
 <img src="../assets/web/hybrid/ssg.webp" alt="SSG流程" class="content-image" style="max-width: 600px; margin: 2rem auto; display: block;" />
 
-#### SSG的工作流程
+### SSG的工作流程
 
 1. **构建阶段**：
    - 从数据源（如CMS、API、Markdown文件等）获取内容
@@ -84,14 +84,14 @@ tags: [github, pages]
    - 用户请求页面时，服务器直接返回预渲染的HTML
    - 浏览器加载JavaScript进行"水合"(Hydration)，使页面具有交互性
 
-#### SSG适用场景
+### SSG适用场景
 
 - **博客和文档网站**：内容更新频率低，SEO要求高
 - **营销网站**：需要快速加载和良好SEO的展示型网站
 - **电子商务产品目录**：产品信息相对稳定的展示页面
 - **公司官网**：信息相对固定，需要高性能和SEO
 
-#### 主流SSG工具和框架
+### 主流SSG工具和框架
 
 - **Next.js**：React框架，支持SSG、SSR和ISR
 - **Gatsby**：基于React的专注于SSG的框架
@@ -101,14 +101,13 @@ tags: [github, pages]
 - **Astro**：新兴的多框架静态站点生成器
 - **VitePress/VuePress**：Vue驱动的静态站点生成器，适合文档站点
 
-
-### ISR - Incremental Static Regeneration（增量静态再生成）
+## ISR - Incremental Static Regeneration（增量静态再生成）
 
 增量静态再生成（Incremental Static Regeneration）是SSG的扩展，允许在特定条件下重新生成单个页面，而不需要重建整个站点。这是Next.js首创的技术，解决了传统SSG的内容更新问题。
 
 <img src="../assets/web/hybrid/isr.webp" alt="ISR流程" class="content-image" style="max-width: 600px; margin: 2rem auto; display: block;" />
 
-#### ISR的工作流程
+### ISR的工作流程
 
 1. **初始构建**：
    - 与SSG类似，在构建时预渲染部分或全部页面
@@ -127,7 +126,7 @@ tags: [github, pages]
    - 通过API触发特定页面的重新生成
    - 适用于CMS内容更新、产品信息变更等场景
 
-#### ISR的技术实现
+### ISR的技术实现
 
 ```javascript
 // Next.js中的ISR实现示例
@@ -157,7 +156,7 @@ export async function getStaticPaths() {
 }
 ```
 
-#### ISR的高级特性
+### ISR的高级特性
 
 1. **按需重新验证**：
    ```javascript
@@ -182,14 +181,14 @@ export async function getStaticPaths() {
 
 3. **混合模式**：同一应用中，不同页面可以使用不同的重新验证策略
 
-#### ISR适用场景
+### ISR适用场景
 
 - **新闻网站**：内容定期更新但不需要实时
 - **电子商务**：产品信息和库存需要定期更新
 - **内容丰富的网站**：有大量页面，无法在构建时全部生成
 - **个性化但不高度动态的内容**：可以按用户组或区域缓存
 
-#### ISR支持的框架
+### ISR支持的框架
 
 - **Next.js**：最早实现ISR的框架，支持最完善
 - **Nuxt 3**：Vue生态系统中的ISR实现

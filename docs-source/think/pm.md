@@ -1,7 +1,8 @@
 ---
-date: 2025-08-20
 title: AI草莽时代，产品经理应该是怎样的人担当
-description: AI 产品经理
+description: 在新技术尚未形成共识的早期阶段，产品经理是否还能提出可靠的产品方向。
+date: 2025-08-20
+tags: [AI, 产品经理]
 ---
 
 <BlogPost>

@@ -1,6 +1,10 @@
 import fs from 'fs';
 import path from 'path';
-import matter from 'gray-matter';
+import { fileURLToPath } from 'url';
+
+// 获取当前文件的目录路径
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // 检测环境
 const isProduction = process.env.NODE_ENV === 'production';
@@ -22,7 +26,8 @@ const config = {
   language: 'zh-CN',
   ttl: 60,
   rssFile: 'docs-source/rss.xml',
-  contentDirs: ['docs-source/posts', 'docs-source/ai', 'docs-source/think'],
+  // 数据文件路径
+  dataFile: path.join(__dirname, '../docs-source/data/list.json'),
   // 根据环境设置不同的基础路径
   base: isProduction || deployEnv === 'LOCAL_PREVIEW' ? '/publish/' : '/'
 };
@@ -38,57 +43,51 @@ console.log('环境变量:', {
   siteUrl: config.siteUrl
 });
 
-// 获取所有 Markdown 文件
-function getAllMarkdownFiles() {
-  let files = [];
-  
-  for (const dir of config.contentDirs) {
-    if (fs.existsSync(dir)) {
-      const dirFiles = fs.readdirSync(dir)
-        .filter(file => file.endsWith('.md'))
-        .map(file => path.join(dir, file));
-      files = [...files, ...dirFiles];
-    }
+/**
+ * 从 list.json 文件中获取文章数据
+ * @returns {Array} 文章数据数组
+ */
+function getArticlesFromJson() {
+  try {
+    // 读取 list.json 文件
+    const jsonData = JSON.parse(fs.readFileSync(config.dataFile, 'utf8'));
+    console.log(`从 ${config.dataFile} 读取了 ${jsonData.articles.length} 篇文章数据`);
+    return jsonData.articles;
+  } catch (error) {
+    console.error(`读取数据文件失败: ${error.message}`);
+    return [];
   }
-  
-  return files;
 }
 
-// 解析 Markdown 文件的元数据
-function parseMarkdownFiles(files) {
-  return files.map(file => {
-    const content = fs.readFileSync(file, 'utf8');
-    const { data } = matter(content);
-    // 处理路径，确保使用正斜杠并移除 docs-source 前缀
-    let relativePath = file
-      .replace(/^docs-source[\/\\]/, '') // 移除开头的 docs-source/ 或 docs-source\
-      .replace('.md', '')
-      .replace(/\\/g, '/')
-      .replace(/_/g, '-'); // 将下划线替换为连字符
+/**
+ * 将文章数据转换为 RSS 项目格式
+ * @param {Array} articles 文章数据数组
+ * @returns {Array} RSS 项目数组
+ */
+function convertArticlesToRssItems(articles) {
+  return articles.map(article => {
+    // 从 URL 中提取相对路径（去掉开头的斜杠）
+    const relativePath = article.url.startsWith('/') ? article.url.substring(1) : article.url;
     
-    // 使用配置的 base 路径，而不是硬编码 'publish/'
-    const urlPath = config.base.startsWith('/') 
-      ? config.base.substring(1) + relativePath 
-      : config.base + relativePath;
-    
-    // 跳过索引文件
-    if (path.basename(file) === 'index.md') {
-      return null;
-    }
+    // 使用完整的站点URL
+    const itemPath = `${config.siteUrl}/${relativePath}`;
     
     return {
-      title: data.title || path.basename(file, '.md'),
-      description: data.description || '',
-      link: `${config.siteUrl}/${urlPath}`,
-      guid: `${config.siteUrl}/${urlPath}`,
-      pubDate: data.date ? new Date(data.date) : new Date(),
-      categories: data.tags || [],
-      file: file
+      title: article.title,
+      description: article.description || '',
+      link: itemPath,
+      guid: itemPath,
+      pubDate: article.date ? new Date(article.date) : new Date(),
+      categories: article.tags || []
     };
-  }).filter(item => item !== null); // 过滤掉空项
+  });
 }
 
-  // 生成 RSS XML 内容
+/**
+ * 生成 RSS XML 内容
+ * @param {Array} items RSS 项目数组
+ * @returns {string} RSS XML 内容
+ */
 function generateRssXml(items) {
   // 按日期排序，最新的在前面
   items.sort((a, b) => b.pubDate - a.pubDate);
@@ -118,16 +117,6 @@ function generateRssXml(items) {
     
   // 添加每个文章项
   for (const item of items) {
-    // 从完整URL中提取相对路径
-    const relativePath = item.file
-      .replace(/^docs-source[\/\\]/, '')
-      .replace('.md', '')
-      .replace(/\\/g, '/')
-      .replace(/_/g, '-');
-    
-    // 使用完整的站点URL
-    const itemPath = `${config.siteUrl}/${relativePath}`;
-    
     const categories = item.categories.map(category => 
       `      <category>${category}</category>`
     ).join('\n');
@@ -136,8 +125,8 @@ function generateRssXml(items) {
     <item>
       <title>${item.title}</title>
       <description>${item.description}</description>
-      <link>${itemPath}</link>
-      <guid>${itemPath}</guid>
+      <link>${item.link}</link>
+      <guid>${item.guid}</guid>
       <pubDate>${formatDate(item.pubDate)}</pubDate>
 ${categories}
     </item>
@@ -152,19 +141,29 @@ ${categories}
   return rssContent;
 }
 
-// 主函数
+/**
+ * 主函数 - 更新 RSS 文件
+ */
 function updateRss() {
   console.log('开始更新 RSS 文件...');
   console.log(`当前环境: ${isProduction ? '生产' : '开发'}, 基础路径: ${config.base}`);
   
-  const files = getAllMarkdownFiles();
-  console.log(`找到 ${files.length} 个 Markdown 文件`);
+  // 从 list.json 获取文章数据
+  const articles = getArticlesFromJson();
   
-  const items = parseMarkdownFiles(files);
-  console.log('解析文件元数据完成');
+  if (articles.length === 0) {
+    console.error('没有找到文章数据，RSS 更新失败');
+    return;
+  }
   
-  const rssContent = generateRssXml(items);
+  // 转换为 RSS 项目格式
+  const rssItems = convertArticlesToRssItems(articles);
+  console.log(`转换了 ${rssItems.length} 篇文章到 RSS 格式`);
   
+  // 生成 RSS XML 内容
+  const rssContent = generateRssXml(rssItems);
+  
+  // 写入 RSS 文件
   fs.writeFileSync(config.rssFile, rssContent, 'utf8');
   console.log(`RSS 文件已更新: ${config.rssFile}`);
   

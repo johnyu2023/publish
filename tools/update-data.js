@@ -160,29 +160,9 @@ function traverseDirectory(dir, baseDir) {
 
 /**
  * 设置文章的日期
- * 如果文章没有日期，则使用参考文件中的日期或默认日期
+ * 如果文章没有日期，则使用默认日期
  */
 function setArticleDates() {
-  // 读取 list-test.json 作为参考
-  const testFilePath = path.join(__dirname, '../docs-source/data/list-test.json');
-  let testData = {};
-  
-  try {
-    const testContent = fs.readFileSync(testFilePath, 'utf-8');
-    testData = JSON.parse(testContent);
-  } catch (error) {
-    console.error(`无法读取参考文件: ${error.message}`);
-  }
-  
-  // 创建一个映射，用于快速查找文章的日期
-  const dateMap = {};
-  if (testData.articles) {
-    for (const article of testData.articles) {
-      const key = `${article.directory}/${article.url.split('/').pop()}`;
-      dateMap[key] = article.date;
-    }
-  }
-  
   // 设置日期
   for (const article of result.articles) {
     // 如果文章已经有日期，则跳过
@@ -190,14 +170,8 @@ function setArticleDates() {
       continue;
     }
     
-    const key = `${article.directory}/${article.url.split('/').pop()}`;
-    
-    if (dateMap[key]) {
-      article.date = dateMap[key];
-    } else {
-      // 如果在参考文件中找不到日期，则使用一个默认日期
-      article.date = "2025-01-01";
-    }
+    // 使用默认日期
+    article.date = "2025-01-01";
   }
 }
 

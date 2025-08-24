@@ -1,87 +1,64 @@
-// 此文件由 update-sidebar.js 自动生成，请勿手动修改
-export default {
-  "/ai/": [
-    {
-      "text": "学习笔记",
-      "collapsed": false,
-      "items": [
-        {
-          "text": "浅谈数据清洗",
-          "link": "/ai/data-cleaning"
-        },
-        {
-          "text": "数据科学与AI应用开发的关系",
-          "link": "/ai/data-science"
-        },
-        {
-          "text": "Function Calling vs MCP",
-          "link": "/ai/function-calling-vs-mcp"
-        },
-        {
-          "text": "AI 辅助编程的注意事项",
-          "link": "/ai/coding-01"
-        },
-        {
-          "text": "Function Calling 的原始形态",
-          "link": "/ai/function-calling"
-        },
-        {
-          "text": "AI 辅助编程",
-          "link": "/ai/code"
-        },
-        {
-          "text": "机器学习，深度学习，强化学习",
-          "link": "/ai/machine-learning"
-        }
-      ]
-    }
-  ],
-  "/posts/": [
-    {
-      "text": "技术文章",
-      "collapsed": false,
-      "items": [
-        {
-          "text": "使用 GitHub Pages 部署静态网站",
-          "link": "/posts/github-pages"
-        },
-        {
-          "text": "Markdown 语法完全指南",
-          "link": "/posts/markdown-guide"
-        },
-        {
-          "text": "开始使用 VitePress 搭建技术博客",
-          "link": "/posts/getting-started"
-        },
-        {
-          "text": "ssh 原理图",
-          "link": "/posts/ssh"
-        }
-      ]
-    }
-  ],
-  "/think/": [
-    {
-      "text": "观察思考",
-      "collapsed": false,
-      "items": [
-        {
-          "text": "AI草莽时代，产品经理应该是怎样的人担当",
-          "link": "/think/pm"
-        }
-      ]
-    }
-  ],
-  "/web/": [
-    {
-      "text": "前端开发",
-      "collapsed": false,
-      "items": [
-        {
-          "text": "web 网站的混合渲染",
-          "link": "/web/hybrid-rendering"
-        }
-      ]
-    }
-  ]
+// 从 list.json 动态生成侧边栏配置
+import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+// 目录名称映射
+const directoryTitles = {
+  'ai': '学习笔记',
+  'posts': '技术文章',
+  'think': '观察思考',
+  'web': '前端开发'
 };
+
+// 读取 list.json 文件
+function generateSidebar() {
+  try {
+    // 读取 list.json 文件
+    const jsonPath = path.resolve(__dirname, '../data/list.json');
+    const jsonData = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
+    
+    // 按目录分组文章
+    const articlesByDirectory = {};
+    
+    // 初始化目录
+    jsonData.directories.forEach(dir => {
+      articlesByDirectory[dir] = [];
+    });
+    
+    // 将文章按目录分组
+    jsonData.articles.forEach(article => {
+      if (articlesByDirectory[article.directory]) {
+        articlesByDirectory[article.directory].push({
+          text: article.title,
+          link: article.url
+        });
+      }
+    });
+    
+    // 生成侧边栏配置
+    const sidebar = {};
+    
+    // 为每个目录创建侧边栏配置
+    Object.keys(articlesByDirectory).forEach(dir => {
+      if (articlesByDirectory[dir].length > 0) {
+        sidebar[`/${dir}/`] = [
+          {
+            text: directoryTitles[dir] || dir,
+            collapsed: false,
+            items: articlesByDirectory[dir]
+          }
+        ];
+      }
+    });
+    
+    return sidebar;
+  } catch (error) {
+    console.error('生成侧边栏配置时出错:', error);
+    // 返回空配置作为后备
+    return {};
+  }
+}
+
+// 导出生成的侧边栏配置
+export default generateSidebar();

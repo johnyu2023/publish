@@ -6,8 +6,18 @@
     <link>https://johnyu2023.github.io/publish</link>
     <atom:link href="https://johnyu2023.github.io/publish/rss.xml" rel="self" type="application/rss+xml"/>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 24 Aug 2025 06:49:47 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 24 Aug 2025 17:14:53 GMT</lastBuildDate>
     <ttl>60</ttl>
+    
+    <item>
+      <title>AI时代，初级岗位是否存在？</title>
+      <description>应届生找不到工作，是错配，还是误解。</description>
+      <link>https://johnyu2023.github.io/publish/think/junior</link>
+      <guid>https://johnyu2023.github.io/publish/think/junior</guid>
+      <pubDate>Sun, 24 Aug 2025 00:00:00 GMT</pubDate>
+      <category>AI</category>
+      <category>初级岗位</category>
+    </item>
     
     <item>
       <title>浅谈数据清洗</title>
@@ -29,11 +39,12 @@
     
     <item>
       <title>AI草莽时代，产品经理应该是怎样的人担当</title>
-      <description>AI 产品经理</description>
+      <description>在新技术尚未形成共识的早期阶段，产品经理是否还能提出可靠的产品方向。</description>
       <link>https://johnyu2023.github.io/publish/think/pm</link>
       <guid>https://johnyu2023.github.io/publish/think/pm</guid>
       <pubDate>Wed, 20 Aug 2025 00:00:00 GMT</pubDate>
-
+      <category>AI</category>
+      <category>产品经理</category>
     </item>
     
     <item>
@@ -62,6 +73,18 @@
       <pubDate>Thu, 14 Aug 2025 00:00:00 GMT</pubDate>
       <category>github</category>
       <category>pages</category>
+    </item>
+    
+    <item>
+      <title>web 网站的混合渲染</title>
+      <description>在一个 Web 应用中结合使用多种渲染策略，例如同时使用服务端渲染（SSR）、静态站点生成（SSG）和客户端渲染（CSR），并根据不同页面或组件的需求选择最合适的方式。</description>
+      <link>https://johnyu2023.github.io/publish/web/hybrid-rendering</link>
+      <guid>https://johnyu2023.github.io/publish/web/hybrid-rendering</guid>
+      <pubDate>Fri, 01 Aug 2025 00:00:00 GMT</pubDate>
+      <category>CSR</category>
+      <category>SSR</category>
+      <category>SSG</category>
+      <category>ISR</category>
     </item>
     
     <item>
