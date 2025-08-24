@@ -28,6 +28,9 @@ const distDir = path.join(rootDir, 'docs-source', '.vitepress', 'dist');
 const targetPath = path.join(rootDir, targetDir);
 const rssSource = path.join(rootDir, 'docs-source', 'rss.xml');
 const rssTarget = path.join(targetPath, 'rss.xml');
+const listSource = path.join(rootDir, 'docs-source', 'data', 'list.json');
+const listTarget = path.join(targetPath, 'data', 'list.json');
+const listTargetDir = path.dirname(listTarget);
 
 // 确保目标目录存在
 if (!fs.existsSync(targetPath)) {
@@ -43,6 +46,13 @@ if (process.platform === 'win32') {
     // 复制 RSS 文件
     execSync(`copy "${rssSource}" "${rssTarget}" /Y`, { stdio: 'inherit' });
     
+    // 确保 data 目录存在
+    if (!fs.existsSync(listTargetDir)) {
+      fs.mkdirSync(listTargetDir, { recursive: true });
+    }
+    // 复制 list.json 文件
+    execSync(`copy "${listSource}" "${listTarget}" /Y`, { stdio: 'inherit' });
+    
     console.log(`✅ 成功将文件复制到 ${targetDir} 目录`);
   } catch (error) {
     console.error('❌ 复制文件时出错:', error);
@@ -53,6 +63,13 @@ if (process.platform === 'win32') {
   try {
     execSync(`cp -R ${distDir}/* ${targetPath}/`, { stdio: 'inherit' });
     execSync(`cp ${rssSource} ${rssTarget}`, { stdio: 'inherit' });
+    
+    // 确保 data 目录存在
+    if (!fs.existsSync(listTargetDir)) {
+      fs.mkdirSync(listTargetDir, { recursive: true });
+    }
+    // 复制 list.json 文件
+    execSync(`cp ${listSource} ${listTarget}`, { stdio: 'inherit' });
     console.log(`✅ 成功将文件复制到 ${targetDir} 目录`);
   } catch (error) {
     console.error('❌ 复制文件时出错:', error);

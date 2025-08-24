@@ -67,8 +67,8 @@ async function loadArticlesData() {
     loading.value = true
     error.value = false
     
-    // 使用相对路径加载 JSON 文件
-    const response = await fetch(withBase('/data/list.json'))
+    // 使用相对路径加载 JSON 文件，添加时间戳避免缓存
+    const response = await fetch(withBase(`/data/list.json?t=${Date.now()}`))
     
     if (!response.ok) {
       throw new Error('无法加载数据文件')
