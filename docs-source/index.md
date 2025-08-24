@@ -27,6 +27,11 @@ features:
     title: 观察思考
     details: 分享对现在和未来的一些思考
     link: /think/pm
+
+  - icon: 🌐
+    title: 前端开发
+    details: 分享前端开发技术和最佳实践
+    link: /web/hybrid-rendering
 ---
 
 <script setup>
@@ -34,7 +39,7 @@ import { withBase } from 'vitepress'
 </script>
 
 <div class="article-section">
-  <h2>最新文章</h2>
+  <h2><a :href="withBase('/list')">最新文章</a></h2>
 
   <div class="vp-raw">
   <div class="custom-block">

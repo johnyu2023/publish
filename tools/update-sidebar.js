@@ -167,6 +167,18 @@ function generateSidebar() {
     ];
   }
   
+  // 处理前端开发文章
+  const webDir = path.join(docsSourceDir, 'web');
+  if (fs.existsSync(webDir)) {
+    sidebar['/web/'] = [
+      {
+        text: '前端开发',
+        collapsed: false,
+        items: generateSidebarForDir(webDir, '/web/')
+      }
+    ];
+  }
+  
   return sidebar;
 }
 

@@ -1,4 +1,4 @@
-// 用于自动更新首页上的最近更新文章列表
+// 用于自动更新首页上的最近更新文章列表和全部文章列表页面
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
@@ -34,8 +34,8 @@ function scanDirectory(dirPath) {
         const subPosts = scanDirectory(fullPath);
         posts.push(...subPosts);
       } else if (file.endsWith('.md')) {
-        // 跳过 index.md 和 about.md 文件
-        if (file === 'index.md' || file === 'about.md') continue;
+        // 跳过 index.md、about.md 和 list.md 文件
+        if (file === 'index.md' || file === 'about.md' || file === 'list.md') continue;
         
         const relativePath = path.relative(process.cwd(), fullPath)
           .replace(/\\/g, '/') // 将反斜杠替换为正斜杠
@@ -91,6 +91,83 @@ function updateRecentPosts() {
   fs.writeFileSync(indexPath, updatedIndexContent, 'utf8');
   
   console.log('已更新首页上的最近更新文章列表');
+  
+  // 更新全部文章列表页面
+  updateAllPostsList(posts);
+}
+
+// 更新全部文章列表页面
+function updateAllPostsList(posts) {
+  const listPath = path.join(process.cwd(), 'docs-source', 'list.md');
+  let listContent = fs.readFileSync(listPath, 'utf8');
+  
+  // 按年份和月份对文章进行分组
+  const groupedPosts = {};
+  
+  for (const post of posts) {
+    const date = new Date(post.date);
+    const year = date.getFullYear();
+    const month = date.getMonth() + 1; // 月份从0开始，所以+1
+    
+    if (!groupedPosts[year]) {
+      groupedPosts[year] = {};
+    }
+    
+    if (!groupedPosts[year][month]) {
+      groupedPosts[year][month] = [];
+    }
+    
+    groupedPosts[year][month].push(post);
+  }
+  
+  // 生成按年份和月份分组的文章列表HTML
+  let allPostsHtml = '';
+  
+  // 获取所有年份并降序排序
+  const years = Object.keys(groupedPosts).sort((a, b) => b - a);
+  
+  for (const year of years) {
+    allPostsHtml += `<div class="year-section">\n`;
+    allPostsHtml += `  <h2 class="year-title">${year}年</h2>\n`;
+    
+    // 获取当前年份的所有月份并降序排序
+    const months = Object.keys(groupedPosts[year]).sort((a, b) => b - a);
+    
+    for (const month of months) {
+      allPostsHtml += `  <div class="month-section">\n`;
+      allPostsHtml += `    <h3 class="month-title">${month}月</h3>\n`;
+      allPostsHtml += `    <ul>\n`;
+      
+      // 当月的所有文章
+      const monthPosts = groupedPosts[year][month];
+      
+      // 按日期降序排序
+      monthPosts.sort((a, b) => b.date - a.date);
+      
+      for (const post of monthPosts) {
+        const day = new Date(post.date).getDate();
+        allPostsHtml += `      <li>\n`;
+        allPostsHtml += `        <span class="article-date">${month}-${day.toString().padStart(2, '0')}</span>\n`;
+        allPostsHtml += `        <span class="article-title"><a :href="withBase('${post.link}')">${post.title}</a></span>\n`;
+        allPostsHtml += `      </li>\n`;
+      }
+      
+      allPostsHtml += `    </ul>\n`;
+      allPostsHtml += `  </div>\n`;
+    }
+    
+    allPostsHtml += `</div>\n`;
+  }
+  
+  // 更新全部文章列表页面
+  const contentRegex = /<div class="article-list">[\s\S]*?<\/div>/;
+  const updatedContent = `<div class="article-list">\n  <!-- 此处内容将由 update-recent-posts.js 脚本自动生成 -->\n${allPostsHtml}</div>`;
+  const updatedListContent = listContent.replace(contentRegex, updatedContent);
+  
+  // 写回列表文件
+  fs.writeFileSync(listPath, updatedListContent, 'utf8');
+  
+  console.log('已更新全部文章列表页面');
 }
 
 // 执行更新

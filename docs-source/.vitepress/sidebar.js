@@ -52,6 +52,10 @@ export default {
         {
           "text": "开始使用 VitePress 搭建技术博客",
           "link": "/posts/getting-started"
+        },
+        {
+          "text": "ssh 原理图",
+          "link": "/posts/ssh"
         }
       ]
     }
@@ -64,6 +68,18 @@ export default {
         {
           "text": "AI草莽时代，产品经理应该是怎样的人担当",
           "link": "/think/pm"
+        }
+      ]
+    }
+  ],
+  "/web/": [
+    {
+      "text": "前端开发",
+      "collapsed": false,
+      "items": [
+        {
+          "text": "web 网站的混合渲染",
+          "link": "/web/hybrid-rendering"
         }
       ]
     }
