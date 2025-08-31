@@ -7,11 +7,9 @@ tags: [CSR, SSR, SSG, ISR]
 
 <BlogPost>
 
-# web 网站的混合渲染
-
 > 服务端渲染重新卷土重来，但这次带来的却是不一样的风景。
 
-<img src="../assets/web/hybrid/ssr-csr-ssr.webp" alt="hybrid-rendering" class="content-image" width="100%" style="max-width: 800px; margin: 0 auto; display: block;" />
+<img src="../assets/web/hybrid/ssr-csr-ssr.webp" alt="hybrid-rendering" class="content-image" />
 
 在现代Web开发中，渲染策略的选择已经不再是非此即彼的问题。随着技术的发展，我们可以在同一个应用中结合使用多种渲染方式，根据不同页面或组件的需求选择最合适的渲染策略。这种方法被称为"混合渲染"（Hybrid Rendering）。
 
@@ -22,13 +20,13 @@ tags: [CSR, SSR, SSG, ISR]
 + SSG - Static Site Generation
 + ISR - Incremental Static Regeneration
 
-<img src="../assets/web/hybrid/render-strategies.webp" alt="hybrid-rendering" class="content-image" style="max-width: 800px; margin: 0 auto; display: block;" />
+<img src="../assets/web/hybrid/render-strategies.webp" alt="hybrid-rendering" class="content-image" />
 
 ## CSR - Client Side Rendering（客户端渲染）
 
 客户端渲染（Client-Side Rendering）是在浏览器中使用JavaScript动态生成页面内容的技术。
 
-<img src="../assets/web/hybrid/csr.webp" alt="hybrid-rendering" class="content-image" style="margin: 0 auto; display: block;" />
+<img src="../assets/web/hybrid/csr.webp" alt="hybrid-rendering" class="content-image" />
 
 ### CSR的优势
 
@@ -48,7 +46,7 @@ tags: [CSR, SSR, SSG, ISR]
 
 服务端渲染（Server-Side Rendering）是一种在服务器上生成完整HTML页面的技术，然后将这些页面发送到客户端浏览器。
 
-<img src="../assets/web/hybrid/ssr.webp" alt="hybrid-rendering" class="content-image" style="margin: 0 auto; display: block;" />
+<img src="../assets/web/hybrid/ssr.webp" alt="hybrid-rendering" class="content-image" />
 
 ### SSR的优势
 
@@ -67,7 +65,7 @@ tags: [CSR, SSR, SSG, ISR]
 
 静态站点生成（Static Site Generation）是在构建时预先生成所有页面的HTML文件。与传统的动态网站不同，SSG在部署前就已经生成了所有页面，用户访问时直接获取预渲染的HTML文件。
 
-<img src="../assets/web/hybrid/ssg.webp" alt="SSG流程" class="content-image" style="max-width: 600px; margin: 2rem auto; display: block;" />
+<img src="../assets/web/hybrid/ssg.webp" alt="SSG流程" class="content-image" />
 
 ### SSG的工作流程
 
@@ -105,7 +103,7 @@ tags: [CSR, SSR, SSG, ISR]
 
 增量静态再生成（Incremental Static Regeneration）是SSG的扩展，允许在特定条件下重新生成单个页面，而不需要重建整个站点。这是Next.js首创的技术，解决了传统SSG的内容更新问题。
 
-<img src="../assets/web/hybrid/isr.webp" alt="ISR流程" class="content-image" style="max-width: 600px; margin: 2rem auto; display: block;" />
+<img src="../assets/web/hybrid/isr.webp" alt="ISR流程" class="content-image" />
 
 ### ISR的工作流程
 
@@ -159,6 +157,7 @@ export async function getStaticPaths() {
 ### ISR的高级特性
 
 1. **按需重新验证**：
+
    ```javascript
    // 触发特定页面重新生成的API路由
    export default async function handler(req, res) {

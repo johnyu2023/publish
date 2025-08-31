@@ -365,3 +365,21 @@
   width: 100%;
 }
 
+
+.content-image {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  display: block;
+}
+
+/* 确保引用块内的文本正确换行显示 */
+.vp-doc blockquote p {
+  margin-bottom: 8px;
+  display: block;
+}
+
+.vp-doc blockquote {
+  white-space: normal !important;
+}
+

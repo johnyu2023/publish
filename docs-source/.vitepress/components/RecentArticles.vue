@@ -1,7 +1,7 @@
 <template>
   <div class="latest-articles-section">
     <!-- 最新文章标题 -->
-    <h2 class="section-title">最新文章</h2>
+    <h2 class="section-title"><a href="/list" style="color: inherit; text-decoration: none;">最新文章</a></h2>
     
     <!-- 最近更新区域 -->
     <div class="recent-articles">
