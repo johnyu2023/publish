@@ -1,13 +1,11 @@
 ---
+title: AI 辅助编程初体验
+description: 初次体会AI 辅助编程，喜忧参半。
 date: 2025-06-15
-title: AI 辅助编程
-description: AI辅助编程工具的使用经验和实践案例
+tags: [Cursor]
 ---
 
 <BlogPost>
-
-# AI 辅助编程
-
 
 ## 1. windows下截屏的小工具
 

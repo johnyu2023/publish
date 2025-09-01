@@ -19,6 +19,18 @@
       ]
     },
     {
+      "directory": "web",
+      "title": "从 Figma 还原小程序代码",
+      "url": "/web/from-figma-to-mini",
+      "date": "2025-08-30",
+      "description": "Cursor 中通过 MCP 访问 Figma ，还原设计稿，进而直接生成微信小程序代码。",
+      "tags": [
+        "Cursor",
+        "MCP",
+        "Figma，小程序"
+      ]
+    },
+    {
       "directory": "think",
       "title": "AI时代初级岗位是否存在",
       "url": "/think/junior",
@@ -128,11 +140,13 @@
     },
     {
       "directory": "ai",
-      "title": "AI 辅助编程",
+      "title": "AI 辅助编程初体验",
       "url": "/ai/code",
       "date": "2025-06-15",
-      "description": "AI辅助编程工具的使用经验和实践案例",
-      "tags": []
+      "description": "初次体会AI 辅助编程，喜忧参半。",
+      "tags": [
+        "Cursor"
+      ]
     },
     {
       "directory": "ai",

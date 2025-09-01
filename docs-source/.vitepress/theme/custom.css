@@ -367,8 +367,8 @@
 
 
 .content-image {
-  width: 100%;
-  max-width: 800px;
+  width: auto;
+  max-width: 100%;
   margin: 0 auto;
   display: block;
 }

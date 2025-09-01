@@ -39,7 +39,7 @@ export default withMermaid(defineConfig({
     
     nav: [
       { text: '首页', link: '/' },
-      { text: '文章', link: '/posts/' },
+      { text: '文章', link: '/list' },
       { text: '关于', link: '/about' }
     ],
     

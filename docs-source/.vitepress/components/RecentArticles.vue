@@ -34,7 +34,7 @@
       <!-- RSS订阅链接 -->
       <div class="rss-subscribe">
         <span class="rss-icon">📡</span>
-        <a :href="withBase('/rss.xml')" class="rss-link">订阅 RSS Feed</a>
+        <a :href="withBase('rss.xml')" class="rss-link">订阅 RSS Feed</a>
         <span class="rss-text">获取最新文章更新</span>
       </div>
     </div>

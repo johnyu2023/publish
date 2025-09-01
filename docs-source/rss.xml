@@ -6,7 +6,7 @@
     <link>https://johnyu2023.github.io/publish</link>
     <atom:link href="https://johnyu2023.github.io/publish/rss.xml" rel="self" type="application/rss+xml"/>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 31 Aug 2025 05:44:34 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 01 Sep 2025 06:20:30 GMT</lastBuildDate>
     <ttl>60</ttl>
     
     <item>
@@ -18,6 +18,17 @@
       <category>Cursor</category>
       <category>MCP</category>
       <category>Figma</category>
+    </item>
+    
+    <item>
+      <title>从 Figma 还原小程序代码</title>
+      <description>Cursor 中通过 MCP 访问 Figma ，还原设计稿，进而直接生成微信小程序代码。</description>
+      <link>https://johnyu2023.github.io/publish/web/from-figma-to-mini</link>
+      <guid>https://johnyu2023.github.io/publish/web/from-figma-to-mini</guid>
+      <pubDate>Sat, 30 Aug 2025 00:00:00 GMT</pubDate>
+      <category>Cursor</category>
+      <category>MCP</category>
+      <category>Figma，小程序</category>
     </item>
     
     <item>
@@ -128,12 +139,12 @@
     </item>
     
     <item>
-      <title>AI 辅助编程</title>
-      <description>AI辅助编程工具的使用经验和实践案例</description>
+      <title>AI 辅助编程初体验</title>
+      <description>初次体会AI 辅助编程，喜忧参半。</description>
       <link>https://johnyu2023.github.io/publish/ai/code</link>
       <guid>https://johnyu2023.github.io/publish/ai/code</guid>
       <pubDate>Sun, 15 Jun 2025 00:00:00 GMT</pubDate>
-
+      <category>Cursor</category>
     </item>
     
     <item>
