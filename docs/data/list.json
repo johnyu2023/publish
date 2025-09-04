@@ -7,6 +7,26 @@
   ],
   "articles": [
     {
+      "directory": "ai",
+      "title": "小语言模型的春天到了吗",
+      "url": "/ai/slm",
+      "date": "2025-09-03",
+      "description": "小型语言模型主要是部署于端侧或处理特定的任务，和大模型相比优势很明显，未来是不是会越来越多的小模型应用在项目中呢",
+      "tags": [
+        "SLM"
+      ]
+    },
+    {
+      "directory": "ai",
+      "title": "AI 生图使用",
+      "url": "/ai/ai-images-01",
+      "date": "2025-09-02",
+      "description": "用 AI 生成图片",
+      "tags": [
+        "AI 生图"
+      ]
+    },
+    {
       "directory": "web",
       "title": "Figma MCP 与 Cursor 配合使用",
       "url": "/web/cursor-mcp-to-figma",
@@ -150,11 +170,55 @@
     },
     {
       "directory": "ai",
+      "title": "Transformer 揭秘02",
+      "url": "/ai/transformer-02",
+      "date": "2025-03-04",
+      "description": "Transformer 内部的实现机制",
+      "tags": [
+        "Transformer"
+      ]
+    },
+    {
+      "directory": "ai",
+      "title": "Transformer 揭秘01",
+      "url": "/ai/transformer-01",
+      "date": "2025-03-01",
+      "description": "Transformer 框架总体来说，包含哪些子任务模块，它们各自的职责是什么",
+      "tags": [
+        "Transformer"
+      ]
+    },
+    {
+      "directory": "ai",
+      "title": "神经网络 揭秘01",
+      "url": "/ai/neural-network-01",
+      "date": "2025-02-20",
+      "description": "神经网络 是一种计算模型，它模拟了人脑的工作原理。这种结构使得神经网络能够从大量数据中学习并识别模式，从而完成各种任务。",
+      "tags": [
+        "Neural Network"
+      ]
+    },
+    {
+      "directory": "ai",
       "title": "机器学习，深度学习，强化学习",
       "url": "/ai/machine-learning",
-      "date": "2025-03-01",
-      "description": "机器学习 深度学习 强化学习",
-      "tags": []
+      "date": "2025-02-01",
+      "description": "机器学习，深度学习，强化学习这三个概念，似乎很接近，却又似乎大相径庭",
+      "tags": [
+        "Machine Learning",
+        "Deep Learning",
+        "Reinforcement Learning"
+      ]
+    },
+    {
+      "directory": "posts",
+      "title": "LaTeX 测试页面",
+      "url": "/posts/latex-test",
+      "date": "2025-01-17",
+      "description": "这是一个测试 VitePress 中 LaTeX 支持的页面，仅仅为了验证是否能正常显示",
+      "tags": [
+        "LaTeX"
+      ]
     },
     {
       "directory": "posts",

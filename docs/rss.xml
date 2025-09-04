@@ -6,8 +6,26 @@
     <link>https://johnyu2023.github.io/publish</link>
     <atom:link href="https://johnyu2023.github.io/publish/rss.xml" rel="self" type="application/rss+xml"/>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 01 Sep 2025 06:20:30 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 04 Sep 2025 10:18:59 GMT</lastBuildDate>
     <ttl>60</ttl>
+    
+    <item>
+      <title>小语言模型的春天到了吗</title>
+      <description>小型语言模型主要是部署于端侧或处理特定的任务，和大模型相比优势很明显，未来是不是会越来越多的小模型应用在项目中呢</description>
+      <link>https://johnyu2023.github.io/publish/ai/slm</link>
+      <guid>https://johnyu2023.github.io/publish/ai/slm</guid>
+      <pubDate>Wed, 03 Sep 2025 00:00:00 GMT</pubDate>
+      <category>SLM</category>
+    </item>
+    
+    <item>
+      <title>AI 生图使用</title>
+      <description>用 AI 生成图片</description>
+      <link>https://johnyu2023.github.io/publish/ai/ai-images-01</link>
+      <guid>https://johnyu2023.github.io/publish/ai/ai-images-01</guid>
+      <pubDate>Tue, 02 Sep 2025 00:00:00 GMT</pubDate>
+      <category>AI 生图</category>
+    </item>
     
     <item>
       <title>Figma MCP 与 Cursor 配合使用</title>
@@ -148,12 +166,50 @@
     </item>
     
     <item>
+      <title>Transformer 揭秘02</title>
+      <description>Transformer 内部的实现机制</description>
+      <link>https://johnyu2023.github.io/publish/ai/transformer-02</link>
+      <guid>https://johnyu2023.github.io/publish/ai/transformer-02</guid>
+      <pubDate>Tue, 04 Mar 2025 00:00:00 GMT</pubDate>
+      <category>Transformer</category>
+    </item>
+    
+    <item>
+      <title>Transformer 揭秘01</title>
+      <description>Transformer 框架总体来说，包含哪些子任务模块，它们各自的职责是什么</description>
+      <link>https://johnyu2023.github.io/publish/ai/transformer-01</link>
+      <guid>https://johnyu2023.github.io/publish/ai/transformer-01</guid>
+      <pubDate>Sat, 01 Mar 2025 00:00:00 GMT</pubDate>
+      <category>Transformer</category>
+    </item>
+    
+    <item>
+      <title>神经网络 揭秘01</title>
+      <description>神经网络 是一种计算模型，它模拟了人脑的工作原理。这种结构使得神经网络能够从大量数据中学习并识别模式，从而完成各种任务。</description>
+      <link>https://johnyu2023.github.io/publish/ai/neural-network-01</link>
+      <guid>https://johnyu2023.github.io/publish/ai/neural-network-01</guid>
+      <pubDate>Thu, 20 Feb 2025 00:00:00 GMT</pubDate>
+      <category>Neural Network</category>
+    </item>
+    
+    <item>
       <title>机器学习，深度学习，强化学习</title>
-      <description>机器学习 深度学习 强化学习</description>
+      <description>机器学习，深度学习，强化学习这三个概念，似乎很接近，却又似乎大相径庭</description>
       <link>https://johnyu2023.github.io/publish/ai/machine-learning</link>
       <guid>https://johnyu2023.github.io/publish/ai/machine-learning</guid>
-      <pubDate>Sat, 01 Mar 2025 00:00:00 GMT</pubDate>
-
+      <pubDate>Sat, 01 Feb 2025 00:00:00 GMT</pubDate>
+      <category>Machine Learning</category>
+      <category>Deep Learning</category>
+      <category>Reinforcement Learning</category>
+    </item>
+    
+    <item>
+      <title>LaTeX 测试页面</title>
+      <description>这是一个测试 VitePress 中 LaTeX 支持的页面，仅仅为了验证是否能正常显示</description>
+      <link>https://johnyu2023.github.io/publish/posts/latex-test</link>
+      <guid>https://johnyu2023.github.io/publish/posts/latex-test</guid>
+      <pubDate>Fri, 17 Jan 2025 00:00:00 GMT</pubDate>
+      <category>LaTeX</category>
     </item>
     
     <item>

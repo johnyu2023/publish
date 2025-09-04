@@ -2,6 +2,7 @@ import { defineConfig } from 'vitepress'
 import type { DefaultTheme } from 'vitepress'
 import { withMermaid } from 'vitepress-plugin-mermaid'
 import sidebarConfig from './sidebar.js'
+import { katex } from '@mdit/plugin-katex'
 
 // 检测环境
 const isProduction = process.env.NODE_ENV === 'production'
@@ -20,10 +21,22 @@ export default withMermaid(defineConfig({
   // 设置基础路径
   base,
   
+  // 配置markdown选项，使用官方的katex插件支持LaTeX
+  markdown: {
+    config: (md) => {
+      md.use(katex, {
+        throwOnError: false,
+        errorColor: '#cc0000'
+      })
+    }
+  },
+  
   // 添加RSS链接到HTML头部
   head: [
-    ['link', { rel: 'alternate', type: 'application/rss+xml', href: isLocalDev ? '/rss.xml' : '/publish/rss.xml', title: 'RSS Feed for AI时代的技术分享' }],
+    ['link', { rel: 'alternate', type: 'application/rss+xml', href: `${base}rss.xml`, title: 'RSS Feed for AI时代的技术分享' }],
     ['meta', { name: 'referrer', content: 'no-referrer-when-downgrade' }],
+    // 添加KaTeX的CSS样式
+    ['link', { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css' }]
   ],
   
   // 添加全局变量，用于构建链接
