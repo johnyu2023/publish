@@ -6,8 +6,28 @@
     <link>https://johnyu2023.github.io/publish</link>
     <atom:link href="https://johnyu2023.github.io/publish/rss.xml" rel="self" type="application/rss+xml"/>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 04 Sep 2025 10:18:59 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 08 Sep 2025 14:15:19 GMT</lastBuildDate>
     <ttl>60</ttl>
+    
+    <item>
+      <title>AI 的深度检索</title>
+      <description>AI 何时才会进行一步检索。</description>
+      <link>https://johnyu2023.github.io/publish/posts/deep-search</link>
+      <guid>https://johnyu2023.github.io/publish/posts/deep-search</guid>
+      <pubDate>Mon, 08 Sep 2025 00:00:00 GMT</pubDate>
+      <category>AI</category>
+      <category>deep-search</category>
+    </item>
+    
+    <item>
+      <title>AI 制作长视频实践</title>
+      <description>AI 可以方便地制作短视频，但涉及到长视频，就会面对很多挑战。</description>
+      <link>https://johnyu2023.github.io/publish/posts/ai-movie</link>
+      <guid>https://johnyu2023.github.io/publish/posts/ai-movie</guid>
+      <pubDate>Sun, 07 Sep 2025 00:00:00 GMT</pubDate>
+      <category>AI</category>
+      <category>视频</category>
+    </item>
     
     <item>
       <title>小语言模型的春天到了吗</title>
@@ -181,6 +201,15 @@
       <guid>https://johnyu2023.github.io/publish/ai/transformer-01</guid>
       <pubDate>Sat, 01 Mar 2025 00:00:00 GMT</pubDate>
       <category>Transformer</category>
+    </item>
+    
+    <item>
+      <title>神经网络 揭秘02</title>
+      <description>深度学习中，CNN 和 RNN 是两种非常重要且功能强大的神经网络架构。它们各自被设计用来处理不同类型的数据。</description>
+      <link>https://johnyu2023.github.io/publish/ai/neural-network-02</link>
+      <guid>https://johnyu2023.github.io/publish/ai/neural-network-02</guid>
+      <pubDate>Thu, 27 Feb 2025 00:00:00 GMT</pubDate>
+      <category>Neural Network</category>
     </item>
     
     <item>

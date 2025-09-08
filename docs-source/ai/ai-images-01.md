@@ -38,10 +38,17 @@ tags: [AI 生图]
 输出的图片要能支持 2K 分辨率，并且以 9:16 竖屏的形式展现。
 ```
 
-## Github 上有意思的仓库
+## Github 上有意思的仓库1
 
 [精选的 Gemini-2.5-Flash-Image（也称为 Nano Banana）生成图像与提示词合集](https://github.com/JimmyLv/awesome-nano-banana)
 
 可以从上面找一些提示词来试试生成图片，主要用于 Google 的 Gemini-2.5-Flash-Image 模型。
+
+## Github 上有意思的仓库2
+
+[Nano-Banana Creation ZHO](https://github.com/ZHO-ZHO-ZHO/ZHO-nano-banana-Creation)
+
+Nano-Banana 创意玩法大合集
+
 
 </BlogPost>

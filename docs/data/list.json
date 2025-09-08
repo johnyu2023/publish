@@ -7,6 +7,28 @@
   ],
   "articles": [
     {
+      "directory": "posts",
+      "title": "AI 的深度检索",
+      "url": "/posts/deep-search",
+      "date": "2025-09-08",
+      "description": "AI 何时才会进行一步检索。",
+      "tags": [
+        "AI",
+        "deep-search"
+      ]
+    },
+    {
+      "directory": "posts",
+      "title": "AI 制作长视频实践",
+      "url": "/posts/ai-movie",
+      "date": "2025-09-07",
+      "description": "AI 可以方便地制作短视频，但涉及到长视频，就会面对很多挑战。",
+      "tags": [
+        "AI",
+        "视频"
+      ]
+    },
+    {
       "directory": "ai",
       "title": "小语言模型的春天到了吗",
       "url": "/ai/slm",
@@ -186,6 +208,16 @@
       "description": "Transformer 框架总体来说，包含哪些子任务模块，它们各自的职责是什么",
       "tags": [
         "Transformer"
+      ]
+    },
+    {
+      "directory": "ai",
+      "title": "神经网络 揭秘02",
+      "url": "/ai/neural-network-02",
+      "date": "2025-02-27",
+      "description": "深度学习中，CNN 和 RNN 是两种非常重要且功能强大的神经网络架构。它们各自被设计用来处理不同类型的数据。",
+      "tags": [
+        "Neural Network"
       ]
     },
     {
