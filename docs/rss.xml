@@ -6,8 +6,73 @@
     <link>https://johnyu2023.github.io/publish</link>
     <atom:link href="https://johnyu2023.github.io/publish/rss.xml" rel="self" type="application/rss+xml"/>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 08 Sep 2025 14:15:19 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 23 Sep 2025 10:27:13 GMT</lastBuildDate>
     <ttl>60</ttl>
+    
+    <item>
+      <title>不同领域的 AI 算法</title>
+      <description>领域：金融，制造业，快消</description>
+      <link>https://johnyu2023.github.io/publish/ai/ai-algorithms-in-different-fields</link>
+      <guid>https://johnyu2023.github.io/publish/ai/ai-algorithms-in-different-fields</guid>
+      <pubDate>Sat, 20 Sep 2025 00:00:00 GMT</pubDate>
+      <category>金融，制造业，快消</category>
+    </item>
+    
+    <item>
+      <title>wucai-code 使用</title>
+      <description>wucai-code 是一个基于 node.js 的命令行工具，用于 AI Coding</description>
+      <link>https://johnyu2023.github.io/publish/ai/wucai-code</link>
+      <guid>https://johnyu2023.github.io/publish/ai/wucai-code</guid>
+      <pubDate>Thu, 18 Sep 2025 00:00:00 GMT</pubDate>
+      <category>wucai-code</category>
+    </item>
+    
+    <item>
+      <title>分析式AI 01</title>
+      <description>AI 用于分析数据、识别模式、支持决策等分析性任务</description>
+      <link>https://johnyu2023.github.io/publish/ai/analytical-ai-01</link>
+      <guid>https://johnyu2023.github.io/publish/ai/analytical-ai-01</guid>
+      <pubDate>Wed, 17 Sep 2025 00:00:00 GMT</pubDate>
+      <category>Analytical AI</category>
+    </item>
+    
+    <item>
+      <title>RAG 01</title>
+      <description>RAG 01 - 向量数据库</description>
+      <link>https://johnyu2023.github.io/publish/ai/rag01</link>
+      <guid>https://johnyu2023.github.io/publish/ai/rag01</guid>
+      <pubDate>Tue, 16 Sep 2025 00:00:00 GMT</pubDate>
+      <category>RAG</category>
+    </item>
+    
+    <item>
+      <title>向量数据库</title>
+      <description>向量数据库 - AI时代的核心记忆体</description>
+      <link>https://johnyu2023.github.io/publish/ai/vector-database</link>
+      <guid>https://johnyu2023.github.io/publish/ai/vector-database</guid>
+      <pubDate>Tue, 16 Sep 2025 00:00:00 GMT</pubDate>
+      <category>向量</category>
+      <category>向量数据库</category>
+    </item>
+    
+    <item>
+      <title>Embeddings</title>
+      <description>嵌入</description>
+      <link>https://johnyu2023.github.io/publish/ai/embeddings</link>
+      <guid>https://johnyu2023.github.io/publish/ai/embeddings</guid>
+      <pubDate>Mon, 15 Sep 2025 00:00:00 GMT</pubDate>
+      <category>Embeddings</category>
+      <category>向量</category>
+    </item>
+    
+    <item>
+      <title>Coze 使用 01</title>
+      <description>开源后的 Coze 未来可期，是时候重新认识一下 Coze 了</description>
+      <link>https://johnyu2023.github.io/publish/ai/coze-01</link>
+      <guid>https://johnyu2023.github.io/publish/ai/coze-01</guid>
+      <pubDate>Wed, 10 Sep 2025 00:00:00 GMT</pubDate>
+      <category>Coze</category>
+    </item>
     
     <item>
       <title>AI 的深度检索</title>
@@ -168,6 +233,15 @@
     </item>
     
     <item>
+      <title>概率论 01</title>
+      <description>概率论是数学中研究概率的分支</description>
+      <link>https://johnyu2023.github.io/publish/ai/probability-theory</link>
+      <guid>https://johnyu2023.github.io/publish/ai/probability-theory</guid>
+      <pubDate>Fri, 18 Jul 2025 00:00:00 GMT</pubDate>
+      <category>Probability theory</category>
+    </item>
+    
+    <item>
       <title>Function Calling 的原始形态</title>
       <description>探索大语言模型函数调用的基本实现方式</description>
       <link>https://johnyu2023.github.io/publish/ai/function-calling</link>
@@ -183,6 +257,15 @@
       <guid>https://johnyu2023.github.io/publish/ai/code</guid>
       <pubDate>Sun, 15 Jun 2025 00:00:00 GMT</pubDate>
       <category>Cursor</category>
+    </item>
+    
+    <item>
+      <title>AI 基础 01</title>
+      <description>AI 基础知识思考</description>
+      <link>https://johnyu2023.github.io/publish/ai/ai-basic-01</link>
+      <guid>https://johnyu2023.github.io/publish/ai/ai-basic-01</guid>
+      <pubDate>Mon, 12 May 2025 00:00:00 GMT</pubDate>
+      <category>AI</category>
     </item>
     
     <item>
@@ -219,6 +302,24 @@
       <guid>https://johnyu2023.github.io/publish/ai/neural-network-01</guid>
       <pubDate>Thu, 20 Feb 2025 00:00:00 GMT</pubDate>
       <category>Neural Network</category>
+    </item>
+    
+    <item>
+      <title>线性代数基础 02</title>
+      <description>向量和计算</description>
+      <link>https://johnyu2023.github.io/publish/ai/linear-algebra-02</link>
+      <guid>https://johnyu2023.github.io/publish/ai/linear-algebra-02</guid>
+      <pubDate>Sun, 16 Feb 2025 00:00:00 GMT</pubDate>
+      <category>Linear Algebra</category>
+    </item>
+    
+    <item>
+      <title>线性代数基础 01</title>
+      <description>线性代数的一些基础知识</description>
+      <link>https://johnyu2023.github.io/publish/ai/linear-algebra-01</link>
+      <guid>https://johnyu2023.github.io/publish/ai/linear-algebra-01</guid>
+      <pubDate>Sat, 15 Feb 2025 00:00:00 GMT</pubDate>
+      <category>Linear Algebra</category>
     </item>
     
     <item>

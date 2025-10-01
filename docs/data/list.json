@@ -7,6 +7,78 @@
   ],
   "articles": [
     {
+      "directory": "ai",
+      "title": "不同领域的 AI 算法",
+      "url": "/ai/ai-algorithms-in-different-fields",
+      "date": "2025-09-20",
+      "description": "领域：金融，制造业，快消",
+      "tags": [
+        "金融，制造业，快消"
+      ]
+    },
+    {
+      "directory": "ai",
+      "title": "wucai-code 使用",
+      "url": "/ai/wucai-code",
+      "date": "2025-09-18",
+      "description": "wucai-code 是一个基于 node.js 的命令行工具，用于 AI Coding",
+      "tags": [
+        "wucai-code"
+      ]
+    },
+    {
+      "directory": "ai",
+      "title": "分析式AI 01",
+      "url": "/ai/analytical-ai-01",
+      "date": "2025-09-17",
+      "description": "AI 用于分析数据、识别模式、支持决策等分析性任务",
+      "tags": [
+        "Analytical AI"
+      ]
+    },
+    {
+      "directory": "ai",
+      "title": "RAG 01",
+      "url": "/ai/rag01",
+      "date": "2025-09-16",
+      "description": "RAG 01 - 向量数据库",
+      "tags": [
+        "RAG"
+      ]
+    },
+    {
+      "directory": "ai",
+      "title": "向量数据库",
+      "url": "/ai/vector-database",
+      "date": "2025-09-16",
+      "description": "向量数据库 - AI时代的核心记忆体",
+      "tags": [
+        "向量",
+        "向量数据库"
+      ]
+    },
+    {
+      "directory": "ai",
+      "title": "Embeddings",
+      "url": "/ai/embeddings",
+      "date": "2025-09-15",
+      "description": "嵌入",
+      "tags": [
+        "Embeddings",
+        "向量"
+      ]
+    },
+    {
+      "directory": "ai",
+      "title": "Coze 使用 01",
+      "url": "/ai/coze-01",
+      "date": "2025-09-10",
+      "description": "开源后的 Coze 未来可期，是时候重新认识一下 Coze 了",
+      "tags": [
+        "Coze"
+      ]
+    },
+    {
       "directory": "posts",
       "title": "AI 的深度检索",
       "url": "/posts/deep-search",
@@ -174,6 +246,16 @@
     },
     {
       "directory": "ai",
+      "title": "概率论 01",
+      "url": "/ai/probability-theory",
+      "date": "2025-07-18",
+      "description": "概率论是数学中研究概率的分支",
+      "tags": [
+        "Probability theory"
+      ]
+    },
+    {
+      "directory": "ai",
       "title": "Function Calling 的原始形态",
       "url": "/ai/function-calling",
       "date": "2025-07-16",
@@ -188,6 +270,16 @@
       "description": "初次体会AI 辅助编程，喜忧参半。",
       "tags": [
         "Cursor"
+      ]
+    },
+    {
+      "directory": "ai",
+      "title": "AI 基础 01",
+      "url": "/ai/ai-basic-01",
+      "date": "2025-05-12",
+      "description": "AI 基础知识思考",
+      "tags": [
+        "AI"
       ]
     },
     {
@@ -228,6 +320,26 @@
       "description": "神经网络 是一种计算模型，它模拟了人脑的工作原理。这种结构使得神经网络能够从大量数据中学习并识别模式，从而完成各种任务。",
       "tags": [
         "Neural Network"
+      ]
+    },
+    {
+      "directory": "ai",
+      "title": "线性代数基础 02",
+      "url": "/ai/linear-algebra-02",
+      "date": "2025-02-16",
+      "description": "向量和计算",
+      "tags": [
+        "Linear Algebra"
+      ]
+    },
+    {
+      "directory": "ai",
+      "title": "线性代数基础 01",
+      "url": "/ai/linear-algebra-01",
+      "date": "2025-02-15",
+      "description": "线性代数的一些基础知识",
+      "tags": [
+        "Linear Algebra"
       ]
     },
     {
