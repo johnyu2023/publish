@@ -20,6 +20,8 @@ export default withMermaid(defineConfig({
   lang: 'zh-CN',
   // 设置基础路径
   base,
+  // 指定使用自定义主题
+  theme: './theme',
   
   // 配置markdown选项，使用官方的katex插件支持LaTeX
   markdown: {
@@ -36,7 +38,38 @@ export default withMermaid(defineConfig({
     ['link', { rel: 'alternate', type: 'application/rss+xml', href: `${base}rss.xml`, title: 'RSS Feed for AI时代的技术分享' }],
     ['meta', { name: 'referrer', content: 'no-referrer-when-downgrade' }],
     // 添加KaTeX的CSS样式
-    ['link', { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css' }]
+    ['link', { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css' }],
+    // 添加测试用的全局样式
+    ['style', {}, `
+      body {
+        background-color: #f0f0f0 !important;
+      }
+      .debug-message {
+        position: fixed !important;
+        top: 20px !important;
+        left: 20px !important;
+        background-color: purple !important;
+        color: white !important;
+        padding: 20px !important;
+        font-size: 16px !important;
+        z-index: 9999 !important;
+      }
+      
+      /* 非常明显的全局测试样式 */
+      .global-test-banner {
+        position: fixed !important;
+        top: 100px !important;
+        left: 0 !important;
+        right: 0 !important;
+        background-color: yellow !important;
+        color: black !important;
+        padding: 30px !important;
+        font-size: 24px !important;
+        font-weight: bold !important;
+        text-align: center !important;
+        z-index: 9998 !important;
+      }
+    `]
   ],
   
   // 添加全局变量，用于构建链接

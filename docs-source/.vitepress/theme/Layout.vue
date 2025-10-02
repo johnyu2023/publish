@@ -2,6 +2,8 @@
 import { useData, useRouter } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import { ref, onMounted, onUnmounted, watch, nextTick } from 'vue'
+import TestSidebar from './components/TestSidebar.vue'
+import SidebarArticleList from './components/SidebarArticleList.vue'
 
 const { Layout } = DefaultTheme
 const { page } = useData()
@@ -71,7 +73,22 @@ onUnmounted(() => {
 </script>
 
 <template>
+  <!-- 直接显示的测试内容，不通过插槽 -->
+  <div style="position: fixed; top: 100px; left: 20px; background-color: red; color: white; padding: 20px; z-index: 9999;">
+    这是直接显示的测试内容，用于验证组件渲染
+  </div>
+  
   <Layout>
+    <!-- 侧边栏顶部插槽 -->
+    <template #aside-top>
+      <TestSidebar />
+      <div style="margin-top: 20px; background-color: blue; color: white; padding: 10px;">
+        直接在插槽中添加的内容
+      </div>
+      <SidebarArticleList />
+    </template>
+    
+    <!-- 导航栏内容后面的插槽 -->
     <template #nav-bar-content-after>
       <div class="fixed-article-title" :class="{ visible: isVisible }">
         {{ title }}

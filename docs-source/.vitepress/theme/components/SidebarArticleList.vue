@@ -1,29 +1,39 @@
 <template>
-  <div class="sidebar-articles" v-if="currentDirectory">
-    <h3 class="sidebar-title">{{ currentDirectory }} 相关文章</h3>
-    
-    <!-- 加载状态 -->
-    <div v-if="loading" class="loading-state">
-      <div class="loading-text">加载中...</div>
+  <div class="sidebar-articles">
+    <!-- 标记行 - 已移到条件渲染外部，确保总是显示 -->
+    <div class="sidebar-modify-notice">
+      侧边栏待修改 - 测试内容
+    </div>
+    <div style="background-color: yellow; padding: 10px; margin-top: 10px;">
+      这是一个测试消息，用于验证侧边栏组件是否正常加载
     </div>
     
-    <!-- 错误状态 -->
-    <div v-else-if="error" class="error-state">
-      <div class="error-text">加载失败</div>
-      <button @click="loadArticlesData" class="retry-button">重试</button>
-    </div>
-    
-    <!-- 数据加载成功 -->
-    <div v-else class="article-list">
-      <ul>
-        <li 
-          v-for="article in directoryArticles" 
-          :key="article.url"
-          :class="{ active: isCurrentArticle(article.url) }"
-        >
-          <a :href="withBase(article.url)" class="article-link">{{ article.title }}</a>
-        </li>
-      </ul>
+    <div v-if="currentDirectory">
+      <h3 class="sidebar-title">{{ currentDirectory }} 相关文章</h3>
+      
+      <!-- 加载状态 -->
+      <div v-if="loading" class="loading-state">
+        <div class="loading-text">加载中...</div>
+      </div>
+      
+      <!-- 错误状态 -->
+      <div v-else-if="error" class="error-state">
+        <div class="error-text">加载失败</div>
+        <button @click="loadArticlesData" class="retry-button">重试</button>
+      </div>
+      
+      <!-- 数据加载成功 -->
+      <div v-else class="article-list">
+        <ul>
+          <li 
+            v-for="article in directoryArticles" 
+            :key="article.url"
+            :class="{ active: isCurrentArticle(article.url) }"
+          >
+            <a :href="withBase(article.url)" class="article-link">{{ article.title }}</a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -119,6 +129,17 @@ onMounted(() => {
   border-radius: 8px;
   padding: 1rem;
   background-color: var(--vp-c-bg-soft);
+}
+
+/* 侧边栏标记样式 */
+.sidebar-modify-notice {
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  text-align: center;
 }
 
 .sidebar-title {

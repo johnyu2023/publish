@@ -1,0 +1,1 @@
+需要执行 curl 命令时，应使用 curl.exe 而不是直接使用 curl

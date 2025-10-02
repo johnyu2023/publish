@@ -1,3 +1,17 @@
+/* 自定义样式 */
+/* 全局标记样式 - 用于测试修改是否生效 */
+.test-global-marker {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: red;
+  color: white;
+  padding: 10px 15px;
+  font-weight: bold;
+  z-index: 9999;
+  border-radius: 4px;
+}
+
 /* 增加内容区域宽度 */
 :root {
   --vp-layout-max-width: 1800px !important; /* 大幅增加最大宽度 */

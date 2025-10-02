@@ -1,7 +1,7 @@
 <script setup>
 import { useData } from 'vitepress'
-import PostDate from '../components/PostDate.vue'
-import SidebarArticleList from '../components/SidebarArticleList.vue'
+import PostDate from './components/PostDate.vue'
+import SidebarArticleList from './components/SidebarArticleList.vue'
 
 const { frontmatter } = useData()
 </script>
