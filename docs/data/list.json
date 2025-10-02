@@ -8,6 +8,26 @@
   "articles": [
     {
       "directory": "ai",
+      "title": "时间序列分析",
+      "url": "/ai/time-series-analysis",
+      "date": "2025-09-27",
+      "description": "时间序列分析",
+      "tags": [
+        "时间序列模型"
+      ]
+    },
+    {
+      "directory": "ai",
+      "title": "二手车预测价格大赛",
+      "url": "/ai/used-car",
+      "date": "2025-09-27",
+      "description": "二手车预测价格大赛",
+      "tags": [
+        "机器学习"
+      ]
+    },
+    {
+      "directory": "ai",
       "title": "不同领域的 AI 算法",
       "url": "/ai/ai-algorithms-in-different-fields",
       "date": "2025-09-20",
@@ -246,16 +266,6 @@
     },
     {
       "directory": "ai",
-      "title": "概率论 01",
-      "url": "/ai/probability-theory",
-      "date": "2025-07-18",
-      "description": "概率论是数学中研究概率的分支",
-      "tags": [
-        "Probability theory"
-      ]
-    },
-    {
-      "directory": "ai",
       "title": "Function Calling 的原始形态",
       "url": "/ai/function-calling",
       "date": "2025-07-16",
@@ -270,6 +280,46 @@
       "description": "初次体会AI 辅助编程，喜忧参半。",
       "tags": [
         "Cursor"
+      ]
+    },
+    {
+      "directory": "ai",
+      "title": "Jupyter 使用",
+      "url": "/ai/jupyter",
+      "date": "2025-06-10",
+      "description": "Jupyter 是一个开源的 Web 应用程序，主要用于创建和共享包含实时代码、数学公式、可视化图表和 Markdown 文本的交互式文档。",
+      "tags": [
+        "Jupyter"
+      ]
+    },
+    {
+      "directory": "ai",
+      "title": "Python 使用基础",
+      "url": "/ai/python",
+      "date": "2025-06-01",
+      "description": "Python 使用过程中一些值得记录的内容",
+      "tags": [
+        "Python"
+      ]
+    },
+    {
+      "directory": "ai",
+      "title": "统计学知识",
+      "url": "/ai/statistics",
+      "date": "2025-05-27",
+      "description": "统计学知识",
+      "tags": [
+        "Statistics"
+      ]
+    },
+    {
+      "directory": "ai",
+      "title": "概率论 01",
+      "url": "/ai/probability-theory",
+      "date": "2025-05-18",
+      "description": "概率论是数学中研究概率的分支",
+      "tags": [
+        "Probability theory"
       ]
     },
     {

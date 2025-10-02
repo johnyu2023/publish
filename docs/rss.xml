@@ -6,8 +6,26 @@
     <link>https://johnyu2023.github.io/publish</link>
     <atom:link href="https://johnyu2023.github.io/publish/rss.xml" rel="self" type="application/rss+xml"/>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 23 Sep 2025 10:27:13 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 02 Oct 2025 09:49:36 GMT</lastBuildDate>
     <ttl>60</ttl>
+    
+    <item>
+      <title>时间序列分析</title>
+      <description>时间序列分析</description>
+      <link>https://johnyu2023.github.io/publish/ai/time-series-analysis</link>
+      <guid>https://johnyu2023.github.io/publish/ai/time-series-analysis</guid>
+      <pubDate>Sat, 27 Sep 2025 00:00:00 GMT</pubDate>
+      <category>时间序列模型</category>
+    </item>
+    
+    <item>
+      <title>二手车预测价格大赛</title>
+      <description>二手车预测价格大赛</description>
+      <link>https://johnyu2023.github.io/publish/ai/used-car</link>
+      <guid>https://johnyu2023.github.io/publish/ai/used-car</guid>
+      <pubDate>Sat, 27 Sep 2025 00:00:00 GMT</pubDate>
+      <category>机器学习</category>
+    </item>
     
     <item>
       <title>不同领域的 AI 算法</title>
@@ -233,15 +251,6 @@
     </item>
     
     <item>
-      <title>概率论 01</title>
-      <description>概率论是数学中研究概率的分支</description>
-      <link>https://johnyu2023.github.io/publish/ai/probability-theory</link>
-      <guid>https://johnyu2023.github.io/publish/ai/probability-theory</guid>
-      <pubDate>Fri, 18 Jul 2025 00:00:00 GMT</pubDate>
-      <category>Probability theory</category>
-    </item>
-    
-    <item>
       <title>Function Calling 的原始形态</title>
       <description>探索大语言模型函数调用的基本实现方式</description>
       <link>https://johnyu2023.github.io/publish/ai/function-calling</link>
@@ -257,6 +266,42 @@
       <guid>https://johnyu2023.github.io/publish/ai/code</guid>
       <pubDate>Sun, 15 Jun 2025 00:00:00 GMT</pubDate>
       <category>Cursor</category>
+    </item>
+    
+    <item>
+      <title>Jupyter 使用</title>
+      <description>Jupyter 是一个开源的 Web 应用程序，主要用于创建和共享包含实时代码、数学公式、可视化图表和 Markdown 文本的交互式文档。</description>
+      <link>https://johnyu2023.github.io/publish/ai/jupyter</link>
+      <guid>https://johnyu2023.github.io/publish/ai/jupyter</guid>
+      <pubDate>Tue, 10 Jun 2025 00:00:00 GMT</pubDate>
+      <category>Jupyter</category>
+    </item>
+    
+    <item>
+      <title>Python 使用基础</title>
+      <description>Python 使用过程中一些值得记录的内容</description>
+      <link>https://johnyu2023.github.io/publish/ai/python</link>
+      <guid>https://johnyu2023.github.io/publish/ai/python</guid>
+      <pubDate>Sun, 01 Jun 2025 00:00:00 GMT</pubDate>
+      <category>Python</category>
+    </item>
+    
+    <item>
+      <title>统计学知识</title>
+      <description>统计学知识</description>
+      <link>https://johnyu2023.github.io/publish/ai/statistics</link>
+      <guid>https://johnyu2023.github.io/publish/ai/statistics</guid>
+      <pubDate>Tue, 27 May 2025 00:00:00 GMT</pubDate>
+      <category>Statistics</category>
+    </item>
+    
+    <item>
+      <title>概率论 01</title>
+      <description>概率论是数学中研究概率的分支</description>
+      <link>https://johnyu2023.github.io/publish/ai/probability-theory</link>
+      <guid>https://johnyu2023.github.io/publish/ai/probability-theory</guid>
+      <pubDate>Sun, 18 May 2025 00:00:00 GMT</pubDate>
+      <category>Probability theory</category>
     </item>
     
     <item>

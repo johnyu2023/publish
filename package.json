@@ -21,12 +21,12 @@
   "author": "Your Name",
   "license": "MIT",
   "devDependencies": {
-    "@types/node": "^20.11.0",
+    "@types/node": "^24.6.2",
     "cross-env": "^10.0.0",
     "gray-matter": "^4.0.3",
     "mermaid": "^11.10.0",
     "rimraf": "^6.0.1",
-    "vitepress": "^1.0.0-rc.44",
+    "vitepress": "^1.6.4",
     "vitepress-plugin-mermaid": "^2.0.17"
   },
   "dependencies": {
