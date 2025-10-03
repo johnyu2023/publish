@@ -4,6 +4,9 @@ import ShowAllList from '../components/ShowAllList.vue'
 import TimeArticleList from '../components/TimeArticleList.vue'
 import BlogPost from '../components/BlogPost.vue'
 
+// 导入 Naive UI
+import naive from 'naive-ui'
+
 // 导入专门用于修复ShowAllList组件布局问题的样式
 import './custom.css'
 import './show-all-list-fix.css'
@@ -52,6 +55,7 @@ export default {
   extends: DefaultTheme,
   
   enhanceApp({ app }) {
+    app.use(naive)
     app.component('BlogPost', BlogPost)
     app.component('TimeArticleList', TimeArticleList)
   },

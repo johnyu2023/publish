@@ -38,18 +38,51 @@
         <span class="rss-text">获取最新文章更新</span>
       </div>
     </div>
+    
+    <!-- Naive UI 模态框 -->
+    <n-modal 
+      v-model:show="showModal" 
+      :style="{ width: '80%', maxWidth: '1200px', height: '80%' }" 
+      preset="card" 
+      title="全部文章" 
+      size="huge" 
+      :bordered="false"
+      :auto-focus="false"
+      :trap-focus="false"
+      @after-leave="restoreFocus"
+    >
+      <ShowAllList />
+    </n-modal>
   </div>
 </template>
 
 <script setup>
 import { withBase } from 'vitepress'
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
+import { NModal } from 'naive-ui'
+import ShowAllList from '/.vitepress/components/ShowAllList.vue'
+
+// 控制模态框显示状态
+const showModal = ref(false)
 
 // 打开文章列表模态框
 function openArticlesModal() {
-  // 触发自定义事件，让theme/index.js中的代码处理模态框的打开
-  const event = new CustomEvent('open-articles-modal')
-  window.dispatchEvent(event)
+  // 保存触发元素的引用
+  if (typeof window !== 'undefined') {
+    window.lastTriggerElement = document.activeElement
+  }
+  showModal.value = true
+}
+
+// 恢复焦点到触发元素
+function restoreFocus() {
+  if (typeof window !== 'undefined' && window.lastTriggerElement) {
+    // 确保元素仍然存在于 DOM 中
+    if (document.contains(window.lastTriggerElement)) {
+      window.lastTriggerElement.focus()
+    }
+    window.lastTriggerElement = null
+  }
 }
 
 // 数据加载状态
@@ -99,9 +132,21 @@ async function loadArticlesData() {
   }
 }
 
-// 页面加载时获取数据
+// 处理模态框关闭事件
+const handleCloseModal = () => {
+  showModal.value = false
+  restoreFocus()
+}
+
+// 页面加载时获取数据并添加事件监听器
 onMounted(() => {
   loadArticlesData()
+  window.addEventListener('close-modal', handleCloseModal)
+})
+
+// 组件卸载时移除事件监听器
+onUnmounted(() => {
+  window.removeEventListener('close-modal', handleCloseModal)
 })
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="all-list-container">
+  <div class="all-list-container" ref="containerRef">
     <div class="main-layout">
       <!-- Tab 切换（左侧） -->
       <div class="tabs">
@@ -58,9 +58,12 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted, nextTick } from 'vue'
 import { useData, withBase } from 'vitepress'
 import TimeArticleList from '/.vitepress/components/TimeArticleList.vue'
+
+// 模板引用
+const containerRef = ref(null)
 
 // 定义props，接收外部传入的宽度和高度值
 const props = defineProps({
@@ -84,6 +87,9 @@ const activeDirectory = ref('') // 当前选中的分类
 // 获取当前页面数据
 const { page } = useData()
 
+// 存储触发模态框的元素
+const triggerElement = ref(null)
+
 // 过滤后的文章（当前选中分类的文章）
 const filteredArticles = computed(() => {
   if (!activeDirectory.value) return []
@@ -91,6 +97,18 @@ const filteredArticles = computed(() => {
     .filter(article => article.directory === activeDirectory.value)
     .sort((a, b) => new Date(b.date) - new Date(a.date))
 })
+
+// 保存触发元素的引用
+const saveTriggerElement = () => {
+  triggerElement.value = document.activeElement
+}
+
+// 恢复焦点到触发元素
+const restoreFocus = () => {
+  if (triggerElement.value) {
+    triggerElement.value.focus()
+  }
+}
 
 // 格式化日期
 function formatDate(dateStr) {
@@ -105,6 +123,8 @@ function formatDate(dateStr) {
 const handleArticleClick = (article) => {
   // 触发自定义事件，通知父组件关闭模态框
   window.dispatchEvent(new CustomEvent('close-modal'))
+  // 恢复焦点到触发元素
+  restoreFocus()
 }
 
 // 加载分类数据
@@ -151,6 +171,9 @@ const setDefaultDirectory = () => {
 }
 
 onMounted(() => {
+  // 保存触发元素
+  saveTriggerElement()
+  
   Promise.all([loadCategories(), loadArticles()]).then(() => {
     // 等待数据加载完成后设置默认分类
     setTimeout(() => {
@@ -158,7 +181,25 @@ onMounted(() => {
     }, 0)
   }).finally(() => {
     loading.value = false
+    // 确保在下一个 DOM 更新周期后设置焦点
+    nextTick(() => {
+      if (containerRef.value) {
+        // 将焦点设置到容器上，而不是让子元素保留焦点
+        containerRef.value.setAttribute('tabindex', '-1')
+        containerRef.value.focus()
+        // 添加 aria-modal 和 role 属性以改善无障碍访问
+        containerRef.value.setAttribute('role', 'dialog')
+        containerRef.value.setAttribute('aria-modal', 'true')
+        // 添加 aria-label 以提供模态框的描述
+        containerRef.value.setAttribute('aria-label', '全部文章列表')
+      }
+    })
   })
+})
+
+onUnmounted(() => {
+  // 组件卸载时恢复焦点
+  restoreFocus()
 })
 
 // 计算文章列表的样式

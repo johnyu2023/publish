@@ -31,9 +31,12 @@
   },
   "dependencies": {
     "@mdit/plugin-katex": "^0.23.1",
+    "@vicons/material": "^0.13.0",
     "katex": "^0.16.22",
     "markdown-it": "^14.1.0",
     "markdown-it-texmath": "^1.0.0",
-    "vitepress-plugin-rss": "^0.3.1"
+    "naive-ui": "^2.43.1",
+    "vitepress-plugin-rss": "^0.3.1",
+    "vue": "^3.5.22"
   }
 }
