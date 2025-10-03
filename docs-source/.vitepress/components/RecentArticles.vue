@@ -1,7 +1,7 @@
 <template>
   <div class="latest-articles-section">
     <!-- 最新文章标题 -->
-    <h2 class="section-title"><a href="list" style="color: inherit; text-decoration: none;">最新文章</a></h2>
+    <h2 class="section-title"><span style="color: inherit; cursor: pointer;" @click="openArticlesModal">最新文章</span></h2>
     
     <!-- 最近更新区域 -->
     <div class="recent-articles">
@@ -44,6 +44,13 @@
 <script setup>
 import { withBase } from 'vitepress'
 import { ref, onMounted } from 'vue'
+
+// 打开文章列表模态框
+function openArticlesModal() {
+  // 触发自定义事件，让theme/index.js中的代码处理模态框的打开
+  const event = new CustomEvent('open-articles-modal')
+  window.dispatchEvent(event)
+}
 
 // 数据加载状态
 const loading = ref(true)

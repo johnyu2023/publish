@@ -4,6 +4,10 @@ import ShowAllList from '../components/ShowAllList.vue'
 import TimeArticleList from '../components/TimeArticleList.vue'
 import BlogPost from '../components/BlogPost.vue'
 
+// 导入专门用于修复ShowAllList组件布局问题的样式
+import './custom.css'
+import './show-all-list-fix.css'
+
 // 创建响应式状态和方法
 const isModalOpen = ref(false)
 const openModal = () => {
@@ -159,11 +163,13 @@ export default {
     // 注册全局事件监听器
     onMounted(() => {
       window.addEventListener('close-modal', handleGlobalCloseModal)
+      window.addEventListener('open-articles-modal', openModal)
     })
     
     // 移除全局事件监听器
     onUnmounted(() => {
       window.removeEventListener('close-modal', handleGlobalCloseModal)
+      window.removeEventListener('open-articles-modal', openModal)
     })
   }
 }

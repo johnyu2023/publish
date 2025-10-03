@@ -1,0 +1,29 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "title": "foundation",
+      "directory": "基础知识"
+    },
+    {
+      "id": 2,
+      "title": "ai",
+      "directory": "人工智能"
+    },
+    {
+      "id": 3,
+      "title": "web",
+      "directory": "前端开发"
+    },
+    {
+      "id": 4,
+      "title": "think",
+      "directory": "观察思考"
+    },
+    {
+      "id": 5,
+      "title": "other",
+      "directory": "技术文章"
+    }
+  ]
+}

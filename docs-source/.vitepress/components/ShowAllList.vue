@@ -24,12 +24,12 @@
           <!-- 分类 Tabbar -->
           <div class="category-tabs">
             <button
-              v-for="directory in directories"
-              :key="directory"
-              :class="['category-tab', { active: activeDirectory === directory }]"
-              @click="activeDirectory = directory"
+              v-for="category in categories"
+              :key="category.id"
+              :class="['category-tab', { active: activeDirectory === category.title }]"
+              @click="activeDirectory = category.title"
             >
-              {{ getDirectoryName(directory) }}
+              {{ category.directory }}
             </button>
           </div>
 
@@ -58,19 +58,24 @@
 </template>
 
 <script setup>
-import { ref, computed, onMounted, defineProps } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import { useData, withBase } from 'vitepress'
 import TimeArticleList from '/.vitepress/components/TimeArticleList.vue'
 
-// 定义props，接收外部传入的高度值
+// 定义props，接收外部传入的宽度和高度值
 const props = defineProps({
   height: {
     type: String,
     default: '400px' // 默认高度，保持原有样式
+  },
+  width: {
+    type: String,
+    default: '100%' // 默认宽度，保持原有样式
   }
 })
 
 const articles = ref([])
+const categories = ref([])
 const loading = ref(true)
 const error = ref(null)
 const activeTab = ref('category') // 默认显示按分类
@@ -79,46 +84,13 @@ const activeDirectory = ref('') // 当前选中的分类
 // 获取当前页面数据
 const { page } = useData()
 
-// 所有目录
-const directories = computed(() => {
-  const dirs = [...new Set(articles.value.map(article => article.directory))]
-  return dirs
-})
-
-// 按目录分组文章
-const groupedArticles = computed(() => {
-  const groups = {}
-  articles.value.forEach(article => {
-    if (!groups[article.directory]) {
-      groups[article.directory] = []
-    }
-    groups[article.directory].push(article)
-  })
-  
-  // 对每个目录内的文章按日期降序排列
-  Object.keys(groups).forEach(directory => {
-    groups[directory].sort((a, b) => new Date(b.date) - new Date(a.date))
-  })
-  
-  return groups
-})
-
 // 过滤后的文章（当前选中分类的文章）
 const filteredArticles = computed(() => {
   if (!activeDirectory.value) return []
-  return groupedArticles.value[activeDirectory.value] || []
+  return articles.value
+    .filter(article => article.directory === activeDirectory.value)
+    .sort((a, b) => new Date(b.date) - new Date(a.date))
 })
-
-// 获取目录显示名称
-const getDirectoryName = (directory) => {
-  const directoryNames = {
-    'ai': '学习笔记',
-    'web': '前端开发',
-    'think': '观察思考',
-    'posts': '技术文章'
-  }
-  return directoryNames[directory] || directory
-}
 
 // 格式化日期
 function formatDate(dateStr) {
@@ -135,6 +107,17 @@ const handleArticleClick = (article) => {
   window.dispatchEvent(new CustomEvent('close-modal'))
 }
 
+// 加载分类数据
+const loadCategories = async () => {
+  try {
+    const response = await fetch(withBase('/data/category.json'))
+    const data = await response.json()
+    categories.value = data.categories || []
+  } catch (err) {
+    error.value = err.message
+  }
+}
+
 // 加载文章数据
 const loadArticles = async () => {
   try {
@@ -143,8 +126,6 @@ const loadArticles = async () => {
     articles.value = data.articles || []
   } catch (err) {
     error.value = err.message
-  } finally {
-    loading.value = false
   }
 }
 
@@ -155,7 +136,8 @@ const setDefaultDirectory = () => {
     const pathParts = page.value.relativePath.split('/')
     if (pathParts.length > 0) {
       const currentPageDirectory = pathParts[0]
-      if (directories.value.includes(currentPageDirectory)) {
+      const matchingCategory = categories.value.find(cat => cat.title === currentPageDirectory)
+      if (matchingCategory) {
         activeDirectory.value = currentPageDirectory
         return
       }
@@ -163,60 +145,67 @@ const setDefaultDirectory = () => {
   }
   
   // 默认选中第一个分类
-  if (directories.value.length > 0) {
-    activeDirectory.value = directories.value[0]
+  if (categories.value.length > 0) {
+    activeDirectory.value = categories.value[0].title
   }
 }
 
 onMounted(() => {
-  loadArticles().then(() => {
+  Promise.all([loadCategories(), loadArticles()]).then(() => {
     // 等待数据加载完成后设置默认分类
     setTimeout(() => {
       setDefaultDirectory()
     }, 0)
+  }).finally(() => {
+    loading.value = false
   })
 })
 
-// 计算文章列表的高度样式
+// 计算文章列表的样式
 const articleListStyle = computed(() => ({
   maxHeight: props.height,
-  height: props.height
+  height: props.height,
+  width: props.width
 }))
 </script>
 
 <style scoped>
 .all-list-container {
-  max-width: 1000px;
-  margin: 0 auto;
+  max-width: 100%; /* 设置为100%以充分利用可用宽度 */
+  width: 100%;
+  min-width: 800px; /* 确保最小宽度 */
+  margin: 0; /* 移除水平外边距 */
   background-color: #ffffff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 10px 0; /* 减小垂直内边距，移除水平内边距 */
+  border-radius: 0; /* 移除圆角 */
+  box-shadow: none; /* 移除阴影 */
 }
 
 .main-layout {
   display: flex;
-  gap: 20px;
+  gap: 10px; /* 进一步减小两列之间的间隙 */
+  width: 100%;
 }
 
 .tabs {
   display: flex;
   flex-direction: column;
-  width: 200px;
+  width: 120px; /* 进一步减小左侧标签栏宽度 */
   border-right: 1px solid #eee;
-  padding-right: 20px;
+  padding-right: 10px;
+  padding-left: 20px;
 }
 
 .tab-button {
-  padding: 15px 25px;
+  padding: 10px 15px;
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 14px;
   color: #666;
   border-right: 3px solid transparent;
   text-align: left;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .tab-button.active {
@@ -226,22 +215,23 @@ const articleListStyle = computed(() => ({
 
 .content-area {
   flex: 1;
+  padding-right: 20px;
 }
 
 .category-tabs {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 20px;
+  gap: 6px;
+  margin-bottom: 10px;
 }
 
 .category-tab {
-  padding: 8px 16px;
+  padding: 5px 12px;
   background: #f5f5f5;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .category-tab.active {
@@ -251,24 +241,24 @@ const articleListStyle = computed(() => ({
 
 .loading, .error {
   text-align: center;
-  padding: 20px;
+  padding: 15px;
 }
 
 .directory-group {
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 }
 
 .article-list {
   list-style: none;
   padding: 0;
   overflow-y: auto;
-  /* 移除固定的max-height，由组件props动态设置 */
+  width: 100%;
 }
 
 .article-item {
   display: flex;
   justify-content: space-between;
-  padding: 8px 0;
+  padding: 6px 0;
   border-bottom: 1px dashed #eee;
 }
 
@@ -276,6 +266,7 @@ const articleListStyle = computed(() => ({
   text-decoration: none;
   color: var(--vp-c-brand);
   flex: 1;
+  font-size: 14px;
 }
 
 .article-link:hover {
@@ -284,14 +275,14 @@ const articleListStyle = computed(() => ({
 
 .article-date {
   color: #999;
-  font-size: 14px;
+  font-size: 12px;
   margin-left: 10px;
   white-space: nowrap;
 }
 
 /* 滚动条样式 */
 .article-list::-webkit-scrollbar {
-  width: 6px;
+  width: 4px;
 }
 
 .article-list::-webkit-scrollbar-track {
@@ -300,7 +291,7 @@ const articleListStyle = computed(() => ({
 
 .article-list::-webkit-scrollbar-thumb {
   background: #c1c1c1;
-  border-radius: 3px;
+  border-radius: 2px;
 }
 
 .article-list::-webkit-scrollbar-thumb:hover {
@@ -308,6 +299,11 @@ const articleListStyle = computed(() => ({
 }
 
 .tab-content {
-  min-height: 300px;
+  min-height: 500px; /* 增加最小高度 */
+  width: 100%;
+}
+
+.category-content {
+  width: 100%;
 }
 </style>
