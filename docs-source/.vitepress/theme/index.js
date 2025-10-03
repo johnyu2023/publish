@@ -1,6 +1,7 @@
 import { h, ref, onMounted, onUnmounted } from 'vue'
 import DefaultTheme from 'vitepress/theme'
 import ShowAllList from '../components/ShowAllList.vue'
+import BlogPost from '../components/BlogPost.vue'
 
 // 创建响应式状态和方法
 const isModalOpen = ref(false)
@@ -18,6 +19,10 @@ const handleGlobalCloseModal = () => {
 
 export default {
   extends: DefaultTheme,
+  
+  enhanceApp({ app }) {
+    app.component('BlogPost', BlogPost)
+  },
   
   Layout() {
     return h(DefaultTheme.Layout, null, {

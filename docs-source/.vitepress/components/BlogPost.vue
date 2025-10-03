@@ -1,6 +1,7 @@
 <script setup>
 import { computed } from 'vue'
 import { useData } from 'vitepress'
+import ImageModal from './ImageModal.vue'
 
 const { frontmatter } = useData()
 
@@ -35,6 +36,9 @@ const formattedDate = computed(() => {
     <div class="post-content">
       <slot />
     </div>
+    
+    <!-- 图片弹窗组件 -->
+    <ImageModal />
   </div>
 </template>
 
