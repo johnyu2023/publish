@@ -1,88 +1,124 @@
 <template>
-  <div class="show-all-list">
-    <!-- 加载状态 -->
-    <div v-if="loading" class="loading-state">
-      <div class="loading-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="spin">
-          <circle cx="12" cy="12" r="10"></circle>
-          <path d="M12 2a10 10 0 0 1 10 10"></path>
-        </svg>
+  <div class="all-list-container">
+    <div class="main-layout">
+      <!-- Tab 切换（左侧） -->
+      <div class="tabs">
+        <button 
+          :class="['tab-button', { active: activeTab === 'category' }]" 
+          @click="activeTab = 'category'"
+        >
+          按分类显示
+        </button>
+        <button 
+          :class="['tab-button', { active: activeTab === 'time' }]" 
+          @click="activeTab = 'time'"
+        >
+          按时间显示
+        </button>
       </div>
-      <div class="loading-text">数据读取中...</div>
-    </div>
-    
-    <!-- 错误状态 -->
-    <div v-else-if="error" class="error-state">
-      <div class="error-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10"></circle>
-          <line x1="12" y1="8" x2="12" y2="12"></line>
-          <line x1="12" y1="16" x2="12.01" y2="16"></line>
-        </svg>
-      </div>
-      <div class="error-text">数据获取失败...</div>
-      <button @click="loadArticlesData" class="retry-button">重试</button>
-    </div>
-    
-    <!-- 数据加载成功 - 按目录分组显示所有文章 -->
-    <div v-else class="content">
-      <div v-for="directory in directories" :key="directory.key" class="directory-section">
-        <h2 class="directory-title">{{ directory.title }}</h2>
-        <ul class="article-list">
-          <li v-for="article in directory.articles" :key="article.url" class="article-item">
-            <span class="article-date">{{ formatDate(article.date) }}</span>
-            <span class="article-title">
-              <a :href="withBase(article.url)" @click="onArticleClick">{{ article.title }}</a>
-            </span>
-          </li>
-        </ul>
+
+      <!-- 内容区域 -->
+      <div class="content-area">
+        <!-- 按分类显示 -->
+        <div v-if="activeTab === 'category'" class="tab-content">
+          <!-- 分类 Tabbar -->
+          <div class="category-tabs">
+            <button
+              v-for="directory in directories"
+              :key="directory"
+              :class="['category-tab', { active: activeDirectory === directory }]"
+              @click="activeDirectory = directory"
+            >
+              {{ getDirectoryName(directory) }}
+            </button>
+          </div>
+
+          <!-- 分类文章列表 -->
+          <div v-if="loading" class="loading">加载中...</div>
+          <div v-else-if="error" class="error">加载失败: {{ error }}</div>
+          <div v-else class="category-content">
+            <div class="directory-group">
+              <ul class="article-list" :style="articleListStyle">
+                <li v-for="article in filteredArticles" :key="article.url" class="article-item">
+                  <a :href="withBase(article.url)" class="article-link" @click="handleArticleClick(article)">{{ article.title }}</a>
+                  <span class="article-date">{{ formatDate(article.date) }}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- 按时间显示 -->
+        <div v-else-if="activeTab === 'time'" class="tab-content">
+          <TimeArticleList />
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { withBase } from 'vitepress'
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, defineProps } from 'vue'
+import { useData, withBase } from 'vitepress'
+import TimeArticleList from '/.vitepress/components/TimeArticleList.vue'
 
-// 目录名称映射
-const directoryTitles = {
-  'ai': '学习笔记',
-  'posts': '技术文章',
-  'think': '观察思考',
-  'web': '前端开发'
-}
+// 定义props，接收外部传入的高度值
+const props = defineProps({
+  height: {
+    type: String,
+    default: '400px' // 默认高度，保持原有样式
+  }
+})
 
-// 数据加载状态
-const loading = ref(true)
-// 数据加载错误状态
-const error = ref(false)
-// 所有文章
 const articles = ref([])
+const loading = ref(true)
+const error = ref(null)
+const activeTab = ref('category') // 默认显示按分类
+const activeDirectory = ref('') // 当前选中的分类
+
+// 获取当前页面数据
+const { page } = useData()
+
+// 所有目录
+const directories = computed(() => {
+  const dirs = [...new Set(articles.value.map(article => article.directory))]
+  return dirs
+})
 
 // 按目录分组文章
-const directories = computed(() => {
-  // 按目录分组
-  const articlesByDirectory = {}
-  
+const groupedArticles = computed(() => {
+  const groups = {}
   articles.value.forEach(article => {
-    if (!articlesByDirectory[article.directory]) {
-      articlesByDirectory[article.directory] = []
+    if (!groups[article.directory]) {
+      groups[article.directory] = []
     }
-    articlesByDirectory[article.directory].push(article)
+    groups[article.directory].push(article)
   })
   
-  // 转换为数组格式并排序
-  return Object.keys(articlesByDirectory).map(dir => ({
-    key: dir,
-    title: directoryTitles[dir] || dir,
-    articles: articlesByDirectory[dir].sort((a, b) => new Date(b.date) - new Date(a.date))
-  })).sort((a, b) => {
-    // 按目录顺序排序
-    const order = ['ai', 'posts', 'think', 'web']
-    return order.indexOf(a.key) - order.indexOf(b.key)
+  // 对每个目录内的文章按日期降序排列
+  Object.keys(groups).forEach(directory => {
+    groups[directory].sort((a, b) => new Date(b.date) - new Date(a.date))
   })
+  
+  return groups
 })
+
+// 过滤后的文章（当前选中分类的文章）
+const filteredArticles = computed(() => {
+  if (!activeDirectory.value) return []
+  return groupedArticles.value[activeDirectory.value] || []
+})
+
+// 获取目录显示名称
+const getDirectoryName = (directory) => {
+  const directoryNames = {
+    'ai': '学习笔记',
+    'web': '前端开发',
+    'think': '观察思考',
+    'posts': '技术文章'
+  }
+  return directoryNames[directory] || directory
+}
 
 // 格式化日期
 function formatDate(dateStr) {
@@ -93,166 +129,185 @@ function formatDate(dateStr) {
   return `${year}-${month}-${day}`
 }
 
-// 文章点击处理函数
-function onArticleClick() {
+// 处理文章点击
+const handleArticleClick = (article) => {
   // 触发自定义事件，通知父组件关闭模态框
   window.dispatchEvent(new CustomEvent('close-modal'))
 }
 
 // 加载文章数据
-async function loadArticlesData() {
+const loadArticles = async () => {
   try {
-    loading.value = true
-    error.value = false
-    
-    // 使用相对路径加载 JSON 文件
     const response = await fetch(withBase('/data/list.json'))
-    
-    if (!response.ok) {
-      throw new Error('无法加载数据文件')
-    }
-    
     const data = await response.json()
-    
-    // 存储所有文章
     articles.value = data.articles || []
-    
-    loading.value = false
   } catch (err) {
-    console.error('加载文章数据失败:', err)
+    error.value = err.message
+  } finally {
     loading.value = false
-    error.value = true
   }
 }
 
-// 页面加载时获取数据
+// 设置默认选中的分类
+const setDefaultDirectory = () => {
+  // 如果有当前页面信息，尝试获取当前页面的分类
+  if (page.value && page.value.relativePath) {
+    const pathParts = page.value.relativePath.split('/')
+    if (pathParts.length > 0) {
+      const currentPageDirectory = pathParts[0]
+      if (directories.value.includes(currentPageDirectory)) {
+        activeDirectory.value = currentPageDirectory
+        return
+      }
+    }
+  }
+  
+  // 默认选中第一个分类
+  if (directories.value.length > 0) {
+    activeDirectory.value = directories.value[0]
+  }
+}
+
 onMounted(() => {
-  loadArticlesData()
+  loadArticles().then(() => {
+    // 等待数据加载完成后设置默认分类
+    setTimeout(() => {
+      setDefaultDirectory()
+    }, 0)
+  })
 })
+
+// 计算文章列表的高度样式
+const articleListStyle = computed(() => ({
+  maxHeight: props.height,
+  height: props.height
+}))
 </script>
 
 <style scoped>
-.show-all-list {
-  max-height: 70vh;
-  overflow-y: auto;
-  padding-right: 10px;
+.all-list-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
-.content {
-  padding: 10px;
+.main-layout {
+  display: flex;
+  gap: 20px;
 }
 
-.directory-section {
-  margin-bottom: 2rem;
+.tabs {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  border-right: 1px solid #eee;
+  padding-right: 20px;
 }
 
-.directory-title {
-  font-size: 1.4rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--vp-c-brand);
-  color: var(--vp-c-text-1);
+.tab-button {
+  padding: 15px 25px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #666;
+  border-right: 3px solid transparent;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.tab-button.active {
+  color: var(--vp-c-brand);
+  border-right: 3px solid var(--vp-c-brand);
+}
+
+.content-area {
+  flex: 1;
+}
+
+.category-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.category-tab {
+  padding: 8px 16px;
+  background: #f5f5f5;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.category-tab.active {
+  background: var(--vp-c-brand);
+  color: white;
+}
+
+.loading, .error {
+  text-align: center;
+  padding: 20px;
+}
+
+.directory-group {
+  margin-bottom: 30px;
 }
 
 .article-list {
   list-style: none;
   padding: 0;
-  margin: 0;
+  overflow-y: auto;
+  /* 移除固定的max-height，由组件props动态设置 */
 }
 
 .article-item {
-  margin-bottom: 0.75rem;
   display: flex;
-  align-items: baseline;
-  padding: 0.5rem;
-  border-radius: 4px;
-  transition: background-color 0.2s;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px dashed #eee;
 }
 
-.article-item:hover {
-  background-color: var(--vp-c-bg-mute);
-}
-
-.article-date {
-  font-size: 0.85rem;
-  color: var(--vp-c-text-2);
-  margin-right: 1rem;
-  min-width: 80px;
-}
-
-.article-title {
+.article-link {
+  text-decoration: none;
+  color: var(--vp-c-brand);
   flex: 1;
 }
 
-.article-title a {
-  color: var(--vp-c-brand);
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.article-title a:hover {
+.article-link:hover {
   text-decoration: underline;
 }
 
-/* 加载状态样式 */
-.loading-state, .error-state {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 3rem 0;
-  color: var(--vp-c-text-2);
-}
-
-.loading-icon, .error-icon {
-  margin-bottom: 1rem;
-}
-
-.loading-text, .error-text {
-  font-size: 1.2rem;
-}
-
-.spin {
-  animation: spin 1.5s linear infinite;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-.retry-button {
-  margin-top: 1rem;
-  padding: 0.5rem 1rem;
-  background-color: var(--vp-c-brand);
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 0.9rem;
-}
-
-.retry-button:hover {
-  background-color: var(--vp-c-brand-dark);
+.article-date {
+  color: #999;
+  font-size: 14px;
+  margin-left: 10px;
+  white-space: nowrap;
 }
 
 /* 滚动条样式 */
-.show-all-list::-webkit-scrollbar {
+.article-list::-webkit-scrollbar {
   width: 6px;
 }
 
-.show-all-list::-webkit-scrollbar-track {
-  background: var(--vp-c-bg-soft);
+.article-list::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.article-list::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
   border-radius: 3px;
 }
 
-.show-all-list::-webkit-scrollbar-thumb {
-  background: var(--vp-c-brand);
-  border-radius: 3px;
+.article-list::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
 }
 
-.show-all-list::-webkit-scrollbar-thumb:hover {
-  background: var(--vp-c-brand-dark);
+.tab-content {
+  min-height: 300px;
 }
 </style>

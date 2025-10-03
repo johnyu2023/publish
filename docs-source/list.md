@@ -6,7 +6,7 @@ title: 全部文章列表
 # 全部文章列表
 
 <script setup>
-import ArticleList from './.vitepress/components/ArticleList.vue'
+import ShowAllList from './.vitepress/components/ShowAllList.vue'
 </script>
 
-<ArticleList />
+<ShowAllList />

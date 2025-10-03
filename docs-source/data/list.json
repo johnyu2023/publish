@@ -8,6 +8,26 @@
   "articles": [
     {
       "directory": "ai",
+      "title": "穿越2026年",
+      "url": "/ai/to-2026",
+      "date": "2026-03-01",
+      "description": "穿越时空的传奇",
+      "tags": [
+        "时空"
+      ]
+    },
+    {
+      "directory": "ai",
+      "title": "穿越2025年10月",
+      "url": "/ai/to-2025-10",
+      "date": "2025-10-21",
+      "description": "穿越时空的传奇",
+      "tags": [
+        "时空"
+      ]
+    },
+    {
+      "directory": "ai",
       "title": "时间序列分析",
       "url": "/ai/time-series-analysis",
       "date": "2025-09-27",
@@ -438,6 +458,26 @@
       "description": "ssh 动态原理图",
       "tags": [
         "ssh"
+      ]
+    },
+    {
+      "directory": "ai",
+      "title": "重返1999年12月",
+      "url": "/ai/return-1999-12",
+      "date": "1999-12-21",
+      "description": "穿越时空的传奇",
+      "tags": [
+        "时空"
+      ]
+    },
+    {
+      "directory": "ai",
+      "title": "重返1999年",
+      "url": "/ai/return-1999 copy",
+      "date": "1999-03-01",
+      "description": "穿越时空的传奇",
+      "tags": [
+        "时空"
       ]
     }
   ]

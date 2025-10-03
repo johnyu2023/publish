@@ -40,7 +40,10 @@
             <h3 class="month-title">{{ month }}月</h3>
             <ul>
               <li v-for="article in getArticlesForYearMonth(year, month)" :key="article.url">
-                <span class="article-date">{{ formatDateShort(article.date) }}</span>
+                <div class="date-container">
+                  <span class="article-date">{{ formatDateShort(article.date) }}</span>
+                  <span class="date-spacing"></span>
+                </div>
                 <span class="article-title"><a :href="withBase(article.url)">{{ article.title }}</a></span>
               </li>
             </ul>
@@ -161,6 +164,28 @@ onMounted(() => {
 <style scoped>
 .article-list {
   margin-top: 2rem;
+  height: calc(100vh - 200px); /* 固定高度，可根据需要调整 */
+  overflow-y: auto; /* 添加垂直滚动条 */
+  padding-right: 30px; /* 进一步增加右侧内边距，为滚动条留出更多空间 */
+}
+
+/* 美化滚动条 */
+.article-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.article-list::-webkit-scrollbar-track {
+  background: var(--vp-c-bg-soft);
+  border-radius: 4px;
+}
+
+.article-list::-webkit-scrollbar-thumb {
+  background: var(--vp-c-border);
+  border-radius: 4px;
+}
+
+.article-list::-webkit-scrollbar-thumb:hover {
+  background: var(--vp-c-text-3);
 }
 
 .year-section {
@@ -229,8 +254,17 @@ onMounted(() => {
 .article-date {
   font-size: 0.9rem;
   color: var(--vp-c-text-2);
-  margin-right: 1rem;
-  min-width: 5rem;
+  margin-right: 0.5rem;
+}
+
+.date-container {
+  display: flex;
+  align-items: center;
+  min-width: 12rem; /* 大幅增加最小宽度，确保与滚动条有足够距离 */
+}
+
+.date-spacing {
+  width: 3rem; /* 大幅增加额外的间距，确保日期和滚动轴之间有足够空间 */
 }
 
 .article-title {
