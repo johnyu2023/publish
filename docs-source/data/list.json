@@ -10,26 +10,6 @@
   "articles": [
     {
       "directory": "ai",
-      "title": "穿越2026年",
-      "url": "/ai/to-2026",
-      "date": "2026-03-01",
-      "description": "穿越时空的传奇",
-      "tags": [
-        "时空"
-      ]
-    },
-    {
-      "directory": "ai",
-      "title": "穿越2025年10月",
-      "url": "/ai/to-2025-10",
-      "date": "2025-10-21",
-      "description": "穿越时空的传奇",
-      "tags": [
-        "时空"
-      ]
-    },
-    {
-      "directory": "ai",
       "title": "时间序列分析",
       "url": "/ai/time-series-analysis",
       "date": "2025-09-27",
@@ -209,17 +189,17 @@
       ]
     },
     {
-      "directory": "ai",
+      "directory": "foundation",
       "title": "浅谈数据清洗",
-      "url": "/ai/data-cleaning",
+      "url": "/foundation/data-cleaning",
       "date": "2025-08-21",
       "description": "数据清洗",
       "tags": []
     },
     {
-      "directory": "ai",
+      "directory": "foundation",
       "title": "数据科学与AI应用开发的关系",
-      "url": "/ai/data-science",
+      "url": "/foundation/data-science",
       "date": "2025-08-21",
       "description": "数据科学 数据探索 数据清洗 特征工程",
       "tags": []
@@ -325,9 +305,9 @@
       ]
     },
     {
-      "directory": "ai",
+      "directory": "foundation",
       "title": "统计学知识",
-      "url": "/ai/statistics",
+      "url": "/foundation/statistics",
       "date": "2025-05-27",
       "description": "统计学知识",
       "tags": [
@@ -335,9 +315,9 @@
       ]
     },
     {
-      "directory": "ai",
+      "directory": "foundation",
       "title": "概率论 01",
-      "url": "/ai/probability-theory",
+      "url": "/foundation/probability-theory",
       "date": "2025-05-18",
       "description": "概率论是数学中研究概率的分支",
       "tags": [
@@ -460,26 +440,6 @@
       "description": "ssh 动态原理图",
       "tags": [
         "ssh"
-      ]
-    },
-    {
-      "directory": "ai",
-      "title": "重返1999年12月",
-      "url": "/ai/return-1999-12",
-      "date": "1999-12-21",
-      "description": "穿越时空的传奇",
-      "tags": [
-        "时空"
-      ]
-    },
-    {
-      "directory": "ai",
-      "title": "重返1999年",
-      "url": "/ai/return-1999 copy",
-      "date": "1999-03-01",
-      "description": "穿越时空的传奇",
-      "tags": [
-        "时空"
       ]
     }
   ]

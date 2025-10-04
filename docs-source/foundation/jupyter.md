@@ -33,7 +33,7 @@ jupyter lab
 
 - 如果是在一个目录中启动 cmd 或 power shell，直接运行 `jupyter lab` 即可。在 web 页面中左侧的文件列表中，显示的就是这个目录下的所有文件。
 
-<img src="../assets/ai/jupyter/jupyter-lab.png" alt="Jupyter Lab" />
+<img src="../assets/foundation/jupyter/jupyter-lab.png" alt="Jupyter Lab" />
 
 ## `.ipynb 文件`和 `.py 文件`配合使用
 

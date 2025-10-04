@@ -20,6 +20,6 @@ tags: [wucai-code]
 + 执行 `npm install -g @wucai/wucai-code@latest`
 + 在任何一个目录下，执行 `cmd` 命令，在命令行窗口中，输入`wucai`
 
-<img src="../assets/ai/wucai-code/install-wucai-code.png" alt="install">
+<img src="../assets/foundation/wucai-code/install-wucai-code.png" alt="install">
 
 </BlogPost>

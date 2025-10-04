@@ -7,7 +7,7 @@ tags: [Probability theory]
 
 <BlogPost>
 
-<img src="../assets/ai/probability-theory/theory-of-probability_stats.jpg" alt="probability-theory">
+<img src="../assets/foundation/probability-theory/theory-of-probability_stats.jpg" alt="probability-theory">
 
 ## 事件的概率
 
@@ -651,7 +651,7 @@ $X \sim N(\mu, \sigma^2)$
 
 #### 高斯分布的图形表示
 
-<img src="../assets/ai/probability-theory/normal-distribution.jpg" alt="正态分布的图形表示" />
+<img src="../assets/foundation/probability-theory/normal-distribution.jpg" alt="正态分布的图形表示" />
 
 ---
 

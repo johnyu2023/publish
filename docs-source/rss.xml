@@ -6,7 +6,7 @@
     <link>https://johnyu2023.github.io/publish</link>
     <atom:link href="https://johnyu2023.github.io/publish/rss.xml" rel="self" type="application/rss+xml"/>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 02 Oct 2025 09:49:36 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 04 Oct 2025 01:26:16 GMT</lastBuildDate>
     <ttl>60</ttl>
     
     <item>
@@ -39,8 +39,8 @@
     <item>
       <title>wucai-code 使用</title>
       <description>wucai-code 是一个基于 node.js 的命令行工具，用于 AI Coding</description>
-      <link>https://johnyu2023.github.io/publish/ai/wucai-code</link>
-      <guid>https://johnyu2023.github.io/publish/ai/wucai-code</guid>
+      <link>https://johnyu2023.github.io/publish/foundation/wucai-code</link>
+      <guid>https://johnyu2023.github.io/publish/foundation/wucai-code</guid>
       <pubDate>Thu, 18 Sep 2025 00:00:00 GMT</pubDate>
       <category>wucai-code</category>
     </item>
@@ -95,8 +95,8 @@
     <item>
       <title>AI 的深度检索</title>
       <description>AI 何时才会进行一步检索。</description>
-      <link>https://johnyu2023.github.io/publish/posts/deep-search</link>
-      <guid>https://johnyu2023.github.io/publish/posts/deep-search</guid>
+      <link>https://johnyu2023.github.io/publish/other/deep-search</link>
+      <guid>https://johnyu2023.github.io/publish/other/deep-search</guid>
       <pubDate>Mon, 08 Sep 2025 00:00:00 GMT</pubDate>
       <category>AI</category>
       <category>deep-search</category>
@@ -105,8 +105,8 @@
     <item>
       <title>AI 制作长视频实践</title>
       <description>AI 可以方便地制作短视频，但涉及到长视频，就会面对很多挑战。</description>
-      <link>https://johnyu2023.github.io/publish/posts/ai-movie</link>
-      <guid>https://johnyu2023.github.io/publish/posts/ai-movie</guid>
+      <link>https://johnyu2023.github.io/publish/other/ai-movie</link>
+      <guid>https://johnyu2023.github.io/publish/other/ai-movie</guid>
       <pubDate>Sun, 07 Sep 2025 00:00:00 GMT</pubDate>
       <category>AI</category>
       <category>视频</category>
@@ -175,8 +175,8 @@
     <item>
       <title>浅谈数据清洗</title>
       <description>数据清洗</description>
-      <link>https://johnyu2023.github.io/publish/ai/data-cleaning</link>
-      <guid>https://johnyu2023.github.io/publish/ai/data-cleaning</guid>
+      <link>https://johnyu2023.github.io/publish/foundation/data-cleaning</link>
+      <guid>https://johnyu2023.github.io/publish/foundation/data-cleaning</guid>
       <pubDate>Thu, 21 Aug 2025 00:00:00 GMT</pubDate>
 
     </item>
@@ -184,8 +184,8 @@
     <item>
       <title>数据科学与AI应用开发的关系</title>
       <description>数据科学 数据探索 数据清洗 特征工程</description>
-      <link>https://johnyu2023.github.io/publish/ai/data-science</link>
-      <guid>https://johnyu2023.github.io/publish/ai/data-science</guid>
+      <link>https://johnyu2023.github.io/publish/foundation/data-science</link>
+      <guid>https://johnyu2023.github.io/publish/foundation/data-science</guid>
       <pubDate>Thu, 21 Aug 2025 00:00:00 GMT</pubDate>
 
     </item>
@@ -212,8 +212,8 @@
     <item>
       <title>AI 辅助编程的注意事项</title>
       <description>探讨使用AI辅助编程的最佳实践和常见陷阱</description>
-      <link>https://johnyu2023.github.io/publish/ai/coding-01</link>
-      <guid>https://johnyu2023.github.io/publish/ai/coding-01</guid>
+      <link>https://johnyu2023.github.io/publish/foundation/coding-01</link>
+      <guid>https://johnyu2023.github.io/publish/foundation/coding-01</guid>
       <pubDate>Mon, 18 Aug 2025 00:00:00 GMT</pubDate>
 
     </item>
@@ -221,8 +221,8 @@
     <item>
       <title>使用 GitHub Pages 部署静态网站</title>
       <description>如何使用 GitHub Pages 部署静态网站</description>
-      <link>https://johnyu2023.github.io/publish/posts/github-pages</link>
-      <guid>https://johnyu2023.github.io/publish/posts/github-pages</guid>
+      <link>https://johnyu2023.github.io/publish/other/github-pages</link>
+      <guid>https://johnyu2023.github.io/publish/other/github-pages</guid>
       <pubDate>Thu, 14 Aug 2025 00:00:00 GMT</pubDate>
       <category>github</category>
       <category>pages</category>
@@ -262,8 +262,8 @@
     <item>
       <title>AI 辅助编程初体验</title>
       <description>初次体会AI 辅助编程，喜忧参半。</description>
-      <link>https://johnyu2023.github.io/publish/ai/code</link>
-      <guid>https://johnyu2023.github.io/publish/ai/code</guid>
+      <link>https://johnyu2023.github.io/publish/foundation/code</link>
+      <guid>https://johnyu2023.github.io/publish/foundation/code</guid>
       <pubDate>Sun, 15 Jun 2025 00:00:00 GMT</pubDate>
       <category>Cursor</category>
     </item>
@@ -271,8 +271,8 @@
     <item>
       <title>Jupyter 使用</title>
       <description>Jupyter 是一个开源的 Web 应用程序，主要用于创建和共享包含实时代码、数学公式、可视化图表和 Markdown 文本的交互式文档。</description>
-      <link>https://johnyu2023.github.io/publish/ai/jupyter</link>
-      <guid>https://johnyu2023.github.io/publish/ai/jupyter</guid>
+      <link>https://johnyu2023.github.io/publish/foundation/jupyter</link>
+      <guid>https://johnyu2023.github.io/publish/foundation/jupyter</guid>
       <pubDate>Tue, 10 Jun 2025 00:00:00 GMT</pubDate>
       <category>Jupyter</category>
     </item>
@@ -280,8 +280,8 @@
     <item>
       <title>Python 使用基础</title>
       <description>Python 使用过程中一些值得记录的内容</description>
-      <link>https://johnyu2023.github.io/publish/ai/python</link>
-      <guid>https://johnyu2023.github.io/publish/ai/python</guid>
+      <link>https://johnyu2023.github.io/publish/foundation/python</link>
+      <guid>https://johnyu2023.github.io/publish/foundation/python</guid>
       <pubDate>Sun, 01 Jun 2025 00:00:00 GMT</pubDate>
       <category>Python</category>
     </item>
@@ -289,8 +289,8 @@
     <item>
       <title>统计学知识</title>
       <description>统计学知识</description>
-      <link>https://johnyu2023.github.io/publish/ai/statistics</link>
-      <guid>https://johnyu2023.github.io/publish/ai/statistics</guid>
+      <link>https://johnyu2023.github.io/publish/foundation/statistics</link>
+      <guid>https://johnyu2023.github.io/publish/foundation/statistics</guid>
       <pubDate>Tue, 27 May 2025 00:00:00 GMT</pubDate>
       <category>Statistics</category>
     </item>
@@ -298,8 +298,8 @@
     <item>
       <title>概率论 01</title>
       <description>概率论是数学中研究概率的分支</description>
-      <link>https://johnyu2023.github.io/publish/ai/probability-theory</link>
-      <guid>https://johnyu2023.github.io/publish/ai/probability-theory</guid>
+      <link>https://johnyu2023.github.io/publish/foundation/probability-theory</link>
+      <guid>https://johnyu2023.github.io/publish/foundation/probability-theory</guid>
       <pubDate>Sun, 18 May 2025 00:00:00 GMT</pubDate>
       <category>Probability theory</category>
     </item>
@@ -381,8 +381,8 @@
     <item>
       <title>LaTeX 测试页面</title>
       <description>这是一个测试 VitePress 中 LaTeX 支持的页面，仅仅为了验证是否能正常显示</description>
-      <link>https://johnyu2023.github.io/publish/posts/latex-test</link>
-      <guid>https://johnyu2023.github.io/publish/posts/latex-test</guid>
+      <link>https://johnyu2023.github.io/publish/other/latex-test</link>
+      <guid>https://johnyu2023.github.io/publish/other/latex-test</guid>
       <pubDate>Fri, 17 Jan 2025 00:00:00 GMT</pubDate>
       <category>LaTeX</category>
     </item>
@@ -390,8 +390,8 @@
     <item>
       <title>Markdown 语法完全指南</title>
       <description>全面介绍Markdown语法及其在技术写作中的应用</description>
-      <link>https://johnyu2023.github.io/publish/posts/markdown-guide</link>
-      <guid>https://johnyu2023.github.io/publish/posts/markdown-guide</guid>
+      <link>https://johnyu2023.github.io/publish/other/markdown-guide</link>
+      <guid>https://johnyu2023.github.io/publish/other/markdown-guide</guid>
       <pubDate>Thu, 16 Jan 2025 00:00:00 GMT</pubDate>
 
     </item>
@@ -399,8 +399,8 @@
     <item>
       <title>开始使用 VitePress 搭建技术博客</title>
       <description>从零开始学习如何使用VitePress搭建个人技术博客</description>
-      <link>https://johnyu2023.github.io/publish/posts/getting-started</link>
-      <guid>https://johnyu2023.github.io/publish/posts/getting-started</guid>
+      <link>https://johnyu2023.github.io/publish/other/getting-started</link>
+      <guid>https://johnyu2023.github.io/publish/other/getting-started</guid>
       <pubDate>Wed, 15 Jan 2025 00:00:00 GMT</pubDate>
 
     </item>
@@ -408,8 +408,8 @@
     <item>
       <title>ssh 原理图</title>
       <description>ssh 动态原理图</description>
-      <link>https://johnyu2023.github.io/publish/posts/ssh</link>
-      <guid>https://johnyu2023.github.io/publish/posts/ssh</guid>
+      <link>https://johnyu2023.github.io/publish/other/ssh</link>
+      <guid>https://johnyu2023.github.io/publish/other/ssh</guid>
       <pubDate>Mon, 11 Nov 2024 00:00:00 GMT</pubDate>
       <category>ssh</category>
     </item>
