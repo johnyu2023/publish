@@ -198,9 +198,11 @@ onMounted(() => {
 }
 
 .article-date {
-  color: #999;
-  font-size: 14px;
-  margin-left: 10px;
-  white-space: nowrap;
+  color: #999 !important;
+  font-size: 14px !important;
+  margin-left: 10px !important;
+  white-space: nowrap !important;
+  padding-left: 10px !important;
+  display: inline-block !important;
 }
 </style>

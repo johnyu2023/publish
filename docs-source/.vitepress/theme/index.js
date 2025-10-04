@@ -1,6 +1,6 @@
 import { h, ref, onMounted, onUnmounted } from 'vue'
 import DefaultTheme from 'vitepress/theme'
-import ShowAllList from '../components/ShowAllList.vue'
+import ShowAllTitle from '../components/ShowAllTitle.vue'
 import TimeArticleList from '../components/TimeArticleList.vue'
 import BlogPost from '../components/BlogPost.vue'
 
@@ -58,6 +58,7 @@ export default {
     app.use(naive)
     app.component('BlogPost', BlogPost)
     app.component('TimeArticleList', TimeArticleList)
+    app.component('ShowAllTitle', ShowAllTitle)
   },
   
   Layout() {
@@ -143,7 +144,7 @@ export default {
               }
             }, '×')
           ]),
-          // 使用 ShowAllList 组件显示所有文章
+          // 使用 ShowAllTitle 组件显示所有文章
           h('div', {
             style: {
               flex: 1,
@@ -154,7 +155,7 @@ export default {
             onScroll: handleModalScroll
           }, [
             // 传入高度值，根据模态框高度计算合适的值
-            h(ShowAllList, {
+            h(ShowAllTitle, {
               height: 'calc(100% - 40px)' // 减去分类标签栏的高度
             })
           ])

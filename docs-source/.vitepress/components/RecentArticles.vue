@@ -40,7 +40,7 @@
     </div>
     
     <!-- Naive UI 模态框 -->
-    <n-modal 
+    <NModal 
       v-model:show="showModal" 
       :style="{ width: '80%', maxWidth: '1200px', height: '80%' }" 
       preset="card" 
@@ -51,8 +51,8 @@
       :trap-focus="false"
       @after-leave="restoreFocus"
     >
-      <ShowAllList />
-    </n-modal>
+      <ShowAllTitle />
+    </NModal>
   </div>
 </template>
 
@@ -60,7 +60,7 @@
 import { withBase } from 'vitepress'
 import { ref, onMounted, onUnmounted } from 'vue'
 import { NModal } from 'naive-ui'
-import ShowAllList from '/.vitepress/components/ShowAllList.vue'
+import ShowAllTitle from '/.vitepress/components/ShowAllTitle.vue'
 
 // 控制模态框显示状态
 const showModal = ref(false)
