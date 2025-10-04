@@ -32,11 +32,44 @@ const handleModalWheel = (event) => {
   const clientHeight = modalContent.clientHeight
   const delta = event.deltaY
 
-  // 如果滚动到底部或顶部，阻止默认行为
-  if ((delta > 0 && scrollTop + clientHeight >= scrollHeight) || 
-      (delta < 0 && scrollTop <= 0)) {
+  // 检查是否在滚动边界
+  const isAtTop = scrollTop <= 0
+  const isAtBottom = scrollTop + clientHeight >= scrollHeight
+  
+  // 如果在滚动边界且试图继续滚动，则阻止默认行为
+  if ((isAtTop && delta < 0) || (isAtBottom && delta > 0)) {
     event.preventDefault()
+    event.stopPropagation()
+    event.stopImmediatePropagation()
+    return false
   }
+  
+  // 如果在滚动范围内，允许滚动但阻止事件传播到父元素
+  event.stopPropagation()
+  event.stopImmediatePropagation()
+}
+
+// 处理触摸滚动事件，防止滚动传播
+const handleModalTouchMove = (event) => {
+  const modalContent = event.currentTarget
+  const scrollTop = modalContent.scrollTop
+  const scrollHeight = modalContent.scrollHeight
+  const clientHeight = modalContent.clientHeight
+  
+  // 检查是否在滚动边界
+  const isAtTop = scrollTop <= 0
+  const isAtBottom = scrollTop + clientHeight >= scrollHeight
+  
+  // 如果在滚动边界，阻止事件传播
+  if (isAtTop || isAtBottom) {
+    event.stopPropagation()
+    event.stopImmediatePropagation()
+    return false
+  }
+  
+  // 如果在滚动范围内，阻止事件传播到父元素
+  event.stopPropagation()
+  event.stopImmediatePropagation()
 }
 
 // 处理模态框内容的滚动，确保滚动流畅
@@ -44,6 +77,12 @@ const handleModalScroll = (event) => {
   const modalContent = event.currentTarget
   // 添加平滑滚动效果
   modalContent.style.scrollBehavior = 'smooth'
+  event.stopPropagation()
+}
+
+// 处理模态框内部的滚动事件，确保滚动行为正确
+const handleModalContentScroll = (event) => {
+  event.stopPropagation()
 }
 
 // 处理全局关闭模态框事件
@@ -152,11 +191,14 @@ export default {
               padding: '10px 0'
             },
             onWheel: handleModalWheel,
-            onScroll: handleModalScroll
+            onScroll: handleModalScroll,
+            onTouchMove: handleModalTouchMove
           }, [
             // 传入高度值，根据模态框高度计算合适的值
             h(ShowAllTitle, {
-              height: 'calc(100% - 40px)' // 减去分类标签栏的高度
+              height: 'calc(100% - 40px)', // 减去分类标签栏的高度
+              ref: 'showAllTitleRef',
+              onScroll: handleModalContentScroll
             })
           ])
         ])

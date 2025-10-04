@@ -1,5 +1,5 @@
 <template>
-  <div class="article-list-container">
+  <div class="article-list-container" @wheel="handleMouseWheel" @touchmove="handleTouchMove">
     <div v-if="loading" class="loading">加载中...</div>
     <div v-else-if="error" class="error">加载失败: {{ error }}</div>
     <div v-else>
@@ -32,6 +32,54 @@ const articles = ref([])
 const loading = ref(true)
 const error = ref(null)
 const expandedYears = ref(new Set())
+
+// 处理鼠标滚轮事件，防止滚动传播
+const handleMouseWheel = (event) => {
+  const element = event.currentTarget;
+  const scrollTop = element.scrollTop;
+  const scrollHeight = element.scrollHeight;
+  const clientHeight = element.clientHeight;
+  const delta = event.deltaY;
+
+  // 检查是否在滚动边界
+  const isAtTop = scrollTop <= 0;
+  const isAtBottom = scrollTop + clientHeight >= scrollHeight;
+  
+  // 如果在滚动边界且试图继续滚动，则阻止默认行为和事件传播
+  if ((isAtTop && delta < 0) || (isAtBottom && delta > 0)) {
+    event.preventDefault();
+    event.stopPropagation();
+    event.stopImmediatePropagation();
+    return false;
+  }
+  
+  // 如果在滚动范围内，允许滚动但阻止事件传播到父元素
+  event.stopPropagation();
+  event.stopImmediatePropagation();
+}
+
+// 处理触摸滚动事件，防止滚动传播
+const handleTouchMove = (event) => {
+  const element = event.currentTarget;
+  const scrollTop = element.scrollTop;
+  const scrollHeight = element.scrollHeight;
+  const clientHeight = element.clientHeight;
+  
+  // 检查是否在滚动边界
+  const isAtTop = scrollTop <= 0;
+  const isAtBottom = scrollTop + clientHeight >= scrollHeight;
+  
+  // 如果在滚动边界，阻止事件传播
+  if (isAtTop || isAtBottom) {
+    event.stopPropagation();
+    event.stopImmediatePropagation();
+    return false;
+  }
+  
+  // 如果在滚动范围内，阻止事件传播到父元素
+  event.stopPropagation();
+  event.stopImmediatePropagation();
+}
 
 // 按年份和月份分组文章并进行排序
 const groupedArticlesByYear = computed(() => {
@@ -138,6 +186,10 @@ onMounted(() => {
 .article-list-container {
   max-width: 800px;
   margin: 0 auto;
+  max-height: 500px;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 10px;
 }
 
 .loading, .error {

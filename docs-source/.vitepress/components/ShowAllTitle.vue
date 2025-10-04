@@ -54,7 +54,7 @@
               <n-button @click="retryLoad" style="margin-top: 10px;">重试</n-button>
             </div>
             <div v-else>
-              <n-list style="max-height: 500px; overflow-y: auto;">
+              <n-list style="max-height: 500px; overflow-y: auto;" class="article-list" @wheel="handleMouseWheel" @touchmove="handleTouchMove">
                 <n-list-item v-for="article in filteredArticles" :key="article.url">
                   <n-thing>
                     <template #header>
@@ -88,9 +88,8 @@
 <script setup>
 import { ref, computed, onMounted, onUnmounted, nextTick, watch } from 'vue'
 import { useData, withBase } from 'vitepress'
-import TimeArticleList from '/.vitepress/components/TimeArticleList.vue'
-import naive from 'naive-ui'
-const { NSpace, NButton, NLayout, NLayoutSider, NLayoutContent, NSpin, NAlert, NList, NListItem, NThing, NTag } = naive
+import TimeArticleList from './TimeArticleList.vue'
+// 移除本地naive-ui导入，使用全局注册的组件
 
 // 模板引用
 const containerRef = ref(null)
@@ -174,18 +173,71 @@ function formatDate(dateStr) {
 // 处理文章点击
 const handleArticleClick = (article) => {
   // 触发自定义事件，通知父组件关闭模态框
-  window.dispatchEvent(new CustomEvent('close-modal'))
+  window.dispatchEvent(new CustomEvent('close-modal'));
   // 恢复焦点到触发元素
-  restoreFocus()
+  restoreFocus();
+}
+
+// 处理鼠标滚轮事件，防止滚动传播
+const handleMouseWheel = (event) => {
+  const element = event.currentTarget;
+  const scrollTop = element.scrollTop;
+  const scrollHeight = element.scrollHeight;
+  const clientHeight = element.clientHeight;
+  const delta = event.deltaY;
+
+  // 检查是否在滚动边界
+  const isAtTop = scrollTop <= 0;
+  const isAtBottom = scrollTop + clientHeight >= scrollHeight;
+  
+  // 如果在滚动边界且试图继续滚动，则阻止默认行为和事件传播
+  if ((isAtTop && delta < 0) || (isAtBottom && delta > 0)) {
+    event.preventDefault();
+    event.stopPropagation();
+    event.stopImmediatePropagation();
+    return false;
+  }
+  
+  // 如果在滚动范围内，允许滚动但阻止事件传播到父元素
+  event.stopPropagation();
+  event.stopImmediatePropagation();
+}
+
+// 处理触摸滚动事件，防止滚动传播
+const handleTouchMove = (event) => {
+  const element = event.currentTarget;
+  const scrollTop = element.scrollTop;
+  const scrollHeight = element.scrollHeight;
+  const clientHeight = element.clientHeight;
+  
+  // 检查是否在滚动边界
+  const isAtTop = scrollTop <= 0;
+  const isAtBottom = scrollTop + clientHeight >= scrollHeight;
+  
+  // 如果在滚动边界，阻止事件传播
+  if (isAtTop || isAtBottom) {
+    event.stopPropagation();
+    event.stopImmediatePropagation();
+    return false;
+  }
+  
+  // 如果在滚动范围内，阻止事件传播到父元素
+  event.stopPropagation();
+  event.stopImmediatePropagation();
 }
 
 // 加载分类数据
 const loadCategories = async () => {
   try {
     const response = await fetch(withBase('/data/category.json'))
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`)
+    }
     const data = await response.json()
+    console.log('Categories data:', data) // 调试信息
     categories.value = data.categories || []
   } catch (err) {
+    console.error('加载分类数据失败:', err) // 错误信息
     error.value = err.message
   }
 }
@@ -194,9 +246,14 @@ const loadCategories = async () => {
 const loadArticles = async () => {
   try {
     const response = await fetch(withBase('/data/list.json'))
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`)
+    }
     const data = await response.json()
+    console.log('Articles data:', data) // 调试信息
     articles.value = data.articles || []
   } catch (err) {
+    console.error('加载文章数据失败:', err) // 错误信息
     error.value = err.message
   }
 }
@@ -295,5 +352,34 @@ onUnmounted(() => {
   align-items: center;
   justify-content: center;
   height: 300px;
+}
+
+/* 解决模态框内滚动问题 */
+.article-list {
+  /* 防止滚动事件冲突 */
+  overscroll-behavior: contain;
+}
+
+/* 确保在模态框中可以正确滚动 */
+:deep(.article-list) {
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+}
+
+:deep(.article-list::-webkit-scrollbar) {
+  width: 6px;
+}
+
+:deep(.article-list::-webkit-scrollbar-track) {
+  background: #f1f1f1;
+}
+
+:deep(.article-list::-webkit-scrollbar-thumb) {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+:deep(.article-list::-webkit-scrollbar-thumb:hover) {
+  background: #a1a1a1;
 }
 </style>

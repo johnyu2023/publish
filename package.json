@@ -5,10 +5,11 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "dev": "npm run update:data && vitepress dev docs-source",
-    "preview": "cross-env DEPLOY_ENV=LOCAL_PREVIEW npm run update:data && npm run update:rss && vitepress build docs-source && npm run copy:to publish && npx http-server -p 5174 .",
-    "build": "cross-env NODE_ENV=production DEPLOY_ENV=GITHUB_PAGES npm run update:data && npm run update:rss && vitepress build docs-source && npm run copy:to docs",
+    "dev": "npm run update:data:fixed && vitepress dev docs-source",
+    "preview": "cross-env DEPLOY_ENV=LOCAL_PREVIEW npm run update:data:fixed && npm run update:rss && vitepress build docs-source && npm run copy:to publish && npx http-server -p 5174 .",
+    "build": "cross-env NODE_ENV=production DEPLOY_ENV=GITHUB_PAGES npm run update:data:fixed && npm run update:rss && vitepress build docs-source && npm run copy:to docs",
     "update:data": "node tools/update-data.js",
+    "update:data:fixed": "node tools/update-data-fixed.js",
     "update:rss": "cross-env NODE_ENV=production DEPLOY_ENV=GITHUB_PAGES node tools/update-rss.js",
     "copy:to": "node tools/copy-dist.js",
     "clean": "node tools/clean.js"
