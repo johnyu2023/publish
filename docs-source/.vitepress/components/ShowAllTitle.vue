@@ -89,7 +89,8 @@
 import { ref, computed, onMounted, onUnmounted, nextTick, watch } from 'vue'
 import { useData, withBase } from 'vitepress'
 import TimeArticleList from '/.vitepress/components/TimeArticleList.vue'
-import { NSpace, NButton, NLayout, NLayoutSider, NLayoutContent, NSpin, NAlert, NList, NListItem, NThing, NTag } from 'naive-ui'
+import naive from 'naive-ui'
+const { NSpace, NButton, NLayout, NLayoutSider, NLayoutContent, NSpin, NAlert, NList, NListItem, NThing, NTag } = naive
 
 // 模板引用
 const containerRef = ref(null)

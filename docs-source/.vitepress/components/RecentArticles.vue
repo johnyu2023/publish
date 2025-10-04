@@ -59,7 +59,8 @@
 <script setup>
 import { withBase } from 'vitepress'
 import { ref, onMounted, onUnmounted } from 'vue'
-import { NModal } from 'naive-ui'
+import naive from 'naive-ui'
+const { NModal } = naive
 import ShowAllTitle from '/.vitepress/components/ShowAllTitle.vue'
 
 // 控制模态框显示状态

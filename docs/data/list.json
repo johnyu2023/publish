@@ -1,7 +1,9 @@
 {
   "directories": [
     "ai",
-    "posts",
+    "foundation",
+    "other",
+    "public",
     "think",
     "web"
   ],
@@ -37,9 +39,9 @@
       ]
     },
     {
-      "directory": "ai",
+      "directory": "foundation",
       "title": "wucai-code 使用",
-      "url": "/ai/wucai-code",
+      "url": "/foundation/wucai-code",
       "date": "2025-09-18",
       "description": "wucai-code 是一个基于 node.js 的命令行工具，用于 AI Coding",
       "tags": [
@@ -99,9 +101,9 @@
       ]
     },
     {
-      "directory": "posts",
+      "directory": "other",
       "title": "AI 的深度检索",
-      "url": "/posts/deep-search",
+      "url": "/other/deep-search",
       "date": "2025-09-08",
       "description": "AI 何时才会进行一步检索。",
       "tags": [
@@ -110,9 +112,9 @@
       ]
     },
     {
-      "directory": "posts",
+      "directory": "other",
       "title": "AI 制作长视频实践",
-      "url": "/posts/ai-movie",
+      "url": "/other/ai-movie",
       "date": "2025-09-07",
       "description": "AI 可以方便地制作短视频，但涉及到长视频，就会面对很多挑战。",
       "tags": [
@@ -187,17 +189,17 @@
       ]
     },
     {
-      "directory": "ai",
+      "directory": "foundation",
       "title": "浅谈数据清洗",
-      "url": "/ai/data-cleaning",
+      "url": "/foundation/data-cleaning",
       "date": "2025-08-21",
       "description": "数据清洗",
       "tags": []
     },
     {
-      "directory": "ai",
+      "directory": "foundation",
       "title": "数据科学与AI应用开发的关系",
-      "url": "/ai/data-science",
+      "url": "/foundation/data-science",
       "date": "2025-08-21",
       "description": "数据科学 数据探索 数据清洗 特征工程",
       "tags": []
@@ -222,17 +224,17 @@
       "tags": []
     },
     {
-      "directory": "ai",
+      "directory": "foundation",
       "title": "AI 辅助编程的注意事项",
-      "url": "/ai/coding-01",
+      "url": "/foundation/coding-01",
       "date": "2025-08-18",
       "description": "探讨使用AI辅助编程的最佳实践和常见陷阱",
       "tags": []
     },
     {
-      "directory": "posts",
+      "directory": "other",
       "title": "使用 GitHub Pages 部署静态网站",
-      "url": "/posts/github-pages",
+      "url": "/other/github-pages",
       "date": "2025-08-14",
       "description": "如何使用 GitHub Pages 部署静态网站",
       "tags": [
@@ -273,9 +275,9 @@
       "tags": []
     },
     {
-      "directory": "ai",
+      "directory": "foundation",
       "title": "AI 辅助编程初体验",
-      "url": "/ai/code",
+      "url": "/foundation/code",
       "date": "2025-06-15",
       "description": "初次体会AI 辅助编程，喜忧参半。",
       "tags": [
@@ -283,9 +285,9 @@
       ]
     },
     {
-      "directory": "ai",
+      "directory": "foundation",
       "title": "Jupyter 使用",
-      "url": "/ai/jupyter",
+      "url": "/foundation/jupyter",
       "date": "2025-06-10",
       "description": "Jupyter 是一个开源的 Web 应用程序，主要用于创建和共享包含实时代码、数学公式、可视化图表和 Markdown 文本的交互式文档。",
       "tags": [
@@ -293,9 +295,9 @@
       ]
     },
     {
-      "directory": "ai",
+      "directory": "foundation",
       "title": "Python 使用基础",
-      "url": "/ai/python",
+      "url": "/foundation/python",
       "date": "2025-06-01",
       "description": "Python 使用过程中一些值得记录的内容",
       "tags": [
@@ -303,9 +305,9 @@
       ]
     },
     {
-      "directory": "ai",
+      "directory": "foundation",
       "title": "统计学知识",
-      "url": "/ai/statistics",
+      "url": "/foundation/statistics",
       "date": "2025-05-27",
       "description": "统计学知识",
       "tags": [
@@ -313,9 +315,9 @@
       ]
     },
     {
-      "directory": "ai",
+      "directory": "foundation",
       "title": "概率论 01",
-      "url": "/ai/probability-theory",
+      "url": "/foundation/probability-theory",
       "date": "2025-05-18",
       "description": "概率论是数学中研究概率的分支",
       "tags": [
@@ -405,9 +407,9 @@
       ]
     },
     {
-      "directory": "posts",
+      "directory": "other",
       "title": "LaTeX 测试页面",
-      "url": "/posts/latex-test",
+      "url": "/other/latex-test",
       "date": "2025-01-17",
       "description": "这是一个测试 VitePress 中 LaTeX 支持的页面，仅仅为了验证是否能正常显示",
       "tags": [
@@ -415,25 +417,25 @@
       ]
     },
     {
-      "directory": "posts",
+      "directory": "other",
       "title": "Markdown 语法完全指南",
-      "url": "/posts/markdown-guide",
+      "url": "/other/markdown-guide",
       "date": "2025-01-16",
       "description": "全面介绍Markdown语法及其在技术写作中的应用",
       "tags": []
     },
     {
-      "directory": "posts",
+      "directory": "other",
       "title": "开始使用 VitePress 搭建技术博客",
-      "url": "/posts/getting-started",
+      "url": "/other/getting-started",
       "date": "2025-01-15",
       "description": "从零开始学习如何使用VitePress搭建个人技术博客",
       "tags": []
     },
     {
-      "directory": "posts",
+      "directory": "other",
       "title": "ssh 原理图",
-      "url": "/posts/ssh",
+      "url": "/other/ssh",
       "date": "2024-11-11",
       "description": "ssh 动态原理图",
       "tags": [
