@@ -22,4 +22,26 @@ tags: [wucai-code]
 
 <img src="../assets/foundation/wucai-code/install-wucai-code.png" alt="install">
 
+## 更新 wucai-code
+
++ 由于是全局安装，所以可以在任务目录下执行更新命令
++ 执行 `npm install -g @wucai/wucai-code@latest`
+
+## 身份认证方式
+
+<img src="../assets/foundation/wucai-code/auth.png" alt="auth">
+
++ 身份认证是为了判读用什么身份去调用大语言模型
++ 输入 /auth 切换认证方式
++ 支持方式一： 通过 dashscope 认证
++ 支持方式二： 通过 qwen 认证
++ 目前通过 qwen 认证方式，每天赠送2000次访问
+
+## 工作目录和授权方式
+
++ 在任何需要工作的目录，通过 cmd 或 powershell 窗口，执行 `wucai` 命令，就能启动 wucai-code
++ 会询问对该工作目录的授权方式，一般就选`是，始终允许`即可。
+
+<img src="../assets/foundation/wucai-code/always-true.png" alt="auth-dir">
+
 </BlogPost>

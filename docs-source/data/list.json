@@ -10,6 +10,26 @@
   "articles": [
     {
       "directory": "ai",
+      "title": "TensorFlow 基础",
+      "url": "/ai/tensorflow",
+      "date": "2025-10-07",
+      "description": "TensorFlow",
+      "tags": [
+        "TensorFlow"
+      ]
+    },
+    {
+      "directory": "ai",
+      "title": "神经网络基础",
+      "url": "/ai/neural-network-basic",
+      "date": "2025-10-04",
+      "description": "神经网络基础",
+      "tags": [
+        "神经网络"
+      ]
+    },
+    {
+      "directory": "ai",
       "title": "时间序列分析",
       "url": "/ai/time-series-analysis",
       "date": "2025-09-27",
@@ -375,9 +395,9 @@
       ]
     },
     {
-      "directory": "ai",
+      "directory": "foundation",
       "title": "线性代数基础 02",
-      "url": "/ai/linear-algebra-02",
+      "url": "/foundation/linear-algebra-02",
       "date": "2025-02-16",
       "description": "向量和计算",
       "tags": [
@@ -385,9 +405,9 @@
       ]
     },
     {
-      "directory": "ai",
+      "directory": "foundation",
       "title": "线性代数基础 01",
-      "url": "/ai/linear-algebra-01",
+      "url": "/foundation/linear-algebra-01",
       "date": "2025-02-15",
       "description": "线性代数的一些基础知识",
       "tags": [

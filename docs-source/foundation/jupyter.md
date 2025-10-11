@@ -7,21 +7,15 @@ tags: [Jupyter]
 
 <BlogPost>
 
-## Jupyter 简介
+## Jupyter Notebook 简介
 
 Jupyter 是一个开源的 Web 应用程序，主要用于创建和共享包含**实时代码、数学公式、可视化图表和 Markdown 文本**的交互式文档（通常称为 Jupyter Notebook）。
 
-### Jupyter 的主要用途包括
+## JupyterLab 简介
 
-- **数据清理与转换**：可以交互式地探索和处理数据。
-- **数值模拟与统计建模**：支持 Python、R、Julia 等多种编程语言，适合科学计算。
-- **机器学习与数据分析**：因其直观的交互界面，被广泛用于数据科学和 AI 领域。
-- **教学与文档编写**：结合代码、文字说明和可视化结果，非常适合教学、演示和报告撰写。
-- **多语言支持与扩展性**：作为 Project Jupyter 的一部分，它支持多种编程语言内核，并可扩展为更强大的开发环境，如 JupyterLab。
+JupyterLab 是 Jupyter Notebook 的下一代、功能更强大的 Web 交互式开发环境。它不仅支持 Notebook，还能在一个浏览器窗口中同时打开终端、文本编辑器、Markdown 文件、CSV 数据表、图像等，非常适合数据科学、编程教学和探索性分析等场景。
 
-## 启动 Jupyter Lab
-
-> **JupyterLab 是 Jupyter Notebook 的下一代升级版**，两者虽然核心功能相似（都能运行 `.ipynb` 笔记本），但在用户体验和功能上有显著区别。
+## 启动 JupyterLab
 
 - 如果你已安装 Jupyter（或通过 `pip install jupyterlab` 单独安装），只需在终端运行：
 

@@ -38,7 +38,7 @@ tags: [Analytical AI]
 
 ### 机器学习的十大经典模型 - kaggle 上投票选出来的模型
 
-+ 分类算法：C4.5，朴素贝叶斯（Naive Bayes），SVM，KNN，Adaboost，CART
++ 分类/回归算法：C4.5，朴素贝叶斯（Naive Bayes），SVM，KNN，Adaboost，CART -- 分类和回归的区别就是最后加一个函数的事，所以本质上是一类
 + 聚类算法：K-Means，EM
 + 关联分析：Apriori
 + 连接分析：PageRank

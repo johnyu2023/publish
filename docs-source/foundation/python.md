@@ -153,4 +153,117 @@ source ./stock_env/bin/activate    # Linux/macOS
 source /full/path/to/stock_env/bin/activate
 ```
 
+## 虚拟环境的空间占用问题
+
+**实际情况：**
+
+- 虚拟环境确实会在每个项目目录下创建独立的依赖库
+- 但现代 Python 虚拟环境（如 venv、conda）会使用**符号链接**或**硬链接**来减少重复文件
+- 相同版本的包在不同虚拟环境中通常不会完全复制，而是共享底层文件
+
+**空间占用估算：**
+
+- 一个基础的虚拟环境大约 10-20MB
+- 如果项目依赖大型库（如 numpy、pandas、tensorflow），每个环境可能增加 100MB-1GB+
+- 但如果你有 10 个项目都用相同的依赖，实际占用可能只有 1-2GB，而不是 10GB
+
+## 硬盘空间分配实用解决方案
+
+1. **创建专门的开发目录**（如 D:\PythonProjects）
+2. **使用虚拟环境**，但集中管理在 D:\venvs
+3. **每个项目保持独立**，避免依赖冲突
+4. **定期清理**不用的项目和环境
+
+## 对C盘清理的建议
+
+你**不需要写 Python 程序**，直接在 **PowerShell 中用一条（或两行）命令**就能安全清空 C 盘中的第三方 Python 依赖库。
+
+---
+
+### ✅ 推荐方法：使用 PowerShell 一行命令卸载所有第三方包
+
+```powershell
+pip freeze | ForEach-Object { $pkg = $_.Split('==')[0]; if ($pkg -notin @('pip', 'setuptools', 'wheel', 'pkg-resources', '')) { pip uninstall -y $pkg } }
+```
+
+> 💡 **复制粘贴这一整行到 PowerShell 中运行即可。**
+
+---
+
+### 🔍 这条命令做了什么？
+
+1. `pip freeze`：列出所有已安装的包（格式如 `numpy==1.24.0`）
+2. `ForEach-Object`：遍历每一行
+3. `Split('==')[0]`：提取包名（如 `numpy`）
+4. 排除核心工具包：`pip`、`setuptools`、`wheel`、`pkg-resources`
+5. 对其余所有包执行 `pip uninstall -y`（`-y` 表示自动确认）
+
+---
+
+### 🛡️ 安全建议（强烈推荐先做）
+
+#### 1. **先备份包列表（以防万一）**
+```powershell
+pip freeze > D:\python_global_packages_backup.txt
+```
+这样万一误删了某个你其实需要的全局工具（比如 `black`、`jupyter`），还能恢复。
+
+#### 2. **先预览要删除哪些包**
+运行这个命令看看会删什么：
+```powershell
+pip freeze | ForEach-Object { $pkg = $_.Split('==')[0]; if ($pkg -notin @('pip', 'setuptools', 'wheel', 'pkg-resources', '')) { Write-Host "Will uninstall: $pkg" } }
+```
+
+---
+
+### 🧹 额外清理（可选）
+
+清空 pip 缓存，进一步释放 C 盘空间：
+```powershell
+pip cache purge
+```
+
+---
+
+### ❌ 不要做的事
+
+- **不要手动删除 `site-packages` 文件夹里的内容** → 可能导致 pip 状态不一致
+- **不要卸载 `pip`、`setuptools`、`wheel`** → 虚拟环境创建会依赖它们
+
+---
+
+### ✅ 验证是否清理干净
+
+清理后运行：
+```powershell
+pip list
+```
+正常输出应该只有：
+```
+Package    Version
+---------- -------
+pip        23.x.x
+setuptools 65.x.x
+wheel      0.x.x
+```
+
+如果有其他包，说明它们可能是通过 `--user` 安装的，你可以额外清理用户目录的包：
+
+```powershell
+# 清理用户级安装的包（如果存在）
+pip uninstall -y --user (pip list --user | Select-String -Pattern '^[^P]' | ForEach-Object { ($_ -split ' ')[0] })
+```
+
+不过大多数情况下，第一条命令已经足够。
+
+---
+
+### 总结
+
+- **用 PowerShell 一行命令即可完成**
+- **无需写 Python 脚本**
+- **先备份，再执行，很安全**
+
+现在你就可以放心清理 C 盘的 Python 第三方库了！
+
 </BlogPost>
