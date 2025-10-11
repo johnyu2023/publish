@@ -6,8 +6,26 @@
     <link>https://johnyu2023.github.io/publish</link>
     <atom:link href="https://johnyu2023.github.io/publish/rss.xml" rel="self" type="application/rss+xml"/>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 04 Oct 2025 08:43:57 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 11 Oct 2025 03:12:17 GMT</lastBuildDate>
     <ttl>60</ttl>
+    
+    <item>
+      <title>TensorFlow 基础</title>
+      <description>TensorFlow</description>
+      <link>https://johnyu2023.github.io/publish/ai/tensorflow</link>
+      <guid>https://johnyu2023.github.io/publish/ai/tensorflow</guid>
+      <pubDate>Tue, 07 Oct 2025 00:00:00 GMT</pubDate>
+      <category>TensorFlow</category>
+    </item>
+    
+    <item>
+      <title>神经网络基础</title>
+      <description>神经网络基础</description>
+      <link>https://johnyu2023.github.io/publish/ai/neural-network-basic</link>
+      <guid>https://johnyu2023.github.io/publish/ai/neural-network-basic</guid>
+      <pubDate>Sat, 04 Oct 2025 00:00:00 GMT</pubDate>
+      <category>神经网络</category>
+    </item>
     
     <item>
       <title>时间序列分析</title>
@@ -352,8 +370,8 @@
     <item>
       <title>线性代数基础 02</title>
       <description>向量和计算</description>
-      <link>https://johnyu2023.github.io/publish/ai/linear-algebra-02</link>
-      <guid>https://johnyu2023.github.io/publish/ai/linear-algebra-02</guid>
+      <link>https://johnyu2023.github.io/publish/foundation/linear-algebra-02</link>
+      <guid>https://johnyu2023.github.io/publish/foundation/linear-algebra-02</guid>
       <pubDate>Sun, 16 Feb 2025 00:00:00 GMT</pubDate>
       <category>Linear Algebra</category>
     </item>
@@ -361,8 +379,8 @@
     <item>
       <title>线性代数基础 01</title>
       <description>线性代数的一些基础知识</description>
-      <link>https://johnyu2023.github.io/publish/ai/linear-algebra-01</link>
-      <guid>https://johnyu2023.github.io/publish/ai/linear-algebra-01</guid>
+      <link>https://johnyu2023.github.io/publish/foundation/linear-algebra-01</link>
+      <guid>https://johnyu2023.github.io/publish/foundation/linear-algebra-01</guid>
       <pubDate>Sat, 15 Feb 2025 00:00:00 GMT</pubDate>
       <category>Linear Algebra</category>
     </item>
