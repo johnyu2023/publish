@@ -22,7 +22,7 @@ export default withMermaid(defineConfig({
   base,
   // 指定使用自定义主题
   theme: './theme',
-  
+
   // 配置markdown选项，使用官方的katex插件支持LaTeX
   markdown: {
     config: (md) => {
@@ -32,46 +32,81 @@ export default withMermaid(defineConfig({
       })
     }
   },
-  
+
   // 添加RSS链接到HTML头部
   head: [
     ['link', { rel: 'alternate', type: 'application/rss+xml', href: `${base}rss.xml`, title: 'RSS Feed for AI时代的技术分享' }],
     ['meta', { name: 'referrer', content: 'no-referrer-when-downgrade' }],
     // 添加KaTeX的CSS样式
     ['link', { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css' }],
-    // 添加测试用的全局样式
+    // 添加 Mermaid 交互增强脚本
+    ['script', { src: `${base}.vitepress/theme/assets/mermaid-interaction.js` }],
+    // 添加 Mermaid 图表交互增强样式
     ['style', {}, `
-      body {
-        background-color: #f0f0f0 !important;
+      /* Mermaid 图表缩放和拖拽样式 */
+      .mermaid {
+        position: relative !important;
+        overflow: visible !important;
+        cursor: grab !important;
+        user-select: none !important;
+        display: inline-block !important;
+        transform-origin: center center !important;
+        transition: transform 0.1s ease-out !important;
       }
-      .debug-message {
-        position: fixed !important;
-        top: 20px !important;
-        left: 20px !important;
-        background-color: purple !important;
-        color: white !important;
+
+      .mermaid:active {
+        cursor: grabbing !important;
+      }
+
+      .mermaid svg {
+        display: block !important;
+        margin: 0 auto !important;
+        max-width: none !important;
+        height: auto !important;
+      }
+
+      /* Mermaid 容器样式，确保有足够的空间 */
+      .mermaid-wrapper {
+        position: relative !important;
+        overflow: auto !important;
         padding: 20px !important;
-        font-size: 16px !important;
-        z-index: 9999 !important;
+        border: 1px solid #e1e5e9 !important;
+        border-radius: 8px !important;
+        background-color: #fff !important;
+        margin: 20px 0 !important;
+        min-height: 200px !important;
       }
-      
-      /* 非常明显的全局测试样式 */
-      .global-test-banner {
-        position: fixed !important;
-        top: 100px !important;
-        left: 0 !important;
-        right: 0 !important;
-        background-color: yellow !important;
-        color: black !important;
-        padding: 30px !important;
-        font-size: 24px !important;
-        font-weight: bold !important;
+
+      /* 缩放控制提示 */
+      .mermaid-wrapper::before {
+        content: "💡 使用鼠标滚轮缩放，按住拖拽移动" !important;
+        position: absolute !important;
+        top: 5px !important;
+        right: 5px !important;
+        font-size: 12px !important;
+        color: #666 !important;
+        background-color: rgba(255, 255, 255, 0.9) !important;
+        padding: 4px 8px !important;
+        border-radius: 4px !important;
+        z-index: 10 !important;
+        pointer-events: none !important;
+      }
+
+      /* VitePress 中的 Markdown 内容区域 */
+      .vp-doc .mermaid {
+        margin: 20px 0 !important;
         text-align: center !important;
-        z-index: 9998 !important;
+      }
+
+      /* 确保在大图中不会被截断 */
+      .vp-doc .mermaid svg {
+        max-width: none !important;
+        width: 100% !important;
+        height: auto !important;
       }
     `]
   ],
-  
+
   // 添加全局变量，用于构建链接
   vite: {
     define: {
@@ -79,30 +114,30 @@ export default withMermaid(defineConfig({
     }
   },
   cleanUrls: true,
-  
+
   themeConfig: {
     siteTitle: 'AI时代开发之旅',
-    
+
     nav: [
       { text: '首页', link: '/' },
       { text: '文章', link: '/list' },
       { text: '关于', link: '/about' }
     ],
-    
+
     // 使用动态生成的侧边栏配置
     sidebar: sidebarConfig as DefaultTheme.Sidebar,
-    
+
     socialLinks: [
       { icon: 'github', link: 'https://github.com/johnyu2023' },
       { icon: 'rss', link: isProduction ? '/publish/rss.xml' : '/rss.xml' }
     ],
-    
+
     footer: {
       message: '基于 MIT 协议发布',
       copyright: 'Copyright © 2024-present'
     }
   },
-  
+
   // Mermaid 配置
   mermaid: {
     theme: 'default',

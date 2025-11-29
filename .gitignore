@@ -60,3 +60,4 @@ jspm_packages/
 # Local preview directory
 publish/
 
+.claude/
