@@ -157,13 +157,207 @@ result = sm.tsa.seasonal_decompose(data.Price, period=250)
 result.plot()
 plt.show()
 
-
 # In[5]:
 
-
 #help(sm.tsa.seasonal_decompose)
-
-
 ```
+
+## 虚拟环境
+
+- 使用虚拟环境，这是 Python 开发的最佳实践。
+  - 全局污染会导致难以复现、调试和部署。
+  - 虚拟环境能隔离依赖，保证项目可移植性和稳定性。
+
+- 如果项目在 Trae 上运行，已创建虚拟环境，并激活该虚拟环境，安装了所有依赖库，能顺利运行。
+- 此时打开 JupyterLab，大概率不会使用你已经创建的虚拟环境，而是是用全局的配置。
+- 建议：将项目的虚拟环境注册为 Jupyter 内核
+
+### 注册虚拟环境为 Jupyter 内核
+
+- 脚本 register_jupyter_kernel.ps1
+
+```powershell
+# register_jupyter_kernel.ps1
+# 用途: 将当前目录下的 venv 虚拟环境注册为 Jupyter 内核
+# Usage: Register the venv virtual environment in current directory as a Jupyter kernel
+
+# 获取当前目录名作为内核名称 | Get current directory name as kernel name
+$projectDir = Get-Location
+$projectName = (Split-Path -Leaf $projectDir.Path)
+# 清理项目名: 只保留字母、数字、下划线、连字符 | Clean project name: Keep only letters, numbers, underscores, hyphens
+$kernelName = $projectName -replace '[^a-zA-Z0-9_-]', '_'
+if ([string]::IsNullOrWhiteSpace($kernelName)) {
+    $kernelName = "venv_kernel"
+}
+
+# 虚拟环境路径 | Virtual environment path
+$venvPath = Join-Path $projectDir "venv"
+$pythonExecutable = Join-Path $venvPath "Scripts\python.exe"
+
+# 检查虚拟环境是否存在 | Check if virtual environment exists
+if (-Not (Test-Path $pythonExecutable)) {
+    Write-Error "Virtual environment not found: $pythonExecutable"
+    Write-Host "Please ensure a virtual environment named 'venv' has been created in the project root directory."
+    exit 1
+}
+
+# 安装/升级 ipykernel | Install/upgrade ipykernel
+Write-Host "Installing/upgrading ipykernel..."
+& $pythonExecutable -m pip install -q --upgrade ipykernel
+if ($LASTEXITCODE -ne 0) {
+    Write-Error "Failed to install/upgrade ipykernel."
+    exit 1
+}
+
+# 注册内核 | Register kernel
+Write-Host "Registering Jupyter kernel..."
+& $pythonExecutable -m ipykernel install --user --name="$kernelName" --display-name="Project: $projectName"
+if ($LASTEXITCODE -eq 0) {
+    Write-Host "Successfully registered Jupyter kernel: 'Project: $projectName' (Kernel name: $kernelName)" -ForegroundColor Green
+    Write-Host "After starting Jupyter Lab, please select this kernel in your Notebook." -ForegroundColor Yellow
+} else {
+    Write-Error "Error registering kernel, please check permissions or dependencies."
+    exit 1
+}
+```
+
+- 在项目根目录下运行该脚本。
+
+```powershell
+PowerShell -ExecutionPolicy Bypass -File .\register_jupyter_kernel.ps1
+```
+
+✅ 这条命令会：
+
+- 自动激活 venv；
+- 安装 ipykernel（如果没装）；
+- 将当前项目注册为 Jupyter 内核（内核名 = 文件夹名）。
+
+- 在同一个终端中执行命令 `jupyter lab` 启动 Jupyter Lab。
+
+- 在 jupyter lab 中选择该内核。
+
+<img src="../assets/foundation/jupyter/select-kernel.png" alt="select kernel" style="zoom:50%;" />
+
+## Restart Kernel
+
+### 概念解析
+
+#### 1. **Jupyter 的“内核”（Kernel）是什么？**
+
+- 内核是一个**独立的后台进程**（比如 Python 解释器），负责**真正执行你的代码**。
+- 当你在单元格里写 `x = 5` 并运行，这个变量 `x` 是**保存在内核的内存中**，不是保存在 `.ipynb` 文件里。
+- 即使你关闭浏览器标签页，只要内核没停，`x` 依然存在（下次打开还能用）。
+
+#### 2. **为什么需要 “Restart Kernel”？**
+
+在交互式开发中，你可能会：
+
+- 修改了某个函数定义，但旧版本还在内存中；
+- 误删了某个变量，但后续单元格还依赖它；
+- 数据库连接没关，占着资源；
+- 代码逻辑变了，但旧状态干扰新结果。
+
+👉 这些**残留状态会导致“明明代码改对了，结果还是错的”**。
+
+所以你需要：
+
+- **Restart Kernel**：杀死旧的 Python 进程，启动一个全新的、干净的内核（所有变量清空）；
+- **Run All**：从上到下重新执行所有单元格，确保逻辑完整、状态一致。
+
+> 🔄 “刷新页面” ≠ “Restart Kernel”  
+> 刷新浏览器只是重新加载网页，**内核仍在后台运行**！你必须手动点 “Restart Kernel” 才能重置 Python 状态。
+
+---
+
+### 类比理解
+
+| 场景 | 类比 |
+|------|------|
+| **Jupyter 内核** | 一个开着的 Python REPL（交互式命令行） |
+| **运行单元格** | 在 REPL 里输入一行代码并回车 |
+| **Restart Kernel** | 按 `Ctrl+D` 退出 REPL，再重新打开一个新的 |
+| **.ipynb 文件** | 一个记录你“曾经在 REPL 里输过什么”的笔记 |
+
+即使你修改了笔记（`.ipynb` 文件），**REPL 里的状态不会自动变**——你得重新输入所有命令（Run All），或者干脆重启 REPL（Restart Kernel）。
+
+---
+
+### 常见误区澄清
+
+- ❌ “我改了代码，刷新页面就应该生效”  
+  → 刷新页面只重载前端，**内核状态不变**。
+
+- ✅ 正确做法：  
+  **Kernel → Restart & Run All**  
+  这样才能确保：  
+  1. 所有旧状态清除；  
+  2. 所有单元格按顺序重新执行；  
+  3. 结果可复现。
+
+---
+
+### 为什么叫 “Kernel” 而不叫 “Python Interpreter”？
+
+因为 Jupyter 支持多种语言（R、Julia、Scala 等），每种语言都有自己的“内核”。  
+“Kernel” 是 Jupyter 对**后端计算引擎**的通用称呼，Python 内核只是其中一种。
+
+## Windows 系统下更新 JupyterLab
+
+```powershell
+pip install --upgrade jupyterlab
+```
+
+## 浏览器模式下 ModuleNotFoundError
+
+### 报错信息
+
++ 在 JupyterLab 浏览器中运行脚本报错 `ModuleNotFoundError: No module named 'langchain'`，说明当前 Python 环境中未安装 `langchain` 包。
+
+```plaintext
+ModuleNotFoundError: No module named 'langchain' 
+```
+
+### 确认 JupyterLab 使用的是哪个 Python 环境
+
++ 在 JupyterLab 的 notebook 中运行以下代码，查看当前内核对应的 Python 路径：
+
+```python
+import sys
+print(sys.executable)
+```
+
++ 输出可能类似：
+  - `C:\Users\John\.pyenv\pyenv-win\versions\3.12.10\python.exe`（系统 Python）
+  - 或某个虚拟环境路径（如 `venv\Scripts\python.exe`）
+
++ 记下这个路径，它决定了你应该在哪里安装 `langchain`。
+
+### 安装模块
+
++ 根据输出确认，我们的 Python 路径是：
+
+``` plaintext
+C:\Users\John\.pyenv\pyenv-win\versions\3.12.10\python.exe
+```
+
++ 使用完整路径调用 pip（推荐，最可靠）
+
+打开 **命令提示符（CMD）** 或 **PowerShell**，运行：
+
+```cmd
+C:\Users\John\.pyenv\pyenv-win\versions\3.12.10\python.exe -m pip install langchain
+```
+
++  验证安装是否成功
+
+回到 JupyterLab，运行：
+
+```python
+import langchain
+print(langchain.__version__)
+```
+
+<img src="../assets/foundation/jupyter/jupyter-module-not-found.png" alt="verify install" style="zoom:50%;" />
 
 </BlogPost>
