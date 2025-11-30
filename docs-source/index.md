@@ -36,10 +36,10 @@ features:
 
 <script setup>
 import { withBase } from 'vitepress'
-import RecentArticles from './.vitepress/components/RecentArticles.vue'
+import TabbedSection from './.vitepress/components/TabbedSection.vue'
 </script>
 
-<RecentArticles />
+<TabbedSection />
 
 <style>
 .article-section {
