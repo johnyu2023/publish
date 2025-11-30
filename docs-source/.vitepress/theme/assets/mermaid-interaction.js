@@ -275,6 +275,11 @@ class MermaidInteraction {
 
   // 添加放大镜按钮
   addZoomButton(wrapper, mermaid) {
+    // 检查是否是弹框中的 Mermaid，如果是则不添加按钮
+    if (mermaid.classList.contains('modal-mermaid-no-zoom') || mermaid.classList.contains('mermaid-modal-chart')) {
+      return;
+    }
+
     // 检查是否已经有按钮
     if (wrapper.querySelector('.mermaid-zoom-btn')) {
       return;
@@ -417,20 +422,18 @@ class MermaidInteraction {
 
     // 智能设置弹框中 Mermaid 图表的尺寸
     if (originalWidth > originalHeight) {
-      // 宽度型图表：使用90%宽度，高度自适应
+      // 宽度大于高度的图表：宽度为弹框窗口的90%，高度自适应
       Object.assign(modalMermaid.style, {
-        width: '85vw', // 使用弹框的大部分宽度
+        width: '90vw', // 使用弹框窗口的90%宽度
         height: 'auto', // 高度自适应
-        minHeight: '60vh', // 最小高度
-        maxWidth: '85vw' // 最大宽度限制
+        maxWidth: '90vw' // 最大宽度限制
       });
     } else {
-      // 高度型图表：使用90%高度，宽度自适应
+      // 宽度小于等于高度的图表：高度为弹框窗口的90%，宽度自适应
       Object.assign(modalMermaid.style, {
         width: 'auto', // 宽度自适应
-        height: '75vh', // 使用弹框的大部分高度，留出底部提示空间
-        minWidth: '60vw', // 最小宽度
-        maxHeight: '75vh' // 最大高度限制
+        height: '90vh', // 使用弹框窗口的90%高度
+        maxHeight: '90vh' // 最大高度限制
       });
     }
 
@@ -442,27 +445,11 @@ class MermaidInteraction {
     this.modalScales.set(modalMermaid.dataset.mermaidId, 1);
     this.modalTranslations.set(modalMermaid.dataset.mermaidId, { x: 0, y: 0 });
 
-    // 添加使用提示
-    const tip = document.createElement('div');
-    tip.className = 'mermaid-modal-tip';
-    tip.innerHTML = '💡 使用鼠标滚轮缩放，按住拖拽移动，双击重置';
-    Object.assign(tip.style, {
-      position: 'absolute',
-      bottom: '10px',
-      left: '50%',
-      transform: 'translateX(-50%)',
-      fontSize: '14px',
-      color: '#666',
-      backgroundColor: 'rgba(255, 255, 255, 0.9)',
-      padding: '6px 12px',
-      borderRadius: '6px',
-      pointerEvents: 'none'
-    });
+    // 不添加使用提示（弹框中不需要提示）
 
     // 组装弹框
     content.appendChild(modalMermaid);
     content.appendChild(closeBtn);
-    content.appendChild(tip);
     modal.appendChild(content);
 
     // 添加到页面
@@ -483,11 +470,8 @@ class MermaidInteraction {
     // 添加弹框事件监听器
     this.addModalEventListeners(modalMermaid);
 
-    // 弹框中不显示放大镜按钮
-    const existingZoomBtn = modalMermaid.querySelector('.mermaid-zoom-btn');
-    if (existingZoomBtn) {
-      existingZoomBtn.style.display = 'none';
-    }
+    // 弹框中的 Mermaid 图表不添加放大镜按钮，在添加前就阻止
+    modalMermaid.classList.add('modal-mermaid-no-zoom');
 
     // 点击背景关闭
     modal.addEventListener('click', (e) => {

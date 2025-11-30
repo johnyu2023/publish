@@ -92,6 +92,11 @@ export default withMermaid(defineConfig({
         pointer-events: none !important;
       }
 
+      /* 弹框中的 Mermaid 不显示提示 */
+      .mermaid-modal .mermaid-wrapper::before {
+        display: none !important;
+      }
+
       /* 放大镜按钮样式 */
       .mermaid-zoom-btn {
         position: absolute !important;
