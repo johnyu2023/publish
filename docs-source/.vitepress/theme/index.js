@@ -1,6 +1,7 @@
 import { h, ref, onMounted, onUnmounted } from 'vue'
 import DefaultTheme from 'vitepress/theme'
 import ShowAllTitle from '../components/ShowAllTitle.vue'
+import ArticleListPage from '../components/ArticleListPage.vue'
 import TimeArticleList from '../components/TimeArticleList.vue'
 import BlogPost from '../components/BlogPost.vue'
 
@@ -98,6 +99,7 @@ export default {
     app.component('BlogPost', BlogPost)
     app.component('TimeArticleList', TimeArticleList)
     app.component('ShowAllTitle', ShowAllTitle)
+    // app.component('ArticleListPage', ArticleListPage)
   },
   
   Layout() {
@@ -197,6 +199,7 @@ export default {
             // 传入高度值，根据模态框高度计算合适的值
             h(ShowAllTitle, {
               height: 'calc(100% - 40px)', // 减去分类标签栏的高度
+              inModal: true, // 在模态框中使用，需要触发关闭事件
               ref: 'showAllTitleRef',
               onScroll: handleModalContentScroll
             })

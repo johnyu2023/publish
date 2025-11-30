@@ -58,16 +58,9 @@
                 <n-list-item v-for="article in filteredArticles" :key="article.url">
                   <n-thing>
                     <template #header>
-                      <template v-if="inModal">
-                        <a :href="withBase(article.url)" class="article-link" @click="handleArticleClick(article)">
-                          {{ article.title }}
-                        </a>
-                      </template>
-                      <template v-else>
-                        <a :href="withBase(article.url)" class="article-link">
-                          {{ article.title }}
-                        </a>
-                      </template>
+                      <a :href="withBase(article.url)" class="article-link">
+                        {{ article.title }}
+                      </a>
                     </template>
                     <template #description>
                       <n-space>
@@ -101,19 +94,15 @@ import TimeArticleList from './TimeArticleList.vue'
 // 模板引用
 const containerRef = ref(null)
 
-// 定义props，接收外部传入的宽度和高度值
+// 定义props
 const props = defineProps({
   height: {
     type: String,
-    default: '400px' // 默认高度，保持原有样式
+    default: '400px'
   },
   width: {
     type: String,
-    default: '100%' // 默认宽度，保持原有样式
-  },
-  inModal: {
-    type: Boolean,
-    default: false // 默认不在模态框中使用，避免在list页面触发模态框行为
+    default: '100%'
   }
 })
 
@@ -126,9 +115,6 @@ const activeDirectory = ref('') // 当前选中的分类
 
 // 获取当前页面数据
 const { page } = useData()
-
-// 存储触发模态框的元素
-const triggerElement = ref(null)
 
 // 过滤后的文章（当前选中分类的文章）
 const filteredArticles = computed(() => {
@@ -160,18 +146,6 @@ const parseTags = (tags) => {
   return parsedTags.filter(tag => tag) // 过滤掉空标签
 }
 
-// 保存触发元素的引用
-const saveTriggerElement = () => {
-  triggerElement.value = document.activeElement
-}
-
-// 恢复焦点到触发元素
-const restoreFocus = () => {
-  if (triggerElement.value) {
-    triggerElement.value.focus()
-  }
-}
-
 // 格式化日期
 function formatDate(dateStr) {
   const date = new Date(dateStr)
@@ -179,14 +153,6 @@ function formatDate(dateStr) {
   const month = (date.getMonth() + 1).toString().padStart(2, '0')
   const day = date.getDate().toString().padStart(2, '0')
   return `${year}-${month}-${day}`
-}
-
-// 处理文章点击
-const handleArticleClick = (article) => {
-  // 在模态框中使用时，触发自定义事件，通知父组件关闭模态框
-  window.dispatchEvent(new CustomEvent('close-modal'));
-  // 恢复焦点到触发元素
-  restoreFocus();
 }
 
 // 处理鼠标滚轮事件，防止滚动传播
@@ -303,9 +269,6 @@ const setDefaultDirectory = () => {
 }
 
 onMounted(() => {
-  // 保存触发元素
-  saveTriggerElement()
-  
   Promise.all([loadCategories(), loadArticles()]).then(() => {
     // 等待数据加载完成后设置默认分类
     setTimeout(() => {
@@ -321,8 +284,6 @@ onMounted(() => {
         containerRef.value.focus()
         // 添加 aria-modal 和 role 属性以改善无障碍访问
         containerRef.value.setAttribute('role', 'dialog')
-        containerRef.value.setAttribute('aria-modal', 'true')
-        // 添加 aria-label 以提供模态框的描述
         containerRef.value.setAttribute('aria-label', '全部文章列表')
       }
     })
@@ -334,11 +295,6 @@ watch(categories, (newCategories) => {
   if (newCategories.length > 0 && !activeDirectory.value) {
     setDefaultDirectory()
   }
-})
-
-onUnmounted(() => {
-  // 组件卸载时恢复焦点
-  restoreFocus()
 })
 </script>
 

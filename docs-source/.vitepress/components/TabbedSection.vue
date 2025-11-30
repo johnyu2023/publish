@@ -45,6 +45,14 @@
             </ul>
           </div>
 
+          <!-- 查看全部文章链接 -->
+          <div class="view-all-articles">
+            <a :href="withBase('/list')" class="view-all-link">
+              <span class="view-all-icon">👉</span>
+              查看全部文章
+            </a>
+          </div>
+
           <!-- RSS订阅链接 -->
           <div class="rss-subscribe">
             <span class="rss-icon">📡</span>
@@ -105,7 +113,7 @@
       :trap-focus="false"
       @after-leave="restoreFocus"
     >
-      <ShowAllTitle />
+      <ShowAllTitle :inModal="true" />
     </NModal>
   </div>
 </template>
@@ -386,8 +394,8 @@ onUnmounted(() => {
   font-weight: normal;
 }
 
-/* RSS订阅和查看更多区域 */
-.rss-subscribe, .view-more {
+/* 查看全部文章和RSS订阅及查看更多区域 */
+.view-all-articles, .rss-subscribe, .view-more {
   margin-top: 1rem;
   padding-top: 0.75rem;
   border-top: 1px solid var(--vp-c-divider);
@@ -396,6 +404,20 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   gap: 0.25rem;
+}
+
+.view-all-link {
+  color: var(--vp-c-brand);
+  text-decoration: none;
+  font-weight: 500;
+  margin: 0 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.view-all-link:hover {
+  text-decoration: underline;
 }
 
 .rss-icon, .view-more-icon {
