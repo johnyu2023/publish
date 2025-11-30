@@ -11,34 +11,17 @@ hero:
     - theme: alt
       text: github pages
       link: /posts/github-pages
-
-features:
-  - icon: 🚀
-    title: 学习笔记
-    details: 记录AI学习笔记
-    link: /ai/code
-
-  - icon: 📝
-    title: 技术文章
-    details: 分享传统技术的文章心得
-    link: /posts/github-pages
-
-  - icon: 💡
-    title: 观察思考
-    details: 分享对现在和未来的一些思考
-    link: /think/pm
-
-  - icon: 🌐
-    title: 前端开发
-    details: 分享前端开发技术和最佳实践
-    link: /web/hybrid-rendering
 ---
 
 <script setup>
-import { withBase } from 'vitepress'
+import { ref, onMounted } from 'vue'
 import TabbedSection from './.vitepress/components/TabbedSection.vue'
+import CategoryCards from './.vitepress/components/CategoryCards.vue'
+
+// 组件挂载后不需要额外的数据加载，因为CategoryCards组件会自己处理
 </script>
 
+<CategoryCards />
 <TabbedSection />
 
 <style>

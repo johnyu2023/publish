@@ -397,3 +397,225 @@
   white-space: normal !important;
 }
 
+/* 调整首页5个分类卡片布局 - 在一行显示 */
+.VPHomeFeatures {
+  width: 100%;
+  max-width: none !important;
+}
+
+.VPHomeFeatures .container {
+  max-width: 1600px !important;
+  width: 100% !important;
+  padding: 0 24px !important;
+  margin: 0 auto !important;
+}
+
+.VPHomeFeatures .items {
+  display: grid !important;
+  grid-template-columns: repeat(5, minmax(280px, 1fr)) !important;
+  gap: 12px !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  justify-items: stretch !important;
+}
+
+.VPFeature {
+  position: relative !important;
+  width: 100% !important;
+  height: auto !important;
+  min-height: 200px !important;
+  border-radius: 12px !important;
+  background-color: var(--vp-c-bg-soft) !important;
+  border: 1px solid var(--vp-c-divider) !important;
+  transition: all 0.3s ease !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  grid-column: span 1 !important;
+}
+
+.VPFeature:hover {
+  transform: translateY(-4px) !important;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12) !important;
+  border-color: var(--vp-c-brand) !important;
+  background-color: var(--vp-c-bg) !important;
+}
+
+/* 重置VitePress默认样式 */
+.VPFeature * {
+  box-sizing: border-box !important;
+}
+
+.VPFeature .icon {
+  font-size: 2.5rem !important;
+  margin-bottom: 1rem !important;
+  display: block !important;
+  text-align: center !important;
+  line-height: 1 !important;
+}
+
+.VPFeature .title {
+  font-size: 1.2rem !important;
+  margin-bottom: 0.75rem !important;
+  line-height: 1.3 !important;
+  font-weight: 600 !important;
+  text-align: center !important;
+  color: var(--vp-c-text-1) !important;
+}
+
+.VPFeature .details {
+  font-size: 0.9rem !important;
+  line-height: 1.5 !important;
+  color: var(--vp-c-text-2) !important;
+  text-align: center !important;
+  margin: 0 !important;
+}
+
+.VPFeature a {
+  text-decoration: none !important;
+  color: inherit !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  width: 100% !important;
+  height: 100% !important;
+  padding: 24px 16px !important;
+  min-height: inherit !important;
+  box-sizing: border-box !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* 确保内容不被遮挡 */
+.VPFeature .VPFeatureText {
+  text-align: center !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* 响应式调整 - 平板和手机设备 */
+@media (max-width: 1440px) {
+  .VPHomeFeatures .container {
+    max-width: 1400px !important;
+  }
+
+  .VPHomeFeatures .items {
+    gap: 10px !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  .VPHomeFeatures .container {
+    max-width: 1200px !important;
+    padding: 0 20px !important;
+  }
+
+  .VPHomeFeatures .items {
+    grid-template-columns: repeat(5, minmax(240px, 1fr)) !important;
+    gap: 8px !important;
+  }
+
+  .VPFeature {
+    min-height: 180px !important;
+  }
+
+  .VPFeature a {
+    padding: 20px 12px !important;
+  }
+
+  .VPFeature .icon {
+    font-size: 2.2rem !important;
+  }
+
+  .VPFeature .title {
+    font-size: 1.1rem !important;
+  }
+
+  .VPFeature .details {
+    font-size: 0.85rem !important;
+  }
+}
+
+@media (max-width: 1024px) {
+  .VPHomeFeatures .container {
+    max-width: 960px !important;
+    padding: 0 16px !important;
+  }
+
+  .VPHomeFeatures .items {
+    grid-template-columns: repeat(3, minmax(280px, 1fr)) !important;
+    gap: 16px !important;
+  }
+
+  .VPFeature {
+    min-height: 170px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .VPHomeFeatures .container {
+    max-width: 720px !important;
+    padding: 0 16px !important;
+  }
+
+  .VPHomeFeatures .items {
+    grid-template-columns: repeat(2, minmax(300px, 1fr)) !important;
+    gap: 12px !important;
+  }
+
+  .VPFeature {
+    min-height: 160px !important;
+  }
+
+  .VPFeature a {
+    padding: 16px 12px !important;
+  }
+
+  .VPFeature .icon {
+    font-size: 2rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .VPFeature .title {
+    font-size: 1rem !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  .VPFeature .details {
+    font-size: 0.8rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .VPHomeFeatures .container {
+    max-width: 100% !important;
+    padding: 0 12px !important;
+  }
+
+  .VPHomeFeatures .items {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .VPFeature {
+    min-height: 140px !important;
+  }
+
+  .VPFeature a {
+    padding: 20px 16px !important;
+  }
+
+  .VPFeature .icon {
+    font-size: 2.2rem !important;
+    margin-bottom: 0.75rem !important;
+  }
+
+  .VPFeature .title {
+    font-size: 1.1rem !important;
+  }
+
+  .VPFeature .details {
+    font-size: 0.85rem !important;
+  }
+}
+
