@@ -2,12 +2,97 @@
   "directories": [
     "ai",
     "foundation",
+    "history",
     "other",
     "public",
     "think",
     "web"
   ],
   "articles": [
+    {
+      "directory": "ai",
+      "title": "Embeddings 再梳理",
+      "url": "/ai/embeddings-02",
+      "date": "2025-11-29",
+      "description": "嵌入",
+      "tags": [
+        "Embeddings",
+        "向量"
+      ]
+    },
+    {
+      "directory": "foundation",
+      "title": "Python虚拟环境-共享库+子项目",
+      "url": "/foundation/python-shared-libs-lightweight-project-venv",
+      "date": "2025-11-29",
+      "description": "Python虚拟环境解决方案：共享大库 + 轻量项目虚拟环境",
+      "tags": [
+        "Python",
+        "虚拟环境"
+      ]
+    },
+    {
+      "directory": "other",
+      "title": "LaTeX 规范",
+      "url": "/other/latex-spec",
+      "date": "2025-11-29",
+      "description": "本网站使用的 LaTeX 编写规范，为了确保所有公式能够正确渲染，请遵循以下编写规范。",
+      "tags": [
+        "LaTeX"
+      ]
+    },
+    {
+      "directory": "ai",
+      "title": "Dify 初探",
+      "url": "/ai/dify",
+      "date": "2025-11-26",
+      "description": "。",
+      "tags": [
+        "Dify"
+      ]
+    },
+    {
+      "directory": "ai",
+      "title": "Qwen-Agent",
+      "url": "/ai/qwen-agent",
+      "date": "2025-10-28",
+      "description": "Qwen-Agent 是一个开发框架，充分利用基于通义千问模型（Qwen）的指令遵循、工具使用、规划、记忆能力。",
+      "tags": [
+        "Qwen-Agent"
+      ]
+    },
+    {
+      "directory": "foundation",
+      "title": "Jupyter Kernel",
+      "url": "/foundation/jupyter-kernel",
+      "date": "2025-10-24",
+      "description": "Jupyter 中 Kernel 介绍。",
+      "tags": [
+        "Jupyter",
+        "JupyterLab",
+        "Kernel"
+      ]
+    },
+    {
+      "directory": "foundation",
+      "title": "Python 的虚拟环境",
+      "url": "/foundation/python-venv",
+      "date": "2025-10-23",
+      "description": "Python 虚拟环境的使用思考",
+      "tags": [
+        "Python，虚拟环境"
+      ]
+    },
+    {
+      "directory": "foundation",
+      "title": "Python 源代码思考",
+      "url": "/foundation/python-02",
+      "date": "2025-10-22",
+      "description": "在阅读 Python 源代码时一些值得记录的内容",
+      "tags": [
+        "Python"
+      ]
+    },
     {
       "directory": "ai",
       "title": "TensorFlow 基础",
@@ -317,7 +402,17 @@
     {
       "directory": "foundation",
       "title": "Python 使用基础",
-      "url": "/foundation/python",
+      "url": "/foundation/python-01 copy",
+      "date": "2025-06-01",
+      "description": "Python 使用过程中一些值得记录的内容",
+      "tags": [
+        "Python"
+      ]
+    },
+    {
+      "directory": "foundation",
+      "title": "Python 使用基础",
+      "url": "/foundation/python-01",
       "date": "2025-06-01",
       "description": "Python 使用过程中一些值得记录的内容",
       "tags": [
@@ -424,16 +519,6 @@
         "Machine Learning",
         "Deep Learning",
         "Reinforcement Learning"
-      ]
-    },
-    {
-      "directory": "other",
-      "title": "LaTeX 测试页面",
-      "url": "/other/latex-test",
-      "date": "2025-01-17",
-      "description": "这是一个测试 VitePress 中 LaTeX 支持的页面，仅仅为了验证是否能正常显示",
-      "tags": [
-        "LaTeX"
       ]
     },
     {
