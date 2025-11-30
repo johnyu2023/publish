@@ -222,4 +222,4 @@ export default withMermaid(defineConfig({
   mermaid: {
     theme: 'default',
   }
-})
+}))
