@@ -41,16 +41,6 @@
       ]
     },
     {
-      "directory": "other",
-      "title": "LaTeX 测试页面",
-      "url": "/other/latex-test",
-      "date": "2025-11-29",
-      "description": "这是一个测试 VitePress 中 LaTeX 支持的页面，仅仅为了验证是否能正常显示",
-      "tags": [
-        "LaTeX"
-      ]
-    },
-    {
       "directory": "ai",
       "title": "Dify 初探",
       "url": "/ai/dify",
