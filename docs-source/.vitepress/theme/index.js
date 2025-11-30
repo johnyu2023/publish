@@ -8,6 +8,9 @@ import BlogPost from '../components/BlogPost.vue'
 // 导入 Naive UI
 import naive from 'naive-ui'
 
+// 在 VitePress 路由变化后重新初始化 Mermaid 交互功能
+import { useRouter } from 'vitepress'
+
 // 导入专门用于修复ShowAllList组件布局问题的样式
 import './custom.css'
 import './show-all-list-fix.css'
@@ -101,7 +104,7 @@ export default {
     app.component('ShowAllTitle', ShowAllTitle)
     // app.component('ArticleListPage', ArticleListPage)
   },
-  
+
   Layout() {
     return h(DefaultTheme.Layout, null, {
       'sidebar-nav-before': () => [
@@ -210,6 +213,20 @@ export default {
   },
   
   setup() {
+    // 注册路由钩子，以便在页面切换时重新初始化 Mermaid 交互功能
+    const router = useRouter();
+    
+    // 页面切换后重新初始化 Mermaid 交互功能
+    router.onAfterRouteChanged = () => {
+      // 给页面一些时间完成渲染
+      setTimeout(() => {
+        if (window.mermaidInteraction) {
+          // 重新检查并设置新的 Mermaid 元素
+          window.mermaidInteraction.setupMermaidElements();
+        }
+      }, 500);
+    };
+    
     // 注册全局事件监听器
     onMounted(() => {
       window.addEventListener('close-modal', handleGlobalCloseModal)

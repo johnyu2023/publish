@@ -67,6 +67,7 @@
 
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
+import { withBase } from 'vitepress'
 
 // 数据状态
 const loading = ref(true)
@@ -102,8 +103,12 @@ async function loadHistoryData() {
     loading.value = true
     error.value = false
 
-    // 使用 fetch API 加载历史数据，添加时间戳避免缓存
-    const response = await fetch(`/data/history.json?t=${Date.now()}`)
+    // 使用绝对路径加载历史数据，添加时间戳避免缓存
+    // 构建绝对路径确保正确请求资源
+    const base = window?.__VP_STATIC_BASE__ || window?.__vitepress?.siteData?.base || '/';
+    // 确保路径始终是绝对路径，以解决相对路径解析问题
+    const absolutePath = base.endsWith('/') ? `${base}data/history.json` : `${base}/data/history.json`;
+    const response = await fetch(`${withBase('/data/history.json')}?t=${Date.now()}`)
 
     if (!response.ok) {
       throw new Error('无法加载历史数据文件')

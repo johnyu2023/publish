@@ -40,7 +40,7 @@ export default withMermaid(defineConfig({
     // 添加KaTeX的CSS样式
     ['link', { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css' }],
     // 添加 Mermaid 交互增强脚本
-    ['script', { src: `${base}.vitepress/theme/assets/mermaid-interaction.js` }],
+    ['script', { src: `${base}mermaid-interaction.js` }],
     // 添加 Mermaid 图表交互增强样式
     ['style', {}, `
       /* Mermaid 图表缩放和拖拽样式 */
