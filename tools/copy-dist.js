@@ -22,7 +22,9 @@ const SOURCE_CONFIG = {
   // 文章列表数据文件
   listSource: path.join('{rootDir}', 'docs-source', 'data', 'list.json'),
   // 文章目录定义文件
-  categorySource: path.join('{rootDir}', 'docs-source', 'data', 'category.json')
+  categorySource: path.join('{rootDir}', 'docs-source', 'data', 'category.json'),
+  // 历史事件数据文件
+  historySource: path.join('{rootDir}', 'docs-source', 'data', 'history.json')
 };
 
 // ==============================
@@ -52,6 +54,8 @@ const listTarget = path.join(targetPath, 'data', 'list.json');
 const listTargetDir = path.dirname(listTarget);
 const categorySource = SOURCE_CONFIG.categorySource.replace('{rootDir}', rootDir);
 const categoryTarget = path.join(targetPath, 'data', 'category.json');
+const historySource = SOURCE_CONFIG.historySource.replace('{rootDir}', rootDir);
+const historyTarget = path.join(targetPath, 'data', 'history.json');
 
 // 确保目标目录存在
 if (!fs.existsSync(targetPath)) {
@@ -77,6 +81,9 @@ if (process.platform === 'win32') {
     // 复制 category.json 文件
     execSync(`copy "${categorySource}" "${categoryTarget}" /Y`, { stdio: 'inherit' });
     
+    // 复制 history.json 文件
+    execSync(`copy "${historySource}" "${historyTarget}" /Y`, { stdio: 'inherit' });
+    
     console.log(`✅ 成功将文件复制到 ${targetDir} 目录`);
   } catch (error) {
     console.error('❌ 复制文件时出错:', error);
@@ -97,6 +104,9 @@ if (process.platform === 'win32') {
     
     // 复制 category.json 文件
     execSync(`cp ${categorySource} ${categoryTarget}`, { stdio: 'inherit' });
+    
+    // 复制 history.json 文件
+    execSync(`cp ${historySource} ${historyTarget}`, { stdio: 'inherit' });
     
     console.log(`✅ 成功将文件复制到 ${targetDir} 目录`);
   } catch (error) {

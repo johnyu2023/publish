@@ -17,7 +17,7 @@ tags: [Cursor, MCP, Figma，小程序]
 
 + 示例提示词：
 
-``` prompt
+```plaintext
 我想开发一个手机上使用的web应用。我想生成的是：一个中年技术工程师对生活，对人生，对技术的思考
 
 ## 内容包括：
@@ -52,7 +52,7 @@ tags: [Cursor, MCP, Figma，小程序]
 
 + 最终给出的描述如下
 
-``` response
+```plaintext
 # 网站设计描述：中年技术工程师的个人思考空间
 
 ## 整体风格与氛围
@@ -167,7 +167,7 @@ tags: [Cursor, MCP, Figma，小程序]
 
 + 提示词里要清晰明确让它意识到要去调用这个 figma 的 MCP
 
-``` prompt
+```plaintext
 @https://www.figma.com/design/bNc1sc9VLFjumKp1SpRR14/mini02?node-id=1-2&t=8mB8G0cLD046OKcF-4 -- 这是 首页 的设计稿，
 https://www.figma.com/design/bNc1sc9VLFjumKp1SpRR14/mini02?node-id=1-99&t=8mB8G0cLD046OKcF-4 -- 这是 文章列表 的设计稿，
 https://www.figma.com/design/bNc1sc9VLFjumKp1SpRR14/mini02?node-id=1-246&t=8mB8G0cLD046OKcF-4 -- 这是 文章内容 的设计稿，
@@ -198,7 +198,7 @@ https://www.figma.com/design/bNc1sc9VLFjumKp1SpRR14/mini02?node-id=1-452&t=8mB8G
 
 #### 方式1：直接指定服务器名称
 
-``` prompt
+```plaintext
 请使用 "Framelink Figma MCP" 服务器获取这个Figma文件的数据：
 https://www.figma.com/design/KAZBLhvhSCzcPaMTQTZTWZ/mini003?node-id=1-2
 
@@ -207,7 +207,7 @@ https://www.figma.com/design/KAZBLhvhSCzcPaMTQTZTWZ/mini003?node-id=1-2
 
 #### 方式2：明确说明MCP工具使用
 
-``` prompt
+```plaintext
 使用MCP工具完成以下任务：
 
 1. 从Figma获取设计稿数据（文件ID: KAZBLhvhSCzcPaMTQTZTWZ，节点ID: 1-2）
@@ -219,7 +219,7 @@ https://www.figma.com/design/KAZBLhvhSCzcPaMTQTZTWZ/mini003?node-id=1-2
 
 #### 方式3：最简洁有效的写法
 
-``` prompt
+```plaintext
 从这个Figma链接下载所有图片：
 https://www.figma.com/design/bNc1sc9VLFjumKp1SpRR14/mini02?node-id=1-2
 
@@ -235,7 +235,7 @@ https://www.figma.com/design/bNc1sc9VLFjumKp1SpRR14/mini02?node-id=1-2
 
 #### 最佳实践示例
 
-``` prompt
+```plaintext
 请帮我从以下Figma设计稿中下载所有图片资源：
 
 首页：https://www.figma.com/design/KAZBLhvhSCzcPaMTQTZTWZ/mini003?node-id=1-2
@@ -248,7 +248,7 @@ https://www.figma.com/design/bNc1sc9VLFjumKp1SpRR14/mini02?node-id=1-2
 
 #### 无法一次性将程序生成和图片生成完成
 
-``` prompt
+```plaintext
 请使用 "Framelink Figma MCP" 服务器，获取以下这些 Figma 文件的数据。根据这些 Figma 设计稿，请帮我生成生成一个微信小程序的代码项目。
 
 首页： https://www.figma.com/design/KAZBLhvhSCzcPaMTQTZTWZ/mini003?node-id=1-2&t=k451nghq0qxBoRcm-4

@@ -113,7 +113,7 @@ npm install -g figma-developer-mcp
 
 + 提示词里要清晰明确让它意识到要去调用这个 figma 的 MCP
 
-``` prompt
+```plaintext
 @https://www.figma.com/design/bNc1sc9VLFjumKp1SpRR14/mini02?node-id=1-2&t=8mB8G0cLD046OKcF-4 请根据这个 figma 设计稿，检查我们的首页，是否符合设计稿的要求
 ```
 

@@ -54,10 +54,12 @@ tools 目录中的所有 JavaScript 工具文件都在项目构建流程中正�
 ### 拷贝的源目录和目标目录
 
 **源目录**：
+
 1. `docs-source/.vitepress/dist` - VitePress 构建生成的静态文件目录
 2. `docs-source/rss.xml` - RSS 订阅文件
 3. `docs-source/data/list.json` - 文章列表数据文件
 4. `docs-source/data/category.json` - 文章目录定义文件
+5. `docs-source/data/history.json` - 历史事件数据文件
 
 **目标目录**：
 - 由命令行参数指定，通常为 `docs` 或 `publish` 目录

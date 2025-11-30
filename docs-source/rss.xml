@@ -6,8 +6,84 @@
     <link>https://johnyu2023.github.io/publish</link>
     <atom:link href="https://johnyu2023.github.io/publish/rss.xml" rel="self" type="application/rss+xml"/>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 11 Oct 2025 03:12:17 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 30 Nov 2025 12:34:05 GMT</lastBuildDate>
     <ttl>60</ttl>
+    
+    <item>
+      <title>Embeddings 再梳理</title>
+      <description>嵌入</description>
+      <link>https://johnyu2023.github.io/publish/ai/embeddings-02</link>
+      <guid>https://johnyu2023.github.io/publish/ai/embeddings-02</guid>
+      <pubDate>Sat, 29 Nov 2025 00:00:00 GMT</pubDate>
+      <category>Embeddings</category>
+      <category>向量</category>
+    </item>
+    
+    <item>
+      <title>Python虚拟环境-共享库+子项目</title>
+      <description>Python虚拟环境解决方案：共享大库 + 轻量项目虚拟环境</description>
+      <link>https://johnyu2023.github.io/publish/foundation/python-shared-libs-lightweight-project-venv</link>
+      <guid>https://johnyu2023.github.io/publish/foundation/python-shared-libs-lightweight-project-venv</guid>
+      <pubDate>Sat, 29 Nov 2025 00:00:00 GMT</pubDate>
+      <category>Python</category>
+      <category>虚拟环境</category>
+    </item>
+    
+    <item>
+      <title>LaTeX 规范</title>
+      <description>本网站使用的 LaTeX 编写规范，为了确保所有公式能够正确渲染，请遵循以下编写规范。</description>
+      <link>https://johnyu2023.github.io/publish/other/latex-spec</link>
+      <guid>https://johnyu2023.github.io/publish/other/latex-spec</guid>
+      <pubDate>Sat, 29 Nov 2025 00:00:00 GMT</pubDate>
+      <category>LaTeX</category>
+    </item>
+    
+    <item>
+      <title>Dify 初探</title>
+      <description>。</description>
+      <link>https://johnyu2023.github.io/publish/ai/dify</link>
+      <guid>https://johnyu2023.github.io/publish/ai/dify</guid>
+      <pubDate>Wed, 26 Nov 2025 00:00:00 GMT</pubDate>
+      <category>Dify</category>
+    </item>
+    
+    <item>
+      <title>Qwen-Agent</title>
+      <description>Qwen-Agent 是一个开发框架，充分利用基于通义千问模型（Qwen）的指令遵循、工具使用、规划、记忆能力。</description>
+      <link>https://johnyu2023.github.io/publish/ai/qwen-agent</link>
+      <guid>https://johnyu2023.github.io/publish/ai/qwen-agent</guid>
+      <pubDate>Tue, 28 Oct 2025 00:00:00 GMT</pubDate>
+      <category>Qwen-Agent</category>
+    </item>
+    
+    <item>
+      <title>Jupyter Kernel</title>
+      <description>Jupyter 中 Kernel 介绍。</description>
+      <link>https://johnyu2023.github.io/publish/foundation/jupyter-kernel</link>
+      <guid>https://johnyu2023.github.io/publish/foundation/jupyter-kernel</guid>
+      <pubDate>Fri, 24 Oct 2025 00:00:00 GMT</pubDate>
+      <category>Jupyter</category>
+      <category>JupyterLab</category>
+      <category>Kernel</category>
+    </item>
+    
+    <item>
+      <title>Python 的虚拟环境</title>
+      <description>Python 虚拟环境的使用思考</description>
+      <link>https://johnyu2023.github.io/publish/foundation/python-venv</link>
+      <guid>https://johnyu2023.github.io/publish/foundation/python-venv</guid>
+      <pubDate>Thu, 23 Oct 2025 00:00:00 GMT</pubDate>
+      <category>Python，虚拟环境</category>
+    </item>
+    
+    <item>
+      <title>Python 源代码思考</title>
+      <description>在阅读 Python 源代码时一些值得记录的内容</description>
+      <link>https://johnyu2023.github.io/publish/foundation/python-02</link>
+      <guid>https://johnyu2023.github.io/publish/foundation/python-02</guid>
+      <pubDate>Wed, 22 Oct 2025 00:00:00 GMT</pubDate>
+      <category>Python</category>
+    </item>
     
     <item>
       <title>TensorFlow 基础</title>
@@ -298,8 +374,17 @@
     <item>
       <title>Python 使用基础</title>
       <description>Python 使用过程中一些值得记录的内容</description>
-      <link>https://johnyu2023.github.io/publish/foundation/python</link>
-      <guid>https://johnyu2023.github.io/publish/foundation/python</guid>
+      <link>https://johnyu2023.github.io/publish/foundation/python-01 copy</link>
+      <guid>https://johnyu2023.github.io/publish/foundation/python-01 copy</guid>
+      <pubDate>Sun, 01 Jun 2025 00:00:00 GMT</pubDate>
+      <category>Python</category>
+    </item>
+    
+    <item>
+      <title>Python 使用基础</title>
+      <description>Python 使用过程中一些值得记录的内容</description>
+      <link>https://johnyu2023.github.io/publish/foundation/python-01</link>
+      <guid>https://johnyu2023.github.io/publish/foundation/python-01</guid>
       <pubDate>Sun, 01 Jun 2025 00:00:00 GMT</pubDate>
       <category>Python</category>
     </item>
@@ -394,15 +479,6 @@
       <category>Machine Learning</category>
       <category>Deep Learning</category>
       <category>Reinforcement Learning</category>
-    </item>
-    
-    <item>
-      <title>LaTeX 测试页面</title>
-      <description>这是一个测试 VitePress 中 LaTeX 支持的页面，仅仅为了验证是否能正常显示</description>
-      <link>https://johnyu2023.github.io/publish/other/latex-test</link>
-      <guid>https://johnyu2023.github.io/publish/other/latex-test</guid>
-      <pubDate>Fri, 17 Jan 2025 00:00:00 GMT</pubDate>
-      <category>LaTeX</category>
     </item>
     
     <item>
