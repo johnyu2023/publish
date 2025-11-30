@@ -82,7 +82,7 @@ export default withMermaid(defineConfig({
         content: "💡 使用鼠标滚轮缩放，按住拖拽移动" !important;
         position: absolute !important;
         top: 5px !important;
-        right: 5px !important;
+        right: 45px !important;
         font-size: 12px !important;
         color: #666 !important;
         background-color: rgba(255, 255, 255, 0.9) !important;
@@ -90,6 +90,32 @@ export default withMermaid(defineConfig({
         border-radius: 4px !important;
         z-index: 10 !important;
         pointer-events: none !important;
+      }
+
+      /* 放大镜按钮样式 */
+      .mermaid-zoom-btn {
+        position: absolute !important;
+        top: 10px !important;
+        right: 10px !important;
+        width: 32px !important;
+        height: 32px !important;
+        border: none !important;
+        border-radius: 6px !important;
+        background-color: rgba(59, 130, 246, 0.9) !important;
+        color: white !important;
+        font-size: 16px !important;
+        cursor: pointer !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+        transition: all 0.2s ease !important;
+        z-index: 100 !important;
+      }
+
+      .mermaid-zoom-btn:hover {
+        background-color: rgba(59, 130, 246, 1) !important;
+        transform: scale(1.1) !important;
       }
 
       /* VitePress 中的 Markdown 内容区域 */
@@ -103,6 +129,60 @@ export default withMermaid(defineConfig({
         max-width: none !important;
         width: 100% !important;
         height: auto !important;
+      }
+
+      /* 弹框样式 */
+      .mermaid-modal {
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        background-color: rgba(0, 0, 0, 0.8) !important;
+        z-index: 9999 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        cursor: grab !important;
+      }
+
+      .mermaid-modal-content {
+        position: relative !important;
+        background-color: white !important;
+        border-radius: 12px !important;
+        padding: 20px !important;
+        width: 90vw !important;
+        height: 90vh !important;
+        overflow: hidden !important;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3) !important;
+        cursor: default !important;
+      }
+
+      .mermaid-modal-chart {
+        position: relative !important;
+        overflow: visible !important;
+        cursor: grab !important;
+        user-select: none !important;
+        display: inline-block !important;
+        transform-origin: center center !important;
+        transition: transform 0.1s ease-out !important;
+      }
+
+      .mermaid-modal-chart:active {
+        cursor: grabbing !important;
+      }
+
+      .mermaid-modal-tip {
+        position: absolute !important;
+        bottom: 10px !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        font-size: 14px !important;
+        color: #666 !important;
+        background-color: rgba(255, 255, 255, 0.9) !important;
+        padding: 6px 12px !important;
+        border-radius: 6px !important;
+        pointer-events: none !important;
       }
     `]
   ],
@@ -142,4 +222,4 @@ export default withMermaid(defineConfig({
   mermaid: {
     theme: 'default',
   }
-}))
+})
