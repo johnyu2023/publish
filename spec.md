@@ -5,6 +5,7 @@
 ## 1. Mermaid 图表规范
 
 ### 1.1 基本配置
+
 - 本项目使用 `vitepress-plugin-mermaid` 插件
 - 已配置全局 CSS 样式和 JavaScript 交互功能
 - 支持鼠标滚轮缩放（0.1x - 5x）和拖拽移动
@@ -12,6 +13,7 @@
 - 双击重置到默认状态
 
 ### 1.2 编写规范
+
 - 使用标准的 Mermaid 语法，参考 [Mermaid 官方文档](https://mermaid.js.org/intro/)
 - 图表类型支持：`flowchart`、`graph`、`sequence`、`classDiagram`、`stateDiagram`、`erDiagram`、`pie`、`gantt`
 - **节点定义**：使用有意义的标识符，如 `A[开始]`、`B[数据处理]`、`C[输出]`
@@ -20,6 +22,7 @@
 - **样式定制**：可以通过 class 定义样式，但保持简洁
 
 ### 1.3 示例模板
+
 ```mermaid
 flowchart TD
     A[开始] --> B[数据处理]
@@ -33,6 +36,7 @@ flowchart TD
 ```
 
 ### 1.4 交互功能使用
+
 - **缩放**：鼠标滚轮向前滚动放大，向后滚动缩小
 - **拖拽**：按住左键拖拽移动图表
 - **重置**：双击图表恢复原始大小和位置
@@ -41,11 +45,13 @@ flowchart TD
 ## 2. LaTeX 数学公式规范
 
 ### 2.1 基本配置
+
 - 本项目使用 `@mdit/plugin-katex` 插件
 - 已配置 LaTeX 样式：`https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css`
 - 详细的 LaTeX 规范请参考：`docs-source/other/latex-spec.md`
 
 ### 2.2 编写规范
+
 - **行内公式**：使用单个 `$` 包围
   - **行间公式**：使用 `$$` 包围（独占一行）
 - **向量和矩阵**：使用 `\mathbf{}` 表示粗体，`\mathit{}` 表示斜体
@@ -54,12 +60,14 @@ flowchart TD
 - **上下标**：使用 `^` 表示上标，`_` 表示下标
 
 ### 2.3 最佳实践
+
 - **避免中文符号**：在数学公式中避免使用中文标点符号
 - **使用标准命令**：优先使用 `\frac` 而不是手动构造分数
 - **矩阵格式**：使用 `\begin{pmatrix}` 和 `\end{pmatrix}`
 - **公式解释**：复杂公式后可以添加文字说明
 
 ### 2.4 常用公式模板
+
 ```markdown
 <!-- 行内公式 -->
 $E = mc^2$
@@ -77,16 +85,19 @@ $$\mathbf{A} = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}$$
 ## 3. 代码编写规范
 
 ### 3.1 文件结构
+
 - `docs-source/` - 源文档目录，存放所有 Markdown 文件
 - `docs-source/.vitepress/` - VitePress 配置和主题文件
 - `docs-source/assets/` - 静态资源文件（图片、文档等）
 
 ### 3.2 命名规范
+
 - 使用 kebab-case：`embeddings-02.md`、`machine-learning.md`
 - 避免特殊字符和空格
 - 文件名应简明反映内容主题
 
 ### 3.3 Front Matter 规范
+
 ```yaml
 ---
 title: 文章标题
@@ -97,95 +108,193 @@ tags: [标签1, 标签2]
 ```
 
 ### 3.4 内容结构
+
 - 使用 `<BlogPost>` 组件包装内容
 - 标题层级：使用 `#` 表示一级标题，`##` 表示二级标题
 - 代码块：使用三个反引号标识语言类型
 - 图片：使用相对路径，放在 `assets/` 目录下
 
 ### 3.5 组件使用
-- 已有组件：
-  - `<PostDate>` - 显示文章日期
-  - `<ImageModal>` - 图片模态框
-  - `<ArticleList>` - 文章列表
-  - `<SidebarArticleList>` - 侧边栏文章列表
 
-## 4. Git 工作流规范
+项目包含丰富的 Vue 组件库，按功能分类如下：
 
-### 4.1 分支管理
-- 主分支：`main`
-- 功能分支：`feature/功能名称`
-- 修复分支：`fix/问题描述`
-- 发布分支：`release/版本号`
+#### 布局组件 (Layout Components)
 
-### 4.2 提交信息规范
-```bash
-git commit -m "type(scope): subject
+- `<Layout>` - 主布局组件，提供固定标题功能和侧边栏集成
+- `<PostLayout>` - 文章专用布局，包含相关文章侧边栏
+- `<fixed-title>` - 固定标题组件，滚动时显示页面标题
 
-body
+#### 博客/文章组件 (Blog/Article Components)
 
-detailed explanation
+- `<BlogPost>` - 文章头部组件，包含日期格式化和元数据
+- `<ArticleList>` - 文章列表组件，支持年月分组和折叠功能
+- `<ArticleListPage>` - 专用文章列表页面组件
+- `<TimeArticleList>` - 基于时间的文章列表组件
+- `<RecentArticles>` - 最新文章显示组件，集成RSS订阅和模态框
+- `<HistoryTimeline>` - 文章历史时间轴组件
 
-🤖 Generated with [Claude Code](https://claude.com/claude-code)
+#### 侧边栏组件 (Sidebar Components)
 
-Co-Authored-By: Claude <noreply@anthropic.com>"
+- `<SidebarArticleList>` - 侧边栏文章列表，支持按目录过滤
+- `<TestSidebar>` - 开发测试用侧边栏组件
+
+#### UI 组件 (UI Components)
+
+- `<ImageModal>` - 图片模态框组件，支持点击放大查看
+- `<CategoryCards>` - 分类卡片网格组件，带导航功能
+- `<TabbedSection>` - 标签页内容区域组件
+- `<ShowAllTitle>` - "显示全部"标题组件
+
+#### 日期/时间组件 (Date/Time Components)
+
+- `<PostDate>` - 文章日期格式化组件
+  - 两个版本：`docs-source/.vitepress/theme/components/` 和 `docs-source/.vitepress/components/`
+
+#### 页脚/文档组件 (Footer/Documentation Components)
+
+- `<DocFooter>` - 文档页脚组件
+- `<VPDocFooter>` - VitePress 文档页脚组件
+- `<DocLayout>` - 文档布局组件
+
+#### 组件特点
+
+- **数据集成**：所有组件与 JSON 数据文件集成（`/data/list.json`、`/data/category.json`）
+- **错误处理**：包含加载状态、错误处理和重试功能
+- **响应式设计**：支持移动端和桌面端
+- **交互功能**：丰富的用户交互体验
+
+#### 使用示例
+
+```vue
+<!-- 使用文章列表组件 -->
+<ArticleList :articles="articles" />
+
+<!-- 使用图片模态框 -->
+<ImageModal :src="imageSrc" :alt="imageAlt" />
+
+<!-- 使用分类卡片 -->
+<CategoryCards :categories="categories" />
 ```
 
-**类型**：
-- `feat`: 新功能
-- `fix`: 修复问题
-- `docs`: 文档更新
-- `style`: 代码格式调整
-- `refactor`: 代码重构
-- `test`: 测试相关
+## 4. 构建和部署规范
 
-**示例**：
-- `feat(mermaid): add zoom and pan functionality`
-- `fix(latex): resolve equation rendering issue`
-- `docs(readme): update project documentation`
+### 4.1 开发环境脚本
 
-## 5. 构建和部署规范
+项目支持三种运行模式：开发、预览和生产。
 
-### 5.1 开发环境
+#### 开发模式 (`npm run dev`)
+
+- 用于本地开发和调试
+- 启动热重载服务器
+- 自动更新数据文件：`npm run update:data:fixed`
+- 适用于开发过程中的实时预览
+
+#### 预览模式 (`npm run preview`)
+
+- 模拟生产环境的本地预览
+- 与生产版本代码完全一致
+- 构建完成后复制到 `publish` 目录
+- 在端口 5174 启动静态服务器
+- 推荐在部署前使用此模式验证
+
+#### 生产模式 (`npm run build`)
+
+- 构建生产就绪的静态文件
+- 优化资源大小和性能
+- 构建完成后复制到 `docs` 目录（用于 GitHub Pages 部署）
+
+#### 清理命令 (`npm run clean`)
+
+- 清理构建输出目录（publish 和 docs）
+- 在执行预览或生产构建前建议先运行此命令
+- 确保构建环境的清洁性
+
+#### 使用流程
+
 ```bash
-# 安装依赖
-npm install
+# 标准构建流程
+npm run clean    # 可选：清理旧构建文件
+npm run preview  # 本地预览，验证构建结果
+npm run build    # 构建生产版本
 
-# 本地开发
-npm run dev
-
-# 构建生产版本
-npm run build
-
-# 预览构建结果
-npm run preview
+# 开发流程
+npm run dev      # 开发模式，实时预览
 ```
 
-### 5.2 环境变量
+### 4.2 静态资源管理
+
+#### docs-source/public 目录
+
+- `docs-source/public` 目录存放需要在不同构建环境中使用的静态文件
+- **预览环境**：文件自动复制到 `publish` 目录
+- **生产环境**：文件自动复制到 `docs` 目录
+- 确保文件在所有构建环境中都能正确访问
+
+#### 当前包含的文件
+
+- `favicon.ico` - 网站图标
+- `mermaid-interaction.js` - Mermaid 图表交互功能脚本
+
+#### 使用指南
+
+- 将需要在所有环境中访问的静态文件放入此目录
+- 避免在页面中硬编码路径，应使用 `withBase` 函数处理路径
+
+### 4.3 数据文件访问规范
+
+#### withBase 函数使用
+
+- 项目中的数据文件存放在 `docs-source/data` 目录
+- 在页面中访问数据文件时，必须使用 `withBase` 函数确保正确的路径解析
+- **目的**：保证在预览和生产环境中都能正确访问到数据文件
+
+#### 数据文件列表
+
+- `category.json` - 分类信息数据
+- `history.json` - 历史记录数据
+- `list.json` - 文章列表数据
+
+#### 使用示例
+
+```javascript
+// 错误方式 - 可能在某些环境中失效
+const data = await fetch('/data/list.json')
+
+// 正确方式 - 使用 withBase 确保路径正确
+const data = await fetch(withBase('/data/list.json'))
+```
+
+### 4.4 环境变量
+
 - `NODE_ENV=production` - 生产环境
 - `DEPLOY_ENV=GITHUB_PAGES` - GitHub Pages 部署
 
-## 6. 代码质量规范
+## 5. 代码质量规范
 
-### 6.1 通用原则
+### 5.1 通用原则
+
 - 保持代码简洁明了
 - 添加必要的注释
 - 避免过度工程化
 - 遵循现有项目风格
 
-### 6.2 Markdown 编写
+### 5.2 Markdown 编写
+
 - 使用标准 Markdown 语法
 - 合理使用标题层级
 - 保持段落简短
 - 正确使用代码块和引用
 
-### 6.3 性能考虑
+### 5.3 性能考虑
+
 - 避免过大的图片资源
 - 合理使用 Mermaid 图表复杂度
 - 优化 LaTeX 公式渲染性能
 
-## 7. 常见问题解决
+## 6. 常见问题解决
 
-### 7.1 Mermaid 图表问题
+### 6.1 Mermaid 图表问题
+
 - **问题**：图表显示不完整或样式异常
 - **解决**：
   1. 检查语法是否符合 Mermaid 规范
@@ -193,7 +302,8 @@ npm run preview
   3. 参考 Mermaid 官方文档
   4. 使用交互功能进行调试
 
-### 7.2 LaTeX 公式问题
+### 6.2 LaTeX 公式问题
+
 - **问题**：公式无法正确渲染或显示异常
 - **解决**：
   1. 检查 LaTeX 语法是否正确
@@ -201,7 +311,8 @@ npm run preview
   3. 使用简化版本进行测试
   4. 检查括号匹配和特殊字符转义
 
-### 7.3 构建问题
+### 6.3 构建问题
+
 - **问题**：构建失败或页面无法访问
 - **解决**：
   1. 检查 VitePress 配置文件语法
@@ -209,20 +320,23 @@ npm run preview
   3. 清理构建缓存：`rm -rf node_modules/.vite`
   4. 检查端口占用情况
 
-## 8. 工具和资源
+## 7. 工具和资源
 
-### 8.1 开发工具推荐
+### 7.1 开发工具推荐
+
 - **IDE**：VS Code（推荐安装相关插件）
 - **浏览器**：Chrome 或 Firefox（开发者工具）
 - **版本控制**：Git
 
-### 8.2 有用链接
+### 7.2 有用链接
+
 - [VitePress 官方文档](https://vitepress.dev/)
 - [Mermaid 官方文档](https://mermaid.js.org/)
 - [KaTeX 文档](https://katex.org/)
 - [Markdown 语法指南](https://www.markdownguide.org/)
 
-### 8.3 模板和示例
+### 7.3 模板和示例
+
 - 查看 `docs-source/` 目录下的现有文件作为参考
 - 特别是包含 Mermaid 图表和 LaTeX 公式的文件
 - 使用项目中的组件作为模板
@@ -230,4 +344,6 @@ npm run preview
 ---
 
 **更新日志**：
+
+- 2025-12-01: 新增构建脚本详细说明、静态资源管理规范、数据文件访问规范、Vue组件完整列表
 - 2025-11-29: 初始版本，包含 Mermaid 和 LaTeX 规范
