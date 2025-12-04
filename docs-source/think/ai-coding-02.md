@@ -1,19 +1,17 @@
 ---
-date: 2025-08-18
-title: AI 辅助编程的注意事项
+title: AI辅助编程02-注意事项
 description: 探讨使用AI辅助编程的最佳实践和常见陷阱
+date: 2025-08-18
+tags: [AI Coding]
 ---
 
 <BlogPost>
 
-# AI 辅助编程的注意事项
-
-
 ## 1. 背景说明
 
-使用过多个 AI 辅助编程工具：
-Cursor，Trae CN，Lingma, CodeBuddy
-体验总体是差不多的。
++ 使用过多个 AI 辅助编程工具：
++ Cursor，Trae CN，Lingma, CodeBuddy
++ 体验总体是差不多的。
 
 ## 2. AI能编程，但细节会有问题
 

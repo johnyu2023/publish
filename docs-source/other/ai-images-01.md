@@ -2,14 +2,14 @@
 title: AI 生图使用
 description: 用 AI 生成图片
 date: 2025-09-02
-tags: [AI 生图]
+tags: [AI，文生图]
 ---
 
 <BlogPost>
 
 ## 展示一张图
 
-<img src="../assets/ai/ai-images/man-in-keyboard.png" alt="man in esc key">
+<img src="../assets/other/ai-images/man-in-keyboard.png" alt="man in esc key">
 
 ```plaintext
 一个超写实的等距视角 3D 渲染图，展示了一个微型电脑工作空间，置于一个半透明的机械键盘键帽内，键帽特别放置在一块真实哑光表面的机械键盘的 ESC 键上。
@@ -27,7 +27,7 @@ tags: [AI 生图]
 
 ## 展示一张图 - 9:16 竖屏 2K 分辨率
 
-<img src="../assets/ai/ai-images/man_9-16_63835x63835x6383.png" alt="man in esc key">
+<img src="../assets/other/ai-images/man_9-16_63835x63835x6383.png" alt="man in esc key">
 
 ```plaintext
 一个超写实的等距视角 3D 渲染图，展示了一个微型电脑工作空间，置于一个半透明的机械键盘键帽内，键帽特别放置在一块真实哑光表面的机械键盘的 ESC 键上。

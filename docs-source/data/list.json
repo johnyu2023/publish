@@ -10,6 +10,16 @@
   ],
   "articles": [
     {
+      "directory": "think",
+      "title": "AI辅助编程03-尽头是软件工程",
+      "url": "/think/ai-coding-03",
+      "date": "2025-12-01",
+      "description": "探讨使用AI辅助编程的最佳实践和常见陷阱",
+      "tags": [
+        "AI Coding"
+      ]
+    },
+    {
       "directory": "ai",
       "title": "Embeddings 再梳理",
       "url": "/ai/embeddings-02",
@@ -238,9 +248,9 @@
       ]
     },
     {
-      "directory": "ai",
+      "directory": "other",
       "title": "AI 生图使用",
-      "url": "/ai/ai-images-01",
+      "url": "/other/ai-images-01",
       "date": "2025-09-02",
       "description": "用 AI 生成图片",
       "tags": [
@@ -329,12 +339,14 @@
       "tags": []
     },
     {
-      "directory": "foundation",
-      "title": "AI 辅助编程的注意事项",
-      "url": "/foundation/coding-01",
+      "directory": "think",
+      "title": "AI辅助编程02-注意事项",
+      "url": "/think/ai-coding-02",
       "date": "2025-08-18",
       "description": "探讨使用AI辅助编程的最佳实践和常见陷阱",
-      "tags": []
+      "tags": [
+        "AI Coding"
+      ]
     },
     {
       "directory": "other",
@@ -380,13 +392,13 @@
       "tags": []
     },
     {
-      "directory": "foundation",
-      "title": "AI 辅助编程初体验",
-      "url": "/foundation/code",
+      "directory": "think",
+      "title": "AI辅助编程01-初体验",
+      "url": "/think/ai-coding-01",
       "date": "2025-06-15",
-      "description": "初次体会AI 辅助编程，喜忧参半。",
+      "description": "初次体会AI辅助编程，喜忧参半",
       "tags": [
-        "Cursor"
+        "AI Coding"
       ]
     },
     {
