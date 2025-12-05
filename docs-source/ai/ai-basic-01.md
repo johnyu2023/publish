@@ -5,7 +5,7 @@ date: 2025-05-12
 tags: [AI]
 ---
 
-<BlogPost>
+::: blog-post
 
 <img src="../assets/ai/analytical-ai/analytical-ai.jpg" alt="analytical-ai">
 
@@ -100,4 +100,4 @@ tags: [AI]
 
 总而言之，当你在学习AI应用时遇到“贝叶斯原理”，它很可能指的是利用贝叶斯定理来处理概率、更新信念、构建可学习模型或优化系统的一种核心思想和方法论。
 
-</BlogPost>
+:::

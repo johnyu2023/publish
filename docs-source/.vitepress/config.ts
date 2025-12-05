@@ -3,6 +3,7 @@ import type { DefaultTheme } from 'vitepress'
 import { withMermaid } from 'vitepress-plugin-mermaid'
 import sidebarConfig from './sidebar.js'
 import { katex } from '@mdit/plugin-katex'
+import markdownItContainer from 'markdown-it-container'
 
 // 检测环境
 const isProduction = process.env.NODE_ENV === 'production'
@@ -26,6 +27,22 @@ export default withMermaid(defineConfig({
   // 配置markdown选项，使用官方的katex插件支持LaTeX
   markdown: {
     config: (md) => {
+      // 使用自定义容器插件
+      md.use(markdownItContainer, 'blog-post', {
+        validate: function(params) {
+          return params.trim() === 'blog-post';
+        },
+        render: function(tokens, idx) {
+          if (tokens[idx].nesting === 1) {
+            // 开始标签 - 使用Vue组件
+            return '<ClientOnly><VPCustomContainer>';
+          } else {
+            // 结束标签
+            return '</VPCustomContainer></ClientOnly>';
+          }
+        }
+      });
+      
       md.use(katex, {
         throwOnError: false,
         errorColor: '#cc0000'
@@ -39,6 +56,54 @@ export default withMermaid(defineConfig({
     ['meta', { name: 'referrer', content: 'no-referrer-when-downgrade' }],
     // 添加KaTeX的CSS样式
     ['link', { rel: 'stylesheet', href: 'https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css' }],
+    // 添加自定义blog-post容器样式
+    ['style', {}, `/* 自定义blog-post容器样式 */
+      .blog-post-container {
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 1.5rem 0;
+      }
+
+      .blog-post-container header {
+        margin-bottom: 2rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid var(--vp-c-divider);
+      }
+
+      .blog-post-container h1 {
+        margin: 0 0 0.5rem 0;
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--vp-c-text-1);
+      }
+
+      .blog-post-container .post-meta {
+        display: block;
+        color: var(--vp-c-text-2);
+        margin-top: 0.5rem;
+      }
+
+      .blog-post-container .post-date {
+        display: block;
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+      }
+
+      .blog-post-container .date-icon {
+        margin-right: 0.5rem;
+      }
+
+      .blog-post-container .post-description {
+        display: block;
+        margin: 0.5rem 0 0 0;
+        color: var(--vp-c-text-2);
+        font-style: italic;
+      }
+
+      .blog-post-container .post-content {
+        line-height: 1.7;
+      }
+    `],
     // 添加 Mermaid 交互增强脚本
     ['script', { src: `${base}mermaid-interaction.js` }],
     // 添加 Mermaid 图表交互增强样式

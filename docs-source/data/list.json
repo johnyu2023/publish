@@ -10,6 +10,16 @@
   ],
   "articles": [
     {
+      "directory": "ai",
+      "title": "LLM 的训练",
+      "url": "/ai/llm-training",
+      "date": "2025-12-05",
+      "description": "LLM 都是如何训练出来的",
+      "tags": [
+        "LLM，训练"
+      ]
+    },
+    {
       "directory": "think",
       "title": "AI辅助编程03-尽头是软件工程",
       "url": "/think/ai-coding-03",
@@ -254,7 +264,7 @@
       "date": "2025-09-02",
       "description": "用 AI 生成图片",
       "tags": [
-        "AI 生图"
+        "AI，文生图"
       ]
     },
     {
@@ -532,22 +542,6 @@
         "Deep Learning",
         "Reinforcement Learning"
       ]
-    },
-    {
-      "directory": "other",
-      "title": "Markdown 语法完全指南",
-      "url": "/other/markdown-guide",
-      "date": "2025-01-16",
-      "description": "全面介绍Markdown语法及其在技术写作中的应用",
-      "tags": []
-    },
-    {
-      "directory": "other",
-      "title": "开始使用 VitePress 搭建技术博客",
-      "url": "/other/getting-started",
-      "date": "2025-01-15",
-      "description": "从零开始学习如何使用VitePress搭建个人技术博客",
-      "tags": []
     },
     {
       "directory": "other",

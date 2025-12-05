@@ -1,6 +1,11 @@
 {
   "history": [
     {
+      "date": "2025-12-05",
+      "title": "采用 ::: blog-post ... ::: 语法 实现自定义组件",
+      "desc": "解决撰写博客时, 不停报错的问题。由于 <BlogPost> 和 </BlogPost> 标签对触发LSP解析错误, 报告\"Document has been closed\"错误。新方案通过 ::: blog-post ... ::: 这种 markdown 语法替代Vue组件标签, 避免LSP解析错误"
+    },
+    {
       "date": "2025-11-30",
       "title": "加入历史时间功能",
       "desc": "加入历史事件功能，用户可以查看网站历史事件"

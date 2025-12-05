@@ -6,7 +6,8 @@ import { fileURLToPath } from 'url';
 // 目录名称映射
 const directoryTitles = {
   'ai': '学习笔记',
-  'posts': '技术文章',
+  'foundation': '基础知识',
+  'other': '技术文档',
   'think': '观察思考',
   'web': '前端开发'
 };

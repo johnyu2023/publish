@@ -4,6 +4,7 @@ import ShowAllTitle from '../components/ShowAllTitle.vue'
 import ArticleListPage from '../components/ArticleListPage.vue'
 import TimeArticleList from '../components/TimeArticleList.vue'
 import BlogPost from '../components/BlogPost.vue'
+import VPCustomContainer from '../components/VPCustomContainer.vue'
 
 // 导入 Naive UI
 import naive from 'naive-ui'
@@ -100,6 +101,7 @@ export default {
   enhanceApp({ app }) {
     app.use(naive)
     app.component('BlogPost', BlogPost)
+    app.component('VPCustomContainer', VPCustomContainer)
     app.component('TimeArticleList', TimeArticleList)
     app.component('ShowAllTitle', ShowAllTitle)
     // app.component('ArticleListPage', ArticleListPage)
