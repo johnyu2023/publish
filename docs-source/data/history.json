@@ -1,6 +1,11 @@
 {
   "history": [
     {
+      "date": "2025-12-06",
+      "title": "VPCustomContainer组件中加入章节列表",
+      "desc": "文章右侧提供章节列表，悬浮，可收缩展开"
+    },
+    {
       "date": "2025-12-05",
       "title": "采用 ::: blog-post ... ::: 语法 实现自定义组件",
       "desc": "解决撰写博客时, 不停报错的问题。由于 <BlogPost> 和 </BlogPost> 标签对触发LSP解析错误, 报告\"Document has been closed\"错误。新方案通过 ::: blog-post ... ::: 这种 markdown 语法替代Vue组件标签, 避免LSP解析错误"

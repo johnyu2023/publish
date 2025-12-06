@@ -27,7 +27,7 @@ export default withMermaid(defineConfig({
   // 配置markdown选项，使用官方的katex插件支持LaTeX
   markdown: {
     config: (md) => {
-      // 使用自定义容器插件
+      // 使用自定义容器插件 - 用于替代 <BlogPost> 标签的 ::: blog-post 语法
       md.use(markdownItContainer, 'blog-post', {
         validate: function(params) {
           return params.trim() === 'blog-post';
