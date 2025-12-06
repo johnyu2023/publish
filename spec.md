@@ -320,22 +320,70 @@ const data = await fetch(withBase('/data/list.json'))
   3. 清理构建缓存：`rm -rf node_modules/.vite`
   4. 检查端口占用情况
 
-## 7. 工具和资源
+## 7. BlogPost 组件替代方案
 
-### 7.1 开发工具推荐
+### 7.1 问题背景
+
+- **LSP解析错误**：使用 `<BlogPost>` Vue组件标签时出现 "Document has been closed" 错误
+- **错误原因**：语言服务器在处理Vue组件标签时可能出现文档状态管理问题
+- **解决方案**：使用markdown容器语法替代Vue组件标签
+
+### 7.2 实现原理
+
+- **核心插件**：`markdown-it-container` 插件处理自定义容器语法
+- **语法格式**：使用 `::: blog-post` 和 `:::` 包裹内容
+- **转换机制**：markdown-it 将容器语法转换为 `<ClientOnly><VPCustomContainer>...</VPCustomContainer></ClientOnly>`
+- **组件功能**：`VPCustomContainer.vue` 访问页面frontmatter数据并渲染相同结构
+
+### 7.3 语法使用
+
+```markdown
+::: blog-post
+
+## 文章标题
+
+这里是文章内容...
+
+:::
+```
+
+### 7.4 技术优势
+
+- **LSP友好**：避免Vue组件标签触发的语言服务器解析问题
+- **功能保持**：完全保持原有标题、日期、描述的显示功能
+- **样式兼容**：应用相同的CSS样式，保持视觉效果一致
+- **共存性**：新旧语法可以在项目中同时使用
+
+### 7.5 组件结构
+
+- **VPCustomContainer.vue**：核心组件，处理frontmatter数据
+- **config.ts配置**：注册markdown-it-container插件
+- **theme/index.js**：注册Vue组件
+
+### 7.6 使用建议
+
+1. **逐步迁移**：可选择性地将markdown文件的 `<BlogPost>` 标签替换为 `::: blog-post` 语法
+2. **保持一致性**：在新创建的文件中优先使用容器语法
+3. **测试验证**：确保标题、日期、描述等frontmatter信息正确显示
+
+---
+
+## 8. 工具和资源
+
+### 8.1 开发工具推荐
 
 - **IDE**：VS Code（推荐安装相关插件）
 - **浏览器**：Chrome 或 Firefox（开发者工具）
 - **版本控制**：Git
 
-### 7.2 有用链接
+### 8.2 有用链接
 
 - [VitePress 官方文档](https://vitepress.dev/)
 - [Mermaid 官方文档](https://mermaid.js.org/)
 - [KaTeX 文档](https://katex.org/)
 - [Markdown 语法指南](https://www.markdownguide.org/)
 
-### 7.3 模板和示例
+### 8.3 模板和示例
 
 - 查看 `docs-source/` 目录下的现有文件作为参考
 - 特别是包含 Mermaid 图表和 LaTeX 公式的文件
@@ -345,5 +393,6 @@ const data = await fetch(withBase('/data/list.json'))
 
 **更新日志**：
 
+- 2025-12-04: 新增 BlogPost 组件替代方案章节，解决LSP解析错误问题
 - 2025-12-01: 新增构建脚本详细说明、静态资源管理规范、数据文件访问规范、Vue组件完整列表
 - 2025-11-29: 初始版本，包含 Mermaid 和 LaTeX 规范

@@ -21,6 +21,16 @@
     },
     {
       "directory": "think",
+      "title": "AI Agents 的商业价值",
+      "url": "/think/business-value-of-ai-agents",
+      "date": "2025-12-05",
+      "description": "AI Agents 在什么方向上可以落地",
+      "tags": [
+        "AI Agents"
+      ]
+    },
+    {
+      "directory": "think",
       "title": "AI辅助编程03-尽头是软件工程",
       "url": "/think/ai-coding-03",
       "date": "2025-12-01",
