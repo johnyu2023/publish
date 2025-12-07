@@ -6,11 +6,19 @@ const isModalOpen = ref(false)
 const modalImageSrc = ref('')
 const modalImageAlt = ref('')
 
+// 图片缩放和拖拽相关
+const scale = ref(1)
+const position = ref({ x: 0, y: 0 })
+const isDragging = ref(false)
+const dragStart = ref({ x: 0, y: 0 })
+
 // 打开图片弹窗
 const openImageModal = (src, alt) => {
   modalImageSrc.value = src
   modalImageAlt.value = alt || ''
   isModalOpen.value = true
+  scale.value = 1  // 重置缩放
+  position.value = { x: 0, y: 0 }  // 重置位置
   // 防止背景滚动
   document.body.style.overflow = 'hidden'
 }
@@ -20,6 +28,8 @@ const closeImageModal = () => {
   isModalOpen.value = false
   modalImageSrc.value = ''
   modalImageAlt.value = ''
+  scale.value = 1
+  position.value = { x: 0, y: 0 }
   // 恢复背景滚动
   document.body.style.overflow = ''
 }
@@ -31,11 +41,57 @@ const closeModalOnBackdrop = (event) => {
   }
 }
 
+// 阻止图片拖拽默认行为
+const preventDrag = (event) => {
+  event.preventDefault()
+}
+
+// 鼠标滚轮缩放
+const handleWheel = (event) => {
+  if (!isModalOpen.value) return
+  
+  event.preventDefault()
+  const delta = event.deltaY > 0 ? -0.1 : 0.1
+  const newScale = scale.value + delta
+  
+  // 设置缩放范围限制（0.5 到 3 倍）
+  if (newScale >= 0.5 && newScale <= 3) {
+    scale.value = newScale
+  }
+}
+
+// 鼠标按下开始拖拽
+const startDrag = (event) => {
+  if (scale.value <= 1) return  // 只有在放大时才允许拖拽
+  
+  isDragging.value = true
+  dragStart.value = {
+    x: event.clientX - position.value.x,
+    y: event.clientY - position.value.y
+  }
+  event.preventDefault()
+}
+
+// 鼠标移动拖拽
+const onDrag = (event) => {
+  if (!isDragging.value) return
+  
+  position.value = {
+    x: event.clientX - dragStart.value.x,
+    y: event.clientY - dragStart.value.y
+  }
+}
+
+// 鼠标释放结束拖拽
+const endDrag = () => {
+  isDragging.value = false
+}
+
 // 全局点击事件处理
 const handleGlobalClick = (event) => {
   const target = event.target
-  // 检查点击的是否是图片
-  if (target.tagName === 'IMG' && target.closest('.blog-post')) {
+  // 检查点击的是否是图片，支持BlogPost和VPCustomContainer两种容器
+  if (target.tagName === 'IMG' && (target.closest('.blog-post') || target.closest('.blog-post-container'))) {
     // 阻止事件冒泡
     event.stopPropagation()
     // 获取图片的src和alt属性
@@ -60,10 +116,28 @@ onUnmounted(() => {
 
 <template>
   <!-- 图片弹窗 -->
-  <div v-if="isModalOpen" class="image-modal" @click="closeModalOnBackdrop">
+  <div 
+    v-if="isModalOpen" 
+    class="image-modal" 
+    @click="closeModalOnBackdrop"
+    @wheel="handleWheel"
+  >
     <div class="modal-content">
       <button class="close-button" @click="closeImageModal">&times;</button>
-      <img :src="modalImageSrc" :alt="modalImageAlt" class="modal-image" />
+      <img 
+        :src="modalImageSrc" 
+        :alt="modalImageAlt" 
+        class="modal-image" 
+        :style="{ 
+          transform: `scale(${scale}) translate(${position.x}px, ${position.y}px)`,
+          cursor: scale > 1 ? (isDragging ? 'grabbing' : 'grab') : 'default'
+        }"
+        @mousedown="startDrag"
+        @mousemove="onDrag"
+        @mouseup="endDrag"
+        @mouseleave="endDrag"
+        @dragstart="preventDrag"
+      />
       <div v-if="modalImageAlt" class="image-alt">{{ modalImageAlt }}</div>
     </div>
   </div>
@@ -86,8 +160,8 @@ onUnmounted(() => {
 
 .modal-content {
   position: relative;
-  max-width: 90%;
-  max-height: 90%;
+  max-width: 90vw;
+  max-height: 90vh;
 }
 
 .close-button {
@@ -116,6 +190,7 @@ onUnmounted(() => {
   max-height: 80vh;
   display: block;
   object-fit: contain;
+  transition: transform 0.1s ease;
 }
 
 .image-alt {

@@ -76,3 +76,15 @@ D:\2024-code\publish\docs-source\.vitepress\components\VPCustomContainer.vue 里
 ### about me
 
 请找到 http://localhost:5173/about 所在的页面，我想修改其中的内容
+
+###
+
+访问 http://localhost:5173/ai/llm-training ，文章里的图片，期望可以点击后弹框放大展示，实际点击无响应
+访问 http://localhost:5173/ai/coze-01 ，文章里的图片，可以点击后弹框放大展示
+怀疑是 VPCustomContainer.vue 里逻辑有遗漏，请参考 BlogPost 组件的实现
+
+访问 http://localhost:5173/ai/llm-training ，文章里的图片，点击后弹框放大展示。弹框里的图片能接受鼠标滚轴缩放和鼠标拖拽。
+
+
+
+
