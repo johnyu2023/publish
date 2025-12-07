@@ -10,6 +10,29 @@
   ],
   "articles": [
     {
+      "directory": "think",
+      "title": "AI时代的全栈工程师",
+      "url": "/think/full-stack-engineer",
+      "date": "2025-12-07",
+      "description": "AI 时代的全栈工程师是如何工作的",
+      "tags": [
+        "AI",
+        "全栈工程师"
+      ]
+    },
+    {
+      "directory": "web",
+      "title": "Vue 中的 Store 与 Composable",
+      "url": "/web/vue-store-composable",
+      "date": "2025-12-07",
+      "description": "Vue 中的 Store 与 Composable 是如何工作的",
+      "tags": [
+        "Vue",
+        "Store",
+        "Composable"
+      ]
+    },
+    {
       "directory": "ai",
       "title": "LLM 的训练",
       "url": "/ai/llm-training",

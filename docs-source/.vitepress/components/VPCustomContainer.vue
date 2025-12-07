@@ -2,6 +2,7 @@
 import { computed, ref, onMounted, nextTick, watch } from 'vue'
 import { useData, useRoute } from 'vitepress'
 import ImageModal from './ImageModal.vue'
+import TreeItem from './TreeItem.vue'
 
 const { frontmatter } = useData()
 const route = useRoute()
@@ -21,6 +22,70 @@ const formattedDate = computed(() => {
 // 章节列表
 const headings = ref([])
 const showOutline = ref(true)  // 默认展开
+const treeHeadings = ref([])
+
+// 构建树形结构的章节数据
+const buildTreeHeadings = () => {
+  if (!headings.value.length) {
+    treeHeadings.value = []
+    return
+  }
+  
+  const tree = []
+  const stack = []
+  
+  for (const heading of headings.value) {
+    const node = {
+      ...heading,
+      children: [],
+      expanded: true, // 默认展开
+      hasChildren: false
+    }
+    
+    // 如果栈为空或者当前层级比栈顶层级更深，直接加入为子节点
+    if (!stack.length || heading.level > stack[stack.length - 1].level) {
+      if (stack.length) {
+        // 添加为栈顶元素的子节点
+        stack[stack.length - 1].children.push(node)
+        stack[stack.length - 1].hasChildren = true
+      } else {
+        // 添加到根级
+        tree.push(node)
+      }
+      stack.push(node)
+    } else if (heading.level === stack[stack.length - 1].level) {
+      // 同级节点，需要弹出栈直到找到父级
+      stack.pop()
+      if (stack.length) {
+        stack[stack.length - 1].children.push(node)
+        stack[stack.length - 1].hasChildren = true
+      } else {
+        tree.push(node)
+      }
+      stack.push(node)
+    } else {
+      // 当前节点层级更高（更浅），需要弹出栈直到找到正确的父级
+      while (stack.length && stack[stack.length - 1].level >= heading.level) {
+        stack.pop()
+      }
+      
+      if (stack.length) {
+        stack[stack.length - 1].children.push(node)
+        stack[stack.length - 1].hasChildren = true
+      } else {
+        tree.push(node)
+      }
+      stack.push(node)
+    }
+  }
+  
+  treeHeadings.value = tree
+}
+
+// 切换节点展开/收起状态
+const toggleNode = (node) => {
+  node.expanded = !node.expanded
+}
 
 // 提取标题
 const extractHeadings = () => {
@@ -59,6 +124,7 @@ const extractHeadings = () => {
 const updateHeadings = async () => {
   await nextTick()
   headings.value = extractHeadings()
+  buildTreeHeadings()
 }
 
 // 滚动到指定标题
@@ -105,7 +171,7 @@ onMounted(async () => {
     </div>
     
     <!-- 章节列表 - 悬浮在右侧 -->
-    <div v-if="headings.length > 0" class="outline-container floating">
+    <div v-if="treeHeadings && treeHeadings.length > 0" class="outline-container floating">
       <!-- 展开/收起按钮 -->
       <button 
         class="outline-toggle" 
@@ -118,21 +184,13 @@ onMounted(async () => {
       
       <!-- 章节目录内容 -->
       <div v-show="showOutline" class="outline-list">
-        <ul>
-          <li 
-            v-for="heading in headings" 
-            :key="heading.id"
-            :class="`level-${heading.level}`"
-          >
-            <a 
-              :href="`#${heading.id}`" 
-              @click.prevent="scrollToHeading(heading.id)"
-              class="outline-link"
-            >
-              {{ heading.text }}
-            </a>
-          </li>
-        </ul>
+        <TreeItem
+          v-for="node in treeHeadings" 
+          :key="node.id"
+          :node="node"
+          @scrollToHeading="scrollToHeading"
+          @toggle-node="toggleNode"
+        />
       </div>
     </div>
     
@@ -199,7 +257,7 @@ onMounted(async () => {
   position: fixed;
   top: 100px; /* 与导航栏保持一定间距 */
   right: 20px; /* 悬浮在右侧 */
-  width: 240px;
+  width: 320px;
   z-index: 100;
   background: var(--vp-c-bg-soft);
   border: 1px solid var(--vp-c-divider);

@@ -63,4 +63,12 @@ Github 系统默认行为：当用户选择“从分支部署”时，GitHub 会
 
 章节列表区域 里加一个小图标吧，点击可以实现展开/收起的功能
 
-http://localhost:3000/dashboard/weight-management 这个页面，右侧内容区域，标签页“体重数据统计”里的统计图表里现在无法显示图形
+D:\2024-code\publish\docs-source\.vitepress\components\VPCustomContainer.vue 里有个 章节列表区域 ，外观上做些修改，变得宽一些。顺便检查它的数据来源，能支持到几级标题的显示。
+
+
+### 优化章节列表区域的显示
+
+D:\2024-code\publish\docs-source\.vitepress\components\VPCustomContainer.vue 里有个 章节列表区域 ，外观上做些修改。
+由于章节数据可能会很多，所以希望能用一个树状结构来显示，这样可以很方便地展开或收缩某个节点。
+
+现在有树状结构了，但节点无法收缩或展开，点击后无反应。不过点击节点的标题，会跳转到对应的位置。
