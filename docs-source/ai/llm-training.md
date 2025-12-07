@@ -178,6 +178,9 @@ $$
 
 ## RLHF - 基于人类反馈的强化学习
 
+<img src="../assets/ai/llm-training/step123.png" alt="step123" width="100%" height="100%">
+
+
 ## 奖励模型 - Reward Model
 
 - 奖励模型 - 是额外训练出来的模型

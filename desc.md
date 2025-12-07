@@ -72,3 +72,7 @@ D:\2024-code\publish\docs-source\.vitepress\components\VPCustomContainer.vue 里
 由于章节数据可能会很多，所以希望能用一个树状结构来显示，这样可以很方便地展开或收缩某个节点。
 
 现在有树状结构了，但节点无法收缩或展开，点击后无反应。不过点击节点的标题，会跳转到对应的位置。
+
+### about me
+
+请找到 http://localhost:5173/about 所在的页面，我想修改其中的内容
