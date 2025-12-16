@@ -1,44 +1,19 @@
 {
-  "name": "tech-blog",
+  "name": "publish2",
   "version": "1.0.0",
-  "description": "个人技术博客",
-  "type": "module",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "npm run update:data:fixed && vitepress dev docs-source",
-    "preview": "cross-env DEPLOY_ENV=LOCAL_PREVIEW npm run update:data:fixed && npm run update:rss && vitepress build docs-source && npm run copy:to publish && npx http-server -p 5174 .",
-    "build": "cross-env NODE_ENV=production DEPLOY_ENV=GITHUB_PAGES npm run update:data:fixed && npm run update:rss && vitepress build docs-source && npm run copy:to docs",
-    "update:data": "node tools/update-data.js",
-    "update:data:fixed": "node tools/update-data-fixed.js",
-    "update:rss": "cross-env NODE_ENV=production DEPLOY_ENV=GITHUB_PAGES node tools/update-rss.js",
-    "copy:to": "node tools/copy-dist.js",
-    "clean": "node tools/clean.js"
+    "dev": "vitepress dev docs",
+    "build": "vitepress build docs",
+    "serve": "vitepress serve docs",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [
-    "blog",
-    "vitepress",
-    "technology"
-  ],
-  "author": "Your Name",
-  "license": "MIT",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "packageManager": "pnpm@10.17.1",
   "devDependencies": {
-    "@types/node": "^24.6.2",
-    "cross-env": "^10.0.0",
-    "gray-matter": "^4.0.3",
-    "mermaid": "^11.10.0",
-    "rimraf": "^6.0.1",
-    "vitepress": "^1.6.4",
-    "vitepress-plugin-mermaid": "^2.0.17"
-  },
-  "dependencies": {
-    "@mdit/plugin-katex": "^0.23.1",
-    "@vicons/material": "^0.13.0",
-    "katex": "^0.16.22",
-    "markdown-it": "^14.1.0",
-    "markdown-it-container": "^4.0.0",
-    "markdown-it-texmath": "^1.0.0",
-    "naive-ui": "^2.43.1",
-    "vitepress-plugin-rss": "^0.3.1",
-    "vue": "^3.5.22"
+    "vitepress": "^1.6.4"
   }
 }
