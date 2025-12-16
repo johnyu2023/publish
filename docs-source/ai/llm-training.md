@@ -11,7 +11,22 @@ tags: [LLM，训练]
 
 ## LLM 训练阶段的划分
 
-### `预训练`和`后训练`
+### LLM 训练的两种技术路线
+
+<img src="../assets/ai/llm-training/llm-training.png" alt="llm-training" width="100%" height="100%">
+
++ 事实上，只有 Llama 3 采用了不同于 GPT 的训练流程，但当 Llama 4 训练时，也采用了 GPT 风格的训练流程。
++ 其他主流 LLM （如 DeepSeek、Qwen）也都采用了 GPT 风格的训练流程。
++ 一般认为，LLM 厂商无法跑通 PPO 训练流程前，才会使用 Llama 3 风格的训练流程，因为 PPO 真的很难。
+
+### GPT 风格的训练流程
+
+| 阶段 | 子阶段 | GPT (DeepSeek, Qwen, Llama 4) | 阶段成果 | 备注 |
+|---|---|---|---|---|
+| 预训练 | - | Pretrain | 模型说起话来像“接话茬”，但不能“做任务” |
+| 后训练 | 指令微调（Instruction Tuning） | SFT（Supervised Fine-Tuning） | 模型能“做任务”，但深度不够 |
+| 后训练 | 对齐训练（Alignment Training） | Reward Model | 奖励模型需要多轮迭代 | 迭代多轮，每次都在新的奖励模型的指导下微调 |
+| 后训练 | 对齐训练（Alignment Training） | PPO（Proximal Policy Optimization） | 模型能“做任务”，深度达到人类偏好 | 迭代多轮 |
 
 现代大语言模型（LLM）的训练通常分为`预训练`和`后训练`两个阶段，所有主流 LLM 基本都遵循这一模式。
 > 预训练教会模型`如何说话`，后训练教会它`如何帮助人`
