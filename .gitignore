@@ -31,3 +31,4 @@ docs/.vitepress/dist
 .env
 .env.local
 .env.*.local
+.wucai/

@@ -1,7 +1,7 @@
 export default {
-  base: '/publish2/',  // 如果是发布到 GitHub Pages 项目站点，请保留此行；如果是用户站点则删除此行
-  title: 'publish2',
-  description: 'A VitePress site',
+  base: '/publish/',  // 如果是发布到 GitHub Pages 项目站点，请保留此行；如果是用户站点则删除此行
+  title: 'AI时代的技术分享-v2',
+  description: 'AI时代的技术分享和感悟',
   themeConfig: {
     nav: [
       { text: 'Home', link: '/' },
