@@ -3,6 +3,9 @@ export default {
   title: 'AI时代的技术分享-v2',
   description: 'AI时代的技术分享和感悟',
   themeConfig: {
+    outline: {
+      level: [2, 4]  // 显示从h2到h4的所有层级
+    },
     nav: [
       { text: 'Home', link: '/' },
       { text: 'AI', link: '/ai/future-of-ai' },
