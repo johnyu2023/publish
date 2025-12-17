@@ -23,10 +23,7 @@ jobs:
         run: pnpm install
 
       - name: Build
-        run: |
-          pnpm build
-          # 强制清理残留 node 进程
-          pkill -f node || true
+        run: node build.mjs  # 直接调用 API
 
       - name: Debug - show dist content
         run: ls -la ./docs/.vitepress/dist
