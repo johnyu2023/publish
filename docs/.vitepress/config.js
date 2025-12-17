@@ -10,6 +10,7 @@ export default {
   markdown: {
     // 使用代码块包装 Mermaid 图表
     config: async (md) => {
+      const fence = md.renderer.rules.fence
       // 简单的 Markdown-it 插件处理 mermaid 代码块
       md.renderer.rules.fence = (tokens, idx, options, env, renderer) => {
         const token = tokens[idx]
@@ -23,7 +24,7 @@ export default {
         }
         
         // 对于其他代码块，使用默认渲染
-        return renderer.renderToken(tokens, idx, options, env, renderer)
+        return fence(tokens, idx, options, env, renderer)
       }
     }
   },
