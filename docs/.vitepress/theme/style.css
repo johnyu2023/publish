@@ -1,0 +1,16 @@
+/* 代码块自动换行样式 */
+.shiki {
+  overflow-x: auto;
+}
+
+.shiki code {
+  white-space: pre-wrap !important;
+  word-break: break-word !important;
+  overflow-wrap: break-word !important;
+}
+
+/* 代码行容器 */
+.highlight-line {
+  display: inline-block;
+  width: 100%;
+}
