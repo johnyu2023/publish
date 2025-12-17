@@ -3,16 +3,12 @@ name: Deploy VitePress site to Pages
 on:
   push:
     branches: [v2]
-  # pull_request:  # 暂时注释掉，避免干扰
-  #   branches: [v2]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
 
       - uses: pnpm/action-setup@v3
         with:
@@ -27,12 +23,13 @@ jobs:
         run: pnpm install
 
       - name: Build
-        run: pnpm build
+        run: |
+          pnpm build
+          # 强制清理残留 node 进程
+          pkill -f node || true
 
       - name: Debug - show dist content
-        run: |
-          ls -la ./docs/.vitepress/dist
-          echo "File count: $(find ./docs/.vitepress/dist -type f | wc -l)"
+        run: ls -la ./docs/.vitepress/dist
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
