@@ -22,3 +22,9 @@ other - 技术文档
 
 访问 http://localhost:5173/publish/ai/future-of-ai.html
 右侧大纲区域可以配置展示更多层级的结构吗？
+
+
+## 提交
+
+一个 vitepress 项目，目前源代码在分支 v2 上。我能直接通过配置在 github pages 上展示吗？
+
