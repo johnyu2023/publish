@@ -2,32 +2,6 @@ export default {
   base: '/publish/',  // 如果是发布到 GitHub Pages 项目站点，请保留此行；如果是用户站点则删除此行
   title: 'AI时代的技术分享-v2',
   description: 'AI时代的技术分享和感悟',
-  vite: {
-    ssr: {
-      noExternal: ['mermaid']
-    }
-  },
-  markdown: {
-    // 使用代码块包装 Mermaid 图表
-    config: async (md) => {
-      const fence = md.renderer.rules.fence
-      // 简单的 Markdown-it 插件处理 mermaid 代码块
-      md.renderer.rules.fence = (tokens, idx, options, env, renderer) => {
-        const token = tokens[idx]
-        const info = token.info.trim()
-        const langName = info.split(/\s+/)[0]
-        
-        if (langName === 'mermaid') {
-          const code = token.content.trim()
-          // 返回一个 Vue 组件占位符，将在客户端进行处理
-          return `<Mermaid code="${encodeURIComponent(code)}" />`
-        }
-        
-        // 对于其他代码块，使用默认渲染
-        return fence(tokens, idx, options, env, renderer)
-      }
-    }
-  },
   themeConfig: {
     outline: {
       level: [2, 4]  // 显示从h2到h4的所有层级
