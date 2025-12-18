@@ -32,3 +32,4 @@ docs/.vitepress/dist
 .env.local
 .env.*.local
 .wucai/
+.vitepress/cache/

@@ -35,6 +35,7 @@ export default {
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Mermaid Test', link: '/mermaid-test' },
+      { text: 'Mermaid Modal Test', link: '/test-mermaid-modal' },
       { text: 'AI', link: '/ai/future-of-ai' },
       { text: 'Foundation', link: '/foundation/data-structure' },
       { text: 'FullStack', link: '/fullstack/fullstack-guide' },
