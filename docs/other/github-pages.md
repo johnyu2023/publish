@@ -108,7 +108,7 @@ jobs:
 
 ## ✅ 4. GitHub Pages 仓库设置（关键！）
 
-### 步骤（必须手动操作一次）：
+### 步骤（必须手动操作一次）
 
 1. 进入仓库 → **Settings → Pages**
 2. 在 **Source** 区域：
@@ -163,12 +163,12 @@ jobs:
 
 > 🎉 本配置已在 `johnyu2023/publish` 项目中验证通过，可稳定自动部署。
 
---- 
+---
 
 **保存建议**：将本文档保存为 `DEPLOY.md` 或 `docs/deploy-guide.md`，纳入项目版本管理。
 
 如需进一步自动化（如 PR 预览、定时部署），可扩展 `on.workflow_dispatch` 或 `on.schedule`。
 
---- 
+---
 
 祝你开发顺利！如有更新，记得同步此文档。
