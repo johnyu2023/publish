@@ -117,15 +117,10 @@ AI将在医疗、教育、交通等领域发挥更大作用。
 
 ## AI 战斗图片示例
 
-<img
-    src="/assets/ai/test/fight.png"
-    alt="AI 战斗图示"
-    style="max-width: 50%; height: auto; cursor: pointer; border: 1px solid #ddd; border-radius: 4px;"
-    @click="showImage('/assets/ai/test/fight.png', 'AI 战斗图示')"
-  />
+![AI 战斗图示](/assets/ai/test/fight.png)
 
 $
-\boxed{I(X = x_i) = -\log_2 P(x_i)}
+\\boxed{I(X = x_i) = -\\log_2 P(x_i)}
 $
 
 ```plaintext
