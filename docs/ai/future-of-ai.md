@@ -26,7 +26,7 @@ flowchart LR
         direction LR
         C1[传统方法<br>离散、稀疏]
         C2[现代方法<br>稠密、语义化]
-    </end>
+    end
     
     C1 --> D[One-Hot 编码<br>词袋模型<br>TF-IDF]
     C2 --> E[词嵌入<br>Word2Vec, GloVe<br>上下文嵌入 BERT, GPT]
