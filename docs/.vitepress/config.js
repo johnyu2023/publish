@@ -2,6 +2,24 @@ export default {
   base: '/publish/',  // 如果是发布到 GitHub Pages 项目站点，请保留此行；如果是用户站点则删除此行
   title: 'AI时代的技术分享-v2',
   description: 'AI时代的技术分享和感悟',
+  markdown: {
+    config: (md) => {
+      // 配置 mermaid 渲染为自定义组件
+      const defaultFence = md.renderer.rules.fence
+      md.renderer.rules.fence = (...args) => {
+        const [tokens, idx] = args
+        const token = tokens[idx]
+        const info = token.info.trim()
+        
+        if (info.startsWith('mermaid')) {
+          // 将 mermaid 代码块渲染为自定义组件
+          return `<Mermaid code="${encodeURIComponent(token.content)}" />`
+        }
+        
+        return defaultFence(...args)
+      }
+    }
+  },
   themeConfig: {
     outline: {
       level: [2, 4]  // 显示从h2到h4的所有层级
