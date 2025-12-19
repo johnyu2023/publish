@@ -126,3 +126,10 @@ vitepress 项目，如果想对于文章中的图片做额外的处理。
 
 vitepress 项目，如果想对于文章中的 yaml frontmatter 做额外的显示处理。
 有什么比较优雅的方案
+
+
+将 docs 目录下，除了 .vitepress 目录下的文件，列一个目录结构，包括子目录。
+
+
+
+其他文件的 yaml frontmatter 都提取出来，生成一个 json 文件，后续可以在其他 vue 组件中读取这个 json 文件，展示一些聚合信息。

@@ -1,3 +1,6 @@
+import { writeFileSync } from 'fs'
+import { resolve } from 'path'
+
 export default {
   base: '/publish/',  // 如果是发布到 GitHub Pages 项目站点，请保留此行；如果是用户站点则删除此行
   title: 'AI时代的技术分享-v2',
@@ -18,6 +21,104 @@ export default {
         
         return defaultFence(...args)
       }
+    }
+  },
+  // 使用 transformPageData 钩子收集页面数据
+  transformPageData(pageData) {
+    // 在全局对象中存储页面数据，供 buildEnd 使用
+    if (!globalThis.vitepressPageData) {
+      globalThis.vitepressPageData = {};
+    }
+    
+    // 使用相对 URL 作为键存储页面数据
+    globalThis.vitepressPageData[pageData.relativePath] = {
+      title: pageData.title,
+      frontmatter: pageData.frontmatter
+    };
+  },
+  
+  buildEnd: async (siteConfig) => {
+    // 导入必要的模块
+    const fs = require('fs').promises;
+    const path = require('path');
+    
+    // 获取收集的页面数据
+    const collectedData = globalThis.vitepressPageData || {};
+    
+    // 获取 docs 目录路径
+    const docsDir = path.resolve(__dirname, '..');
+    
+    // 读取所有 Markdown 文件
+    const getAllMarkdownFiles = async (dir) => {
+      let results = [];
+      const files = await fs.readdir(dir);
+      
+      for (const file of files) {
+        const filePath = path.join(dir, file);
+        const stat = await fs.stat(filePath);
+        
+        if (stat.isDirectory()) {
+          // 递归读取子目录
+          results = results.concat(await getAllMarkdownFiles(filePath));
+        } else if (file.endsWith('.md') && !filePath.includes('.vitepress')) {
+          results.push(filePath);
+        }
+      }
+      
+      return results;
+    };
+    
+    try {
+      // 获取所有 Markdown 文件
+      const markdownFiles = await getAllMarkdownFiles(docsDir);
+      
+      const articles = [];
+      
+      for (const file of markdownFiles) {
+        const relativePath = path.relative(docsDir, file).split(path.sep).join('/');
+        
+        // 查找收集的页面数据
+        const pageData = collectedData[relativePath];
+        
+        // 为非 index 文件生成 URL 路径
+        let urlPath = relativePath.replace(/\.md$/, '');
+        if (urlPath.endsWith('/index.md')) {
+          urlPath = urlPath.replace(/\/index\.md$/, '/');
+        } else {
+          urlPath = urlPath.replace(/\.md$/, '');
+        }
+        
+        // 不以 / 开头的情况要加上
+        if (!urlPath.startsWith('/')) {
+          urlPath = '/' + urlPath;
+        }
+        
+        // 排除特定页面
+        if (
+          urlPath.startsWith('/about') || 
+          urlPath.startsWith('/sample-article') || 
+          urlPath.startsWith('/experiments') || 
+          urlPath.startsWith('/mermaid-test') || 
+          urlPath.startsWith('/test-mermaid-modal')
+        ) {
+          continue;
+        }
+        
+        articles.push({
+          url: urlPath,
+          title: pageData?.frontmatter.title || pageData?.title || '',
+          date: pageData?.frontmatter.date,
+          tags: pageData?.frontmatter.tags || [],
+          description: pageData?.frontmatter.description || ''
+        });
+      }
+      
+      // 写入 public 目录（构建后可通过 /all-articles.json 访问）
+      const outputPath = path.resolve(__dirname, 'public/all-articles.json');
+      await fs.writeFile(outputPath, JSON.stringify(articles, null, 2));
+      console.log(`✅ Generated all-articles.json with ${articles.length} articles using transformPageData hook`);
+    } catch (error) {
+      console.error('Error generating all-articles.json:', error);
     }
   },
   themeConfig: {

@@ -19,6 +19,7 @@
     "vitepress": "^1.6.4"
   },
   "dependencies": {
+    "gray-matter": "^4.0.3",
     "viewerjs": "^1.11.7"
   }
 }
