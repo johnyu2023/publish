@@ -39,8 +39,8 @@ export default {
   
   buildEnd: async (siteConfig) => {
     // 导入必要的模块
-    const fs = require('fs').promises;
-    const path = require('path');
+    const { promises: fs } = await import('fs');
+    const path = await import('path');
     
     // 获取收集的页面数据
     const collectedData = globalThis.vitepressPageData || {};
