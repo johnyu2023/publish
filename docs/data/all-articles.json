@@ -8,6 +8,14 @@
     "description": "这是一篇测试文档，验证多种内容的展示 - 已再次更新"
   },
   {
+    "id": "ai\\vibe-coding.md",
+    "url": "/ai/vibe-coding",
+    "title": "沉浸式编程体验",
+    "date": "2024-11-22T00:00:00.000Z",
+    "tags": "AI 编程",
+    "description": "wucai-code 使用体验"
+  },
+  {
     "id": "foundation\\data-structure.md",
     "url": "/foundation/data-structure",
     "title": "计算机基础知识-2027-15",
