@@ -1,17 +1,18 @@
+// docs/.vitepress/config.js
 import { defineConfig } from 'vitepress'
 import fs from 'fs'
 import fsPromises from 'fs/promises'
 import path from 'path'
 import matter from 'gray-matter'
 
-// === 工具函数 ===
+// === 工具函数：获取目录中文名 ===
 function getDirectoryName(dirName) {
   const names = {
-    'ai': '人工智能',
-    'foundation': '基础知识',
-    'fullstack': '全栈开发',
-    'think': '观察思考',
-    'other': '技术文档'
+    ai: '人工智能',
+    foundation: '基础知识',
+    fullstack: '全栈开发',
+    think: '观察思考',
+    other: '技术文档'
   }
   return names[dirName] || dirName.charAt(0).toUpperCase() + dirName.slice(1)
 }
@@ -21,54 +22,44 @@ const docsDir = path.resolve(__dirname, '..')
 const items = await fsPromises.readdir(docsDir)
 const dynamicSidebar = {}
 
+const targetDirs = ['ai', 'foundation', 'fullstack', 'think', 'other']
+
 for (const item of items) {
   const itemPath = path.join(docsDir, item)
   const stat = await fsPromises.stat(itemPath)
 
+  // 跳过非目录或特殊目录
   if (!stat.isDirectory() || ['.vitepress', '.vuepress'].includes(item)) continue
-
-  const targetDirs = ['ai', 'foundation', 'fullstack', 'think', 'other']
   if (!targetDirs.includes(item)) continue
 
   const dirPath = `/${item}/`
   const files = await fsPromises.readdir(itemPath)
+
   const mdFiles = files
     .filter(file => file.endsWith('.md') && file !== 'index.md')
     .map(file => {
       const filePath = path.join(itemPath, file)
-      const content = fs.readFileSync(filePath, 'utf8') // 同步读取，安全
+      const content = fs.readFileSync(filePath, 'utf8')
       const { data } = matter(content)
       return {
         text: data.title || file.replace(/\.md$/, ''),
-        link: `/${item}/${file.replace(/\.md$/, '')}`
+        link: `/${item}/${file.replace(/\.md$/, '')}`,
+        date: data.date ? new Date(data.date).getTime() : 0
       }
     })
-    .sort((a, b) => {
-      // 再次读取 date 用于排序（因为上面没存）
-      const getDate = (file) => {
-        const filePath = path.join(itemPath, file + '.md')
-        try {
-          const content = fs.readFileSync(filePath, 'utf8')
-          const { data } = matter(content)
-          return data.date ? new Date(data.date).getTime() : 0
-        } catch {
-          return 0
-        }
-      }
-      return getDate(b.link.split('/').pop()) - getDate(a.link.split('/').pop())
-    })
+    .sort((a, b) => b.date - a.date) // 按 date 倒序
 
   if (mdFiles.length > 0) {
     dynamicSidebar[dirPath] = [
       {
         text: getDirectoryName(item),
-        items: mdFiles
+        items: mdFiles.map(({ text, link }) => ({ text, link }))
       }
     ]
   }
 }
 
-// === 全局数据收集（保留你的逻辑）===
+// === 全局数据收集（用于 buildEnd）===
 if (!globalThis.vitepressPageData) {
   globalThis.vitepressPageData = {}
 }
@@ -80,7 +71,11 @@ export default defineConfig({
   description: 'AI时代的技术分享和感悟',
 
   vite: {
-    server: { fs: { allow: ['.'] } }
+    server: {
+      fs: {
+        allow: ['.']
+      }
+    }
   },
 
   markdown: {
@@ -97,6 +92,7 @@ export default defineConfig({
     }
   },
 
+  // 收集每页的 frontmatter 数据
   transformPageData(pageData) {
     globalThis.vitepressPageData[pageData.relativePath] = {
       title: pageData.title,
@@ -104,6 +100,7 @@ export default defineConfig({
     }
   },
 
+  // 构建结束后生成 all-articles.json
   buildEnd: async (siteConfig) => {
     const { promises: fs } = await import('fs')
     const path = await import('path')
@@ -141,9 +138,9 @@ export default defineConfig({
         }
         if (!urlPath.startsWith('/')) urlPath = '/' + urlPath
 
-        if (['/about', '/sample-article', '/experiments', '/mermaid-test', '/test-mermaid-modal'].some(p => urlPath.startsWith(p))) {
-          continue
-        }
+        // 排除非文章页面
+        const excludePaths = ['/about', '/sample-article', '/experiments', '/mermaid-test', '/test-mermaid-modal']
+        if (excludePaths.some(p => urlPath.startsWith(p))) continue
 
         articles.push({
           url: urlPath,
@@ -162,9 +159,10 @@ export default defineConfig({
     }
   },
 
-  // ✅ themeConfig 是普通对象，不是函数！
+  // === 主题配置 ===
   themeConfig: {
     outline: { level: [2, 4] },
+
     nav: [
       { text: 'Home', link: '/' },
       { text: 'AI', link: '/ai/future-of-ai' },
@@ -174,6 +172,7 @@ export default defineConfig({
       { text: 'Other', link: '/other/api-documentation' },
       { text: 'About', link: '/about' }
     ],
+
     sidebar: {
       ...dynamicSidebar,
       '/': [
@@ -188,6 +187,7 @@ export default defineConfig({
         }
       ]
     },
+
     footer: {
       message: 'Released under the MIT License.',
       copyright: 'Copyright © 2025-present'
