@@ -1,42 +1,85 @@
 [
   {
-    "id": "ai\\future-of-ai.md",
-    "url": "/ai/future-of-ai",
-    "title": "人工智能的未来发展-2026-14",
-    "date": "2025-12-20T00:00:00.000Z",
-    "tags": "AI 未来科技 测试 新增标签 再次更新",
-    "description": "这是一篇测试文档，验证多种内容的展示 - 已再次更新"
-  },
-  {
-    "id": "ai\\vibe-coding.md",
-    "url": "/ai/vibe-coding",
-    "title": "沉浸式编程体验",
-    "date": "2024-11-22T00:00:00.000Z",
-    "tags": "AI 编程",
-    "description": "wucai-code 使用体验"
-  },
-  {
-    "id": "foundation\\data-structure.md",
     "url": "/foundation/data-structure",
     "title": "计算机基础知识-2027-15",
     "date": "2025-12-21T00:00:00.000Z",
-    "tags": "计算机 基础知识 新增标签 再次更新",
+    "tags": [
+      "计算机",
+      "基础知识",
+      "新增标签",
+      "再次更新"
+    ],
     "description": "这是一篇基础知识介绍 - 已再次更新"
   },
   {
-    "id": "foundation\\vibe-coding.md",
-    "url": "/foundation/vibe-coding",
-    "title": "沉浸式编程基础知识",
-    "date": "2024-11-25T00:00:00.000Z",
-    "tags": "AI 编程 基础知识",
-    "description": "wucai-code 编程基础知识"
+    "url": "/ai/future-of-ai",
+    "title": "人工智能的未来发展-2026-14",
+    "date": "2025-12-20T00:00:00.000Z",
+    "tags": [
+      "AI",
+      "未来科技",
+      "测试",
+      "新增标签",
+      "再次更新"
+    ],
+    "description": "这是一篇测试文档，验证多种内容的展示 - 已再次更新"
   },
   {
-    "id": "fullstack\\fullstack-guide.md",
     "url": "/fullstack/fullstack-guide",
     "title": "全栈开发指南-2028-14",
     "date": "2024-12-15T00:00:00.000Z",
-    "tags": "全栈 日历 电脑 冰箱 彩电",
+    "tags": [
+      "全栈",
+      "日历",
+      "电脑",
+      "冰箱",
+      "彩电"
+    ],
     "description": "全栈吧，挺玄乎，当如是-总是归去"
+  },
+  {
+    "url": "/foundation/vibe-coding",
+    "title": "沉浸式编程基础知识",
+    "date": "2024-11-25T00:00:00.000Z",
+    "tags": [
+      "AI",
+      "编程",
+      "基础知识"
+    ],
+    "description": "wucai-code 编程基础知识"
+  },
+  {
+    "url": "/ai/vibe-coding",
+    "title": "沉浸式编程体验",
+    "date": "2024-11-22T00:00:00.000Z",
+    "tags": [
+      "AI",
+      "编程"
+    ],
+    "description": "wucai-code 使用体验"
+  },
+  {
+    "url": "/",
+    "title": "AI时代技术学习之旅",
+    "tags": [],
+    "description": ""
+  },
+  {
+    "url": "/other/api-documentation",
+    "title": "Untitled",
+    "tags": [],
+    "description": ""
+  },
+  {
+    "url": "/other/github-pages",
+    "title": "Untitled",
+    "tags": [],
+    "description": ""
+  },
+  {
+    "url": "/think/trends-analysis",
+    "title": "Untitled",
+    "tags": [],
+    "description": ""
   }
 ]

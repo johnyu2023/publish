@@ -5,9 +5,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "build:index": "node ./scripts/build-search-index.mjs",
-    "dev": "pnpm build:index && vitepress dev docs",
-    "build": "pnpm build:index && vitepress build docs",
+    "build:prepare": "node ./scripts/build-prepare.mjs",
+    "dev": "pnpm build:prepare && vitepress dev docs",
+    "build": "pnpm build:prepare && vitepress build docs",
     "serve": "vitepress serve docs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

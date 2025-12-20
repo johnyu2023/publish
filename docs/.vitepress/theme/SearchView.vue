@@ -34,7 +34,7 @@ onMounted(async () => {
     // 加载索引时需要传入与构建时相同的配置（包括 tokenize 和 processTerm！）
     miniSearch.value = MiniSearch.loadJSON(jsonString, {
       fields: ['title', 'description', 'tags'],
-      storeFields: ['url', 'date', 'title'],
+      storeFields: ['url', 'date', 'title', 'originalTags'],
       tokenize,
       processTerm,
       searchOptions: { 
@@ -63,7 +63,40 @@ function search() {
     results.value = []
     return
   }
-  results.value = miniSearch.value.search(query.value)
+  
+  // 获取搜索结果
+  let searchResults = miniSearch.value.search(query.value)
+  
+  // 去重：根据 URL 去除重复项（保留第一个匹配的结果）
+  const seenUrls = new Set()
+  searchResults = searchResults.filter(result => {
+    if (seenUrls.has(result.url)) {
+      return false
+    }
+    seenUrls.add(result.url)
+    return true
+  })
+  
+  // 过滤掉首页（URL 为 "/" 或 "/index" 的文档）
+  searchResults = searchResults.filter(result => {
+    return result.url !== '/' && result.url !== '/index' && !result.url.includes('index.html')
+  })
+  
+  // 按日期倒序排列（有日期的排在前面，日期越新的越靠前）
+  searchResults.sort((a, b) => {
+    // 如果两个结果都有日期，则比较日期
+    if (a.date && b.date) {
+      return new Date(b.date) - new Date(a.date)
+    }
+    // 如果 a 有日期而 b 没有，则 a 排前面
+    if (a.date && !b.date) return -1
+    // 如果 b 有日期而 a 没有，则 b 排前面
+    if (b.date && !a.date) return 1
+    // 如果两个都没有日期，则保持原有顺序
+    return 0
+  })
+  
+  results.value = searchResults
 }
 </script>
 
@@ -74,12 +107,46 @@ function search() {
     <div v-if="loading">加载中...</div>
     
     <ul v-else-if="results.length">
-      <li v-for="r in results" :key="r.id">
+      <li v-for="(r, index) in results" :key="r.id">
+        <span class="index">{{ index + 1 }}.</span>
         <a :href="withBase(r.url)">{{ r.title }}</a>
-        <span>{{ r.date }}</span>
+        <span v-if="r.date" class="date">{{ r.date }}</span>
       </li>
     </ul>
     
     <p v-else-if="!loading && query">未找到结果</p>
   </div>
 </template>
+
+<style scoped>
+.index {
+  margin-right: 8px;
+  color: #666;
+  font-weight: bold;
+}
+
+.date {
+  margin-left: 8px;
+  color: #888;
+  font-size: 0.9em;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+a {
+  text-decoration: none;
+  color: #2c3e50;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+</style>

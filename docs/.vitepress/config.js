@@ -59,11 +59,6 @@ for (const item of items) {
   }
 }
 
-// === 全局数据收集（用于 buildEnd）===
-if (!globalThis.vitepressPageData) {
-  globalThis.vitepressPageData = {}
-}
-
 // === 导出配置 ===
 export default defineConfig({
   base: '/publish/',
@@ -92,71 +87,10 @@ export default defineConfig({
     }
   },
 
-  // 收集每页的 frontmatter 数据
+  // 保留 transformPageData，如果首页仍用 useData() 注入数据
   transformPageData(pageData) {
-    globalThis.vitepressPageData[pageData.relativePath] = {
-      title: pageData.title,
-      frontmatter: pageData.frontmatter
-    }
-  },
-
-  // 构建结束后生成 all-articles.json
-  buildEnd: async (siteConfig) => {
-    const { promises: fs } = await import('fs')
-    const path = await import('path')
-    const collectedData = globalThis.vitepressPageData || {}
-    const docsDir = path.resolve(__dirname, '..')
-
-    const getAllMarkdownFiles = async (dir) => {
-      let results = []
-      const files = await fs.readdir(dir)
-      for (const file of files) {
-        const filePath = path.join(dir, file)
-        const stat = await fs.stat(filePath)
-        if (stat.isDirectory()) {
-          results = results.concat(await getAllMarkdownFiles(filePath))
-        } else if (file.endsWith('.md') && !filePath.includes('.vitepress')) {
-          results.push(filePath)
-        }
-      }
-      return results
-    }
-
-    try {
-      const markdownFiles = await getAllMarkdownFiles(docsDir)
-      const articles = []
-
-      for (const file of markdownFiles) {
-        const relativePath = path.relative(docsDir, file).split(path.sep).join('/')
-        const pageData = collectedData[relativePath]
-
-        let urlPath = relativePath.replace(/\.md$/, '')
-        if (urlPath.endsWith('/index.md')) {
-          urlPath = urlPath.replace(/\/index\.md$/, '/')
-        } else {
-          urlPath = urlPath.replace(/\.md$/, '')
-        }
-        if (!urlPath.startsWith('/')) urlPath = '/' + urlPath
-
-        // 排除非文章页面
-        const excludePaths = ['/about', '/sample-article', '/experiments', '/mermaid-test', '/test-mermaid-modal']
-        if (excludePaths.some(p => urlPath.startsWith(p))) continue
-
-        articles.push({
-          url: urlPath,
-          title: pageData?.frontmatter.title || pageData?.title || '',
-          date: pageData?.frontmatter.date,
-          tags: pageData?.frontmatter.tags || [],
-          description: pageData?.frontmatter.description || ''
-        })
-      }
-
-      const outputPath = path.resolve(__dirname, 'public/all-articles.json')
-      await fs.writeFile(outputPath, JSON.stringify(articles, null, 2))
-      console.log(`✅ Generated all-articles.json with ${articles.length} articles`)
-    } catch (error) {
-      console.error('Error generating all-articles.json:', error)
-    }
+    // 数据生成现在通过外部 build:prepare 脚本完成
+    // 此处保留原函数如果其他地方有使用
   },
 
   // === 主题配置 ===

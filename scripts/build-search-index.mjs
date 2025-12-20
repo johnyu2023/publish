@@ -1,82 +1,57 @@
 // scripts/build-search-index.mjs
-import { readdirSync, readFileSync, writeFileSync, statSync } from 'fs'
-import { join } from 'path'
-import matter from 'gray-matter'
-import MiniSearch from 'minisearch'
+import { readFile, writeFile, rename } from 'fs/promises';
+import { join, dirname } from 'path';
+import MiniSearch from 'minisearch';
+import { fileURLToPath } from 'url';
 
-const DOCS_DIR = 'docs'
-const DATA_DIR = 'docs/data'  // 修改为新的数据目录
-const EXCLUDE_FILES = ['about.md', 'sample-article.md', 'index.md', 'experiments.md']
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const DATA_DIR = join(__dirname, '..', 'docs', 'data');
 
-function getAllMdFiles(dir) {
-  let results = []
-  const list = readdirSync(dir)
-  for (const file of list) {
-    const path = join(dir, file)
-    const stat = statSync(path)
-    if (stat.isDirectory() && file !== 'assets') {
-      results = results.concat(getAllMdFiles(path))
-    } else if (file.endsWith('.md')) {
-      results.push(path)
+// 通用安全写入函数
+async function writeJSONSafe(filePath, data) {
+  const tmpPath = filePath + '.tmp';
+  await writeFile(tmpPath, JSON.stringify(data, null, 2));
+  await rename(tmpPath, filePath); // 原子操作
+}
+
+try {
+  // 从 all-articles.json 读取数据
+  const allArticlesContent = await readFile(join(DATA_DIR, 'all-articles.json'), 'utf8');
+  const articles = JSON.parse(allArticlesContent);
+
+  // 创建并填充 minisearch 索引
+  const miniSearch = new MiniSearch({
+    fields: ['title', 'description', 'tags'], // fields to index for searching
+    storeFields: ['url', 'date', 'title', 'originalTags'], // fields to return with search results
+    searchOptions: {
+      fuzzy: 0.2,
+      prefix: true,
+      boost: { title: 2, description: 1, tags: 1.5 }
+    },
+    // 适配中文内容的分词处理
+    tokenize: (text) => text
+      .split(/[\s\-，。！？、]+/)
+      .map(token => token.trim())
+      .filter(token => token.length > 0),
+    processTerm: (term) => {
+      const cleaned = term.trim().toLowerCase();
+      return cleaned.length > 1 ? cleaned : null;
     }
-  }
-  return results
+  });
+
+  // 添加所有文章到搜索索引
+  miniSearch.addAll(articles.map((article, index) => ({
+    ...article,
+    id: index, // MiniSearch 需要唯一 ID
+    tags: Array.isArray(article.tags) ? article.tags.join(' ') : '', // 用于搜索的字符串格式
+    originalTags: article.tags || []  // 用于存储的原始标签数组
+  })));
+
+  // 生成搜索索引文件
+  await writeJSONSafe(join(DATA_DIR, 'search-index.json'), miniSearch.toJSON());
+
+  console.log(`✅ Generated search-index.json with ${articles.length} articles`);
+} catch (error) {
+  console.error('Error generating search-index.json:', error);
+  process.exit(1);
 }
-
-// 1. 读取所有 .md 文件并解析 frontmatter
-const files = getAllMdFiles(DOCS_DIR)
-const articles = []
-
-for (const file of files) {
-  const relPath = file.replace(/^docs[\/\\]/, '')
-  if (EXCLUDE_FILES.includes(relPath)) continue
-
-  const content = readFileSync(file, 'utf8')
-  const { data } = matter(content)
-
-  if (!data.title) continue
-
-  articles.push({
-    id: relPath, // minisearch 需要唯一 id
-    url: '/' + relPath.replace(/\.md$/, '').replace(/\\/g, '/'),
-    title: data.title,
-    date: data.date,
-    tags: Array.isArray(data.tags) ? data.tags.join(' ') : '',
-    description: data.description || ''
-  })
-}
-
-// 2. 创建并填充 minisearch 索引
-const miniSearch = new MiniSearch({
-  fields: ['title', 'description', 'tags'],
-  storeFields: ['url', 'date', 'title'],
-  searchOptions: {
-    fuzzy: 0.2,
-    prefix: true,
-    boost: { title: 2, description: 1, tags: 1.5 }
-  },
-  // 为中文内容添加适当的分词处理
-  tokenize: (text) => text
-    .split(/[\s\-，。！？、]+/)
-    .map(token => token.trim())  // 确保去除每个分词的首尾空格
-    .filter(token => token.length > 0),
-  processTerm: (term) => {
-    const cleaned = term.trim().toLowerCase()  // 确保去除首尾空格后再转小写
-    return cleaned.length > 1 ? cleaned : null
-  }
-})
-
-miniSearch.addAll(articles)
-
-// 3. 保存到 docs/data 目录
-writeFileSync(
-  join(DATA_DIR, 'all-articles.json'),
-  JSON.stringify(articles, null, 2)
-)
-
-writeFileSync(
-  join(DATA_DIR, 'search-index.json'),
-  JSON.stringify(miniSearch.toJSON())
-)
-
-console.log(`✅ 生成索引：共 ${articles.length} 篇文章`)
