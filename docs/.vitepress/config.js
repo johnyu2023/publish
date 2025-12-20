@@ -67,7 +67,7 @@ if (!globalThis.vitepressPageData) {
 // === 导出配置 ===
 export default defineConfig({
   base: '/publish/',
-  title: 'AI时代的技术分享-v2',
+  title: 'AI时代的技术分享2025',
   description: 'AI时代的技术分享和感悟',
 
   vite: {

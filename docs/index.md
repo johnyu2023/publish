@@ -1,36 +1,20 @@
 ---
 layout: home
-title: 主页
+title: AI时代技术学习之旅
 hero:
-  name: publish2
-  text: 个人技术博客
-  tagline: 记录学习历程，分享技术心得
+  name: AI 时代的技术笔记
+  text: 探索技术，理解未来
+  tagline: 记录思考 · 分享实践 · 拥抱 AI
   image:
-    src: /logo.png
-    alt: publish2
+    src: /assets/head-sport.webp
+    alt: 爱技术爱健身
   actions:
     - theme: brand
       text: 开始阅读
       link: /ai/future-of-ai
     - theme: alt
-      text: 查看全部分类
+      text: 查看所有分类
       link: /categories
-features:
-  - title: 人工智能
-    details: AI技术发展与应用
-    icon: 🤖
-  - title: 基础知识
-    details: 计算机科学基础知识
-    icon: 📘
-  - title: 全栈开发
-    details: 前后端开发实践
-    icon: 💻
-  - title: 技术思考
-    details: 对技术发展的观察
-    icon: 💭
-  - title: 技术文档
-    details: 实用技术参考文档
-    icon: 📋
 ---
 
 <CategoryGrid />
