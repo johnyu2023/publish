@@ -24,6 +24,14 @@
     "description": "这是一篇基础知识介绍 - 已再次更新"
   },
   {
+    "id": "foundation\\vibe-coding.md",
+    "url": "/foundation/vibe-coding",
+    "title": "沉浸式编程基础知识",
+    "date": "2024-11-25T00:00:00.000Z",
+    "tags": "AI 编程 基础知识",
+    "description": "wucai-code 编程基础知识"
+  },
+  {
     "id": "fullstack\\fullstack-guide.md",
     "url": "/fullstack/fullstack-guide",
     "title": "全栈开发指南-2028-14",
