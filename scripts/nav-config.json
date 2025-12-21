@@ -1,0 +1,19 @@
+{
+  "staticNavItems": [
+    {
+      "text": "首页",
+      "link": "/",
+      "order": 1
+    },
+    {
+      "text": "搜索", 
+      "link": "/search.html",
+      "order": 25
+    },
+    {
+      "text": "关于", 
+      "link": "/about",
+      "order": 99
+    }
+  ]
+}

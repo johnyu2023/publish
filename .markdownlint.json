@@ -6,7 +6,9 @@
   "MD033": {
     "allowed_elements": [
       "script",
-      "ArticleMeta"
+      "ArticleMeta",
+      "ClientOnly",
+      "SearchView"
     ]
   },
   "MD041": false,

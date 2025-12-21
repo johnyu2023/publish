@@ -38,15 +38,16 @@
     "fullstack": {
       "name": "全栈开发",
       "description": "全栈开发势不可挡",
-      "count": 6,
+      "count": 12,
       "latestArticle": {
-        "url": "/fullstack/set-up-on-tencent-cloud",
-        "title": "在腾讯云中部署",
-        "date": "2025-12-15",
+        "url": "/fullstack/ai-images-01",
+        "title": "AI 生图使用",
+        "date": "2025-12-21",
         "tags": [
-          "腾讯云"
+          "AI",
+          "文生图"
         ],
-        "description": "腾讯云部署全栈应用的记录"
+        "description": "用 AI 生成图片"
       }
     },
     "think": {
@@ -71,6 +72,13 @@
       "title": "计算机基础知识-2027-15",
       "date": "2025-12-21",
       "url": "/foundation/data-structure"
+    },
+    {
+      "category": "fullstack",
+      "categoryName": "全栈开发",
+      "title": "AI 生图使用",
+      "date": "2025-12-21",
+      "url": "/fullstack/ai-images-01"
     },
     {
       "category": "ai",
@@ -117,25 +125,18 @@
     {
       "category": "fullstack",
       "categoryName": "全栈开发",
-      "title": "Figma MCP 与 Cursor 配合使用",
-      "date": "2025-08-30",
-      "url": "/fullstack/cursor-mcp-to-figma"
+      "title": "LaTeX 规范",
+      "date": "2025-11-29",
+      "url": "/fullstack/latex-spec"
     },
     {
       "category": "fullstack",
       "categoryName": "全栈开发",
-      "title": "从 Figma 还原小程序代码",
-      "date": "2025-08-30",
-      "url": "/fullstack/from-figma-to-mini"
-    },
-    {
-      "category": "think",
-      "categoryName": "观察思考",
-      "title": "AI时代初级岗位是否存在",
-      "date": "2025-08-24",
-      "url": "/think/junior"
+      "title": "AI 的深度检索",
+      "date": "2025-09-08",
+      "url": "/fullstack/deep-search"
     }
   ],
-  "totalArticles": 21,
-  "generatedAt": "2025-12-21T13:49:00.764Z"
+  "totalArticles": 27,
+  "generatedAt": "2025-12-21T23:04:21.341Z"
 }

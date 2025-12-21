@@ -40,8 +40,11 @@ async function main() {
   try {
     // 按顺序执行各个数据生成脚本
     await executeScript('./generate-all-articles.mjs', [DATA_DIR]);
-    await executeScript('./build-search-index.mjs', [DATA_DIR]);
     await executeScript('./generate-blog-data.mjs', [DATA_DIR]);
+    await executeScript('./generate-nav-static.mjs', [DATA_DIR]);
+    await executeScript('./generate-nav-dynamic.mjs', [DATA_DIR]);
+    await executeScript('./merge-nav-data.mjs', [DATA_DIR]);
+    await executeScript('./build-search-index.mjs', [DATA_DIR]);
     
     console.log('\n🎉 Build preparation completed successfully!');
   } catch (error) {
