@@ -1,0 +1,36 @@
+{
+  "categories": {
+    "ai": {
+      "name": "人工智能",
+      "description": "关于人工智能的文章",
+      "icon": "🤖",
+      "order": 1,
+      "color": "#3eaf7c",
+      "enabled": true
+    },
+    "foundation": {
+      "name": "基础知识",
+      "description": "不积跬步无以至千里",
+      "icon": "📘",
+      "order": 2,
+      "color": "#476582",
+      "enabled": true
+    },
+    "fullstack": {
+      "name": "全栈开发",
+      "description": "全栈开发势不可挡",
+      "icon": "💻",
+      "order": 3,
+      "color": "#f5a623",
+      "enabled": true
+    },
+    "think": {
+      "name": "观察思考",
+      "description": "洞察未来的趋势",
+      "icon": "💭",
+      "order": 4,
+      "color": "#d35400",
+      "enabled": true
+    }
+  }
+}

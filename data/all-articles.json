@@ -2,7 +2,7 @@
   {
     "url": "/foundation/data-structure",
     "title": "计算机基础知识-2027-15",
-    "date": "2025-12-21T00:00:00.000Z",
+    "date": "2025-12-21",
     "tags": [
       "计算机",
       "基础知识",
@@ -12,9 +12,20 @@
     "description": "这是一篇基础知识介绍 - 已再次更新"
   },
   {
+    "url": "/fullstack/test-article",
+    "title": "开发文档测试文章",
+    "date": "2025-12-21",
+    "tags": [
+      "开发",
+      "文档",
+      "测试"
+    ],
+    "description": "这是一篇开发文档相关的测试文章"
+  },
+  {
     "url": "/ai/future-of-ai",
     "title": "人工智能的未来发展-2026-14",
-    "date": "2025-12-20T00:00:00.000Z",
+    "date": "2025-12-20",
     "tags": [
       "AI",
       "未来科技",
@@ -25,9 +36,85 @@
     "description": "这是一篇测试文档，验证多种内容的展示 - 已再次更新"
   },
   {
+    "url": "/think/ai-coding-03",
+    "title": "AI辅助编程03-AI时代编程的尽头是软件工程，印度人也是怎么想的吗？真是的",
+    "date": "2025-12-10",
+    "tags": [
+      "AI Coding"
+    ],
+    "description": "探讨使用AI辅助编程的最佳实践和常见陷阱"
+  },
+  {
+    "url": "/think/full-stack-engineer",
+    "title": "AI时代的全栈工程师",
+    "date": "2025-12-07",
+    "tags": [
+      "AI",
+      "全栈工程师"
+    ],
+    "description": "AI 时代的全栈工程师是如何工作的"
+  },
+  {
+    "url": "/think/business-value-of-ai-agents",
+    "title": "AI Agents 的商业价值",
+    "date": "2025-12-05",
+    "tags": [
+      "AI Agents"
+    ],
+    "description": "AI Agents 在什么方向上可以落地"
+  },
+  {
+    "url": "/think/junior",
+    "title": "AI时代初级岗位是否存在",
+    "date": "2025-08-24",
+    "tags": [
+      "AI",
+      "初级岗位"
+    ],
+    "description": "应届生找不到工作，是错配，还是误解。AI是不是剥夺了年轻人的试错机会。"
+  },
+  {
+    "url": "/think/ai-benefits-4-pm",
+    "title": "AI 给产品经理带来的帮助",
+    "date": "2025-08-22",
+    "tags": [
+      "AI",
+      "PM"
+    ],
+    "description": "AI 不仅仅利好开发者，对产品经理来说，更是助力巨大。"
+  },
+  {
+    "url": "/think/pm",
+    "title": "AI草莽时代的产品经理肖像分析",
+    "date": "2025-08-20",
+    "tags": [
+      "AI",
+      "PM"
+    ],
+    "description": "在新技术尚未形成共识的早期阶段，产品经理是否还能提出可靠的产品方向"
+  },
+  {
+    "url": "/think/ai-coding-02",
+    "title": "AI辅助编程02-注意事项",
+    "date": "2025-08-18",
+    "tags": [
+      "AI Coding"
+    ],
+    "description": "探讨使用AI辅助编程的最佳实践和常见陷阱"
+  },
+  {
+    "url": "/think/ai-coding-01",
+    "title": "AI辅助编程01-初体验",
+    "date": "2025-06-15",
+    "tags": [
+      "AI Coding"
+    ],
+    "description": "初次体会AI辅助编程，喜忧参半"
+  },
+  {
     "url": "/fullstack/fullstack-guide",
     "title": "全栈开发指南-2028-14",
-    "date": "2024-12-15T00:00:00.000Z",
+    "date": "2024-12-15",
     "tags": [
       "全栈",
       "日历",
@@ -40,7 +127,7 @@
   {
     "url": "/foundation/vibe-coding",
     "title": "沉浸式编程基础知识",
-    "date": "2024-11-25T00:00:00.000Z",
+    "date": "2024-11-25",
     "tags": [
       "AI",
       "编程",
@@ -51,7 +138,7 @@
   {
     "url": "/ai/vibe-coding",
     "title": "沉浸式编程体验",
-    "date": "2024-11-22T00:00:00.000Z",
+    "date": "2024-11-22",
     "tags": [
       "AI",
       "编程"
@@ -72,12 +159,6 @@
   },
   {
     "url": "/other/github-pages",
-    "title": "Untitled",
-    "tags": [],
-    "description": ""
-  },
-  {
-    "url": "/think/trends-analysis",
     "title": "Untitled",
     "tags": [],
     "description": ""

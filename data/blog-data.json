@@ -7,7 +7,7 @@
       "latestArticle": {
         "url": "/ai/future-of-ai",
         "title": "人工智能的未来发展-2026-14",
-        "date": "2025-12-20T00:00:00.000Z",
+        "date": "2025-12-20",
         "tags": [
           "AI",
           "未来科技",
@@ -20,12 +20,12 @@
     },
     "foundation": {
       "name": "基础知识",
-      "description": "关于基础知识的文章",
+      "description": "不积跬步无以至千里",
       "count": 2,
       "latestArticle": {
         "url": "/foundation/data-structure",
         "title": "计算机基础知识-2027-15",
-        "date": "2025-12-21T00:00:00.000Z",
+        "date": "2025-12-21",
         "tags": [
           "计算机",
           "基础知识",
@@ -37,42 +37,32 @@
     },
     "fullstack": {
       "name": "全栈开发",
-      "description": "关于全栈开发的文章",
-      "count": 1,
+      "description": "全栈开发势不可挡",
+      "count": 2,
       "latestArticle": {
-        "url": "/fullstack/fullstack-guide",
-        "title": "全栈开发指南-2028-14",
-        "date": "2024-12-15T00:00:00.000Z",
+        "url": "/fullstack/test-article",
+        "title": "开发文档测试文章",
+        "date": "2025-12-21",
         "tags": [
-          "全栈",
-          "日历",
-          "电脑",
-          "冰箱",
-          "彩电"
+          "开发",
+          "文档",
+          "测试"
         ],
-        "description": "全栈吧，挺玄乎，当如是-总是归去"
+        "description": "这是一篇开发文档相关的测试文章"
       }
     },
     "think": {
       "name": "观察思考",
-      "description": "关于观察思考的文章",
-      "count": 1,
+      "description": "洞察未来的趋势",
+      "count": 8,
       "latestArticle": {
-        "url": "/think/trends-analysis",
-        "title": "Untitled",
-        "tags": [],
-        "description": ""
-      }
-    },
-    "other": {
-      "name": "技术文档",
-      "description": "关于技术文档的文章",
-      "count": 2,
-      "latestArticle": {
-        "url": "/other/api-documentation",
-        "title": "Untitled",
-        "tags": [],
-        "description": ""
+        "url": "/think/ai-coding-03",
+        "title": "AI辅助编程03-AI时代编程的尽头是软件工程，印度人也是怎么想的吗？真是的",
+        "date": "2025-12-10",
+        "tags": [
+          "AI Coding"
+        ],
+        "description": "探讨使用AI辅助编程的最佳实践和常见陷阱"
       }
     }
   },
@@ -81,38 +71,73 @@
       "category": "foundation",
       "categoryName": "基础知识",
       "title": "计算机基础知识-2027-15",
-      "date": "2025-12-21T00:00:00.000Z",
+      "date": "2025-12-21",
       "url": "/foundation/data-structure"
+    },
+    {
+      "category": "fullstack",
+      "categoryName": "全栈开发",
+      "title": "开发文档测试文章",
+      "date": "2025-12-21",
+      "url": "/fullstack/test-article"
     },
     {
       "category": "ai",
       "categoryName": "人工智能",
       "title": "人工智能的未来发展-2026-14",
-      "date": "2025-12-20T00:00:00.000Z",
+      "date": "2025-12-20",
       "url": "/ai/future-of-ai"
     },
     {
-      "category": "fullstack",
-      "categoryName": "全栈开发",
-      "title": "全栈开发指南-2028-14",
-      "date": "2024-12-15T00:00:00.000Z",
-      "url": "/fullstack/fullstack-guide"
+      "category": "think",
+      "categoryName": "观察思考",
+      "title": "AI辅助编程03-AI时代编程的尽头是软件工程，印度人也是怎么想的吗？真是的",
+      "date": "2025-12-10",
+      "url": "/think/ai-coding-03"
     },
     {
-      "category": "foundation",
-      "categoryName": "基础知识",
-      "title": "沉浸式编程基础知识",
-      "date": "2024-11-25T00:00:00.000Z",
-      "url": "/foundation/vibe-coding"
+      "category": "think",
+      "categoryName": "观察思考",
+      "title": "AI时代的全栈工程师",
+      "date": "2025-12-07",
+      "url": "/think/full-stack-engineer"
     },
     {
-      "category": "ai",
-      "categoryName": "人工智能",
-      "title": "沉浸式编程体验",
-      "date": "2024-11-22T00:00:00.000Z",
-      "url": "/ai/vibe-coding"
+      "category": "think",
+      "categoryName": "观察思考",
+      "title": "AI Agents 的商业价值",
+      "date": "2025-12-05",
+      "url": "/think/business-value-of-ai-agents"
+    },
+    {
+      "category": "think",
+      "categoryName": "观察思考",
+      "title": "AI时代初级岗位是否存在",
+      "date": "2025-08-24",
+      "url": "/think/junior"
+    },
+    {
+      "category": "think",
+      "categoryName": "观察思考",
+      "title": "AI 给产品经理带来的帮助",
+      "date": "2025-08-22",
+      "url": "/think/ai-benefits-4-pm"
+    },
+    {
+      "category": "think",
+      "categoryName": "观察思考",
+      "title": "AI草莽时代的产品经理肖像分析",
+      "date": "2025-08-20",
+      "url": "/think/pm"
+    },
+    {
+      "category": "think",
+      "categoryName": "观察思考",
+      "title": "AI辅助编程02-注意事项",
+      "date": "2025-08-18",
+      "url": "/think/ai-coding-02"
     }
   ],
-  "totalArticles": 9,
-  "generatedAt": "2025-12-21T00:33:50.695Z"
+  "totalArticles": 17,
+  "generatedAt": "2025-12-21T10:25:05.662Z"
 }
