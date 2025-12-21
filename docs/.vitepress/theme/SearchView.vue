@@ -24,8 +24,8 @@ function processTerm(term) {
 onMounted(async () => {
   try {
     console.log('开始加载搜索索引...')
-    // 使用相对路径加载搜索索引，确保与部署路径一致
-    const res = await fetch(new URL('../../data/search-index.json', import.meta.url))
+    // 使用 BASE_URL + 绝对路径加载搜索索引，public 目录内容会映射到网站根路径
+    const res = await fetch(new URL(import.meta.env.BASE_URL + 'data/search-index.json', import.meta.url))
     console.log('HTTP响应状态：', res.status)
     // 使用 text() 而不是 json()，因为 MiniSearch.loadJSON 需要 JSON 字符串
     const jsonString = await res.text()

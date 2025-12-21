@@ -1,5 +1,7 @@
 import DefaultTheme from 'vitepress/theme'
 import LayoutWrapper from './LayoutWrapper.vue'
+import CategoryGrid from './components/CategoryGrid.vue'
+import RecentArticles from './components/RecentArticles.vue'
 import MyCustomComponent from './components/MyCustomComponent.vue'
 import VueDemo from './components/VueDemo.vue'
 import Mermaid from './components/Mermaid.vue'
@@ -10,6 +12,8 @@ export default {
   ...DefaultTheme,
   Layout: LayoutWrapper,
   enhanceApp({ app }) {
+    app.component('CategoryGrid', CategoryGrid)
+    app.component('RecentArticles', RecentArticles)
     app.component('MyCustomComponent', MyCustomComponent)
     app.component('VueDemo', VueDemo)
     app.component('Mermaid', Mermaid)

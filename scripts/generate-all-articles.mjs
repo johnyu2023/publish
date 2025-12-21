@@ -1,6 +1,6 @@
 // scripts/generate-all-articles.mjs
 // 用途：扫描 docs/ 下所有 Markdown 文件，提取 frontmatter，
-//       清洗后生成 docs/data/all-articles.json，供搜索、首页聚合等功能使用。
+//       清洗后生成 docs/public/data/all-articles.json，供搜索、首页聚合等功能使用。
 
 import { readdir, readFile, writeFile, rename, mkdir } from 'fs/promises';
 import { join, dirname } from 'path';
@@ -9,7 +9,9 @@ import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DOCS_DIR = join(__dirname, '..', 'docs');
-const DATA_DIR = join(__dirname, '..', 'docs', 'data');
+
+// 从命令行参数获取 DATA_DIR，如果没有提供则使用默认路径
+const DATA_DIR = process.argv[2] || join(__dirname, '..', 'docs', 'public', 'data');
 
 // 排除非文章页面（这些页面不参与聚合或搜索）
 const EXCLUDE_PATHS = [

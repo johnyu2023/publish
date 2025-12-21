@@ -6,13 +6,16 @@ import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
+const DATA_DIR = join(__dirname, '..', 'docs', 'public', 'data');
 
-const executeScript = async (scriptName) => {
+const executeScript = async (scriptName, args = []) => {
   const scriptPath = join(__dirname, scriptName);
+  const commandArgs = [scriptPath, ...args];
+  
   return new Promise((resolve, reject) => {
-    console.log(`🔄 Executing: ${scriptPath}`);
+    console.log(`🔄 Executing: ${scriptPath} with args: ${args.join(' ')}`);
     
-    const child = spawn('node', [scriptPath], { stdio: 'inherit' });
+    const child = spawn('node', commandArgs, { stdio: 'inherit' });
     
     child.on('close', (code) => {
       if (code === 0) {
@@ -36,9 +39,9 @@ async function main() {
   
   try {
     // 按顺序执行各个数据生成脚本
-    await executeScript('./generate-all-articles.mjs');
-    await executeScript('./build-search-index.mjs');
-    await executeScript('./generate-blog-data.mjs');
+    await executeScript('./generate-all-articles.mjs', [DATA_DIR]);
+    await executeScript('./build-search-index.mjs', [DATA_DIR]);
+    await executeScript('./generate-blog-data.mjs', [DATA_DIR]);
     
     console.log('\n🎉 Build preparation completed successfully!');
   } catch (error) {

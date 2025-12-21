@@ -5,7 +5,9 @@ import MiniSearch from 'minisearch';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const DATA_DIR = join(__dirname, '..', 'docs', 'data');
+
+// 从命令行参数获取 DATA_DIR，如果没有提供则使用默认路径
+const DATA_DIR = process.argv[2] || join(__dirname, '..', 'docs', 'public', 'data');
 
 // 通用安全写入函数
 async function writeJSONSafe(filePath, data) {

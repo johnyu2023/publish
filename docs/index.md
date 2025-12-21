@@ -18,10 +18,7 @@ hero:
 ---
 
 <CategoryGrid />
-
-<script setup>
-import CategoryGrid from './CategoryGrid.vue'
-</script>
+<RecentArticles />
 
 <style>
 .home-content {
