@@ -97,15 +97,115 @@ export default defineConfig({
   themeConfig: {
     outline: { level: [2, 4] },
 
-    nav: [
-      { text: 'Home', link: '/' },
-      { text: 'AI', link: '/ai/future-of-ai' },
-      { text: 'Foundation', link: '/foundation/data-structure' },
-      { text: 'FullStack', link: '/fullstack/fullstack-guide' },
-      { text: 'Think', link: '/think/trends-analysis' },
-      { text: 'Other', link: '/other/api-documentation' },
-      { text: 'About', link: '/about' }
-    ],
+    // 从生成的 nav-data.json 文件读取导航数据
+    nav: (() => {
+      try {
+        // 同步读取 nav-data.json 文件
+        const navDataPath = path.resolve(__dirname, 'public', 'data', 'nav-data.json');
+        if (fs.existsSync(navDataPath)) {
+          const navDataContent = fs.readFileSync(navDataPath, 'utf8');
+          const navData = JSON.parse(navDataContent);
+          return navData;
+        } else {
+          // 如果 nav-data.json 不存在，使用动态生成的侧边栏数据
+          const navItems = [
+            { text: 'Home', link: '/' }
+          ];
+          
+          // 定义分类映射
+          const categoryMap = {
+            'ai': 'AI',
+            'foundation': 'Foundation', 
+            'fullstack': 'FullStack',
+            'think': 'Think',
+            'other': 'Other'
+          };
+
+          // 从 dynamicSidebar 获取最新文章链接
+          Object.entries(categoryMap).forEach(([key, text]) => {
+            if (dynamicSidebar[`/${key}/`]) {
+              // 如果存在该分类的侧边栏，使用该分类下最新文章的链接
+              const categorySidebar = dynamicSidebar[`/${key}/`];
+              if (categorySidebar && categorySidebar[0] && categorySidebar[0].items && categorySidebar[0].items.length > 0) {
+                const firstArticle = categorySidebar[0].items[0];
+                navItems.push({ text, link: firstArticle.link });
+              } else {
+                // 使用默认链接
+                const defaultLinks = {
+                  'ai': '/ai/future-of-ai',
+                  'foundation': '/foundation/data-structure', 
+                  'fullstack': '/fullstack/fullstack-guide',
+                  'think': '/think/trends-analysis',
+                  'other': '/other/api-documentation'
+                };
+                navItems.push({ text, link: defaultLinks[key] || `/${key}/` });
+              }
+            } else {
+              // 使用默认链接
+              const defaultLinks = {
+                'ai': '/ai/future-of-ai',
+                'foundation': '/foundation/data-structure', 
+                'fullstack': '/fullstack/fullstack-guide',
+                'think': '/think/trends-analysis',
+                'other': '/other/api-documentation'
+              };
+              navItems.push({ text, link: defaultLinks[key] || `/${key}/` });
+            }
+          });
+
+          // 添加 About 链接
+          navItems.push({ text: 'About', link: '/about' });
+
+          return navItems;
+        }
+      } catch (error) {
+        console.error('Error reading nav-data.json:', error);
+        // 如果读取失败，回退到之前的动态生成逻辑
+        const navItems = [
+          { text: 'Home', link: '/' }
+        ];
+        
+        const categoryMap = {
+          'ai': 'AI',
+          'foundation': 'Foundation', 
+          'fullstack': 'FullStack',
+          'think': 'Think',
+          'other': 'Other'
+        };
+
+        Object.entries(categoryMap).forEach(([key, text]) => {
+          if (dynamicSidebar[`/${key}/`]) {
+            const categorySidebar = dynamicSidebar[`/${key}/`];
+            if (categorySidebar && categorySidebar[0] && categorySidebar[0].items && categorySidebar[0].items.length > 0) {
+              const firstArticle = categorySidebar[0].items[0];
+              navItems.push({ text, link: firstArticle.link });
+            } else {
+              const defaultLinks = {
+                'ai': '/ai/future-of-ai',
+                'foundation': '/foundation/data-structure', 
+                'fullstack': '/fullstack/fullstack-guide',
+                'think': '/think/trends-analysis',
+                'other': '/other/api-documentation'
+              };
+              navItems.push({ text, link: defaultLinks[key] || `/${key}/` });
+            }
+          } else {
+            const defaultLinks = {
+              'ai': '/ai/future-of-ai',
+              'foundation': '/foundation/data-structure', 
+              'fullstack': '/fullstack/fullstack-guide',
+              'think': '/think/trends-analysis',
+              'other': '/other/api-documentation'
+            };
+            navItems.push({ text, link: defaultLinks[key] || `/${key}/` });
+          }
+        });
+
+        navItems.push({ text: 'About', link: '/about' });
+
+        return navItems;
+      }
+    })(),
 
     sidebar: {
       ...dynamicSidebar,

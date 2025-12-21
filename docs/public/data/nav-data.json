@@ -1,0 +1,38 @@
+[
+  {
+    "text": "Home",
+    "link": "/"
+  },
+  {
+    "text": "人工智能",
+    "link": "/ai/future-of-ai",
+    "category": "ai",
+    "description": "关于人工智能的文章",
+    "count": 2
+  },
+  {
+    "text": "基础知识",
+    "link": "/foundation/data-structure",
+    "category": "foundation",
+    "description": "不积跬步无以至千里",
+    "count": 2
+  },
+  {
+    "text": "全栈开发",
+    "link": "/fullstack/test-article",
+    "category": "fullstack",
+    "description": "全栈开发势不可挡",
+    "count": 2
+  },
+  {
+    "text": "观察思考",
+    "link": "/think/ai-coding-03",
+    "category": "think",
+    "description": "洞察未来的趋势",
+    "count": 8
+  },
+  {
+    "text": "About",
+    "link": "/about"
+  }
+]

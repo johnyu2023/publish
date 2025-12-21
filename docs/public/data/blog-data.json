@@ -38,17 +38,15 @@
     "fullstack": {
       "name": "全栈开发",
       "description": "全栈开发势不可挡",
-      "count": 2,
+      "count": 6,
       "latestArticle": {
-        "url": "/fullstack/test-article",
-        "title": "开发文档测试文章",
-        "date": "2025-12-21",
+        "url": "/fullstack/set-up-on-tencent-cloud",
+        "title": "在腾讯云中部署",
+        "date": "2025-12-15",
         "tags": [
-          "开发",
-          "文档",
-          "测试"
+          "腾讯云"
         ],
-        "description": "这是一篇开发文档相关的测试文章"
+        "description": "腾讯云部署全栈应用的记录"
       }
     },
     "think": {
@@ -75,13 +73,6 @@
       "url": "/foundation/data-structure"
     },
     {
-      "category": "fullstack",
-      "categoryName": "全栈开发",
-      "title": "开发文档测试文章",
-      "date": "2025-12-21",
-      "url": "/fullstack/test-article"
-    },
-    {
       "category": "ai",
       "categoryName": "人工智能",
       "title": "人工智能的未来发展-2026-14",
@@ -89,11 +80,25 @@
       "url": "/ai/future-of-ai"
     },
     {
+      "category": "fullstack",
+      "categoryName": "全栈开发",
+      "title": "在腾讯云中部署",
+      "date": "2025-12-15",
+      "url": "/fullstack/set-up-on-tencent-cloud"
+    },
+    {
       "category": "think",
       "categoryName": "观察思考",
       "title": "AI辅助编程03-AI时代编程的尽头是软件工程，印度人也是怎么想的吗？真是的",
       "date": "2025-12-10",
       "url": "/think/ai-coding-03"
+    },
+    {
+      "category": "fullstack",
+      "categoryName": "全栈开发",
+      "title": "Vue 中的 Store 与 Composable",
+      "date": "2025-12-07",
+      "url": "/fullstack/vue-store-composable"
     },
     {
       "category": "think",
@@ -110,34 +115,27 @@
       "url": "/think/business-value-of-ai-agents"
     },
     {
+      "category": "fullstack",
+      "categoryName": "全栈开发",
+      "title": "Figma MCP 与 Cursor 配合使用",
+      "date": "2025-08-30",
+      "url": "/fullstack/cursor-mcp-to-figma"
+    },
+    {
+      "category": "fullstack",
+      "categoryName": "全栈开发",
+      "title": "从 Figma 还原小程序代码",
+      "date": "2025-08-30",
+      "url": "/fullstack/from-figma-to-mini"
+    },
+    {
       "category": "think",
       "categoryName": "观察思考",
       "title": "AI时代初级岗位是否存在",
       "date": "2025-08-24",
       "url": "/think/junior"
-    },
-    {
-      "category": "think",
-      "categoryName": "观察思考",
-      "title": "AI 给产品经理带来的帮助",
-      "date": "2025-08-22",
-      "url": "/think/ai-benefits-4-pm"
-    },
-    {
-      "category": "think",
-      "categoryName": "观察思考",
-      "title": "AI草莽时代的产品经理肖像分析",
-      "date": "2025-08-20",
-      "url": "/think/pm"
-    },
-    {
-      "category": "think",
-      "categoryName": "观察思考",
-      "title": "AI辅助编程02-注意事项",
-      "date": "2025-08-18",
-      "url": "/think/ai-coding-02"
     }
   ],
-  "totalArticles": 17,
-  "generatedAt": "2025-12-21T10:25:05.662Z"
+  "totalArticles": 21,
+  "generatedAt": "2025-12-21T13:49:00.764Z"
 }
