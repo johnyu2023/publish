@@ -15,14 +15,12 @@ async function writeJSONSafe(filePath, data) {
   await rename(tmpPath, filePath); // 原子操作
 }
 
-// 分类映射
-const CATEGORY_NAMES = {
-  'ai': '人工智能',
-  'foundation': '基础知识',
-  'fullstack': '全栈开发',
-  'think': '观察思考',
-  'other': '技术文档'
-};
+// 从配置文件加载分类信息
+const categoriesConfig = JSON.parse(await readFile(join(DATA_DIR, 'categories.json'), 'utf8'));
+const CATEGORY_NAMES = {};
+Object.entries(categoriesConfig.categories).forEach(([key, value]) => {
+  CATEGORY_NAMES[key] = value.name;
+});
 
 try {
   // 从 all-articles.json 读取数据
@@ -54,18 +52,22 @@ try {
       new Date(b.date || '1970-01-01') - new Date(a.date || '1970-01-01')
     );
 
+    // 从配置中获取描述，如果是新分类则使用默认格式
+    const configDescription = categoriesConfig.categories[category]?.description;
+    const fallbackDescription = category === 'dev' ? '本站开发相关的文档' : `关于${CATEGORY_NAMES[category]}的文章`;
+    
     categoriesInfo[category] = {
       name: CATEGORY_NAMES[category],
-      description: `关于${CATEGORY_NAMES[category]}的文章`,
+      description: configDescription || fallbackDescription,
       count: sortedArticles.length,
       latestArticle: sortedArticles.length > 0 ? sortedArticles[0] : null
     };
   });
 
-  // 获取全站最新5篇文章
+  // 获取全站最新10篇文章
   const latestArticles = articles
     .sort((a, b) => new Date(b.date || '1970-01-01') - new Date(a.date || '1970-01-01'))
-    .slice(0, 5)
+    .slice(0, 10)
     .map(article => {
       // 从 URL 提取分类
       const pathParts = article.url.split('/');

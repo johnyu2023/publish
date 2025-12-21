@@ -9,15 +9,20 @@
         class="category-card" 
         @click="goTo(category.latestArticle ? category.latestArticle.url : `/${key}/`)"
       >
-        <h3>{{ getEmojiByCategory(key) }} {{ category.name }}</h3>
-        <p>{{ category.description }}</p>
-        <div class="article-preview" v-if="category.latestArticle">
-          <h4>最新文章</h4>
-          <ul>
-            <li>{{ category.latestArticle.title }}</li>
-          </ul>
-          <small v-if="category.latestArticle.date" class="date">{{ formatDate(category.latestArticle.date) }}</small>
+        <div class="category-header">
+          <h3>{{ getEmojiByCategory(key) }} {{ category.name }}</h3>
+          <p>{{ category.description }}</p>
+          <div class="divider"></div>
         </div>
+        
+        <div class="latest-article" v-if="category.latestArticle">
+          <div class="latest-header">
+            <h4>最新文章</h4>
+            <small v-if="category.latestArticle.date" class="date">{{ formatDate(category.latestArticle.date) }}</small>
+          </div>
+          <p class="article-title">{{ category.latestArticle.title }}</p>
+        </div>
+        
         <div class="count-info">
           共 {{ category.count }} 篇文章
         </div>
@@ -44,24 +49,25 @@ const goTo = (path) => {
   }
 }
 
-const getEmojiByCategory = (category) => {
-  const emojiMap = {
-    'ai': '🤖',
-    'foundation': '📘',
-    'fullstack': '💻',
-    'think': '💭',
-    'other': '📋'
-  }
-  return emojiMap[category] || '📄'
-}
+const emojiMap = ref({});
 
-const formatDate = (dateString) => {
-  const date = new Date(dateString)
-  return date.toLocaleDateString('zh-CN')
+const getEmojiByCategory = (category) => {
+  return emojiMap.value[category] || '📄'
 }
 
 onMounted(async () => {
   try {
+    // 加载分类配置
+    const configResponse = await fetch(import.meta.env.BASE_URL + 'data/categories.json');
+    if (configResponse.ok) {
+      const config = await configResponse.json();
+      
+      // 提取 emoji 映射
+      Object.entries(config.categories).forEach(([key, value]) => {
+        emojiMap.value[key] = value.icon;
+      });
+    }
+
     // 使用 BASE_URL + 绝对路径加载数据文件，public 目录内容会映射到网站根路径
     const response = await fetch(import.meta.env.BASE_URL + 'data/blog-data.json')
     if (response.ok) {
@@ -74,17 +80,25 @@ onMounted(async () => {
     console.error('Error loading blog data:', error)
   }
 })
+
+const formatDate = (dateString) => {
+  const date = new Date(dateString)
+  return date.toLocaleDateString('zh-CN')
+}
+
+
 </script>
 
 <style scoped>
 .category-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(280px, 300px));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.625rem;
   margin: 2rem auto;
-  max-width: 1200px;
+  max-width: 1400px;
   padding: 0 1rem;
   justify-content: center; /* 使整个网格居中 */
+  border: 1px solid red; /* 红色边框 */
 }
 
 .category-card {
@@ -96,6 +110,9 @@ onMounted(async () => {
   cursor: pointer;
   width: 100%;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  height: 260px; /* 固定高度 */
 }
 
 .category-card:hover {
@@ -104,50 +121,113 @@ onMounted(async () => {
   border-color: #3eaf7c;
 }
 
-.category-card h3 {
-  margin: 0 0 0.75rem 0;
+.category-header {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  margin-bottom: 0;
+  height: 70px; /* 固定高度 */
+  justify-content: flex-start; /* 从顶部开始排列 */
+}
+
+.category-header h3 {
+  margin: 0 0 0.1rem 0;
   font-size: 1.25rem;
   color: #2c3e50;
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.4rem;
+  text-align: left;
+  flex: 0 0 auto;
 }
 
-.category-card p {
+.category-header p {
   color: #666;
-  line-height: 1.6;
-  margin: 0 0 1rem 0;
+  line-height: 1.25;
+  margin: 0 0 0.1rem 0;
+  text-align: left;
+  font-size: 0.9em;
+  flex: 0 0 auto;
+  min-height: auto;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 
-.article-preview {
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 1px dashed #eaecef;
+.divider {
+  background: linear-gradient(to right, #999 50%, transparent 50%);
+  background-size: 6px 2px;
+  background-repeat: repeat-x;
+  margin: 0.1rem 0;
+  width: 100%;
+  height: 2px;
+  flex: 0 0 auto;
+  align-self: stretch;
 }
 
-.article-preview h4 {
+.latest-article {
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem;
+  margin-bottom: 0;
+  height: 110px; /* 固定高度 */
+  overflow: hidden;
+}
+
+.latest-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 0.25rem;
+}
+
+.latest-article h4 {
   font-size: 0.9rem;
   color: #888;
-  margin: 0 0 0.5rem 0;
-}
-
-.article-preview ul {
   margin: 0;
-  padding-left: 1.2rem;
-  list-style-type: disc;
-  color: #666;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  line-height: 1.2;
 }
 
-.count-info {
-  margin-top: 0.5rem;
-  font-size: 0.9em;
-  color: #888;
-  text-align: right;
+.article-title {
+  margin: 0;
+  color: #666;
+  line-height: 1.3;
+  text-align: left;
+  font-size: 1em;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  flex: 1;
 }
 
 .date {
   color: #999;
   font-size: 0.8em;
+  text-align: right;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 0 0 auto;
+  min-width: 60px;
+  margin-left: 0.5rem;
+}
+
+.count-info {
+  font-size: 0.8em;
+  color: #888;
+  text-align: right;
+  padding: 0.5rem;
+  height: 30px; /* 固定高度 */
 }
 
 .loading {
@@ -155,19 +235,5 @@ onMounted(async () => {
   padding: 2rem;
   color: #666;
   font-size: 1.2em;
-}
-
-@media (max-width: 1100px) {
-  .category-grid {
-    grid-template-columns: repeat(2, minmax(250px, 1fr));
-    max-width: 800px;
-  }
-}
-
-@media (max-width: 768px) {
-  .category-grid {
-    grid-template-columns: 1fr;
-    max-width: 400px;
-  }
 }
 </style>

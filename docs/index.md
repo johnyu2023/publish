@@ -6,7 +6,7 @@ hero:
   text: 探索技术，理解未来
   tagline: 记录思考 · 分享实践 · 拥抱 AI
   image:
-    src: /assets/head-sport.webp
+    src: /assets/index/head-sport-200.webp
     alt: 爱技术爱健身
   actions:
     - theme: brand

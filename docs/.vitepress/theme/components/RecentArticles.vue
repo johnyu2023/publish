@@ -38,15 +38,14 @@ const goToArticle = (url) => {
   }
 }
 
+const categoryConfig = ref({});
+
 const getCategoryName = (category) => {
-  const categoryNames = {
-    'ai': '🤖 人工智能',
-    'foundation': '📘 基础知识',
-    'fullstack': '💻 全栈开发',
-    'think': '💭 观察思考',
-    'other': '📋 技术文档'
+  const config = categoryConfig.value[category];
+  if (config) {
+    return `${config.icon} ${config.name}`;
   }
-  return categoryNames[category] || category
+  return category;
 }
 
 const formatDate = (dateString) => {
@@ -57,6 +56,13 @@ const formatDate = (dateString) => {
 
 onMounted(async () => {
   try {
+    // 加载分类配置
+    const configResponse = await fetch(import.meta.env.BASE_URL + 'data/categories.json');
+    if (configResponse.ok) {
+      const config = await configResponse.json();
+      categoryConfig.value = config.categories || {};
+    }
+
     // 使用 BASE_URL + 相对路径加载数据文件
     const response = await fetch(import.meta.env.BASE_URL + 'data/blog-data.json')
     if (response.ok) {
@@ -73,9 +79,10 @@ onMounted(async () => {
 
 <style scoped>
 .recent-articles {
-  max-width: 800px;
+  max-width: 1400px;
   margin: 3rem auto;
   padding: 0 1rem;
+  border: 1px solid red; /* 红色边框 */
 }
 
 .recent-articles h2 {
