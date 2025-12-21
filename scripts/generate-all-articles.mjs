@@ -122,11 +122,18 @@ try {
       continue;
     }
 
+    // 将日期格式转换为 YYYY-MM-DD
+    let formattedDate = data.date;
+    if (data.date) {
+      const dateObj = new Date(data.date);
+      formattedDate = dateObj.toISOString().split('T')[0]; // 格式: YYYY-MM-DD
+    }
+
     // 清洗并构建文章对象
     const cleanedArticle = {
       url: cleanString(urlPath),
       title: cleanString(data.title) || 'Untitled',
-      date: data.date, // date 通常为字符串或 Date，不清洗
+      date: formattedDate,
       tags: cleanTags(data.tags),
       description: cleanString(data.description)
     };

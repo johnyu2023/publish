@@ -98,7 +98,6 @@ const formatDate = (dateString) => {
   max-width: 1400px;
   padding: 0 1rem;
   justify-content: center; /* 使整个网格居中 */
-  border: 1px solid red; /* 红色边框 */
 }
 
 .category-card {
