@@ -1,0 +1,118 @@
+{
+  "categories": {
+    "ai": {
+      "name": "人工智能",
+      "description": "关于人工智能的文章",
+      "count": 2,
+      "latestArticle": {
+        "url": "/ai/future-of-ai",
+        "title": "人工智能的未来发展-2026-14",
+        "date": "2025-12-20T00:00:00.000Z",
+        "tags": [
+          "AI",
+          "未来科技",
+          "测试",
+          "新增标签",
+          "再次更新"
+        ],
+        "description": "这是一篇测试文档，验证多种内容的展示 - 已再次更新"
+      }
+    },
+    "foundation": {
+      "name": "基础知识",
+      "description": "关于基础知识的文章",
+      "count": 2,
+      "latestArticle": {
+        "url": "/foundation/data-structure",
+        "title": "计算机基础知识-2027-15",
+        "date": "2025-12-21T00:00:00.000Z",
+        "tags": [
+          "计算机",
+          "基础知识",
+          "新增标签",
+          "再次更新"
+        ],
+        "description": "这是一篇基础知识介绍 - 已再次更新"
+      }
+    },
+    "fullstack": {
+      "name": "全栈开发",
+      "description": "关于全栈开发的文章",
+      "count": 1,
+      "latestArticle": {
+        "url": "/fullstack/fullstack-guide",
+        "title": "全栈开发指南-2028-14",
+        "date": "2024-12-15T00:00:00.000Z",
+        "tags": [
+          "全栈",
+          "日历",
+          "电脑",
+          "冰箱",
+          "彩电"
+        ],
+        "description": "全栈吧，挺玄乎，当如是-总是归去"
+      }
+    },
+    "think": {
+      "name": "观察思考",
+      "description": "关于观察思考的文章",
+      "count": 1,
+      "latestArticle": {
+        "url": "/think/trends-analysis",
+        "title": "Untitled",
+        "tags": [],
+        "description": ""
+      }
+    },
+    "other": {
+      "name": "技术文档",
+      "description": "关于技术文档的文章",
+      "count": 2,
+      "latestArticle": {
+        "url": "/other/api-documentation",
+        "title": "Untitled",
+        "tags": [],
+        "description": ""
+      }
+    }
+  },
+  "latestArticles": [
+    {
+      "category": "foundation",
+      "categoryName": "基础知识",
+      "title": "计算机基础知识-2027-15",
+      "date": "2025-12-21T00:00:00.000Z",
+      "url": "/foundation/data-structure"
+    },
+    {
+      "category": "ai",
+      "categoryName": "人工智能",
+      "title": "人工智能的未来发展-2026-14",
+      "date": "2025-12-20T00:00:00.000Z",
+      "url": "/ai/future-of-ai"
+    },
+    {
+      "category": "fullstack",
+      "categoryName": "全栈开发",
+      "title": "全栈开发指南-2028-14",
+      "date": "2024-12-15T00:00:00.000Z",
+      "url": "/fullstack/fullstack-guide"
+    },
+    {
+      "category": "foundation",
+      "categoryName": "基础知识",
+      "title": "沉浸式编程基础知识",
+      "date": "2024-11-25T00:00:00.000Z",
+      "url": "/foundation/vibe-coding"
+    },
+    {
+      "category": "ai",
+      "categoryName": "人工智能",
+      "title": "沉浸式编程体验",
+      "date": "2024-11-22T00:00:00.000Z",
+      "url": "/ai/vibe-coding"
+    }
+  ],
+  "totalArticles": 9,
+  "generatedAt": "2025-12-21T00:33:50.695Z"
+}
