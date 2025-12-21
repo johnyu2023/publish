@@ -5,21 +5,18 @@ date: 2025-08-14
 tags: [github, pages]
 ---
 
-<BlogPost>
-
 # 使用 GitHub Pages 部署静态网站
-
 
 ## GitHub Pages 是什么
 
 GitHub Pages 是 GitHub 提供的一项免费服务，用于托管静态网页。该服务于 2008 年推出，可谓是一个历史悠久的服务。
 
-+ 你可以使用它来创建个人博客、展示项目或发布其他类型的静态内容 
-+ 它是一项静态站点托管服务，直接从 GitHub 上获取 HTML、CSS 和 JavaScript 文件，然后发布网站 
-+ 其原理是，GitHub 允许用户将仓库中的内容发布为在线网站 
-+ 每个用户都会自动分配一个以用户名命名的特殊域名：`username.github.io` 
-+ 当你在 GitHub 上创建一个名为 `username.github.io` 的仓库，并将你的静态网页文件（如 HTML, CSS, JavaScript）推送到这个仓库时，GitHub Pages 就会自动将这些文件托管起来，并通过分配的域名提供访问 
-+ 这使得用户可以轻松地拥有一个个人网站 
++ 你可以使用它来创建个人博客、展示项目或发布其他类型的静态内容
++ 它是一项静态站点托管服务，直接从 GitHub 上获取 HTML、CSS 和 JavaScript 文件，然后发布网站
++ 其原理是，GitHub 允许用户将仓库中的内容发布为在线网站
++ 每个用户都会自动分配一个以用户名命名的特殊域名：`username.github.io`
++ 当你在 GitHub 上创建一个名为 `username.github.io` 的仓库，并将你的静态网页文件（如 HTML, CSS, JavaScript）推送到这个仓库时，GitHub Pages 就会自动将这些文件托管起来，并通过分配的域名提供访问
++ 这使得用户可以轻松地拥有一个个人网站
 
 ## 部署静态内容网站的步骤
 
@@ -46,8 +43,5 @@ GitHub Pages 是 GitHub 提供的一项免费服务，用于托管静态网页�
 + GitHub Actions 并不总是成功，可能会莫名失败的。
 
 + 下面两张图展示了出错的情形
-<img src="../assets/other/github-pages/github-action-fail-01.png" alt="Failed" class="content-image" />
-
-<img src="../assets/other/github-pages/github-action-fail-02.png" alt="Failed" class="content-image" />
-
-</BlogPost>
+![github action fail 01](/assets/fullstack/github-pages/github-action-fail-01.png)
+![github action fail 02](/assets/fullstack/github-pages/github-action-fail-02.png)

@@ -12,16 +12,6 @@
     "description": "这是一篇基础知识介绍 - 已再次更新"
   },
   {
-    "url": "/fullstack/ai-images-01",
-    "title": "AI 生图使用",
-    "date": "2025-12-21",
-    "tags": [
-      "AI",
-      "文生图"
-    ],
-    "description": "用 AI 生成图片"
-  },
-  {
     "url": "/ai/future-of-ai",
     "title": "人工智能的未来发展-2026-14",
     "date": "2025-12-20",
@@ -110,6 +100,16 @@
       "视频"
     ],
     "description": "AI 可以方便地制作短视频，但涉及到长视频，就会面对很多挑战。"
+  },
+  {
+    "url": "/fullstack/ai-images-01",
+    "title": "AI 生图使用",
+    "date": "2025-09-02",
+    "tags": [
+      "AI",
+      "文生图"
+    ],
+    "description": "用 AI 生成图片"
   },
   {
     "url": "/fullstack/cursor-mcp-to-figma",

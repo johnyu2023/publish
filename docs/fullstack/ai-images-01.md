@@ -1,7 +1,7 @@
 ---
 title: AI 生图使用
 description: 用 AI 生成图片
-date: 2025-12-21
+date: 2025-09-02
 tags: [AI, 文生图]
 ---
 

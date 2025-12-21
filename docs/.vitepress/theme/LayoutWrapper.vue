@@ -1,35 +1,6 @@
 <template>
   <Layout>
-    <template #nav-bar-content-before>
-      <NavModalTrigger @open-modal="openModal" />
-      <Modal v-model:is-open="showModal" title="导航组件">
-        <div class="modal-content-area">
-          <h3>导航详情</h3>
-          <p>这是一个在弹窗中显示的 Vue 组件示例：</p>
-          
-          <div class="interactive-section">
-            <h4>交互功能</h4>
-            <p>计数: {{ counter }}</p>
-            <button @click="counter++">增加计数</button>
-            
-            <div style="margin-top: 15px;">
-              <input v-model="inputText" placeholder="输入一些文字..." />
-              <p>您输入的是: {{ inputText }}</p>
-            </div>
-          </div>
-          
-          <div class="links-section">
-            <h4>快捷链接</h4>
-            <ul>
-              <li><a href="/">首页</a></li>
-              <li><a href="/sample-article">示例文章</a></li>
-              <li><a href="/experiments">实验页面</a></li>
-              <li><a href="/about">关于</a></li>
-            </ul>
-          </div>
-        </div>
-      </Modal>
-    </template>
+    
     
     <!-- 在文档内容前插入 frontmatter 信息 -->
     <template #doc-before>

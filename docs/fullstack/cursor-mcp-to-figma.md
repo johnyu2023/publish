@@ -98,7 +98,7 @@ npm install -g figma-developer-mcp
 ```
 
 + 安装成功后的截图，能看到其中提供2个 tools
-<img src="../assets/web/figma-mcp/cursor-add-mcp-01.png" alt="add mcp" class="content-image" />
+![add mcp](/assets/fullstack/figma-mcp/cursor-add-mcp-01.png)
 
 ### 3. 在 Figma 桌面 App 中选择
 

@@ -40,14 +40,13 @@
       "description": "全栈开发势不可挡",
       "count": 12,
       "latestArticle": {
-        "url": "/fullstack/ai-images-01",
-        "title": "AI 生图使用",
-        "date": "2025-12-21",
+        "url": "/fullstack/set-up-on-tencent-cloud",
+        "title": "在腾讯云中部署",
+        "date": "2025-12-15",
         "tags": [
-          "AI",
-          "文生图"
+          "腾讯云"
         ],
-        "description": "用 AI 生成图片"
+        "description": "腾讯云部署全栈应用的记录"
       }
     },
     "think": {
@@ -72,13 +71,6 @@
       "title": "计算机基础知识-2027-15",
       "date": "2025-12-21",
       "url": "/foundation/data-structure"
-    },
-    {
-      "category": "fullstack",
-      "categoryName": "全栈开发",
-      "title": "AI 生图使用",
-      "date": "2025-12-21",
-      "url": "/fullstack/ai-images-01"
     },
     {
       "category": "ai",
@@ -135,8 +127,15 @@
       "title": "AI 的深度检索",
       "date": "2025-09-08",
       "url": "/fullstack/deep-search"
+    },
+    {
+      "category": "fullstack",
+      "categoryName": "全栈开发",
+      "title": "AI 制作长视频实践",
+      "date": "2025-09-07",
+      "url": "/fullstack/ai-movie"
     }
   ],
   "totalArticles": 27,
-  "generatedAt": "2025-12-21T23:04:21.341Z"
+  "generatedAt": "2025-12-21T23:49:36.096Z"
 }
