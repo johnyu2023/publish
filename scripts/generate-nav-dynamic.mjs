@@ -1,15 +1,22 @@
 // scripts/05-generate-nav-dynamic.mjs
 // 用途：读取 blog-data.json 文件，生成动态导航数据
 // 依赖：需要 blog-data.json 已存在
-// 输出：docs/public/data/nav-dynamic.json
+// 输出：docs/data/nav-dynamic.json
 
-import { readFile, writeFile, unlink } from 'fs/promises';
+import { readFile, writeFile, unlink, rename } from 'fs/promises';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = join(__dirname, '..', 'docs', 'public', 'data');
 const OUTPUT_DIR = join(__dirname, '..', 'docs', 'data');
+
+// 通用安全写入函数
+async function writeJSONSafe(filePath, data) {
+  const tmpPath = filePath + '.tmp';
+  await writeFile(tmpPath, JSON.stringify(data, null, 2));
+  await rename(tmpPath, filePath); // 原子操作
+}
 
 async function generateNavDynamic() {
   try {
@@ -57,7 +64,7 @@ async function generateNavDynamic() {
     
     // 保存到文件
     const outputFilePath = join(OUTPUT_DIR, 'nav-dynamic.json');
-    await writeFile(outputFilePath, JSON.stringify(navDynamic, null, 2), 'utf8');
+    await writeJSONSafe(outputFilePath, navDynamic);
     console.log(`✅ Dynamic navigation data saved to ${outputFilePath}`);
     
     return navDynamic;
@@ -69,7 +76,7 @@ async function generateNavDynamic() {
 }
 
 // 如果直接运行此脚本
-const isMain = process.argv[1] && process.argv[1].endsWith('05-generate-nav-dynamic.mjs');
+const isMain = process.argv[1] && process.argv[1].endsWith('generate-nav-dynamic.mjs');
 if (isMain) {
   generateNavDynamic().catch(err => {
     console.error('Script failed:', err);

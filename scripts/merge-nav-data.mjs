@@ -1,15 +1,22 @@
 // scripts/06-merge-nav-data.mjs
 // 用途：合并静态和动态导航数据
 // 依赖：需要 nav-static.json 和 nav-dynamic.json 已存在
-// 输出：docs/public/data/nav-data.json
+// 输出：docs/data/nav-data.json
 
-import { readFile, writeFile, unlink } from 'fs/promises';
+import { readFile, writeFile, unlink, rename } from 'fs/promises';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = join(__dirname, '..', 'docs', 'data');
 const OUTPUT_DIR = join(__dirname, '..', 'docs', 'data');
+
+// 通用安全写入函数
+async function writeJSONSafe(filePath, data) {
+  const tmpPath = filePath + '.tmp';
+  await writeFile(tmpPath, JSON.stringify(data, null, 2));
+  await rename(tmpPath, filePath); // 原子操作
+}
 
 async function mergeNavData() {
   try {
@@ -43,7 +50,7 @@ async function mergeNavData() {
     
     // 保存合并后的数据
     const outputFilePath = join(OUTPUT_DIR, 'nav-data.json');
-    await writeFile(outputFilePath, JSON.stringify(allNavItems, null, 2), 'utf8');
+    await writeJSONSafe(outputFilePath, allNavItems);
     console.log(`✅ Merged navigation data saved to ${outputFilePath}`);
     
     return allNavItems;
@@ -55,7 +62,7 @@ async function mergeNavData() {
 }
 
 // 如果直接运行此脚本
-const isMain = process.argv[1] && process.argv[1].endsWith('06-merge-nav-data.mjs');
+const isMain = process.argv[1] && process.argv[1].endsWith('merge-nav-data.mjs');
 if (isMain) {
   mergeNavData().catch(err => {
     console.error('Script failed:', err);

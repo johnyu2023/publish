@@ -1,15 +1,22 @@
 // scripts/04-generate-nav-static.mjs
 // 用途：从配置文件读取静态导航项，生成静态导航数据
 // 依赖：scripts/nav-config.json
-// 输出：docs/public/data/nav-static.json
+// 输出：docs/data/nav-static.json
 
-import { readFile, writeFile, mkdir, unlink } from 'fs/promises';
+import { readFile, writeFile, mkdir, unlink, rename } from 'fs/promises';
 import { join, dirname } from 'path';
 import { fileURLToPath } from 'url';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const CONFIG_DIR = __dirname;  // 配置文件在 scripts 目录
 const OUTPUT_DIR = join(__dirname, '..', 'docs', 'data');
+
+// 通用安全写入函数
+async function writeJSONSafe(filePath, data) {
+  const tmpPath = filePath + '.tmp';
+  await writeFile(tmpPath, JSON.stringify(data, null, 2));
+  await rename(tmpPath, filePath); // 原子操作
+}
 
 async function generateNavStatic() {
   try {
@@ -42,7 +49,7 @@ async function generateNavStatic() {
 
     // 保存到文件
     const outputFilePath = join(OUTPUT_DIR, 'nav-static.json');
-    await writeFile(outputFilePath, JSON.stringify(navStatic, null, 2), 'utf8');
+    await writeJSONSafe(outputFilePath, navStatic);
     console.log(`✅ Static navigation data saved to ${outputFilePath}`);
 
     return navStatic;
@@ -54,7 +61,7 @@ async function generateNavStatic() {
 }
 
 // 如果直接运行此脚本
-const isMain = process.argv[1] && process.argv[1].endsWith('04-generate-nav-static.mjs');
+const isMain = process.argv[1] && process.argv[1].endsWith('generate-nav-static.mjs');
 if (isMain) {
   generateNavStatic().catch(err => {
     console.error('Script failed:', err);
