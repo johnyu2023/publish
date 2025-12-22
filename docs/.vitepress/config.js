@@ -75,6 +75,16 @@ export default defineConfig({
 
   markdown: {
     config(md) {
+      // 添加 KaTeX 支持
+      import('markdown-it-katex').then(katex => {
+        md.use(katex.default, { 
+          throwOnError: false,
+          errorColor: '#cc0000'
+        })
+      }).catch(err => {
+        console.warn('Failed to load katex:', err)
+      })
+
       const defaultFence = md.renderer.rules.fence
       md.renderer.rules.fence = (...args) => {
         const [tokens, idx] = args
