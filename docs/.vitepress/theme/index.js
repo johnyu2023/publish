@@ -25,13 +25,32 @@ export default {
     
     // 在应用启动时初始化图片查看器
     if (typeof window !== 'undefined') {
+      console.log('[ImageViewer] App enhancer: initializing image viewer in 500ms');
       // 稍微延迟以确保 DOM 渲染完成
-      setTimeout(initImageViewer, 500);
+      setTimeout(() => {
+        console.log('[ImageViewer] App enhancer: calling initImageViewer after 500ms delay');
+        initImageViewer();
+      }, 500);
       
       // 监听 VitePress 的页面变化事件
       document.addEventListener('vitepress:page:finish', () => {
-        setTimeout(initImageViewer, 300);
+        console.log('[ImageViewer] App enhancer: vitepress:page:finish event received, initializing in 300ms');
+        setTimeout(() => {
+          console.log('[ImageViewer] App enhancer: calling initImageViewer after vitepress:page:finish event');
+          initImageViewer();
+        }, 300);
       });
+
+      // 监听 HMR 事件以处理热更新
+      if (import.meta.hot) {
+        console.log('[ImageViewer] HMR detected, adding update listener');
+        import.meta.hot.accept(() => {
+          console.log('[ImageViewer] HMR update detected, reinitializing viewer in 1000ms');
+          setTimeout(() => {
+            initImageViewer();
+          }, 1000);
+        });
+      }
     }
   }
 }

@@ -8,7 +8,8 @@
       "script",
       "ArticleMeta",
       "ClientOnly",
-      "SearchView"
+      "SearchView",
+      "img"
     ]
   },
   "MD041": false,
