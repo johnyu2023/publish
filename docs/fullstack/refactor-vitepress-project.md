@@ -120,6 +120,31 @@ tags: [Vitepress]
 | 可维护性 | 低（逻辑分散） | 高（封装良好） |
 | 用户体验 | 一般 | 优秀 |
 
+### 预分词 + MiniSearch
+
+> **核心思想：不在浏览器里分词，而是在构建时（Node.js）用 segmentit 分好词，把“分词结果”存入索引。**
+
+#### 方案概述
+
++ 用 `segmentit` 在构建时分词，生成包含分词结果的 `search-index.json`  
++ 前端 MiniSearch 直接搜索，**无任何额外依赖**  
++ 搜索准确、加载快、维护简单
+
+#### 步骤
+
+1. 在 `docs/.vitepress/build-search-index.js`（构建脚本）中：
+   + 用 `segmentit`读取每篇 Markdown。
+   + 对 `title`、`description`、`tags` 进行中文分词。
+   + 将分词结果（数组）作为“虚拟字段”存入 MiniSearch 索引。
+
+2. 前端搜索时，**MiniSearch 不再需要分词器**，直接匹配预分好的词。
+
+#### 优点
+
++ **前端 0 体积增加**（不需要任何中文分词库）。
++ 搜索准确率高（`segmentit` 分词质量好）。
++ 构建一次，终身受益。
+
 ## 栏目的静态和动态配置
 
 ### 静态配置
