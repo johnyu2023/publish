@@ -45,9 +45,6 @@ async function mergeNavData() {
     const allNavItems = [...navStatic, ...navDynamic];
     allNavItems.sort((a, b) => a.order - b.order);
     
-    console.log('Merged navigation data:');
-    console.log(JSON.stringify(allNavItems, null, 2));
-    
     // 保存合并后的数据
     const outputFilePath = join(OUTPUT_DIR, 'nav-data.json');
     await writeJSONSafe(outputFilePath, allNavItems);

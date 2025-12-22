@@ -59,9 +59,6 @@ async function generateNavDynamic() {
     // 按 order 字段排序
     navDynamic.sort((a, b) => a.order - b.order);
     
-    console.log('Generated dynamic navigation data:');
-    console.log(JSON.stringify(navDynamic, null, 2));
-    
     // 保存到文件
     const outputFilePath = join(OUTPUT_DIR, 'nav-dynamic.json');
     await writeJSONSafe(outputFilePath, navDynamic);

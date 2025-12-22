@@ -45,8 +45,6 @@ async function generateNavStatic() {
       type: 'static'
     }));
 
-    console.log('Generated static navigation data:', JSON.stringify(navStatic, null, 2));
-
     // 保存到文件
     const outputFilePath = join(OUTPUT_DIR, 'nav-static.json');
     await writeJSONSafe(outputFilePath, navStatic);
