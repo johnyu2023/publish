@@ -1,13 +1,13 @@
 ---
 title: AI 给产品经理带来的帮助
-description: AI 不仅仅利好开发者，对产品经理来说，更是助力巨大。
+description: AI让产品经理从概念到原型构建速度大幅提升，可直接参与代码开发，减少团队沟通成本。相比传统开发流程，AI助力PM快速迭代产品，基于用户反馈优化路线图，真正价值在于提升团队目标清晰度和响应速度。
 date: 2025-08-22
 tags: [AI, PM]
 ---
 
 > AI isn’t 10xing developers. It’s 10xing PMs.
 
-![pm](/assets/think/ai-benefits-pm/ai-iterative-pm.jpg)
+![pm的选择](/assets/think/ai-benefits-pm/ai-iterative-pm.jpg)
 
 ## 传统产品经理的困扰
 

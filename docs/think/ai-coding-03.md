@@ -1,8 +1,8 @@
 ---
 title: AI辅助编程03-AI时代编程的尽头是软件工程，印度人也是怎么想的吗？真是的
-description: 探讨使用AI辅助编程的最佳实践和常见陷阱
+description: AI辅助编程存在多轮对话可靠性下降、随机性错误等问题，需频繁Git提交备份。作者对比多种AI工具，强调提示词重要性，分享Vue项目中AI修改导致问题的案例，指出AI在复杂项目中易失控，需人类掌控方向。
 date: 2025-12-10
-tags: [AI Coding]
+tags: [AI, Coding]
 ---
 
 > Ai Coding 的尽头是软件工程

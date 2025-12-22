@@ -1,8 +1,8 @@
 ---
 title: AI辅助编程01-初体验
-description: 初次体会AI辅助编程，喜忧参半
+description: 初次体验AI辅助编程，通过开发Python截屏工具和函数行号检查器实践。发现AI在特定任务上准确性不佳，需人工验证和调整。最终通过AST模块和代码重构获得理想结果，总结AI辅助编程需人工把控方向。
 date: 2025-06-15
-tags: [AI Coding]
+tags: [AI, Coding]
 ---
 
 ## 1. windows下截屏的小工具
