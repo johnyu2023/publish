@@ -28,7 +28,6 @@ for (const item of items) {
   const itemPath = path.join(docsDir, item)
   const stat = await fsPromises.stat(itemPath)
 
-  // 跳过非目录或特殊目录
   if (!stat.isDirectory() || ['.vitepress', '.vuepress'].includes(item)) continue
   if (!targetDirs.includes(item)) continue
 
@@ -47,7 +46,7 @@ for (const item of items) {
         date: data.date ? new Date(data.date).getTime() : 0
       }
     })
-    .sort((a, b) => b.date - a.date) // 按 date 倒序
+    .sort((a, b) => b.date - a.date)
 
   if (mdFiles.length > 0) {
     dynamicSidebar[dirPath] = [
@@ -62,8 +61,10 @@ for (const item of items) {
 // === 导出配置 ===
 export default defineConfig({
   base: '/publish/',
-  title: 'AI时代的技术分享2025',
+  title: 'AI时代的技术分享',
   description: 'AI时代的技术分享和感悟',
+
+  // ⚠️ 注意：此处不设置顶层 locales（单语言中文站不需要）
 
   vite: {
     server: {
@@ -75,7 +76,6 @@ export default defineConfig({
 
   markdown: {
     config(md) {
-      // 添加 KaTeX 支持
       import('markdown-it-katex').then(katex => {
         md.use(katex.default, { 
           throwOnError: false,
@@ -97,20 +97,35 @@ export default defineConfig({
     }
   },
 
-  // 保留 transformPageData，如果首页仍用 useData() 注入数据
   transformPageData(pageData) {
-    // 数据生成现在通过外部 build:prepare 脚本完成
-    // 此处保留原函数如果其他地方有使用
+    // 保留原逻辑
   },
 
   // === 主题配置 ===
   themeConfig: {
-    outline: { level: [2, 4] },
+    // 全局启用深层大纲
+    outline: 'deep',
 
-    // 从预生成的 nav-data.json 文件读取导航数据
+    // ✅ 关键：覆盖默认语言（en）的 UI 文案
+    locales: {
+      en: {
+        outline: {
+          label: '本页内容' // ← 这里生效！
+        },
+        // 可选：其他 UI 中文化（提升体验）
+        docFooter: {
+          prev: '上一篇',
+          next: '下一篇'
+        },
+        lastUpdatedText: '最后更新于',
+        darkModeSwitchLabel: '主题',
+        sidebarMenuLabel: '菜单',
+        returnToTopLabel: '回到顶部'
+      }
+    },
+
     nav: (() => {
       try {
-        // 修正路径：nav-data.json 现在位于 docs/data/ 而非 docs/public/data/
         const dataDir = path.join(__dirname, '..', 'data');
         const navDataPath = path.join(dataDir, 'nav-data.json');
         
@@ -123,17 +138,15 @@ export default defineConfig({
           }
         }
         
-        // 如果 nav-data.json 不存在或为空，返回默认导航
         return [
-          { text: 'Home', link: '/' },
-          { text: 'About', link: '/about' }
+          { text: '首页', link: '/' },
+          { text: '关于', link: '/about' }
         ];
       } catch (error) {
         console.error('Error reading nav-data.json:', error);
-        // 如果读取失败，返回默认导航
         return [
-          { text: 'Home', link: '/' },
-          { text: 'About', link: '/about' }
+          { text: '首页', link: '/' },
+          { text: '关于', link: '/about' }
         ];
       }
     })(),
@@ -142,19 +155,19 @@ export default defineConfig({
       ...dynamicSidebar,
       '/': [
         {
-          text: 'Guide',
+          text: '指南',
           items: [
-            { text: 'Introduction', link: '/' },
-            { text: 'Sample Article', link: '/sample-article' },
-            { text: 'Experiments', link: '/experiments' },
-            { text: 'About', link: '/about' }
+            { text: '介绍', link: '/' },
+            { text: '示例文章', link: '/sample-article' },
+            { text: '实验记录', link: '/experiments' },
+            { text: '关于', link: '/about' }
           ]
         }
       ]
     },
 
     footer: {
-      message: 'Released under the MIT License.',
+      message: '基于 MIT 许可发布。',
       copyright: 'Copyright © 2025-present'
     }
   }

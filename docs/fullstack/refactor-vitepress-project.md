@@ -1,6 +1,6 @@
 ---
 title: 重构 Vitepress 项目
-description: 重构 Vitepress 项目心得：使用稳定版 v1.6.4，pnpm 管理依赖，文章放 docs 目录，静态资源放 docs/public。通过自定义脚本生成文章索引、搜索功能和导航配置，实现自动化部署到 GitHub Pages。采用 MiniSearch 实现前端搜索，配置分类和动态数据展示。
+description: 总结了重构Vitepress项目的经验，涵盖版本选择、pnpm依赖管理、文件结构、GitHub Pages自动部署、静态资源配置等。重点介绍了文章信息汇总、搜索索引构建（使用MiniSearch和segmentit预分词）、导航动态配置等机制，以及自定义组件开发。项目采用模块化构建脚本，实现了全站搜索、分类导航等功能。
 date: 2025-12-22
 tags: [Vitepress, SSG]
 ---
@@ -63,6 +63,14 @@ tags: [Vitepress, SSG]
 
 + 注意：Markdown 或 Vue 组件中通过**相对路径**引用的图片（比如 `![img](./img.png)`）→ 这类图片应和 Markdown 文件放在一起，Vite 会自动处理它们（可能转为 base64 或带 hash 的文件名）。
 
+## `docs\.vitepress\config.js`
+
+> `docs\.vitepress\config.js` 是你掌控整个 Vitepress 站点行为的“总控开关
+
++ 它是 **Vitepress 项目的核心配置文件**，用于定义整个静态站点的**构建行为、主题外观、导航结构、元数据**等几乎所有关键设置。
++ 它可以被视为 **Vitepress 站点的“中枢神经系统”** —— 没有它，Vitepress 不知道如何组织内容、如何渲染页面、如何生成菜单，甚至不知道站点叫什么名字。
++ 它的导出 - 必须默认导出一个配置对象（`export default {}`）。
+
 ## 所有文章信息汇总
 
 ### yaml frontmatter
@@ -120,7 +128,7 @@ tags: [Vitepress]
 | 可维护性 | 低（逻辑分散） | 高（封装良好） |
 | 用户体验 | 一般 | 优秀 |
 
-### 预分词 + MiniSearch
+### segmentit 预分词 + MiniSearch
 
 > **核心思想：不在浏览器里分词，而是在构建时（Node.js）用 segmentit 分好词，把“分词结果”存入索引。**
 
@@ -144,6 +152,11 @@ tags: [Vitepress]
 + **前端 0 体积增加**（不需要任何中文分词库）。
 + 搜索准确率高（`segmentit` 分词质量好）。
 + 构建一次，终身受益。
+
+#### 其他说明
+
+1. 最初尝试使用`nodejieba`，因为它是推荐的中文分词库，分词质量高。但在 Windows 环境下遇到了编译问题，无法加载本地模块。因此放弃该方案。
+2. 切换到了`segmentit`，它提供了相似的中文分词功能且无需编译，效果略逊，但胜在能用。
 
 ## 栏目的静态和动态配置
 

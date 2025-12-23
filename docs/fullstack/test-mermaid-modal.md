@@ -1,4 +1,9 @@
-# Mermaid 弹框测试
+---
+title: Mermaid 弹框测试
+description: Mermaid 正确显示，及点击弹框测试
+date: 2025-12-20
+tags: [Mermaid]
+---
 
 这个页面用来测试 Mermaid 图表的点击弹框功能。
 
