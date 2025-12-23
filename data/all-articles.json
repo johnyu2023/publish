@@ -1,5 +1,15 @@
 [
   {
+    "url": "/fullstack/refactor-vitepress-project",
+    "title": "重构 Vitepress 项目",
+    "date": "2025-12-22",
+    "tags": [
+      "Vitepress",
+      "SSG"
+    ],
+    "description": "重构 Vitepress 项目心得：使用稳定版 v1.6.4，pnpm 管理依赖，文章放 docs 目录，静态资源放 docs/public。通过自定义脚本生成文章索引、搜索功能和导航配置，实现自动化部署到 GitHub Pages。采用 MiniSearch 实现前端搜索，配置分类和动态数据展示。"
+  },
+  {
     "url": "/foundation/data-structure",
     "title": "计算机基础知识-2027-15",
     "date": "2025-12-21",

@@ -38,15 +38,16 @@
     "fullstack": {
       "name": "全栈开发",
       "description": "全栈开发势不可挡",
-      "count": 12,
+      "count": 13,
       "latestArticle": {
-        "url": "/fullstack/set-up-on-tencent-cloud",
-        "title": "在腾讯云中部署",
-        "date": "2025-12-15",
+        "url": "/fullstack/refactor-vitepress-project",
+        "title": "重构 Vitepress 项目",
+        "date": "2025-12-22",
         "tags": [
-          "腾讯云"
+          "Vitepress",
+          "SSG"
         ],
-        "description": "腾讯云部署全栈应用的记录"
+        "description": "重构 Vitepress 项目心得：使用稳定版 v1.6.4，pnpm 管理依赖，文章放 docs 目录，静态资源放 docs/public。通过自定义脚本生成文章索引、搜索功能和导航配置，实现自动化部署到 GitHub Pages。采用 MiniSearch 实现前端搜索，配置分类和动态数据展示。"
       }
     },
     "think": {
@@ -65,6 +66,13 @@
     }
   },
   "latestArticles": [
+    {
+      "category": "fullstack",
+      "categoryName": "全栈开发",
+      "title": "重构 Vitepress 项目",
+      "date": "2025-12-22",
+      "url": "/fullstack/refactor-vitepress-project"
+    },
     {
       "category": "foundation",
       "categoryName": "基础知识",
@@ -127,15 +135,8 @@
       "title": "AI 的深度检索",
       "date": "2025-09-08",
       "url": "/fullstack/deep-search"
-    },
-    {
-      "category": "fullstack",
-      "categoryName": "全栈开发",
-      "title": "AI 制作长视频实践",
-      "date": "2025-09-07",
-      "url": "/fullstack/ai-movie"
     }
   ],
-  "totalArticles": 27,
-  "generatedAt": "2025-12-21T23:49:36.096Z"
+  "totalArticles": 28,
+  "generatedAt": "2025-12-22T17:17:00.693Z"
 }
