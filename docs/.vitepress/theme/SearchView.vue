@@ -33,14 +33,14 @@ onMounted(async () => {
     
     // 加载索引时需要传入与构建时相同的配置（包括 tokenize 和 processTerm！）
     miniSearch.value = MiniSearch.loadJSON(jsonString, {
-      fields: ['title', 'description', 'tags'],
+      fields: ['title', 'description', 'tags', 'tokens'],
       storeFields: ['url', 'date', 'title', 'originalTags'],
       tokenize,
       processTerm,
       searchOptions: { 
         fuzzy: 0.2, 
         prefix: true,
-        boost: { title: 2, description: 1, tags: 1.5 }
+        boost: { title: 2, description: 1, tags: 1.5, tokens: 1 }
       }
     })
     
@@ -64,8 +64,11 @@ function search() {
     return
   }
   
-  // 获取搜索结果
-  let searchResults = miniSearch.value.search(query.value)
+  // 获取搜索结果，使用与构建索引时相同的分词函数
+  let searchResults = miniSearch.value.search(query.value, {
+    tokenize,
+    processTerm
+  })
   
   // 去重：根据 URL 去除重复项（保留第一个匹配的结果）
   const seenUrls = new Set()
