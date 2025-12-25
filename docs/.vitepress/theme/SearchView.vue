@@ -101,12 +101,13 @@ function search() {
 </script>
 
 <template>
-  <div>
-    <input v-model="query" @input="search" placeholder="搜索文章..." />
+  <div class="search-container">
+    <div class="header">高级搜索</div>
+    <input v-model="query" @input="search" placeholder="搜索文章..." class="search-input" />
     
     <div v-if="loading">加载中...</div>
     
-    <ul v-else-if="results.length">
+    <ul v-else-if="results.length" class="results-list">
       <li v-for="(r, index) in results" :key="r.id">
         <span class="index">{{ index + 1 }}.</span>
         <a :href="withBase(r.url)">{{ r.title }}</a>
@@ -119,6 +120,36 @@ function search() {
 </template>
 
 <style scoped>
+.search-container {
+  padding: 10px;
+  min-height: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 90%;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header {
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.search-input {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.results-list {
+  padding: 10px;
+  flex-grow: 1;
+}
+
 .index {
   margin-right: 8px;
   color: #666;

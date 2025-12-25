@@ -25,7 +25,7 @@ jobs:
         run: pnpm install
 
       - name: Build
-        run: node build.mjs  # 直接调用 API
+        run: node scripts/build.mjs  # 直接调用 API
 
       - name: Debug - show dist content
         run: ls -la ./docs/.vitepress/dist

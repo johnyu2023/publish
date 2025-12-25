@@ -64,8 +64,16 @@ try {
     };
   });
 
-  // 获取全站最新10篇文章
-  const latestArticles = articles
+  // 获取全站最新10篇文章（只包含已定义分类的文章）
+  const filteredArticles = articles.filter(article => {
+    // 从 URL 提取分类
+    const pathParts = article.url.split('/');
+    const category = pathParts.length >= 2 ? pathParts[1] : 'other';
+    // 只包含在 categories.json 中定义的分类
+    return categoryMap.hasOwnProperty(category);
+  });
+  
+  const latestArticles = filteredArticles
     .sort((a, b) => new Date(b.date || '1970-01-01') - new Date(a.date || '1970-01-01'))
     .slice(0, 10)
     .map(article => {

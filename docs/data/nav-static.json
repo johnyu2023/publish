@@ -13,7 +13,7 @@
   },
   {
     "text": "关于",
-    "link": "/about",
+    "link": "/system/history",
     "order": 99,
     "type": "static"
   }

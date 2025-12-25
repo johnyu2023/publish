@@ -19,10 +19,10 @@
   },
   {
     "text": "全栈开发",
-    "link": "/fullstack/ai-images-01",
+    "link": "/fullstack/ci-cd",
     "category": "fullstack",
     "description": "全栈开发势不可挡",
-    "count": 12,
+    "count": 13,
     "order": 50,
     "type": "dynamic"
   },

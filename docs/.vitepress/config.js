@@ -155,11 +155,11 @@ export default defineConfig({
       ...dynamicSidebar,
       '/': [
         {
-          text: '指南',
+          text: '本站相关',
           items: [
-            { text: '介绍', link: '/' },
-            { text: '示例文章', link: '/sample-article' },
-            { text: '实验记录', link: '/experiments' },
+            { text: '版本历史', link: '/system/history' },
+            { text: 'LaTeX 规范', link: '/system/latex-spec' },
+            { text: 'Mermaid 弹框测试', link: '/system/test-mermaid-modal' },
             { text: '关于', link: '/about' }
           ]
         }

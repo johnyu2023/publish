@@ -40,14 +40,14 @@
       "description": "全栈开发势不可挡",
       "count": 13,
       "latestArticle": {
-        "url": "/fullstack/refactor-vitepress-project",
-        "title": "重构 Vitepress 项目",
-        "date": "2025-12-22",
+        "url": "/fullstack/ci-cd",
+        "title": "CI/CD释疑",
+        "date": "2025-12-24",
         "tags": [
-          "Vitepress",
-          "SSG"
+          "CI",
+          "CD"
         ],
-        "description": "重构 Vitepress 项目心得：使用稳定版 v1.6.4，pnpm 管理依赖，文章放 docs 目录，静态资源放 docs/public。通过自定义脚本生成文章索引、搜索功能和导航配置，实现自动化部署到 GitHub Pages。采用 MiniSearch 实现前端搜索，配置分类和动态数据展示。"
+        "description": "持续集成/持续部署（CI/CD）是一种软件开发实践，通过自动化构建、测试和部署代码，实现快速、可靠的软件交付。"
       }
     },
     "think": {
@@ -59,13 +59,21 @@
         "title": "AI辅助编程03-AI时代编程的尽头是软件工程，印度人也是怎么想的吗？真是的",
         "date": "2025-12-10",
         "tags": [
-          "AI Coding"
+          "AI",
+          "Coding"
         ],
-        "description": "探讨使用AI辅助编程的最佳实践和常见陷阱"
+        "description": "AI辅助编程存在多轮对话可靠性下降、随机性错误等问题，需频繁Git提交备份。作者对比多种AI工具，强调提示词重要性，分享Vue项目中AI修改导致问题的案例，指出AI在复杂项目中易失控，需人类掌控方向。"
       }
     }
   },
   "latestArticles": [
+    {
+      "category": "fullstack",
+      "categoryName": "全栈开发",
+      "title": "CI/CD释疑",
+      "date": "2025-12-24",
+      "url": "/fullstack/ci-cd"
+    },
     {
       "category": "fullstack",
       "categoryName": "全栈开发",
@@ -125,18 +133,11 @@
     {
       "category": "fullstack",
       "categoryName": "全栈开发",
-      "title": "LaTeX 规范",
-      "date": "2025-11-29",
-      "url": "/fullstack/latex-spec"
-    },
-    {
-      "category": "fullstack",
-      "categoryName": "全栈开发",
       "title": "AI 的深度检索",
       "date": "2025-09-08",
       "url": "/fullstack/deep-search"
     }
   ],
-  "totalArticles": 28,
-  "generatedAt": "2025-12-22T17:17:00.693Z"
+  "totalArticles": 30,
+  "generatedAt": "2025-12-24T01:24:12.337Z"
 }

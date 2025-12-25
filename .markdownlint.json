@@ -9,7 +9,8 @@
       "ArticleMeta",
       "ClientOnly",
       "SearchView",
-      "img"
+      "img",
+      "BlogPost"
     ]
   },
   "MD041": false,

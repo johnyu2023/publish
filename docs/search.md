@@ -7,8 +7,6 @@ sidebar: false
 import SearchView from './.vitepress/theme/SearchView.vue'
 </script>
 
-# 文章搜索
-
 <ClientOnly>
   <SearchView />
 </ClientOnly>

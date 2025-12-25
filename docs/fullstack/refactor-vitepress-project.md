@@ -7,16 +7,18 @@ tags: [Vitepress, SSG]
 
 <img src="/assets/fullstack/refactor-vitepress/future.webp" width="600" alt="无尽的坑" />
 
-## vitepress 版本
+## 项目配置和结构
+
+### vitepress 版本
 
 + `v1.6.4`是当前最稳定的正式版本，推荐使用。
 + `v2.0.0`还不是正式版本，不建议使用。
 
-## 使用 pnpm 管理依赖
+### 使用 pnpm 管理依赖
 
 + 这是因为 `pnpm` 有更好的性能和磁盘空间利用率
 
-## 文章放在哪里
+### markdown 文章放在哪里
 
 > `docs`
 
@@ -27,12 +29,20 @@ tags: [Vitepress, SSG]
   + 多语言/多版本文档管理 - 为了更清晰的结构，将源内容单独隔离。
   + 与 CI/CD 或其他工具集成 - 例如先对 `docs-source` 做预处理（翻译、校验、注入元数据等），再复制/转换到 VitePress 能识别的目录。
 
-## GitHub Pages 自动部署
+## GitHub Pages 和 Actions
 
 > 一提交代码，网站就自动更新
 
+### GitHub Actions
+
++  GitHub 提供的自动化服务，用于在代码变更时自动触发构建和部署
+
+### GitHub Pages 自动部署
+
+
+
 + GitHub Pages - GitHub 提供的静态网站托管服务，免费！
-+ GitHub Actions - GitHub 提供的自动化服务，用于在代码变更时自动触发构建和部署
+
 + `.github/workflows/deploy.yml` -  GitHub Actions 的配置文件，用于定义自动部署流程。
 + deploy.yml 的作用：
   + 每当你把代码推（push）到 GitHub 仓库  
