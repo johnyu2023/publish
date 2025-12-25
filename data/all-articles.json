@@ -1,5 +1,24 @@
 [
   {
+    "url": "/fullstack/ci-cd",
+    "title": "CI/CD释疑",
+    "date": "2025-12-24",
+    "tags": [
+      "CI",
+      "CD"
+    ],
+    "description": "持续集成/持续部署（CI/CD）是一种软件开发实践，通过自动化构建、测试和部署代码，实现快速、可靠的软件交付。"
+  },
+  {
+    "url": "/system/history",
+    "title": "网站开发历史",
+    "date": "2025-12-24",
+    "tags": [
+      "History"
+    ],
+    "description": "记录本站开发的重要节点"
+  },
+  {
     "url": "/fullstack/refactor-vitepress-project",
     "title": "重构 Vitepress 项目",
     "date": "2025-12-22",
@@ -7,7 +26,7 @@
       "Vitepress",
       "SSG"
     ],
-    "description": "重构 Vitepress 项目心得：使用稳定版 v1.6.4，pnpm 管理依赖，文章放 docs 目录，静态资源放 docs/public。通过自定义脚本生成文章索引、搜索功能和导航配置，实现自动化部署到 GitHub Pages。采用 MiniSearch 实现前端搜索，配置分类和动态数据展示。"
+    "description": "总结了重构Vitepress项目的经验，涵盖版本选择、pnpm依赖管理、文件结构、GitHub Pages自动部署、静态资源配置等。重点介绍了文章信息汇总、搜索索引构建（使用MiniSearch和segmentit预分词）、导航动态配置等机制，以及自定义组件开发。项目采用模块化构建脚本，实现了全站搜索、分类导航等功能。"
   },
   {
     "url": "/foundation/data-structure",
@@ -35,6 +54,15 @@
     "description": "这是一篇测试文档，验证多种内容的展示 - 已再次更新"
   },
   {
+    "url": "/system/test-mermaid-modal",
+    "title": "Mermaid 弹框测试",
+    "date": "2025-12-20",
+    "tags": [
+      "Mermaid"
+    ],
+    "description": "Mermaid 正确显示，及点击弹框测试"
+  },
+  {
     "url": "/fullstack/set-up-on-tencent-cloud",
     "title": "在腾讯云中部署",
     "date": "2025-12-15",
@@ -48,9 +76,10 @@
     "title": "AI辅助编程03-AI时代编程的尽头是软件工程，印度人也是怎么想的吗？真是的",
     "date": "2025-12-10",
     "tags": [
-      "AI Coding"
+      "AI",
+      "Coding"
     ],
-    "description": "探讨使用AI辅助编程的最佳实践和常见陷阱"
+    "description": "AI辅助编程存在多轮对话可靠性下降、随机性错误等问题，需频繁Git提交备份。作者对比多种AI工具，强调提示词重要性，分享Vue项目中AI修改导致问题的案例，指出AI在复杂项目中易失控，需人类掌控方向。"
   },
   {
     "url": "/fullstack/vue-store-composable",
@@ -69,21 +98,21 @@
     "date": "2025-12-07",
     "tags": [
       "AI",
-      "全栈工程师"
+      "全栈"
     ],
-    "description": "AI 时代的全栈工程师是如何工作的"
+    "description": "AI时代重新定义全栈工程师，不再仅限前后端开发，而是涵盖数据处理、产品管理、设计、增长等更广泛领域。AI让单人承担更多职责成为可能，传统软件工程师角色将发生巨大变化。"
   },
   {
     "url": "/think/business-value-of-ai-agents",
     "title": "AI Agents 的商业价值",
     "date": "2025-12-05",
     "tags": [
-      "AI Agents"
+      "Agents"
     ],
-    "description": "AI Agents 在什么方向上可以落地"
+    "description": "AI Agents 商业价值在于理解业务流程和工具链搭建，而非模型规模。适合容错率高、任务繁琐的场景如自媒体、B2B销售、数据分析等。生态分层明确，商业机会在垂直领域和私有化部署。"
   },
   {
-    "url": "/fullstack/latex-spec",
+    "url": "/system/latex-spec",
     "title": "LaTeX 规范",
     "date": "2025-11-29",
     "tags": [
@@ -151,7 +180,7 @@
       "AI",
       "初级岗位"
     ],
-    "description": "应届生找不到工作，是错配，还是误解。AI是不是剥夺了年轻人的试错机会。"
+    "description": "AI时代初级岗位将消失，但人才需求转向有经验能指导AI的人员。AI虽能完成基础任务，但需人类把控方向和质量。建议将AI作为学习加速器，通过公开项目展示能力。"
   },
   {
     "url": "/think/ai-benefits-4-pm",
@@ -161,7 +190,7 @@
       "AI",
       "PM"
     ],
-    "description": "AI 不仅仅利好开发者，对产品经理来说，更是助力巨大。"
+    "description": "AI让产品经理从概念到原型构建速度大幅提升，可直接参与代码开发，减少团队沟通成本。相比传统开发流程，AI助力PM快速迭代产品，基于用户反馈优化路线图，真正价值在于提升团队目标清晰度和响应速度。"
   },
   {
     "url": "/think/pm",
@@ -171,16 +200,17 @@
       "AI",
       "PM"
     ],
-    "description": "在新技术尚未形成共识的早期阶段，产品经理是否还能提出可靠的产品方向"
+    "description": "AI技术早期阶段，传统产品经理方法论失效。技术边界模糊时，用户需求需通过技术可行性重新翻译。建议由技术人员主导产品方向探索，产品经理需转型为懂技术的架构师，组织应打破传统分工边界。"
   },
   {
     "url": "/think/ai-coding-02",
     "title": "AI辅助编程02-注意事项",
     "date": "2025-08-18",
     "tags": [
-      "AI Coding"
+      "AI",
+      "Coding"
     ],
-    "description": "探讨使用AI辅助编程的最佳实践和常见陷阱"
+    "description": "AI辅助编程工具存在概率性错误和幻觉问题，需开发者提供清晰思路和架构设计。最佳实践包括：编写详细文档、使用Git追踪、提供完整测试数据、熟练掌握工具限制。AI在代码注释、参数类型说明等方面效率极高。"
   },
   {
     "url": "/fullstack/github-pages",
@@ -219,9 +249,10 @@
     "title": "AI辅助编程01-初体验",
     "date": "2025-06-15",
     "tags": [
-      "AI Coding"
+      "AI",
+      "Coding"
     ],
-    "description": "初次体会AI辅助编程，喜忧参半"
+    "description": "初次体验AI辅助编程，通过开发Python截屏工具和函数行号检查器实践。发现AI在特定任务上准确性不佳，需人工验证和调整。最终通过AST模块和代码重构获得理想结果，总结AI辅助编程需人工把控方向。"
   },
   {
     "url": "/foundation/vibe-coding",
@@ -260,13 +291,7 @@
     "description": ""
   },
   {
-    "url": "/other/api-documentation",
-    "title": "Untitled",
-    "tags": [],
-    "description": ""
-  },
-  {
-    "url": "/other/github-pages",
+    "url": "/system/github-pages",
     "title": "Untitled",
     "tags": [],
     "description": ""
