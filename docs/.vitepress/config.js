@@ -160,7 +160,7 @@ export default defineConfig({
             { text: '版本历史', link: '/system/history' },
             { text: 'LaTeX 规范', link: '/system/latex-spec' },
             { text: 'Mermaid 弹框测试', link: '/system/test-mermaid-modal' },
-            { text: '关于', link: '/about' }
+            { text: '上海话示例', link: '/shanghai/appen' }
           ]
         }
       ]

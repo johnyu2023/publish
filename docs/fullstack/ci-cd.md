@@ -1,6 +1,6 @@
 ---
-title: CI/CD释疑
-description: 持续集成/持续部署（CI/CD）是一种软件开发实践，通过自动化构建、测试和部署代码，实现快速、可靠的软件交付。
+title: CI/CD 释疑
+description: CI/CD（持续集成/持续部署）是现代软件开发的核心实践，通过自动化构建、测试和部署实现快速可靠的软件交付。CI负责自动验证代码变更，CD则自动部署到生产环境。从自建Jenkins到GitHub Actions等托管服务，再到Vercel等"无感"平台，CI/CD正向简化、模块化、安全左移方向发展。
 date: 2025-12-24
 tags: [CI, CD]
 ---
@@ -57,8 +57,6 @@ D -- 否 --> F[通知你构建失败]
 + **CI 阶段**：确保的 Markdown 能正确转成 HTML，没有语法错误。
 + **CD 阶段**：把生成的 `dist/` 文件夹自动发布到线上。
 
----
-
 ## 主流 CI/CD 工具
 
 ### 第一代（自托管、需运维）
@@ -103,15 +101,15 @@ D -- 否 --> F[通知你构建失败]
 ## CI/CD 领域的演进趋势
 
 ### 📈 1. **从“自建”到“托管”再到“无感”**
+
 + **2000s**：团队自己搭 Jenkins，写 Shell 脚本，运维成本高。
 + **2010s**：GitHub + Travis CI 兴起，`.travis.yml` 成为标配，CI 变得民主化。
 + **2020s**：Vercel/Netlify 等平台实现 **“git push → 自动上线”**，开发者甚至**无需写 CI 配置**。
 
-> 💡 你的 VitePress 博客如果部署在 Vercel，**根本不用写 GitHub Actions**——这就是演进的终点：**CI/CD 隐形化**。
-
 ---
 
 ### 🧩 2. **从“单体流程”到“可组合、模块化”**
+
 + **Jenkins**：用插件串联任务，但配置分散。
 + **GitHub Actions**：引入 **Reusable Workflows** 和 **Composite Actions**，允许像搭积木一样复用逻辑。
 + **Tekton（K8s 原生 CI/CD）**：将 CI/CD 拆解为“任务 + 流水线”，完全声明式。
@@ -119,33 +117,14 @@ D -- 否 --> F[通知你构建失败]
 ---
 
 ### 🌐 3. **与 DevOps、GitOps 深度融合**
+
 + **GitOps**（如 Argo CD、Flux）：将“部署状态”也存入 Git，CI 构建产物 → CD 自动同步到集群。
 + **安全左移**：CI 阶段自动做 SAST（代码扫描）、依赖漏洞检测（如 Dependabot、Snyk）。
 
 ---
 
 ### 📱 4. **面向开发者体验（DX）优化**
+
 + 快速反馈：秒级构建、实时日志
 + 本地调试：如 `act` 工具可在本地运行 GitHub Actions
 + 可视化：清晰的流水线图、失败根因分析
-
----
-
-## ✅ 总结：CI/CD 演进主线
-
-| 时代 | 关键词 | 代表工具 |
-|------|--------|--------|
-| **2000s** | 自建、脚本、运维 | Jenkins, CruiseControl |
-| **2010s** | 云化、YAML、集成 | Travis CI, GitLab CI |
-| **2020s** | 无感、组合、安全、GitOps | GitHub Actions, Vercel, Argo CD |
-
-> 🎯 **趋势**：**越往后，开发者越不需要关心“如何做 CI/CD”，只需关心“我的代码”**。
-
----
-
-如果你做开源项目 → **GitHub Actions**  
-如果你用 GitLab → **GitLab CI**  
-如果你做前端/静态站 → **Vercel/Netlify（无需配置 CI）**  
-如果你在企业内网 → **Jenkins 或 Buildkite**
-
-需要我针对你的 VitePress 博客，推荐最简 CI/CD 方案吗？比如“用 GitHub Pages + Actions” vs “直接用 Vercel”？
