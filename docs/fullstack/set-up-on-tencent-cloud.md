@@ -5,11 +5,24 @@ date: 2025-12-15
 tags: [腾讯云]
 ---
 
-## 轻量应用服务器 Lighthouse
+## 腾讯云轻量应用服务器
 
-+ 轻量应用服务器（Tencent Cloud Lighthouse）是新一代开箱即用、面向轻量应用场景的云服务器产品，助力中小企业和开发者便捷高效的在云端构建网站、Web应用、小程序/小游戏、游戏服、电商应用、云盘/图床和开发测试环境，相比普通云服务器更加简单易用且更贴近应用，以套餐形式整体售卖云资源并提供高带宽流量包，将热门软件打包实现一键构建应用，提供极简上云体验。
+### 官网
+
++ [腾讯云官网](https://cloud.tencent.com/)，微信扫码可以登陆
++ [腾讯云控制台](https://console.cloud.tencent.com/)，在控制台，点击“轻量应用服务器”
+
+![控制台](/assets/fullstack/set-up-on-tencent-cloud/tencent-cloud-console.png)
+
+---
+
+### 轻量应用服务器 Lighthouse
+
++ 轻量应用服务器（Tencent Cloud Lighthouse）是新一代开箱即用、面向**轻量应用场景**的云服务器产品，助力中小企业和开发者便捷高效的在云端构建网站、Web应用、小程序/小游戏、游戏服、电商应用、云盘/图床和开发测试环境，相比普通云服务器更加简单易用且更贴近应用，以套餐形式整体售卖云资源并提供高带宽流量包，将热门软件打包实现一键构建应用，提供极简上云体验。
 
 ![轻量应用服务器](/assets/fullstack/set-up-on-tencent-cloud/lighthouse.png)
+
+---
 
 ### 服务器默认是 windows 系统
 
@@ -32,6 +45,8 @@ OrcaTerm：选择“远程桌面”方式（非SSH）
 
 + 分析：计划部署 PostgreSQL + Python (FastAPI) + Vue → 这是典型的 Linux 技术栈
 + 结论: 需要重新安装 Linux 系统，不能用 Windows 系统。
+
+---
 
 ### 服务器重装系统 - Linux
 
@@ -67,6 +82,8 @@ echo $USER  # 输出 deploy 表示成功
 
 ### 安装 PostgreSQL
 
++ 安装 PostgreSQL 数据库
+
 ```bash
 # deploy 身份执行，安装 PostgreSQL
 deploy@VM-0-13-ubuntu:~$ sudo apt install postgresql postgresql-contrib -y
@@ -88,6 +105,8 @@ GRANT ALL PRIVILEGES ON DATABASE myapp_db TO myapp;
 \q
 
 ```
+
++ 验证 PostgreSQL 安装成功
 
 ```bash
 # 验证连接
@@ -126,13 +145,82 @@ Password for user myapp:
 psql (16.11 (Ubuntu 16.11-0ubuntu0.24.04.1))
 Type "help" for help.
 
-
 myapp_db=> \conninfo
 You are connected to database "myapp_db" as user "myapp" via socket in "/var/run/postgresql" at port "5432".
 myapp_db=>
 
-
 ```
+
++ 想要删除 myapp 用户和 myapp_db 库 - 因为忘记了密码，且数据库是空的
+
+```bash
+# 以 deploy 用户身份登录系统执行
+deploy@VM-0-13-ubuntu:~$ sudo -u postgres psql
+[sudo] password for deploy:
+psql (16.11 (Ubuntu 16.11-0ubuntu0.24.04.1))
+Type "help" for help.
+
+postgres=#
+# 此时已经进入了 PostgreSQL 的超级用户（postgres）交互终端
+
+# 删除数据库
+postgres=# DROP DATABASE IF EXISTS myapp_db;
+DROP DATABASE
+
+# 删除用户
+postgres=# DROP USER IF EXISTS myapp;
+DROP ROLE
+
+# 创建新用户，设置你记得住的密码（替换 'your_new_password'）
+postgres=# CREATE USER myapp WITH PASSWORD 'your_new_password';
+CREATE ROLE
+
+# 创建数据库，并指定 myapp 为所有者
+postgres=# CREATE DATABASE myapp_db OWNER myapp;
+CREATE DATABASE
+
+# 验证用户是否存在
+postgres=# \du myapp
+     List of roles
+ Role name | Attributes
+-----------+------------
+ myapp     |
+
+# 验证数据库是否存在
+postgres=# \l myapp_db
+                                                   List of databases
+   Name   | Owner | Encoding | Locale Provider |   Collate   |    Ctype    | ICU Locale | ICU Rules | Access privileges
+----------+-------+----------+-----------------+-------------+-------------+------------+-----------+-------------------
+ myapp_db | myapp | UTF8     | libc            | en_US.UTF-8 | en_US.UTF-8 |            |           |
+(1 row)
+
+# 创建一个测试表 myapp_db ，属于 myapp 用户
+postgres=# CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    email VARCHAR(100) UNIQUE
+);
+CREATE TABLE
+postgres=# INSERT INTO users (name, email) VALUES
+('Alice', 'alice@example.com'),
+('Bob', 'bob@example.com'),
+('Charlie', 'charlie@example.com');
+INSERT 0 3
+
+# 验证测试表是否存在
+postgres=# SELECT * FROM users;
+ id |  name   |        email
+----+---------+---------------------
+  1 | Alice   | alice@example.com
+  2 | Bob     | bob@example.com
+  3 | Charlie | charlie@example.com
+(3 rows)
+
+# 退出 psql 交互终端
+postgres=# \q
+deploy@VM-0-13-ubuntu:~$
+```
+
 
 
 ## ✅ 第二步：安装 PostgreSQL（10 分钟）
