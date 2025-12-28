@@ -1,8 +1,8 @@
 ---
-title: 在腾讯云中部署
-description: 腾讯云部署全栈应用的记录
-date: 2025-12-15
-tags: [腾讯云]
+title: 在腾讯云中部署 - PostgreSQL
+description: 记录在腾讯云部署 PostgreSQL 数据库的过程
+date: 2025-12-27
+tags: [腾讯云, PostgreSQL]
 ---
 
 ## 腾讯云轻量应用服务器
@@ -221,210 +221,98 @@ postgres=# \q
 deploy@VM-0-13-ubuntu:~$
 ```
 
+### 开放端口供开发机连接数据库
 
++ 要让你**本地 Windows 上的 DBeaver（或其他 PostgreSQL 客户端）成功连接腾讯云上的 PostgreSQL 服务**，你需要完成 **3 个关键配置**。缺一不可。
 
-## ✅ 第二步：安装 PostgreSQL（10 分钟）
+#### 第 1 步：修改 PostgreSQL 配置，允许远程连接
 
-### 1. **安装 PostgreSQL**
+##### 编辑 `postgresql.conf`
+
 ```bash
-sudo apt install postgresql postgresql-contrib -y
+sudo nano /etc/postgresql/*/main/postgresql.conf
 ```
 
-### 2. **创建专用数据库和用户**
-```bash
-# 切换到 postgres 系统用户
-sudo -u postgres psql
+找到这一行（通常在 `CONNECTIONS AND AUTHENTICATION` 区域）：
 
-# 在 psql 交互界面执行以下 SQL：
-CREATE USER myapp WITH PASSWORD 'your_strong_password_here';
-CREATE DATABASE myapp_db OWNER myapp;
-GRANT ALL PRIVILEGES ON DATABASE myapp_db TO myapp;
-\q
+```conf
+#listen_addresses = 'localhost'
 ```
-> 🔒 将 `your_strong_password_here` 替换为 **强密码**（字母+数字+符号，12位以上）
 
-### 3. **验证连接（可选）**
+→ **取消注释并改为**：
+
+```conf
+listen_addresses = '*'
+```
+
+> 表示监听所有 IP（包括公网）
+
+保存退出（`Ctrl+O` → 回车 → `Ctrl+X`）。
+
+---
+
+##### 编辑 `pg_hba.conf`（客户端认证配置）
+
 ```bash
-# 用新用户连接测试
-sudo -u myapp psql -d myapp_db
-\conninfo  # 查看连接信息
-\q
+sudo nano /etc/postgresql/*/main/pg_hba.conf
+```
+
+在文件**末尾**添加一行，允许你的用户从任意 IP 用密码登录：
+
+```conf
+# TYPE  DATABASE    USER    ADDRESS     METHOD
+host    myapp_db    myapp   0.0.0.0/0   md5
+```
+
+> 🔒 **安全建议**：上线后应将 `0.0.0.0/0` 替换为你本机的公网 IP（如 `123.123.123.123/32`）。  
+> 可通过访问 [https://ip.cn](https://ip.cn) 查看你的本地公网 IP。
+
+保存退出。
+
+---
+
+##### 重启 PostgreSQL 服务
+
+```bash
+sudo systemctl restart postgresql
 ```
 
 ---
 
-## ✅ 第三步：安装 Python + FastAPI 环境（10 分钟）
+#### 第 2 步：配置腾讯云**安全组（防火墙）**
 
-### 1. **安装 Python 工具链**
-```bash
-sudo apt install python3 python3-pip python3-venv -y
-```
+1. 登录 [腾讯云控制台](https://console.cloud.tencent.com/)
+2. 进入 **云服务器 > 轻量应用服务器**
+3. 找到你的服务器实例 → 点击 **「防火墙」**（或「安全组」）
+4. 添加 **入站规则（放行端口）**：
 
-### 2. **创建项目目录和虚拟环境**
-```bash
-mkdir -p ~/myapp/backend
-cd ~/myapp/backend
-python3 -m venv venv
-source venv/bin/activate
-```
+| 协议 | 端口 | 源 IP | 策略 |
+|------|------|--------|------|
+| TCP  | 5432 | 你的本地公网 IP（或 `0.0.0.0/0` 临时测试） | 允许 |
 
-### 3. **安装 FastAPI 依赖**
-```bash
-pip install "fastapi[all]" asyncpg python-dotenv uvicorn[standard]
-```
-> ✅ `asyncpg` 是异步 PostgreSQL 驱动，`uvicorn` 是 ASGI 服务器
+> 🌐 示例：
+>
+> + 临时测试：源 IP 填 `0.0.0.0/0`
+> + 安全做法：填 `123.123.123.123/32`（替换为你的实际 IP）
 
-### 4. **（可选）写一个测试 API**
-```bash
-nano main.py
-```
-粘贴以下内容：
-```python
-from fastapi import FastAPI
-app = FastAPI()
-
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
-
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: str = None):
-    return {"item_id": item_id, "q": q}
-```
-保存退出（`Ctrl+O` → 回车 → `Ctrl+X`）
-
-### 5. **测试启动 FastAPI**
-```bash
-uvicorn main:app --host 0.0.0.0 --port 8000
-```
-> 🌐 在浏览器访问 `http://1.117.233.30:8000` 应看到 JSON 响应  
-> 按 `Ctrl+C` 停止
+![防火墙设置](/assets/fullstack/set-up-on-tencent-cloud/firewall.png)
 
 ---
 
-## ✅ 第四步：配置生产级服务（systemd）
+#### 第 3 步：本地 DBeaver 连接测试
 
-### 1. **创建 systemd 服务文件**
-```bash
-sudo nano /etc/systemd/system/myapp.service
-```
-粘贴以下内容：
-```ini
-[Unit]
-Description=My FastAPI App
-After=network.target
+在 DBeaver 中新建 PostgreSQL 连接，填写：
 
-[Service]
-User=deploy
-WorkingDirectory=/home/deploy/myapp/backend
-Environment="PATH=/home/deploy/myapp/backend/venv/bin"
-ExecStart=/home/deploy/myapp/backend/venv/bin/uvicorn main:app --host 127.0.0.1 --port 8000
-Restart=always
+| 字段 | 值 |
+|------|----|
+| Host | 腾讯云服务器的**公网 IP**（不是内网 IP） |
+| Port | `5432` |
+| Database | `myapp_db` |
+| Username | `myapp` |
+| Password | 你设置的密码 |
 
-[Install]
-WantedBy=multi-user.target
-```
-> 🔒 注意：`--host 127.0.0.1` 表示只接受本地连接（更安全）
+点击 **「Test Connection」**，成功则显示 **“Connected”**。
 
-### 2. **启用服务**
-```bash
-sudo systemctl daemon-reload
-sudo systemctl start myapp
-sudo systemctl enable myapp
-```
+![DBeaver 创建 PostgreSQL 连接](/assets/fullstack/set-up-on-tencent-cloud/dbeaver-create-postgresql.png)
 
----
-
-## ✅ 第五步：安装 Nginx（前端 + 反向代理）
-
-### 1. **安装 Nginx**
-```bash
-sudo apt install nginx -y
-sudo systemctl start nginx
-```
-
-### 2. **配置反向代理**
-```bash
-sudo nano /etc/nginx/sites-available/myapp
-```
-粘贴：
-```nginx
-server {
-    listen 80;
-    server_name _;  # 匹配任意域名/IP
-
-    location / {
-        # 前端静态文件目录（稍后上传 Vue 的 dist）
-        root /home/deploy/myapp/frontend/dist;
-        try_files $uri $uri/ /index.html;
-    }
-
-    location /api/ {
-        proxy_pass http://127.0.0.1:8000/;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-    }
-}
-```
-
-### 3. **启用配置**
-```bash
-sudo ln -s /etc/nginx/sites-available/myapp /etc/nginx/sites-enabled/
-sudo nginx -t && sudo systemctl reload nginx
-```
-
----
-
-## ✅ 第六步：上传你的代码
-
-### 1. **本地构建 Vue 项目**
-```bash
-# 在你本地电脑
-cd your-vue-project
-npm run build  # 生成 dist 目录
-```
-
-### 2. **用 WinSCP 或 scp 上传**
-- **推荐工具**：[WinSCP](https://winscp.net/)（图形化，支持拖拽）
-  - 主机名：`1.117.233.30`
-  - 用户名：`deploy`
-  - 密码：你的 deploy 用户密码
-  - 上传 `dist` 目录到 `/home/deploy/myapp/frontend/`
-
-> 或用命令行（本地电脑执行）：
-> ```bash
-> scp -r dist deploy@1.117.233.30:/home/deploy/myapp/frontend/
-> ```
-
----
-
-## ✅ 最终验证
-
-1. 访问 `http://1.117.233.30` → 应显示 Vue 前端
-2. 前端调用 `/api/xxx` → 应返回 FastAPI 数据
-3. 检查服务状态：
-   ```bash
-   sudo systemctl status myapp    # FastAPI
-   sudo systemctl status nginx    # Web 服务器
-   ```
-
----
-
-## 📌 后续建议
-- **不要开放 5432 端口**（PostgreSQL 仅本地访问）
-- **定期备份数据库**：
-  ```bash
-  sudo -u postgres pg_dump myapp_db > /home/deploy/backup.sql
-  ```
-- **安全加固**（可选）：
-  - 安装 `fail2ban` 防 SSH 暴力破解
-  - 用腾讯云 SSL 证书启用 HTTPS
-
----
-
-你现在可以：
-1. 先完成 **PostgreSQL 安装**
-2. 再部署 **FastAPI 测试 API**
-3. 最后上传 **Vue 前端**
-
-如果卡在任何步骤（比如 `pg_dump` 权限问题、Nginx 403 错误等），随时告诉我具体现象，我会提供针对性命令！ 🚀
+![DBeaver 下载 PostgreSQL 驱动](/assets/fullstack/set-up-on-tencent-cloud/dbeaver-download.png)
