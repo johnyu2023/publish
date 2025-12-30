@@ -132,6 +132,28 @@ pip install -r requirements.txt
 
 > 虚拟环境 + pyenv 版本控制 = 完美隔离开发环境。
 
+### 安装全局的镜像
+
+```powershell
+# 安装全局的镜像
+# 该命令会自动在你的用户目录下创建或修改 pip 的配置文件，并设置全局镜像为清华源
+pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+
+# 实例
+(venv) PS D:\2025-code\keepfit\server> pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+Writing to C:\Users\john\AppData\Roaming\pip\pip.ini
+(venv) PS D:\2025-code\keepfit\server> 
+
+```
+
+### python 版本的选择
+
+> 建议使用 Python 3.12.7 作为项目的默认版本。
+
++ 在一些项目中，发现如果使用 Python 3.13，会导致安装依赖时出现问题。
++ Python 3.13 是一个较新的版本（从错误信息 Python reports SOABI: cp313-win_amd64 可以看到），它的一些库（如 pydantic-core）可能没有预编译的二进制包，所以 pip 会尝试从源码构建，这就需要 Rust 工具链。
++ 实际应采用 Python 3.12.7 作为项目的默认版本
+
 ## 安装 node 环境
 
 ### Node.js 版本管理工具
