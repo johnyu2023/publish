@@ -1,6 +1,6 @@
 ---
 title: Python 的虚拟环境-精简
-description: Python 虚拟环境的使用思考
+description: Python 虚拟环境用于隔离项目依赖，避免版本冲突和系统污染。使用 python -m venv 创建，激活后安装的包仅在当前环境有效。虚拟环境是项目目录下的文件夹，可同名但路径不同，需添加到 .gitignore，激活不占资源且无需手动关闭。
 date: 2025-12-29
 tags: [Python，虚拟环境]
 ---

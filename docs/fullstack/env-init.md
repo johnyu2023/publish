@@ -1,6 +1,6 @@
 ---
 title: 开发环境的初始化
-description: 开发环境的初始化，包括操作系统的安装，开发工具的安装，以及开发环境的配置。
+description: 开发环境初始化包括：安装 Git 和 SourceTree 管理源码；使用 pyenv-win 管理多版本 Python（推荐 3.12.7），配置清华镜像和虚拟环境；安装 fnm 管理 Node.js 版本，配置自动切换；安装 pnpm 包管理器并配置国内镜像；最后通过 Trae CN 运行项目。
 date: 2025-12-29
 tags: [fullstack, workflow]
 ---

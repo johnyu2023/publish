@@ -1,6 +1,6 @@
 ---
 title: 数据迁移记录
-description: AI时代，产品经理，设计师和开发人员之间的工作流到底该如何衔接，才是更合理更高效的。
+description: 数据迁移目标是将本地 SQLite 数据库迁移到远程 PostgreSQL 数据库。使用 DBeaver 导出 DDL 脚本，通过 Qwen 修正为 PostgreSQL 语法，最终生成包含8张表的完整数据库结构。
 date: 2025-12-30
 tags: [数据迁移]
 ---
