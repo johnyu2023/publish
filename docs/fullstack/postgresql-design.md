@@ -194,7 +194,7 @@ sudo nano /etc/postgresql/*/main/pg_hba.conf
 
 在文件**末尾**添加一行（允许你的 IP 用密码登录 `postgres` 用户）：
 
-```conf
+```ini
 # 允许特定 IP 使用 postgres 用户远程登录（仅用于管理！）
 host    postgres    postgres    124.79.8.217/32    md5
 ```
@@ -216,7 +216,7 @@ sudo nano /etc/postgresql/*/main/postgresql.conf
 
 确保有：
 
-```conf
+```ini
 listen_addresses = '*'
 ```
 
@@ -280,7 +280,7 @@ CREATE DATABASE kpfit_prod_db OWNER kpfit_prod;
 
 ![DBeaver 下创建数据库](/assets/fullstack/set-up-on-tencent-cloud/create-db-for-user.png)
 
-## 连接测试数据库
+## 连接数据库
 
 ### 连接被拒绝
 

@@ -18,7 +18,7 @@ tags: [wucai-code]
 + 执行 `npm install -g @wucai/wucai-code@latest`
 + 在任何一个目录下，执行 `cmd` 命令，在命令行窗口中，输入`wucai`
 
-![install wucai-code](../assets/fullstack/wucai-code/install-wucai-code.png)
+![install wucai-code](/assets/fullstack/wucai-code/install-wucai-code.png)
 
 ## 更新 wucai-code
 
@@ -27,7 +27,7 @@ tags: [wucai-code]
 
 ## 身份认证方式
 
-![auth](../assets/fullstack/wucai-code/auth.png)
+![auth](/assets/fullstack/wucai-code/auth.png)
 
 + 身份认证是为了判读用什么身份去调用大语言模型
 + 输入 /auth 切换认证方式
@@ -40,5 +40,5 @@ tags: [wucai-code]
 + 在任何需要工作的目录，通过 cmd 或 powershell 窗口，执行 `wucai` 命令，就能启动 wucai-code
 + 会询问对该工作目录的授权方式，一般就选`是，始终允许`即可。
 
-![always-true](../assets/fullstack/wucai-code/always-true.png)
+![always-true](/assets/fullstack/wucai-code/always-true.png)
 

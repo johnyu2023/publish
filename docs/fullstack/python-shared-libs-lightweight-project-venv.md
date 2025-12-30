@@ -5,7 +5,7 @@ date: 2025-11-29
 tags: [Python, 虚拟环境]
 ---
 
-<BlogPost>
+
 
 ## 方案概述
 
@@ -125,14 +125,14 @@ PS D:\2024-code\lesson2025> shared-libs\Scripts\activate
 + 打开 ipynb 文件，文件内容显示在右侧内容区域
 + 在右上角选择 kernel，选择子项目已经注册好的 kernel（如 14-hotel_recommendation）
 
-<img src="../assets/foundation/pytho-venv-share/child-module-in-jupyter.png" alt="child-module-in-jupyter">
+![child-module-in-jupyter](/assets/fullstack/python-venv-share/child-module-in-jupyter.png)
 
 ### 缺失的依赖库，一律在共享库中安装
 
 + 子项目中发现缺失依赖库，就回到共享库中安装。
 + 安装后，重新执行子项目，就能正常运行了
 
-<img src="../assets/foundation/pytho-venv-share/child-module-not-found.png" alt="child-module-not-found">
+![child-module-not-found](/assets/fullstack/python-venv-share/child-module-not-found.png)
 
 ## py 文件的显示方式
 
@@ -148,5 +148,3 @@ PS D:\2024-code\lesson2025\14-hotel_recommendation> .venv\Scripts\activate
 # 执行 py 文件
 (.venv) PS D:\2024-code\lesson2025\14-hotel_recommendation> python .\hotel_rec.py
 ```
-
-</BlogPost>

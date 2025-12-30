@@ -235,13 +235,13 @@ sudo nano /etc/postgresql/*/main/postgresql.conf
 
 找到这一行（通常在 `CONNECTIONS AND AUTHENTICATION` 区域）：
 
-```conf
+```ini
 #listen_addresses = 'localhost'
 ```
 
 → **取消注释并改为**：
 
-```conf
+```ini
 listen_addresses = '*'
 ```
 
@@ -259,7 +259,7 @@ sudo nano /etc/postgresql/*/main/pg_hba.conf
 
 在文件**末尾**添加一行，允许你的用户从任意 IP 用密码登录：
 
-```conf
+```ini
 # TYPE  DATABASE    USER    ADDRESS     METHOD
 host    myapp_db    myapp   0.0.0.0/0   md5
 ```
