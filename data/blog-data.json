@@ -38,16 +38,16 @@
     "fullstack": {
       "name": "全栈开发",
       "description": "全栈开发势不可挡",
-      "count": 13,
+      "count": 22,
       "latestArticle": {
-        "url": "/fullstack/ci-cd",
-        "title": "CI/CD释疑",
-        "date": "2025-12-24",
+        "url": "/fullstack/dashscope",
+        "title": "DashScope API 配置",
+        "date": "2025-12-30",
         "tags": [
-          "CI",
-          "CD"
+          "DashScope",
+          "API"
         ],
-        "description": "持续集成/持续部署（CI/CD）是一种软件开发实践，通过自动化构建、测试和部署代码，实现快速、可靠的软件交付。"
+        "description": "DashScope 是阿里云 AI 平台，需在百炼控制台获取 API Key 并设置环境变量 DASHSCOPE_API_KEY，代码中调用 API 实现舆情分析等 AI 功能，支持文本、图像等模型服务。"
       }
     },
     "think": {
@@ -56,7 +56,7 @@
       "count": 8,
       "latestArticle": {
         "url": "/think/ai-coding-03",
-        "title": "AI辅助编程03-AI时代编程的尽头是软件工程，印度人也是怎么想的吗？真是的",
+        "title": "AI辅助编程03",
         "date": "2025-12-10",
         "tags": [
           "AI",
@@ -70,7 +70,56 @@
     {
       "category": "fullstack",
       "categoryName": "全栈开发",
-      "title": "CI/CD释疑",
+      "title": "DashScope API 配置",
+      "date": "2025-12-30",
+      "url": "/fullstack/dashscope"
+    },
+    {
+      "category": "fullstack",
+      "categoryName": "全栈开发",
+      "title": "数据迁移记录",
+      "date": "2025-12-30",
+      "url": "/fullstack/data-migration"
+    },
+    {
+      "category": "fullstack",
+      "categoryName": "全栈开发",
+      "title": "Python 多项目共享虚拟环境",
+      "date": "2025-12-30",
+      "url": "/fullstack/python-shared-venv"
+    },
+    {
+      "category": "fullstack",
+      "categoryName": "全栈开发",
+      "title": "开发环境的初始化",
+      "date": "2025-12-29",
+      "url": "/fullstack/env-init"
+    },
+    {
+      "category": "fullstack",
+      "categoryName": "全栈开发",
+      "title": "Python 的虚拟环境-精简",
+      "date": "2025-12-29",
+      "url": "/fullstack/python-venv-02"
+    },
+    {
+      "category": "fullstack",
+      "categoryName": "全栈开发",
+      "title": "PostgreSQL 数据库设计",
+      "date": "2025-12-27",
+      "url": "/fullstack/postgresql-design"
+    },
+    {
+      "category": "fullstack",
+      "categoryName": "全栈开发",
+      "title": "在腾讯云中部署 - PostgreSQL",
+      "date": "2025-12-27",
+      "url": "/fullstack/set-up-on-tencent-cloud"
+    },
+    {
+      "category": "fullstack",
+      "categoryName": "全栈开发",
+      "title": "CI/CD 释疑",
       "date": "2025-12-24",
       "url": "/fullstack/ci-cd"
     },
@@ -87,57 +136,8 @@
       "title": "计算机基础知识-2027-15",
       "date": "2025-12-21",
       "url": "/foundation/data-structure"
-    },
-    {
-      "category": "ai",
-      "categoryName": "人工智能",
-      "title": "人工智能的未来发展-2026-14",
-      "date": "2025-12-20",
-      "url": "/ai/future-of-ai"
-    },
-    {
-      "category": "fullstack",
-      "categoryName": "全栈开发",
-      "title": "在腾讯云中部署",
-      "date": "2025-12-15",
-      "url": "/fullstack/set-up-on-tencent-cloud"
-    },
-    {
-      "category": "think",
-      "categoryName": "观察思考",
-      "title": "AI辅助编程03-AI时代编程的尽头是软件工程，印度人也是怎么想的吗？真是的",
-      "date": "2025-12-10",
-      "url": "/think/ai-coding-03"
-    },
-    {
-      "category": "fullstack",
-      "categoryName": "全栈开发",
-      "title": "Vue 中的 Store 与 Composable",
-      "date": "2025-12-07",
-      "url": "/fullstack/vue-store-composable"
-    },
-    {
-      "category": "think",
-      "categoryName": "观察思考",
-      "title": "AI时代的全栈工程师",
-      "date": "2025-12-07",
-      "url": "/think/full-stack-engineer"
-    },
-    {
-      "category": "think",
-      "categoryName": "观察思考",
-      "title": "AI Agents 的商业价值",
-      "date": "2025-12-05",
-      "url": "/think/business-value-of-ai-agents"
-    },
-    {
-      "category": "fullstack",
-      "categoryName": "全栈开发",
-      "title": "AI 的深度检索",
-      "date": "2025-09-08",
-      "url": "/fullstack/deep-search"
     }
   ],
-  "totalArticles": 30,
-  "generatedAt": "2025-12-24T01:24:12.337Z"
+  "totalArticles": 40,
+  "generatedAt": "2025-12-30T09:24:25.924Z"
 }
