@@ -16,7 +16,7 @@
     "tags": [
       "数据迁移"
     ],
-    "description": "数据迁移目标是将本地 SQLite 数据库迁移到远程 PostgreSQL 数据库。使用 DBeaver 导出 DDL 脚本，通过 Qwen 修正为 PostgreSQL 语法，最终生成包含8张表的完整数据库结构。"
+    "description": "描述了从SQLite到PostgreSQL的数据迁移过程：使用DBeaver导出DDL脚本，通过AI修正SQL语法，人工审查后执行建表；按外键依赖顺序导入多个表数据；最后重置PostgreSQL序列确保ID连续性。"
   },
   {
     "url": "/fullstack/python-shared-venv",
