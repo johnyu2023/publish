@@ -8,12 +8,86 @@ const results = ref([])
 const miniSearch = ref(null)
 const loading = ref(true)
 
-// 定义与构建索引时相同的分词函数（构建索引时使用的是简单按标点/空格分词）
+// 定义与构建索引时相同的分词函数（使用模拟的中文分词）
 function tokenize(text) {
-  return text
-    .split(/[\s\-，。！？、]+/)
-    .map(token => token.trim())  // 确保去除每个分词的首尾空格
+  // 更好地模拟中文分词逻辑，与构建索引时的 segmentit 分词保持一致
+  if (!text) return []
+  
+  // 首先尝试按标点和空格基本分词
+  const basicTokens = text
+    .split(/[\s\-，。！？、；：""''（）【】\[\]<>]+/)
+    .map(token => token.trim())
     .filter(token => token.length > 0)
+  
+  // 对中文字符进行额外处理，模拟中文分词效果
+  const enhancedTokens = []
+  for (const token of basicTokens) {
+    if (token.length === 0) continue
+    
+    // 添加原始分词
+    enhancedTokens.push(token)
+    
+    // 对中文内容进行更细粒度的处理
+    if (/[\u4e00-\u9fa5]/.test(token)) {
+      // 如果包含中文，尝试提取可能的词组
+      // 添加单个字符
+      for (let i = 0; i < token.length; i++) {
+        const char = token[i]
+        if (char.match(/[\u4e00-\u9fa5]/)) {
+          enhancedTokens.push(char)
+        }
+      }
+      
+      // 添加双字符组合
+      for (let i = 0; i < token.length - 1; i++) {
+        const char1 = token[i]
+        const char2 = token[i + 1]
+        if (char1.match(/[\u4e00-\u9fa5]/) && char2.match(/[\u4e00-\u9fa5]/)) {
+          enhancedTokens.push(char1 + char2)
+        }
+      }
+      
+      // 添加三字符组合（如果长度允许）
+      for (let i = 0; i < token.length - 2; i++) {
+        const chars = token.substring(i, i + 3)
+        if (/^[\u4e00-\u9fa5]{3}$/.test(chars)) {
+          enhancedTokens.push(chars)
+        }
+      }
+      
+      // 添加四字符组合（如成语等常见四字词组）
+      for (let i = 0; i < token.length - 3; i++) {
+        const chars = token.substring(i, i + 4)
+        if (/^[\u4e00-\u9fa5]{4}$/.test(chars)) {
+          enhancedTokens.push(chars)
+        }
+      }
+      
+      // 添加五字符组合
+      for (let i = 0; i < token.length - 4; i++) {
+        const chars = token.substring(i, i + 5)
+        if (/^[\u4e00-\u9fa5]{5}$/.test(chars)) {
+          enhancedTokens.push(chars)
+        }
+      }
+      
+      // 添加六字符组合
+      for (let i = 0; i < token.length - 5; i++) {
+        const chars = token.substring(i, i + 6)
+        if (/^[\u4e00-\u9fa5]{6}$/.test(chars)) {
+          enhancedTokens.push(chars)
+        }
+      }
+    }
+    
+    // 对英文内容，保持原有处理方式
+    if (token.match(/[a-zA-Z]/) && !token.match(/[\u4e00-\u9fa5]/)) {
+      // 保持英文单词的完整性
+      enhancedTokens.push(token.toLowerCase())
+    }
+  }
+  
+  return [...new Set(enhancedTokens)] // 去重
 }
 
 function processTerm(term) {
@@ -40,7 +114,10 @@ onMounted(async () => {
       searchOptions: { 
         fuzzy: 0.2, 
         prefix: true,
-        boost: { title: 2, description: 1, tags: 1.5, tokens: 1 }
+        boost: { title: 2, description: 1, tags: 1.5, tokens: 1 },
+        // 确保使用相同的分词器进行搜索
+        tokenize: tokenize,
+        processTerm: processTerm
       }
     })
     
@@ -65,9 +142,12 @@ function search() {
   }
   
   // 获取搜索结果，使用与构建索引时相同的分词函数
-  let searchResults = miniSearch.value.search(query.value, {
-    tokenize,
-    processTerm
+  let searchResults = miniSearch.value.search(query.value.trim(), {
+    tokenize: tokenize,
+    processTerm: processTerm,
+    fuzzy: 0.2,
+    prefix: true,
+    boost: { title: 2, description: 1, tags: 1.5, tokens: 1 }
   })
   
   // 去重：根据 URL 去除重复项（保留第一个匹配的结果）
