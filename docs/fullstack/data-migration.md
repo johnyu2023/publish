@@ -1,6 +1,6 @@
 ---
 title: 数据迁移记录
-description: 数据迁移目标是将本地 SQLite 数据库迁移到远程 PostgreSQL 数据库。使用 DBeaver 导出 DDL 脚本，通过 Qwen 修正为 PostgreSQL 语法，最终生成包含8张表的完整数据库结构。
+description: 描述了从SQLite到PostgreSQL的数据迁移过程：使用DBeaver导出DDL脚本，通过AI修正SQL语法，人工审查后执行建表；按外键依赖顺序导入多个表数据；最后重置PostgreSQL序列确保ID连续性。
 date: 2025-12-30
 tags: [数据迁移]
 ---
@@ -172,7 +172,7 @@ COMMENT ON COLUMN fitness_locations.updated_at IS '记录最后更新时间';
 -- 3. users: 用户账户表（含 UNIQUE CONSTRAINT）
 CREATE TABLE users (
     id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-    username VARCHAR(50) NOT CHECK (username <> ''),  -- 非空且非空字符串（可选增强）
+    username VARCHAR(50) NOT NULL CHECK (username <> ''),
     nickname VARCHAR(50) NOT NULL,
     password_hash TEXT NOT NULL,
     role VARCHAR(20) NOT NULL,
@@ -321,6 +321,77 @@ COMMENT ON COLUMN training_sets.created_at IS '记录创建时间';
 COMMENT ON COLUMN training_sets.updated_at IS '记录最后更新时间';
 ```
 
+### DBeaver 中执行 DDL 脚本
 
++ 打开 DBeaver，连接到数据库
++ 点击“文件” -> “新建” -> “SQL 脚本”
++ 粘贴 DDL 脚本内容
++ 点击“运行”（或 F5）执行脚本
++ 检查数据库中，如果生成了8张表，说明脚本执行成功
 
+![在 DBeaver 中执行 DDL 脚本](/assets/fullstack/data-migration/dbeaver-call-sql.png)
 
+## 迁移数据到 PostgreSQL
+
+### 导入顺序（处理外键依赖）
+
++ 由于表之间有外键（Foreign Key），必须按照“先父后子”的顺序导入，否则会报错。顺序如下：
+
+1. `exercise_types` (练习类型，基础表)
+2. `fitness_locations` (健身场地，基础表)
+3. `users` (独立表)
+4. `fitness_knowledge` (独立表)
+5. `weight_records` (独立表)
+6. `classes` (依赖 1 和 2)
+7. `training_sessions` (依赖 1 和 2)
+8. `training_sets` (依赖 7)
+
+### 导出数据
+
++ 同时连接上本地 SQLite 数据库和远程 PostgreSQL 数据库
++ 在 SQLite 数据库的连接上鼠标右键选择【导出数据】。操作步骤如图所示 - 注意要勾选【使用批量加载】
+
+![在 DBeaver 中开始导出数据](/assets/fullstack/data-migration/select-table-right-click.png)
+![在 DBeaver 中执行 DDL 脚本](/assets/fullstack/data-migration/export-to-db.png)
+![在 DBeaver 中执行 DDL 脚本](/assets/fullstack/data-migration/map-to-table.png)
+![在 DBeaver 中执行 DDL 脚本](/assets/fullstack/data-migration/batch-export.png)
+![在 DBeaver 中执行 DDL 脚本](/assets/fullstack/data-migration/confirm.png)
+
+### 序列重置（关键步骤）
+
+> 数据导入完成后，你需要告诉 PostgreSQL：“嘿，ID 已经用到 100 了，下次请从 101 开始计数”。
+
++ 在 PostgreSQL 数据库连接的 SQL 编辑器中执行以下脚本：
+
+```sql
+-- 自动重置所有表的自增序列到当前最大 ID
+
+-- 重置 exercise_types 表序列
+SELECT setval(pg_get_serial_sequence('exercise_types', 'id'), COALESCE(MAX(id), 1)) FROM exercise_types;
+
+-- 重置 fitness_locations 表序列
+SELECT setval(pg_get_serial_sequence('fitness_locations', 'id'), COALESCE(MAX(id), 1)) FROM fitness_locations;
+
+-- 重置 users 表序列
+SELECT setval(pg_get_serial_sequence('users', 'id'), COALESCE(MAX(id), 1)) FROM users;
+
+-- 重置 classes 表序列
+SELECT setval(pg_get_serial_sequence('classes', 'id'), COALESCE(MAX(id), 1)) FROM classes;
+
+-- 重置 fitness_knowledge 表序列
+SELECT setval(pg_get_serial_sequence('fitness_knowledge', 'id'), COALESCE(MAX(id), 1)) FROM fitness_knowledge;
+
+-- 重置 training_sessions 表序列
+SELECT setval(pg_get_serial_sequence('training_sessions', 'id'), COALESCE(MAX(id), 1)) FROM training_sessions;
+
+-- 重置 weight_records 表序列
+SELECT setval(pg_get_serial_sequence('weight_records', 'id'), COALESCE(MAX(id), 1)) FROM weight_records;
+
+-- 重置 training_sets 表序列
+SELECT setval(pg_get_serial_sequence('training_sets', 'id'), COALESCE(MAX(id), 1)) FROM training_sets;
+```
+
+![执行 setval ](/assets/fullstack/data-migration/sql-setval.png)
+
++ 可以在 DBeaver 中，检查每个表的序列是否被设置为正确的值
+![检查表的sequence是否被设置为正确的值](/assets/fullstack/data-migration/check-sequence.png)

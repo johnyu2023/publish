@@ -31,10 +31,10 @@
   },
   {
     "text": "全栈开发",
-    "link": "/fullstack/ci-cd",
+    "link": "/fullstack/dashscope",
     "category": "fullstack",
     "description": "全栈开发势不可挡",
-    "count": 13,
+    "count": 22,
     "order": 50,
     "type": "dynamic"
   },

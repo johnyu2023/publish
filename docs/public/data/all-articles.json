@@ -1,13 +1,90 @@
 [
   {
+    "url": "/fullstack/dashscope",
+    "title": "DashScope API 配置",
+    "date": "2025-12-30",
+    "tags": [
+      "DashScope",
+      "API"
+    ],
+    "description": "DashScope 是阿里云 AI 平台，需在百炼控制台获取 API Key 并设置环境变量 DASHSCOPE_API_KEY，代码中调用 API 实现舆情分析等 AI 功能，支持文本、图像等模型服务。"
+  },
+  {
+    "url": "/fullstack/data-migration",
+    "title": "数据迁移记录",
+    "date": "2025-12-30",
+    "tags": [
+      "数据迁移"
+    ],
+    "description": "数据迁移目标是将本地 SQLite 数据库迁移到远程 PostgreSQL 数据库。使用 DBeaver 导出 DDL 脚本，通过 Qwen 修正为 PostgreSQL 语法，最终生成包含8张表的完整数据库结构。"
+  },
+  {
+    "url": "/fullstack/python-shared-venv",
+    "title": "Python 多项目共享虚拟环境",
+    "date": "2025-12-30",
+    "tags": [
+      "Python",
+      "虚拟环境"
+    ],
+    "description": ""
+  },
+  {
+    "url": "/fullstack/env-init",
+    "title": "开发环境的初始化",
+    "date": "2025-12-29",
+    "tags": [
+      "fullstack",
+      "workflow"
+    ],
+    "description": "开发环境初始化包括：安装 Git 和 SourceTree 管理源码；使用 pyenv-win 管理多版本 Python（推荐 3.12.7），配置清华镜像和虚拟环境；安装 fnm 管理 Node.js 版本，配置自动切换；安装 pnpm 包管理器并配置国内镜像；最后通过 Trae CN 运行项目。"
+  },
+  {
+    "url": "/fullstack/python-venv-02",
+    "title": "Python 的虚拟环境-精简",
+    "date": "2025-12-29",
+    "tags": [
+      "Python，虚拟环境"
+    ],
+    "description": "Python 虚拟环境用于隔离项目依赖，避免版本冲突和系统污染。使用 python -m venv 创建，激活后安装的包仅在当前环境有效。虚拟环境是项目目录下的文件夹，可同名但路径不同，需添加到 .gitignore，激活不占资源且无需手动关闭。"
+  },
+  {
+    "url": "/fullstack/postgresql-design",
+    "title": "PostgreSQL 数据库设计",
+    "date": "2025-12-27",
+    "tags": [
+      "PostgreSQL",
+      "数据库设计"
+    ],
+    "description": "记录在 PostgreSQL 数据库设计的过程"
+  },
+  {
+    "url": "/fullstack/set-up-on-tencent-cloud",
+    "title": "在腾讯云中部署 - PostgreSQL",
+    "date": "2025-12-27",
+    "tags": [
+      "腾讯云",
+      "PostgreSQL"
+    ],
+    "description": "记录在腾讯云部署 PostgreSQL 数据库的过程"
+  },
+  {
+    "url": "/shanghai/appen",
+    "title": "上海话项目示例",
+    "date": "2025-12-25",
+    "tags": [
+      "上海话"
+    ],
+    "description": "一个项目的示例"
+  },
+  {
     "url": "/fullstack/ci-cd",
-    "title": "CI/CD释疑",
+    "title": "CI/CD 释疑",
     "date": "2025-12-24",
     "tags": [
       "CI",
       "CD"
     ],
-    "description": "持续集成/持续部署（CI/CD）是一种软件开发实践，通过自动化构建、测试和部署代码，实现快速、可靠的软件交付。"
+    "description": "CI/CD（持续集成/持续部署）是现代软件开发的核心实践，通过自动化构建、测试和部署实现快速可靠的软件交付。CI负责自动验证代码变更，CD则自动部署到生产环境。从自建Jenkins到GitHub Actions等托管服务，再到Vercel等\"无感\"平台，CI/CD正向简化、模块化、安全左移方向发展。"
   },
   {
     "url": "/system/history",
@@ -63,17 +140,8 @@
     "description": "Mermaid 正确显示，及点击弹框测试"
   },
   {
-    "url": "/fullstack/set-up-on-tencent-cloud",
-    "title": "在腾讯云中部署",
-    "date": "2025-12-15",
-    "tags": [
-      "腾讯云"
-    ],
-    "description": "腾讯云部署全栈应用的记录"
-  },
-  {
     "url": "/think/ai-coding-03",
-    "title": "AI辅助编程03-AI时代编程的尽头是软件工程，印度人也是怎么想的吗？真是的",
+    "title": "AI辅助编程03",
     "date": "2025-12-10",
     "tags": [
       "AI",
@@ -112,6 +180,16 @@
     "description": "AI Agents 商业价值在于理解业务流程和工具链搭建，而非模型规模。适合容错率高、任务繁琐的场景如自媒体、B2B销售、数据分析等。生态分层明确，商业机会在垂直领域和私有化部署。"
   },
   {
+    "url": "/fullstack/python-shared-libs-lightweight-project-venv",
+    "title": "Python虚拟环境-共享库+子项目",
+    "date": "2025-11-29",
+    "tags": [
+      "Python",
+      "虚拟环境"
+    ],
+    "description": "Python虚拟环境解决方案：共享大库 + 轻量项目虚拟环境"
+  },
+  {
     "url": "/system/latex-spec",
     "title": "LaTeX 规范",
     "date": "2025-11-29",
@@ -119,6 +197,24 @@
       "LaTeX"
     ],
     "description": "本网站使用的 LaTeX 编写规范，为了确保所有公式能够正确渲染，请遵循以下编写规范。"
+  },
+  {
+    "url": "/fullstack/python-venv",
+    "title": "Python 的虚拟环境",
+    "date": "2025-10-23",
+    "tags": [
+      "Python，虚拟环境"
+    ],
+    "description": "Python 虚拟环境的使用思考"
+  },
+  {
+    "url": "/fullstack/wucai-code",
+    "title": "wucai-code 使用",
+    "date": "2025-09-18",
+    "tags": [
+      "wucai-code"
+    ],
+    "description": "wucai-code 是一个基于 node.js 的命令行工具，用于 AI Coding"
   },
   {
     "url": "/fullstack/deep-search",
