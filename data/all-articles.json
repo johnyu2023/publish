@@ -1,5 +1,45 @@
 [
   {
+    "url": "/fullstack/fastapi",
+    "title": "Python 开发的道和艺术01",
+    "date": "2026-01-06",
+    "tags": [
+      "Python",
+      "Conda",
+      "Pip",
+      "KISS",
+      "函数",
+      "FastAPI",
+      "分层设计"
+    ],
+    "description": ""
+  },
+  {
+    "url": "/fullstack/dao-and-art-of-python-dev-01",
+    "title": "Python 开发的道和艺术01",
+    "date": "2026-01-05",
+    "tags": [
+      "Python",
+      "Conda",
+      "Pip",
+      "KISS",
+      "函数",
+      "FastAPI",
+      "分层设计"
+    ],
+    "description": "文章探讨了Python开发的道和艺术，涵盖包管理器选择、函数与类的权衡、以及FastAPI设计哲学。建议纯Python项目用Pip，数据科学用Conda，避免混用。强调Python函数式优先的设计哲学，与JS社区的OOP倾向形成对比。"
+  },
+  {
+    "url": "/fullstack/pytest-testclient",
+    "title": "Pytest + TestClient 重构",
+    "date": "2026-01-01",
+    "tags": [
+      "pytest",
+      "testclient"
+    ],
+    "description": "介绍了从SQLite迁移到PostgreSQL后，使用Pytest+TestClient重构后端项目测试用例的方案。核心是通过fixture实现测试数据库隔离，确保测试连接正确的数据库。"
+  },
+  {
     "url": "/fullstack/dashscope",
     "title": "DashScope API 配置",
     "date": "2025-12-30",
@@ -26,7 +66,7 @@
       "Python",
       "虚拟环境"
     ],
-    "description": ""
+    "description": "介绍了Python多项目共享虚拟环境的方案。通过创建共享库（shared-libs）安装大型依赖，各子项目创建独立虚拟环境并用.pth文件引用共享库路径，实现依赖共享同时保持项目隔离。子项目通过注册kernel在Jupyter中使用，缺失依赖统一在共享库中安装。"
   },
   {
     "url": "/fullstack/env-init",
