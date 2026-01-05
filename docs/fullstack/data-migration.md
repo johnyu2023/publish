@@ -395,3 +395,117 @@ SELECT setval(pg_get_serial_sequence('training_sets', 'id'), COALESCE(MAX(id), 1
 
 + 可以在 DBeaver 中，检查每个表的序列是否被设置为正确的值
 ![检查表的sequence是否被设置为正确的值](/assets/fullstack/data-migration/check-sequence.png)
+
+## 在同一个 PostgreSQL 的不同数据库之间迁移数据
+
+### DBeaver 中无法直接迁移数据
+
++ 在 DBeaver 中尝试从一个 PostgreSQL 数据库（如 `kpfit_test_db`）向另一个数据库（如 `kpfit_dev_db`）迁移数据时，报错：
+
+```plaintext
+org.jkiss.dbeaver.DBRuntimeException: Error while finishing result set fetching into org.jkiss.dbeaver.tools.transfer.database.DatabaseTransferConsumer@7ccebedb
+```
+
++ 这种报错 **不是表结构问题**（二者表结构完全一致），而是 **跨数据库迁移在 PostgreSQL 中的连接/权限/事务/驱动限制** 导致的。
+
+---
+### 错误原因分析
+
++ **PostgreSQL 的“数据库”是逻辑隔离的**
++ 在 PostgreSQL 中，**不同数据库之间无法直接通过 SQL 访问对方的数据**。即使在 DBeaver 里同时连了 `kpfit_test_db` 和 `kpfit_dev_db`，**PostgreSQL 后端并不允许跨库查询**。
+
+    > **DBeaver 的“数据传输”功能** 在跨库迁移时，**实际流程是**：
+    > + 从源库读取数据到本地内存（或临时文件）
+    > + 再批量插入到目标库
+
+    > 这个过程对大数据量、网络中断、驱动兼容性、内存限制等比较敏感。
+
+---
+### 解决方案 - 使用 `pg_dump` + `psql`
+
++ 使用 Putty 连接到 PostgreSQL 服务器所在的 linux 主机
+
+#### 进入一个工作目录
+
+```bash
+mkdir -p ~/pg_migration
+cd ~/pg_migration
+```
+
+---
+#### 导出 8 张表的数据（仅数据，生成 INSERT 语句）
+
+> 使用 `pg_dump` 的 `--data-only --inserts` 参数，确保生成标准 `INSERT` 语句，兼容性好 。
+
+```bash
+# 设置变量（请按你的实际情况修改！）
+PG_HOST="localhost"        # 通常就是 localhost
+PG_PORT="5432"             # 默认端口，按需修改
+PG_USER="postgres"         # postgres 拥有 kpfit_test_db 和 kpfit_dev_db 数据库的所有权限，所以用这个用户比较方便
+SOURCE_DB="kpfit_test_db"
+TARGET_DB="kpfit_dev_db"
+
+# 导出每张表
+pg_dump -h $PG_HOST -p $PG_PORT -U $PG_USER -d $SOURCE_DB -t exercise_types     --data-only --inserts -f exercise_types.sql
+pg_dump -h $PG_HOST -p $PG_PORT -U $PG_USER -d $SOURCE_DB -t fitness_locations  --data-only --inserts -f fitness_locations.sql
+pg_dump -h $PG_HOST -p $PG_PORT -U $PG_USER -d $SOURCE_DB -t users             --data-only --inserts -f users.sql
+pg_dump -h $PG_HOST -p $PG_PORT -U $PG_USER -d $SOURCE_DB -t fitness_knowledge  --data-only --inserts -f fitness_knowledge.sql
+pg_dump -h $PG_HOST -p $PG_PORT -U $PG_USER -d $SOURCE_DB -t weight_records    --data-only --inserts -f weight_records.sql
+pg_dump -h $PG_HOST -p $PG_PORT -U $PG_USER -d $SOURCE_DB -t classes           --data-only --inserts -f classes.sql
+pg_dump -h $PG_HOST -p $PG_PORT -U $PG_USER -d $SOURCE_DB -t training_sessions  --data-only --inserts -f training_sessions.sql
+pg_dump -h $PG_HOST -p $PG_PORT -U $PG_USER -d $SOURCE_DB -t training_sets     --data-only --inserts -f training_sets.sql
+```
+
+> 💡 执行时会提示输入密码（如果未配置免密），输入你的数据库用户密码即可。
+
+---
+#### 将数据导入到目标数据库
+
+```bash
+psql -h $PG_HOST -p $PG_PORT -U $PG_USER -d $TARGET_DB -f exercise_types.sql
+psql -h $PG_HOST -p $PG_PORT -U $PG_USER -d $TARGET_DB -f fitness_locations.sql
+psql -h $PG_HOST -p $PG_PORT -U $PG_USER -d $TARGET_DB -f users.sql
+psql -h $PG_HOST -p $PG_PORT -U $PG_USER -d $TARGET_DB -f fitness_knowledge.sql
+psql -h $PG_HOST -p $PG_PORT -U $PG_USER -d $TARGET_DB -f weight_records.sql
+psql -h $PG_HOST -p $PG_PORT -U $PG_USER -d $TARGET_DB -f classes.sql
+psql -h $PG_HOST -p $PG_PORT -U $PG_USER -d $TARGET_DB -f training_sessions.sql
+psql -h $PG_HOST -p $PG_PORT -U $PG_USER -d $TARGET_DB -f training_sets.sql
+```
+
+> ✅ 导入顺序**无需严格按依赖**，因为 `INSERT` 不涉及外键检查（前提是目标表结构已存在且外键约束已启用，PostgreSQL 会在插入时自动校验引用完整性）。
+
+---
+#### 重置所有序列（关键！防止下次插入主键冲突）
+
+> 数据导入后，自增序列不会自动更新，必须手动重置 。
+
+创建重置脚本：
+
+```bash
+cat > reset_sequences.sql << 'EOF'
+SELECT setval(pg_get_serial_sequence('exercise_types', 'id'), COALESCE(MAX(id), 1)) FROM exercise_types;
+SELECT setval(pg_get_serial_sequence('fitness_locations', 'id'), COALESCE(MAX(id), 1)) FROM fitness_locations;
+SELECT setval(pg_get_serial_sequence('users', 'id'), COALESCE(MAX(id), 1)) FROM users;
+SELECT setval(pg_get_serial_sequence('fitness_knowledge', 'id'), COALESCE(MAX(id), 1)) FROM fitness_knowledge;
+SELECT setval(pg_get_serial_sequence('weight_records', 'id'), COALESCE(MAX(id), 1)) FROM weight_records;
+SELECT setval(pg_get_serial_sequence('classes', 'id'), COALESCE(MAX(id), 1)) FROM classes;
+SELECT setval(pg_get_serial_sequence('training_sessions', 'id'), COALESCE(MAX(id), 1)) FROM training_sessions;
+SELECT setval(pg_get_serial_sequence('training_sets', 'id'), COALESCE(MAX(id), 1)) FROM training_sets;
+EOF
+```
+
+执行重置：
+
+```bash
+psql -h $PG_HOST -p $PG_PORT -U $PG_USER -d $TARGET_DB -f reset_sequences.sql
+```
+
+> ✅ 此步骤后，所有表的 `id` 序列将指向当前最大值，下次 `INSERT` 可正常自增。
+
+---
+#### 清理工作目录
+
+```bash
+cd ~
+rm -rf ~/pg_migration
+```

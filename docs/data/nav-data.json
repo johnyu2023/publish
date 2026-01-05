@@ -31,10 +31,10 @@
   },
   {
     "text": "全栈开发",
-    "link": "/fullstack/dashscope",
+    "link": "/fullstack/fastapi",
     "category": "fullstack",
     "description": "全栈开发势不可挡",
-    "count": 22,
+    "count": 25,
     "order": 50,
     "type": "dynamic"
   },

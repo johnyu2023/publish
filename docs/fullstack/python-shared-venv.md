@@ -1,6 +1,6 @@
 ---
 title: Python 多项目共享虚拟环境
-description: 
+description: 介绍了Python多项目共享虚拟环境的方案。通过创建共享库（shared-libs）安装大型依赖，各子项目创建独立虚拟环境并用.pth文件引用共享库路径，实现依赖共享同时保持项目隔离。子项目通过注册kernel在Jupyter中使用，缺失依赖统一在共享库中安装。
 date: 2025-12-30
 tags: [Python, 虚拟环境]
 ---

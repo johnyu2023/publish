@@ -5,16 +5,15 @@ date: 2025-12-27
 tags: [PostgreSQL, 数据库设计]
 ---
 
-## 测试库和正式库分离
-
-> 2个名字意义明确的数据库，一个用于测试，一个用于正式环境。这是符合工程规范和安全最佳实践的。
+## 测试库、开发库和正式库分离
 
 ### 配套命名（保持一致性）
 
 | 用户名 | 数据库名 | 备注 |
 | ------ | -------- | ------ |
-| `kpfit_test` | `kpfit_test_db` | 测试环境 |
-| `kpfit_prod` | `kpfit_prod_db` | 正式环境 |
+| `kpfit_test` | `kpfit_test_db` | 测试环境 - 供 pytest 使用 |
+| `kpfit_dev` | `kpfit_dev_db` | 开发环境 - 供本地开发使用 |
+| `kpfit_prod` | `kpfit_prod_db` | 正式环境 - 用于生产部署 |
 
 ---
 
@@ -22,7 +21,7 @@ tags: [PostgreSQL, 数据库设计]
 
 | 优点 | 说明 |
 |------|------|
-| **语义清晰** | 一看就知道 `kpfit_test` 是测试用，`kpfit_prod` 是正式用 |
+| **语义清晰** | 一看就知道 `kpfit_test` 是测试用，`kpfit_dev` 是开发用，`kpfit_prod` 是正式用 |
 | **与应用名绑定** | 前缀 `kpfit` 表明这是专属于你应用的数据库账号，避免与其他项目混淆 |
 | **环境隔离明确** | 开发、测试、部署时不容易连错库（比如不会在 prod 用户下跑测试脚本） |
 | **便于自动化** | CI/CD 脚本、配置文件（如 `.env`）可以明确区分 `DB_USER_TEST` vs `DB_USER_PROD` |
@@ -38,6 +37,10 @@ tags: [PostgreSQL, 数据库设计]
 CREATE USER kpfit_prod WITH PASSWORD 'YourStrong!ProdPassword2025';
 CREATE DATABASE kpfit_prod_db OWNER kpfit_prod;
 
+-- 创建开发用户（可稍简单，但别用 123456）
+CREATE USER kpfit_dev WITH PASSWORD 'KpFitDevPass';
+CREATE DATABASE kpfit_dev_db OWNER kpfit_dev;
+
 -- 创建测试用户（可稍简单，但别用 123456）
 CREATE USER kpfit_test WITH PASSWORD 'KpFitTestPass';
 CREATE DATABASE kpfit_test_db OWNER kpfit_test;
@@ -49,10 +52,11 @@ CREATE DATABASE kpfit_test_db OWNER kpfit_test;
 
 ### DBeaver 连接命名
 
-在 DBeaver 中创建两个连接，命名如：
+在 DBeaver 中创建连接，命名如：
 
 + `kpfit - PROD` → 连 `kpfit_prod_db` / 用户 `kpfit_prod`
 + `kpfit - TEST` → 连 `kpfit_test_db` / 用户 `kpfit_test`
++ `kpfit - DEV` → 连 `kpfit_dev_db` / 用户 `kpfit_dev`
 
 这样在左侧导航器中一目了然，大幅降低误操作风险。
 
@@ -312,6 +316,7 @@ deploy@VM-0-13-ubuntu:~$ sudo nano /etc/postgresql/16/main/pg_hba.conf
 # 应用配置
 host    kpfit_test_db   kpfit_test     0.0.0.0/0  scram-sha-256
 host    kpfit_prod_db   kpfit_prod     0.0.0.0/0  scram-sha-256
+host    kpfit_dev_db   kpfit_dev     0.0.0.0/0  scram-sha-256
 
 # 保存后退出
 # 按 Ctrl + O → 保存文件（会提示确认文件名，直接回车）

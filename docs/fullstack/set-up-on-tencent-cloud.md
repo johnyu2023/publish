@@ -316,3 +316,16 @@ sudo systemctl restart postgresql
 ![DBeaver 创建 PostgreSQL 连接](/assets/fullstack/set-up-on-tencent-cloud/dbeaver-create-postgresql.png)
 
 ![DBeaver 下载 PostgreSQL 驱动](/assets/fullstack/set-up-on-tencent-cloud/dbeaver-download.png)
+
+## 本地开发机和远程服务器的交互
+
+### 命令行工具 - Putty
+
+![putty](/assets/fullstack/set-up-on-tencent-cloud/putty.png)
+
+### 文件传输工具 - FileZilla
+
++ FileZilla 会通过 SFTP（SSH File Transfer Protocol）协议连接到远程服务器
++ 连接的用户名，应保持和 Putty 连接时的一致
+
+![filezilla](/assets/fullstack/set-up-on-tencent-cloud/filezilla.png)

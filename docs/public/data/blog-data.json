@@ -38,16 +38,21 @@
     "fullstack": {
       "name": "全栈开发",
       "description": "全栈开发势不可挡",
-      "count": 22,
+      "count": 25,
       "latestArticle": {
-        "url": "/fullstack/dashscope",
-        "title": "DashScope API 配置",
-        "date": "2025-12-30",
+        "url": "/fullstack/fastapi",
+        "title": "Python 开发的道和艺术01",
+        "date": "2026-01-06",
         "tags": [
-          "DashScope",
-          "API"
+          "Python",
+          "Conda",
+          "Pip",
+          "KISS",
+          "函数",
+          "FastAPI",
+          "分层设计"
         ],
-        "description": "DashScope 是阿里云 AI 平台，需在百炼控制台获取 API Key 并设置环境变量 DASHSCOPE_API_KEY，代码中调用 API 实现舆情分析等 AI 功能，支持文本、图像等模型服务。"
+        "description": ""
       }
     },
     "think": {
@@ -67,6 +72,27 @@
     }
   },
   "latestArticles": [
+    {
+      "category": "fullstack",
+      "categoryName": "全栈开发",
+      "title": "Python 开发的道和艺术01",
+      "date": "2026-01-06",
+      "url": "/fullstack/fastapi"
+    },
+    {
+      "category": "fullstack",
+      "categoryName": "全栈开发",
+      "title": "Python 开发的道和艺术01",
+      "date": "2026-01-05",
+      "url": "/fullstack/dao-and-art-of-python-dev-01"
+    },
+    {
+      "category": "fullstack",
+      "categoryName": "全栈开发",
+      "title": "Pytest + TestClient 重构",
+      "date": "2026-01-01",
+      "url": "/fullstack/pytest-testclient"
+    },
     {
       "category": "fullstack",
       "categoryName": "全栈开发",
@@ -115,29 +141,8 @@
       "title": "在腾讯云中部署 - PostgreSQL",
       "date": "2025-12-27",
       "url": "/fullstack/set-up-on-tencent-cloud"
-    },
-    {
-      "category": "fullstack",
-      "categoryName": "全栈开发",
-      "title": "CI/CD 释疑",
-      "date": "2025-12-24",
-      "url": "/fullstack/ci-cd"
-    },
-    {
-      "category": "fullstack",
-      "categoryName": "全栈开发",
-      "title": "重构 Vitepress 项目",
-      "date": "2025-12-22",
-      "url": "/fullstack/refactor-vitepress-project"
-    },
-    {
-      "category": "foundation",
-      "categoryName": "基础知识",
-      "title": "计算机基础知识-2027-15",
-      "date": "2025-12-21",
-      "url": "/foundation/data-structure"
     }
   ],
-  "totalArticles": 40,
-  "generatedAt": "2025-12-31T11:48:09.852Z"
+  "totalArticles": 43,
+  "generatedAt": "2026-01-05T22:55:45.742Z"
 }
