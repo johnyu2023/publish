@@ -21,18 +21,17 @@
     "foundation": {
       "name": "基础知识",
       "description": "不积跬步无以至千里",
-      "count": 2,
+      "count": 10,
       "latestArticle": {
-        "url": "/foundation/data-structure",
-        "title": "计算机基础知识-2027-15",
-        "date": "2025-12-21",
+        "url": "/foundation/jupyter-kernel",
+        "title": "Jupyter Kernel",
+        "date": "2025-10-24",
         "tags": [
-          "计算机",
-          "基础知识",
-          "新增标签",
-          "再次更新"
+          "Jupyter",
+          "JupyterLab",
+          "Kernel"
         ],
-        "description": "这是一篇基础知识介绍 - 已再次更新"
+        "description": "文章介绍了Jupyter生态系统，重点阐述了Jupyter Kernel作为执行引擎的架构和功能。涵盖Kernel与前端的通信机制、为特定Python环境注册Kernel的方法、虚拟环境管理，以及Restart Kernel的重要性。"
       }
     },
     "fullstack": {
@@ -41,7 +40,7 @@
       "count": 25,
       "latestArticle": {
         "url": "/fullstack/fastapi",
-        "title": "Python 开发的道和艺术01",
+        "title": "FastAPI",
         "date": "2026-01-06",
         "tags": [
           "Python",
@@ -75,7 +74,7 @@
     {
       "category": "fullstack",
       "categoryName": "全栈开发",
-      "title": "Python 开发的道和艺术01",
+      "title": "FastAPI",
       "date": "2026-01-06",
       "url": "/fullstack/fastapi"
     },
@@ -143,6 +142,6 @@
       "url": "/fullstack/set-up-on-tencent-cloud"
     }
   ],
-  "totalArticles": 43,
-  "generatedAt": "2026-01-05T22:55:45.742Z"
+  "totalArticles": 51,
+  "generatedAt": "2026-01-06T14:41:54.307Z"
 }

@@ -1,7 +1,7 @@
 [
   {
     "url": "/fullstack/fastapi",
-    "title": "Python 开发的道和艺术01",
+    "title": "FastAPI",
     "date": "2026-01-06",
     "tags": [
       "Python",
@@ -146,18 +146,6 @@
     "description": "总结了重构Vitepress项目的经验，涵盖版本选择、pnpm依赖管理、文件结构、GitHub Pages自动部署、静态资源配置等。重点介绍了文章信息汇总、搜索索引构建（使用MiniSearch和segmentit预分词）、导航动态配置等机制，以及自定义组件开发。项目采用模块化构建脚本，实现了全站搜索、分类导航等功能。"
   },
   {
-    "url": "/foundation/data-structure",
-    "title": "计算机基础知识-2027-15",
-    "date": "2025-12-21",
-    "tags": [
-      "计算机",
-      "基础知识",
-      "新增标签",
-      "再次更新"
-    ],
-    "description": "这是一篇基础知识介绍 - 已再次更新"
-  },
-  {
     "url": "/ai/future-of-ai",
     "title": "人工智能的未来发展-2026-14",
     "date": "2025-12-20",
@@ -239,6 +227,17 @@
     "description": "本网站使用的 LaTeX 编写规范，为了确保所有公式能够正确渲染，请遵循以下编写规范。"
   },
   {
+    "url": "/foundation/jupyter-kernel",
+    "title": "Jupyter Kernel",
+    "date": "2025-10-24",
+    "tags": [
+      "Jupyter",
+      "JupyterLab",
+      "Kernel"
+    ],
+    "description": "文章介绍了Jupyter生态系统，重点阐述了Jupyter Kernel作为执行引擎的架构和功能。涵盖Kernel与前端的通信机制、为特定Python环境注册Kernel的方法、虚拟环境管理，以及Restart Kernel的重要性。"
+  },
+  {
     "url": "/fullstack/python-venv",
     "title": "Python 的虚拟环境",
     "date": "2025-10-23",
@@ -246,6 +245,15 @@
       "Python，虚拟环境"
     ],
     "description": "Python 虚拟环境的使用思考"
+  },
+  {
+    "url": "/foundation/python-02",
+    "title": "Python 源代码思考",
+    "date": "2025-10-22",
+    "tags": [
+      "Python"
+    ],
+    "description": "在阅读 Python 源代码时一些值得记录的内容。文章探讨了Python中类与函数的设计原则，提出\"函数做事情，类是东西\"的核心理念。建议无状态操作用函数，有状态或需维护数据的用类。提供了现代类设计的最佳实践，包括类型提示、属性声明和文档规范。"
   },
   {
     "url": "/fullstack/wucai-code",
@@ -329,6 +337,28 @@
     "description": "AI让产品经理从概念到原型构建速度大幅提升，可直接参与代码开发，减少团队沟通成本。相比传统开发流程，AI助力PM快速迭代产品，基于用户反馈优化路线图，真正价值在于提升团队目标清晰度和响应速度。"
   },
   {
+    "url": "/foundation/data-cleaning",
+    "title": "浅谈数据清洗",
+    "date": "2025-08-21",
+    "tags": [
+      "数据清洗"
+    ],
+    "description": "文章全面介绍了数据清洗的概念、必要性、常见任务和应用场合，强调其在AI应用中的关键作用。详述了Python中使用Pandas等库的数据清洗方法，并分析了在AI项目中数据清洗的流程位置和角色分工，提出混合清洗策略的实际应用。"
+  },
+  {
+    "url": "/foundation/data-science",
+    "title": "数据科学与AI应用开发的关系",
+    "date": "2025-08-21",
+    "tags": [
+      "数据科学",
+      "AI应用开发",
+      "数据探索",
+      "数据清洗",
+      "特征工程"
+    ],
+    "description": "文章阐述了数据科学与AI应用开发的关系，明确数据探索、清洗、特征工程属于数据科学核心组成部分。描述了从问题定义到模型部署的完整流程，强调数据科学为AI应用提供基础，而AI应用开发负责将模型产品化落地。"
+  },
+  {
     "url": "/think/pm",
     "title": "AI草莽时代的产品经理肖像分析",
     "date": "2025-08-20",
@@ -391,15 +421,58 @@
     "description": "初次体验AI辅助编程，通过开发Python截屏工具和函数行号检查器实践。发现AI在特定任务上准确性不佳，需人工验证和调整。最终通过AST模块和代码重构获得理想结果，总结AI辅助编程需人工把控方向。"
   },
   {
-    "url": "/foundation/vibe-coding",
-    "title": "沉浸式编程基础知识",
-    "date": "2024-11-25",
+    "url": "/foundation/jupyter",
+    "title": "Jupyter 使用",
+    "date": "2025-06-10",
     "tags": [
-      "AI",
-      "编程",
-      "基础知识"
+      "Jupyter"
     ],
-    "description": "wucai-code 编程基础知识"
+    "description": "文章介绍了Jupyter Notebook和JupyterLab的使用，涵盖启动方式、.ipynb与.py文件配合使用、虚拟环境配置、内核管理、模块安装等核心内容。重点阐述了如何将项目虚拟环境注册为Jupyter内核，以及解决ModuleNotFoundError的方法。"
+  },
+  {
+    "url": "/foundation/python-01",
+    "title": "Python 使用基础",
+    "date": "2025-06-01",
+    "tags": [
+      "Python"
+    ],
+    "description": "文章介绍了Python使用基础，涵盖pyenv版本管理工具、装饰器机制、异常处理等核心概念。对比了Python与JavaScript/Java在装饰器和异常处理上的差异，强调Python的函数式特性与灵活性。"
+  },
+  {
+    "url": "/foundation/statistics",
+    "title": "统计学知识",
+    "date": "2025-05-27",
+    "tags": [
+      "Statistics"
+    ],
+    "description": "文章介绍了统计学中时间序列分析的差分技术。差分通过当前值减去前期值来消除趋势和季节性，使非平稳序列变平稳。包括一阶、二阶和季节性差分，是ARIMA模型中的关键步骤，其中d参数代表差分阶数。"
+  },
+  {
+    "url": "/foundation/probability-theory",
+    "title": "概率论 01",
+    "date": "2025-05-18",
+    "tags": [
+      "Probability theory"
+    ],
+    "description": "文章介绍了概率论基础概念，涵盖事件概率、独立与相关事件、联合概率、条件概率、贝叶斯定理、正向与逆向概率，以及重要分布如正态分布和二项分布。重点阐述了概率的数学定义、计算方法和实际应用，如医学检测中的条件概率推理。"
+  },
+  {
+    "url": "/foundation/linear-algebra-02",
+    "title": "线性代数基础 02",
+    "date": "2025-02-16",
+    "tags": [
+      "Linear Algebra"
+    ],
+    "description": "文章介绍了线性代数基础概念，涵盖标量与向量（大小和方向）、点积与叉积、向量矩阵关系、张量概念及2x3数组操作。重点阐述了AI中点积的应用，包括相似度计算、神经网络权重输入和注意力机制。"
+  },
+  {
+    "url": "/foundation/linear-algebra-01",
+    "title": "线性代数基础 01",
+    "date": "2025-02-15",
+    "tags": [
+      "Linear Algebra"
+    ],
+    "description": "文章介绍了线性代数的基本概念，强调其研究线性关系（成比例、可加性）和使用符号解决问题。阐述了线性与非线性对比，以及线性代数可理解为\"线的代数\"，涵盖向量、线性组合、矩阵变换等内容，并举例说明在方程组求解和计算机图形学中的应用。"
   },
   {
     "url": "/ai/vibe-coding",

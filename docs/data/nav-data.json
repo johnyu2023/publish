@@ -22,10 +22,10 @@
   },
   {
     "text": "基础知识",
-    "link": "/foundation/data-structure",
+    "link": "/foundation/jupyter-kernel",
     "category": "foundation",
     "description": "不积跬步无以至千里",
-    "count": 2,
+    "count": 10,
     "order": 50,
     "type": "dynamic"
   },
