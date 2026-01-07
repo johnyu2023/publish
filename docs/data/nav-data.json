@@ -25,7 +25,7 @@
     "link": "/foundation/jupyter-kernel",
     "category": "foundation",
     "description": "不积跬步无以至千里",
-    "count": 10,
+    "count": 8,
     "order": 50,
     "type": "dynamic"
   },
@@ -34,7 +34,7 @@
     "link": "/fullstack/fastapi",
     "category": "fullstack",
     "description": "全栈开发势不可挡",
-    "count": 25,
+    "count": 27,
     "order": 50,
     "type": "dynamic"
   },

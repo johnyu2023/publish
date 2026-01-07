@@ -15,6 +15,15 @@
     "description": ""
   },
   {
+    "url": "/shanghai/appen",
+    "title": "上海话项目示例",
+    "date": "2026-01-06",
+    "tags": [
+      "上海话"
+    ],
+    "description": "一个项目的示例"
+  },
+  {
     "url": "/fullstack/dao-and-art-of-python-dev-01",
     "title": "Python 开发的道和艺术01",
     "date": "2026-01-05",
@@ -38,6 +47,17 @@
       "testclient"
     ],
     "description": "介绍了从SQLite迁移到PostgreSQL后，使用Pytest+TestClient重构后端项目测试用例的方案。核心是通过fixture实现测试数据库隔离，确保测试连接正确的数据库。"
+  },
+  {
+    "url": "/shanghai/tai-er-zhuang-lu",
+    "title": "台儿庄路地铁站",
+    "date": "2026-01-01",
+    "tags": [
+      "台儿庄路",
+      "平度路",
+      "金藏路"
+    ],
+    "description": ""
   },
   {
     "url": "/fullstack/dashscope",
@@ -106,15 +126,6 @@
       "PostgreSQL"
     ],
     "description": "记录在腾讯云部署 PostgreSQL 数据库的过程"
-  },
-  {
-    "url": "/shanghai/appen",
-    "title": "上海话项目示例",
-    "date": "2025-12-25",
-    "tags": [
-      "上海话"
-    ],
-    "description": "一个项目的示例"
   },
   {
     "url": "/fullstack/ci-cd",
@@ -247,7 +258,7 @@
     "description": "Python 虚拟环境的使用思考"
   },
   {
-    "url": "/foundation/python-02",
+    "url": "/fullstack/python-02",
     "title": "Python 源代码思考",
     "date": "2025-10-22",
     "tags": [
@@ -430,7 +441,7 @@
     "description": "文章介绍了Jupyter Notebook和JupyterLab的使用，涵盖启动方式、.ipynb与.py文件配合使用、虚拟环境配置、内核管理、模块安装等核心内容。重点阐述了如何将项目虚拟环境注册为Jupyter内核，以及解决ModuleNotFoundError的方法。"
   },
   {
-    "url": "/foundation/python-01",
+    "url": "/fullstack/python-01",
     "title": "Python 使用基础",
     "date": "2025-06-01",
     "tags": [

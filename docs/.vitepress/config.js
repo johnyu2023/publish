@@ -12,7 +12,8 @@ function getDirectoryName(dirName) {
     foundation: '基础知识',
     fullstack: '全栈开发',
     think: '观察思考',
-    other: '技术文档'
+    other: '技术文档',
+    shanghai: '上海上海'
   }
   return names[dirName] || dirName.charAt(0).toUpperCase() + dirName.slice(1)
 }
@@ -22,7 +23,7 @@ const docsDir = path.resolve(__dirname, '..')
 const items = await fsPromises.readdir(docsDir)
 const dynamicSidebar = {}
 
-const targetDirs = ['ai', 'foundation', 'fullstack', 'think', 'other']
+const targetDirs = ['ai', 'foundation', 'fullstack', 'think', 'other', 'shanghai']
 
 for (const item of items) {
   const itemPath = path.join(docsDir, item)
@@ -160,7 +161,6 @@ export default defineConfig({
             { text: '版本历史', link: '/system/history' },
             { text: 'LaTeX 规范', link: '/system/latex-spec' },
             { text: 'Mermaid 弹框测试', link: '/system/test-mermaid-modal' },
-            { text: '上海话示例', link: '/shanghai/appen' }
           ]
         }
       ]

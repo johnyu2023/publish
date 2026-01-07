@@ -21,7 +21,7 @@
     "foundation": {
       "name": "基础知识",
       "description": "不积跬步无以至千里",
-      "count": 10,
+      "count": 8,
       "latestArticle": {
         "url": "/foundation/jupyter-kernel",
         "title": "Jupyter Kernel",
@@ -37,7 +37,7 @@
     "fullstack": {
       "name": "全栈开发",
       "description": "全栈开发势不可挡",
-      "count": 25,
+      "count": 27,
       "latestArticle": {
         "url": "/fullstack/fastapi",
         "title": "FastAPI",
@@ -142,6 +142,6 @@
       "url": "/fullstack/set-up-on-tencent-cloud"
     }
   ],
-  "totalArticles": 51,
-  "generatedAt": "2026-01-06T14:41:54.307Z"
+  "totalArticles": 52,
+  "generatedAt": "2026-01-07T05:49:51.811Z"
 }

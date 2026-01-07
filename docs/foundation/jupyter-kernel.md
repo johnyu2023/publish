@@ -109,7 +109,7 @@ python -m ipykernel install --user --name my-py3135 --display-name "Python 3.13.
 #### 参数说明
 
 | 参数 | 作用 |
-|------|------|
+| ------ | ------ |
 | `--user` | 将 Kernel 安装到当前用户的配置目录（`~/.local/share/jupyter/kernels/`），无需 root 权限 |
 | `--name my-py3135` | **内部标识名**（文件夹名），必须唯一，不能有空格或特殊字符 |
 | `--display-name "..."` | **在 JupyterLab/Notebook 界面中显示的名称**，可含空格和描述 |
@@ -202,7 +202,7 @@ python -m ipykernel install --user --name my-py3135 --display-name "Python 3.13.
 ### 类比理解
 
 | 场景 | 类比 |
-|------|------|
+| ------ | ------ |
 | **Jupyter 内核** | 一个开着的 Python REPL（交互式命令行） |
 | **运行单元格** | 在 REPL 里输入一行代码并回车 |
 | **Restart Kernel** | 按 `Ctrl+D` 退出 REPL，再重新打开一个新的 |
