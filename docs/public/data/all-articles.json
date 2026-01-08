@@ -1,5 +1,14 @@
 [
   {
+    "url": "/system/history",
+    "title": "网站开发历史",
+    "date": "2026-01-08",
+    "tags": [
+      "History"
+    ],
+    "description": "记录本站开发的重要节点"
+  },
+  {
     "url": "/fullstack/fastapi",
     "title": "FastAPI",
     "date": "2026-01-06",
@@ -138,15 +147,6 @@
     "description": "CI/CD（持续集成/持续部署）是现代软件开发的核心实践，通过自动化构建、测试和部署实现快速可靠的软件交付。CI负责自动验证代码变更，CD则自动部署到生产环境。从自建Jenkins到GitHub Actions等托管服务，再到Vercel等\"无感\"平台，CI/CD正向简化、模块化、安全左移方向发展。"
   },
   {
-    "url": "/system/history",
-    "title": "网站开发历史",
-    "date": "2025-12-24",
-    "tags": [
-      "History"
-    ],
-    "description": "记录本站开发的重要节点"
-  },
-  {
     "url": "/fullstack/refactor-vitepress-project",
     "title": "重构 Vitepress 项目",
     "date": "2025-12-22",
@@ -177,6 +177,15 @@
       "Mermaid"
     ],
     "description": "Mermaid 正确显示，及点击弹框测试"
+  },
+  {
+    "url": "/system/list",
+    "title": "分类列表",
+    "date": "2025-12-19",
+    "tags": [
+      "分类"
+    ],
+    "description": ""
   },
   {
     "url": "/think/ai-coding-03",

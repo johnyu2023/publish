@@ -1,0 +1,99 @@
+{
+  "system": {
+    "name": "System",
+    "description": "关于System的文章",
+    "count": 5,
+    "latestArticle": {
+      "url": "/system/history",
+      "title": "网站开发历史",
+      "date": "2026-01-08",
+      "tags": [
+        "History"
+      ],
+      "description": "记录本站开发的重要节点"
+    }
+  },
+  "fullstack": {
+    "name": "全栈开发",
+    "description": "全栈开发势不可挡",
+    "count": 27,
+    "latestArticle": {
+      "url": "/fullstack/fastapi",
+      "title": "FastAPI",
+      "date": "2026-01-06",
+      "tags": [
+        "Python",
+        "Conda",
+        "Pip",
+        "KISS",
+        "函数",
+        "FastAPI",
+        "分层设计"
+      ],
+      "description": ""
+    }
+  },
+  "shanghai": {
+    "name": "Shanghai",
+    "description": "关于Shanghai的文章",
+    "count": 2,
+    "latestArticle": {
+      "url": "/shanghai/appen",
+      "title": "上海话项目示例",
+      "date": "2026-01-06",
+      "tags": [
+        "上海话"
+      ],
+      "description": "一个项目的示例"
+    }
+  },
+  "ai": {
+    "name": "人工智能",
+    "description": "关于人工智能的文章",
+    "count": 2,
+    "latestArticle": {
+      "url": "/ai/future-of-ai",
+      "title": "人工智能的未来发展-2026-14",
+      "date": "2025-12-20",
+      "tags": [
+        "AI",
+        "未来科技",
+        "测试",
+        "新增标签",
+        "再次更新"
+      ],
+      "description": "这是一篇测试文档，验证多种内容的展示 - 已再次更新"
+    }
+  },
+  "think": {
+    "name": "观察思考",
+    "description": "洞察未来的趋势",
+    "count": 8,
+    "latestArticle": {
+      "url": "/think/ai-coding-03",
+      "title": "AI辅助编程03",
+      "date": "2025-12-10",
+      "tags": [
+        "AI",
+        "Coding"
+      ],
+      "description": "AI辅助编程存在多轮对话可靠性下降、随机性错误等问题，需频繁Git提交备份。作者对比多种AI工具，强调提示词重要性，分享Vue项目中AI修改导致问题的案例，指出AI在复杂项目中易失控，需人类掌控方向。"
+    }
+  },
+  "foundation": {
+    "name": "基础知识",
+    "description": "不积跬步无以至千里",
+    "count": 8,
+    "latestArticle": {
+      "url": "/foundation/jupyter-kernel",
+      "title": "Jupyter Kernel",
+      "date": "2025-10-24",
+      "tags": [
+        "Jupyter",
+        "JupyterLab",
+        "Kernel"
+      ],
+      "description": "文章介绍了Jupyter生态系统，重点阐述了Jupyter Kernel作为执行引擎的架构和功能。涵盖Kernel与前端的通信机制、为特定Python环境注册Kernel的方法、虚拟环境管理，以及Restart Kernel的重要性。"
+    }
+  }
+}

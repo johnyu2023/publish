@@ -1,63 +1,8 @@
 // docs/.vitepress/config.js
 import { defineConfig } from 'vitepress'
 import fs from 'fs'
-import fsPromises from 'fs/promises'
 import path from 'path'
-import matter from 'gray-matter'
-
-// === 工具函数：获取目录中文名 ===
-function getDirectoryName(dirName) {
-  const names = {
-    ai: '人工智能',
-    foundation: '基础知识',
-    fullstack: '全栈开发',
-    think: '观察思考',
-    other: '技术文档',
-    shanghai: '上海上海'
-  }
-  return names[dirName] || dirName.charAt(0).toUpperCase() + dirName.slice(1)
-}
-
-// === 动态生成 sidebar（顶层 await）===
-const docsDir = path.resolve(__dirname, '..')
-const items = await fsPromises.readdir(docsDir)
-const dynamicSidebar = {}
-
-const targetDirs = ['ai', 'foundation', 'fullstack', 'think', 'other', 'shanghai']
-
-for (const item of items) {
-  const itemPath = path.join(docsDir, item)
-  const stat = await fsPromises.stat(itemPath)
-
-  if (!stat.isDirectory() || ['.vitepress', '.vuepress'].includes(item)) continue
-  if (!targetDirs.includes(item)) continue
-
-  const dirPath = `/${item}/`
-  const files = await fsPromises.readdir(itemPath)
-
-  const mdFiles = files
-    .filter(file => file.endsWith('.md') && file !== 'index.md')
-    .map(file => {
-      const filePath = path.join(itemPath, file)
-      const content = fs.readFileSync(filePath, 'utf8')
-      const { data } = matter(content)
-      return {
-        text: data.title || file.replace(/\.md$/, ''),
-        link: `/${item}/${file.replace(/\.md$/, '')}`,
-        date: data.date ? new Date(data.date).getTime() : 0
-      }
-    })
-    .sort((a, b) => b.date - a.date)
-
-  if (mdFiles.length > 0) {
-    dynamicSidebar[dirPath] = [
-      {
-        text: getDirectoryName(item),
-        items: mdFiles.map(({ text, link }) => ({ text, link }))
-      }
-    ]
-  }
-}
+import { getSideBarData } from './sidebar-generator.js'
 
 // === 导出配置 ===
 export default defineConfig({
@@ -152,19 +97,7 @@ export default defineConfig({
       }
     })(),
 
-    sidebar: {
-      ...dynamicSidebar,
-      '/': [
-        {
-          text: '本站相关',
-          items: [
-            { text: '版本历史', link: '/system/history' },
-            { text: 'LaTeX 规范', link: '/system/latex-spec' },
-            { text: 'Mermaid 弹框测试', link: '/system/test-mermaid-modal' },
-          ]
-        }
-      ]
-    },
+    sidebar: await getSideBarData(),
 
     footer: {
       message: '基于 MIT 许可发布。',

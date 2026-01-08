@@ -5,6 +5,7 @@ import RecentArticles from './components/RecentArticles.vue'
 import MyCustomComponent from './components/MyCustomComponent.vue'
 import VueDemo from './components/VueDemo.vue'
 import Mermaid from './components/Mermaid.vue'
+import CategoryLatestLink from './components/CategoryLatestLink.vue'
 import { initImageViewer } from './plugins/imageViewer'
 import './style.css'
 
@@ -22,6 +23,7 @@ export default {
     app.component('MyCustomComponent', MyCustomComponent)
     app.component('VueDemo', VueDemo)
     app.component('Mermaid', Mermaid)
+    app.component('CategoryLatestLink', CategoryLatestLink)
     
     // 在应用启动时初始化图片查看器
     if (typeof window !== 'undefined') {

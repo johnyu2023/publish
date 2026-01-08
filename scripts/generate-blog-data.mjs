@@ -27,24 +27,38 @@ try {
   const allArticlesContent = await readFile(join(DATA_DIR, 'all-articles.json'), 'utf8');
   const articles = JSON.parse(allArticlesContent);
 
-  // 按分类组织文章
+  // 按分类组织文章 - 先处理预定义分类
   const categoryMap = {};
   Object.keys(CATEGORY_NAMES).forEach(category => {
     categoryMap[category] = [];
   });
+
+  // 同时收集所有分类（用于所有目录的最新文章映射）
+  const allCategoryMap = {};
 
   articles.forEach(article => {
     // 从 URL 提取分类
     const pathParts = article.url.split('/');
     if (pathParts.length >= 2) {
       const category = pathParts[1]; // 获取第二部分作为分类
-      if (categoryMap.hasOwnProperty(category)) {
-        categoryMap[category].push(article);
+      
+      // 只处理非空分类
+      if (category && category.trim() !== '') {
+        // 添加到预定义分类映射（用于现有逻辑）
+        if (categoryMap.hasOwnProperty(category)) {
+          categoryMap[category].push(article);
+        }
+        
+        // 添加到所有分类映射（用于所有目录的最新文章）
+        if (!allCategoryMap.hasOwnProperty(category)) {
+          allCategoryMap[category] = [];
+        }
+        allCategoryMap[category].push(article);
       }
     }
   });
 
-  // 生成分类统计信息
+  // 生成预定义分类的统计信息（保持现有逻辑不变）
   const categoriesInfo = {};
   Object.entries(categoryMap).forEach(([category, articles]) => {
     // 按日期排序，获取最新的文章
@@ -63,6 +77,27 @@ try {
       latestArticle: sortedArticles.length > 0 ? sortedArticles[0] : null
     };
   });
+
+  // 生成所有分类的最新文章映射（新增功能）
+  const allCategoriesLatest = {};
+  Object.entries(allCategoryMap).forEach(([category, articles]) => {
+    const sortedArticles = articles.sort((a, b) => 
+      new Date(b.date || '1970-01-01') - new Date(a.date || '1970-01-01')
+    );
+    
+    // 获取分类名称，优先使用预定义名称，否则使用分类名本身
+    const categoryName = CATEGORY_NAMES[category] || category.charAt(0).toUpperCase() + category.slice(1);
+    
+    allCategoriesLatest[category] = {
+      name: categoryName,
+      description: categoriesConfig.categories[category]?.description || `关于${categoryName}的文章`,
+      count: sortedArticles.length,
+      latestArticle: sortedArticles.length > 0 ? sortedArticles[0] : null
+    };
+  });
+
+  // 保存所有分类的最新文章映射
+  await writeJSONSafe(join(DATA_DIR, 'all-categories.json'), allCategoriesLatest);
 
   // 获取全站最新10篇文章（只包含已定义分类的文章）
   const filteredArticles = articles.filter(article => {
@@ -101,6 +136,8 @@ try {
   await writeJSONSafe(join(DATA_DIR, 'blog-data.json'), blogData);
 
   console.log(`✅ Generated blog-data.json with ${Object.keys(CATEGORY_NAMES).length} categories and ${articles.length} total articles`);
+  console.log(`✅ Generated all-categories.json with ${Object.keys(allCategoryMap).length} total categories`);
+
 } catch (error) {
   console.error('Error generating blog-data.json:', error);
   process.exit(1);
