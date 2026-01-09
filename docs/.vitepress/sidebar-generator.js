@@ -14,7 +14,7 @@ function getDirectoryName(dirName) {
     foundation: '基础知识',
     fullstack: '全栈开发',
     think: '观察思考',
-    other: '技术文档',
+    other: '杂七杂八',
     shanghai: '上海上海',
     system: '本站相关'
   }

@@ -13,5 +13,6 @@ import CategoryLatestLink from '../.vitepress/theme/components/CategoryLatestLin
 + <CategoryLatestLink category="foundation" title="基础知识" />
 + <CategoryLatestLink category="fullstack" title="全栈开发" />
 + <CategoryLatestLink category="think" title="思考与设计" />
-<!-- + <CategoryLatestLink category="system" title="系统架构" /> -->
++ <CategoryLatestLink category="system" title="系统架构" />
 + <CategoryLatestLink category="shanghai" title="上海上海" />
++ <CategoryLatestLink category="other" title="杂七杂八" />

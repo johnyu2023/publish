@@ -1,4 +1,18 @@
 {
+  "other": {
+    "name": "Other",
+    "description": "关于Other的文章",
+    "count": 1,
+    "latestArticle": {
+      "url": "/other/buy-led-bulb",
+      "title": "选购灯泡",
+      "date": "2026-01-09",
+      "tags": [
+        "灯泡"
+      ],
+      "description": ""
+    }
+  },
   "system": {
     "name": "System",
     "description": "关于System的文章",
@@ -36,7 +50,7 @@
   "shanghai": {
     "name": "Shanghai",
     "description": "关于Shanghai的文章",
-    "count": 2,
+    "count": 3,
     "latestArticle": {
       "url": "/shanghai/appen",
       "title": "上海话项目示例",
