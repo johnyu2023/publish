@@ -651,7 +651,7 @@ $X \sim N(\mu, \sigma^2)$
 
 #### 高斯分布的图形表示
 
-<img src="../assets/foundation/probability-theory/normal-distribution.jpg" alt="正态分布的图形表示" />
+<img src="/assets/foundation/probability-theory/normal-distribution.jpg" alt="正态分布的图形表示" />
 
 ---
 

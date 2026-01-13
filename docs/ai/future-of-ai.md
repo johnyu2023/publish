@@ -120,7 +120,6 @@ AI将在医疗、教育、交通等领域发挥更大作用。
 ![菜肉馄饨1](/assets/ai/test/mv1.jpg)
 ![菜肉馄饨2](/assets/ai/test/mv2.jpg)
 
-![AI 战斗图示](/assets/ai/test/fight.png)
 
 
 

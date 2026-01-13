@@ -35,7 +35,7 @@ tags: [Jupyter, JupyterLab, Kernel]
 - JupyterLab 属于 Client 层
 - ipykernel 是 Python 语言对应的 Jupyter Kernel 实现，它是整个 Jupyter 架构中负责执行 Python 代码的核心组件
 
-<img src="../assets/foundation/jupyter02/jupyter-architecture.png" alt="Jupyter 架构" />
+<img src="/assets/foundation/jupyter02/jupyter-architecture.png" alt="Jupyter 架构" />
 
 ## Jupyter Kernel 介绍
 

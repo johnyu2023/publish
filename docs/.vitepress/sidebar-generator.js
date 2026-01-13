@@ -82,9 +82,9 @@ async function getSideBarData() {
     }
   }
   
-  console.log('=== 完整侧边栏数据 ===')
-  console.log(JSON.stringify(completeSidebar, null, 2))
-  console.log('=====================')
+  // console.log('=== 完整侧边栏数据 ===')
+  // console.log(JSON.stringify(completeSidebar, null, 2))
+  // console.log('=====================')
   
   return completeSidebar
 }

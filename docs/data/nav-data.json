@@ -13,10 +13,10 @@
   },
   {
     "text": "人工智能",
-    "link": "/ai/future-of-ai",
+    "link": "/ai/function-calling-mcp",
     "category": "ai",
     "description": "关于人工智能的文章",
-    "count": 2,
+    "count": 3,
     "order": 50,
     "type": "dynamic"
   },

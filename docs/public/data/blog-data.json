@@ -3,19 +3,16 @@
     "ai": {
       "name": "人工智能",
       "description": "关于人工智能的文章",
-      "count": 2,
+      "count": 3,
       "latestArticle": {
-        "url": "/ai/future-of-ai",
-        "title": "人工智能的未来发展-2026-14",
-        "date": "2025-12-20",
+        "url": "/ai/function-calling-mcp",
+        "title": "Function Calling与MCP",
+        "date": "2026-01-10",
         "tags": [
-          "AI",
-          "未来科技",
-          "测试",
-          "新增标签",
-          "再次更新"
+          "Function Calling",
+          "MCP"
         ],
-        "description": "这是一篇测试文档，验证多种内容的展示 - 已再次更新"
+        "description": ""
       }
     },
     "foundation": {
@@ -40,7 +37,7 @@
       "count": 27,
       "latestArticle": {
         "url": "/fullstack/fastapi",
-        "title": "FastAPI",
+        "title": "FastAPI 后端项目设计",
         "date": "2026-01-06",
         "tags": [
           "Python",
@@ -72,9 +69,16 @@
   },
   "latestArticles": [
     {
+      "category": "ai",
+      "categoryName": "人工智能",
+      "title": "Function Calling与MCP",
+      "date": "2026-01-10",
+      "url": "/ai/function-calling-mcp"
+    },
+    {
       "category": "fullstack",
       "categoryName": "全栈开发",
-      "title": "FastAPI",
+      "title": "FastAPI 后端项目设计",
       "date": "2026-01-06",
       "url": "/fullstack/fastapi"
     },
@@ -133,15 +137,8 @@
       "title": "PostgreSQL 数据库设计",
       "date": "2025-12-27",
       "url": "/fullstack/postgresql-design"
-    },
-    {
-      "category": "fullstack",
-      "categoryName": "全栈开发",
-      "title": "在腾讯云中部署 - PostgreSQL",
-      "date": "2025-12-27",
-      "url": "/fullstack/set-up-on-tencent-cloud"
     }
   ],
-  "totalArticles": 55,
-  "generatedAt": "2026-01-09T09:08:55.072Z"
+  "totalArticles": 57,
+  "generatedAt": "2026-01-13T10:47:38.376Z"
 }

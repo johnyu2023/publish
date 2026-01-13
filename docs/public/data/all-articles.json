@@ -1,5 +1,27 @@
 [
   {
+    "url": "/other/pick-out-shoes",
+    "title": "AI挑鞋-休闲鞋",
+    "date": "2026-01-13",
+    "tags": [
+      "选鞋",
+      "李宁",
+      "Qwen3",
+      "Gemini3"
+    ],
+    "description": "本文介绍了使用AI辅助挑选李宁休闲鞋的方法。推荐Qwen3-Max分析功能性能，Gemini3-flash分析颜色搭配。针对提供的身高重量用途等，推荐月白3和天迹2.0两款，重点分析了云纹蓝红、大地棕底、纯正藏青三种配色方案。"
+  },
+  {
+    "url": "/ai/function-calling-mcp",
+    "title": "Function Calling与MCP",
+    "date": "2026-01-10",
+    "tags": [
+      "Function Calling",
+      "MCP"
+    ],
+    "description": ""
+  },
+  {
     "url": "/other/buy-led-bulb",
     "title": "选购灯泡",
     "date": "2026-01-09",
@@ -19,7 +41,7 @@
   },
   {
     "url": "/fullstack/fastapi",
-    "title": "FastAPI",
+    "title": "FastAPI 后端项目设计",
     "date": "2026-01-06",
     "tags": [
       "Python",
