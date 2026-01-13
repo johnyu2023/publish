@@ -1,0 +1,113 @@
+{
+  "other": {
+    "name": "Other",
+    "description": "关于Other的文章",
+    "count": 2,
+    "latestArticle": {
+      "url": "/other/pick-out-shoes",
+      "title": "AI挑鞋-休闲鞋",
+      "date": "2026-01-13",
+      "tags": [
+        "选鞋",
+        "李宁",
+        "Qwen3",
+        "Gemini3"
+      ],
+      "description": "本文介绍了使用AI辅助挑选李宁休闲鞋的方法。推荐Qwen3-Max分析功能性能，Gemini3-flash分析颜色搭配。针对提供的身高重量用途等，推荐月白3和天迹2.0两款，重点分析了云纹蓝红、大地棕底、纯正藏青三种配色方案。"
+    }
+  },
+  "ai": {
+    "name": "人工智能",
+    "description": "关于人工智能的文章",
+    "count": 3,
+    "latestArticle": {
+      "url": "/ai/function-calling-mcp",
+      "title": "Function Calling与MCP",
+      "date": "2026-01-10",
+      "tags": [
+        "Function Calling",
+        "MCP"
+      ],
+      "description": ""
+    }
+  },
+  "system": {
+    "name": "System",
+    "description": "关于System的文章",
+    "count": 5,
+    "latestArticle": {
+      "url": "/system/history",
+      "title": "网站开发历史",
+      "date": "2026-01-08",
+      "tags": [
+        "History"
+      ],
+      "description": "记录本站开发的重要节点"
+    }
+  },
+  "fullstack": {
+    "name": "全栈开发",
+    "description": "全栈开发势不可挡",
+    "count": 27,
+    "latestArticle": {
+      "url": "/fullstack/fastapi",
+      "title": "FastAPI 后端项目设计",
+      "date": "2026-01-06",
+      "tags": [
+        "Python",
+        "Conda",
+        "Pip",
+        "KISS",
+        "函数",
+        "FastAPI",
+        "分层设计"
+      ],
+      "description": ""
+    }
+  },
+  "shanghai": {
+    "name": "Shanghai",
+    "description": "关于Shanghai的文章",
+    "count": 3,
+    "latestArticle": {
+      "url": "/shanghai/appen",
+      "title": "上海话项目示例",
+      "date": "2026-01-06",
+      "tags": [
+        "上海话"
+      ],
+      "description": "一个项目的示例"
+    }
+  },
+  "think": {
+    "name": "观察思考",
+    "description": "洞察未来的趋势",
+    "count": 8,
+    "latestArticle": {
+      "url": "/think/ai-coding-03",
+      "title": "AI辅助编程03",
+      "date": "2025-12-10",
+      "tags": [
+        "AI",
+        "Coding"
+      ],
+      "description": "AI辅助编程存在多轮对话可靠性下降、随机性错误等问题，需频繁Git提交备份。作者对比多种AI工具，强调提示词重要性，分享Vue项目中AI修改导致问题的案例，指出AI在复杂项目中易失控，需人类掌控方向。"
+    }
+  },
+  "foundation": {
+    "name": "基础知识",
+    "description": "不积跬步无以至千里",
+    "count": 8,
+    "latestArticle": {
+      "url": "/foundation/jupyter-kernel",
+      "title": "Jupyter Kernel",
+      "date": "2025-10-24",
+      "tags": [
+        "Jupyter",
+        "JupyterLab",
+        "Kernel"
+      ],
+      "description": "文章介绍了Jupyter生态系统，重点阐述了Jupyter Kernel作为执行引擎的架构和功能。涵盖Kernel与前端的通信机制、为特定Python环境注册Kernel的方法、虚拟环境管理，以及Restart Kernel的重要性。"
+    }
+  }
+}
