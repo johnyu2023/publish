@@ -54,20 +54,33 @@
     "think": {
       "name": "观察思考",
       "description": "洞察未来的趋势",
-      "count": 8,
+      "count": 10,
       "latestArticle": {
-        "url": "/think/ai-coding-03",
-        "title": "AI辅助编程03",
-        "date": "2025-12-10",
+        "url": "/think/eight-software-markets-ai-that-will",
+        "title": "笔记-AI将重塑八大软件市场",
+        "date": "2026-01-13",
         "tags": [
-          "AI",
-          "Coding"
+          "AI"
         ],
-        "description": "AI辅助编程存在多轮对话可靠性下降、随机性错误等问题，需频繁Git提交备份。作者对比多种AI工具，强调提示词重要性，分享Vue项目中AI修改导致问题的案例，指出AI在复杂项目中易失控，需人类掌控方向。"
+        "description": ""
       }
     }
   },
   "latestArticles": [
+    {
+      "category": "think",
+      "categoryName": "观察思考",
+      "title": "笔记-AI将重塑八大软件市场",
+      "date": "2026-01-13",
+      "url": "/think/eight-software-markets-ai-that-will"
+    },
+    {
+      "category": "think",
+      "categoryName": "观察思考",
+      "title": "让 AI 自我验证",
+      "date": "2026-01-13",
+      "url": "/think/verify-for-ai"
+    },
     {
       "category": "ai",
       "categoryName": "人工智能",
@@ -123,22 +136,8 @@
       "title": "开发环境的初始化",
       "date": "2025-12-29",
       "url": "/fullstack/env-init"
-    },
-    {
-      "category": "fullstack",
-      "categoryName": "全栈开发",
-      "title": "Python 的虚拟环境-精简",
-      "date": "2025-12-29",
-      "url": "/fullstack/python-venv-02"
-    },
-    {
-      "category": "fullstack",
-      "categoryName": "全栈开发",
-      "title": "PostgreSQL 数据库设计",
-      "date": "2025-12-27",
-      "url": "/fullstack/postgresql-design"
     }
   ],
-  "totalArticles": 57,
-  "generatedAt": "2026-01-13T10:47:38.376Z"
+  "totalArticles": 59,
+  "generatedAt": "2026-01-13T15:02:13.451Z"
 }
