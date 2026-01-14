@@ -12,9 +12,6 @@ hero:
     - theme: brand
       text: 开始阅读
       link: /ai/future-of-ai
-    - theme: alt
-      text: 查看所有分类
-      link: /categories
 ---
 
 <CategoryGrid />
