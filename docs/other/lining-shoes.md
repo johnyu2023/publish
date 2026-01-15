@@ -1,6 +1,6 @@
 ---
-title: AI挑鞋-休闲鞋
-description: 本文借助Qwen3-Max和Gemini3-flash两款AI工具，为指定特征的用户挑选李宁休闲鞋。推荐月白3等鞋款，给出配色建议及购买验证，对比不同科技中底性能。
+title: AI挑鞋-李宁休闲鞋
+description: 本文介绍借助AI挑选李宁休闲鞋的方法，用Qwen3-Max分析性能推荐月白3、天迹2.0等鞋款，用Gemini3-flash选配色，最终选购月白3大地棕底款，并验证轻云科技缓震表现。
 date: 2026-01-13
 tags: [选鞋, 李宁, Qwen3, Gemini3]
 ---
@@ -56,15 +56,15 @@ tags: [选鞋, 李宁, Qwen3, Gemini3]
 + 作为一个多模态大模型，它可以分析图片，识别颜色，给出合理的选择
 + 作为一个海外模型，在训练数据上可能对中国数据不全面，让它分析一个本土品牌的功能、性能选择，恐怕不是好主意
 
-![AGCV077-1](/assets/other/shoes/AGCV077-1-clip.png)
-![AGCV077-2](/assets/other/shoes/AGCV077-2-clip.png)
-![AGCV077-3](/assets/other/shoes/AGCV077-3-clip.png)
-![AGCV077-4](/assets/other/shoes/AGCV077-4-clip.png)
-![AGCV077-8](/assets/other/shoes/AGCV077-8-clip.png)
-![AGCV077-12](/assets/other/shoes/AGCV077-12-clip.png)
-![AGCV077-14](/assets/other/shoes/AGCV077-14-clip.png)
-![AGCV077-15](/assets/other/shoes/AGCV077-15-clip.png)
-![AGCV077-16](/assets/other/shoes/AGCV077-16-clip.png)
+![AGCV077-1](/assets/other/lining-shoes/AGCV077-1-clip.png)
+![AGCV077-2](/assets/other/lining-shoes/AGCV077-2-clip.png)
+![AGCV077-3](/assets/other/lining-shoes/AGCV077-3-clip.png)
+![AGCV077-4](/assets/other/lining-shoes/AGCV077-4-clip.png)
+![AGCV077-8](/assets/other/lining-shoes/AGCV077-8-clip.png)
+![AGCV077-12](/assets/other/lining-shoes/AGCV077-12-clip.png)
+![AGCV077-14](/assets/other/lining-shoes/AGCV077-14-clip.png)
+![AGCV077-15](/assets/other/lining-shoes/AGCV077-15-clip.png)
+![AGCV077-16](/assets/other/lining-shoes/AGCV077-16-clip.png)
 
 ### 结论
 
@@ -76,7 +76,7 @@ tags: [选鞋, 李宁, Qwen3, Gemini3]
 
 ### 🏆 首选推荐：【AGCV077-14 月白3】（云纹蓝红款）
 
-![AGCV077-14](/assets/other/shoes/AGCV077-14-clip.png)
+![AGCV077-14](/assets/other/lining-shoes/AGCV077-14-clip.png)
 
 这是为您量身定制的“高级感”方案。
 
@@ -85,7 +85,7 @@ tags: [选鞋, 李宁, Qwen3, Gemini3]
 
 ### 🥈 次选推荐：【AGCV077-1 月白3】（大地棕底款）
 
-![AGCV077-1](/assets/other/shoes/AGCV077-1-clip.png)
+![AGCV077-1](/assets/other/lining-shoes/AGCV077-1-clip.png)
 
 如果您想要一双更耐看、更有“复古绅士”味道的鞋，选这款。
 
@@ -94,7 +94,7 @@ tags: [选鞋, 李宁, Qwen3, Gemini3]
 
 ### 🥉 备选方案：【AGCV077-8 月白3】（纯正藏青色款）
 
-![AGCV077-8](/assets/other/shoes/AGCV077-8-clip.png)
+![AGCV077-8](/assets/other/lining-shoes/AGCV077-8-clip.png)
 
 这是一款最稳妥、绝不会出错的配色。
 
@@ -113,7 +113,7 @@ tags: [选鞋, 李宁, Qwen3, Gemini3]
 
 + 实际购买时，才发现推荐第一名的【AGCV077-14 月白3】（云纹蓝红款）几乎没有商家有卖，估计可能是特殊的限量版本。唯一找到的商家开价500多，是普通鞋的2倍多的价格。
 + 转而购买推荐第二名的【AGCV077-1 月白3】（大地棕底款），这个看来是主力款型，很多商家都有卖，价格在200出头一些。
-![AGCV077-1](/assets/other/shoes/AGCV077-1-clip.png)
+![AGCV077-1](/assets/other/lining-shoes/AGCV077-1-clip.png)
 
 ## 验证
 
@@ -133,7 +133,7 @@ tags: [选鞋, 李宁, Qwen3, Gemini3]
 | **是否太软？** | 不会！轻云比标准云更紧实，**不易塌陷**，稳定性更好 |
 | **是否适合走路？** | 是！轻量+适度回弹，长时间行走不累脚 |
 
-![Cloud Lite](/assets/other/shoes/cloud-lite.webp)
+![Cloud Lite](/assets/other/lining-shoes/cloud-lite.webp)
 
 ## 对照组
 
@@ -150,19 +150,20 @@ tags: [选鞋, 李宁, Qwen3, Gemini3]
   + 长期使用后**易压缩塌陷**（尤其大体重用户）
   + **无显著回弹反馈**，偏“软塌”感
 
-![AGCU275-8](/assets/other/shoes/AGCU275-8.png)
+![AGCU275-8](/assets/other/lining-shoes/AGCU275-8.png)
 
-![Comfoma](/assets/other/shoes/comfoma.webp)
+![Comfoma](/assets/other/lining-shoes/comfoma.webp)
 
 ### ARZU001-14
 
-+ 烈骏7 PRO V2 减震回弹专业跑鞋
++ 李宁 烈骏7 Pro V2 减震回弹专业跑鞋
 + **定位**：**大体重跑者 / 入门跑者 / 长距离慢跑**  
 
-- **核心科技**：
++ **核心科技**：
   + 中底：**全掌李宁云科技 + 后跟稳定框架（Tuff RB）**
   + 外底：高耐磨 GCR 橡胶（全覆盖）
   + 鞋面：工程网布 + 热熔膜支撑，包裹性强
+
 + **特点**：
   + **中底厚实（heel stack ≈32mm）**，缓震强；
   + **后跟加宽+内侧支撑**，适合**低足弓/扁平足**；
@@ -172,14 +173,13 @@ tags: [选鞋, 李宁, Qwen3, Gemini3]
 
 > ✅ **优势**：缓震足、支撑稳、耐穿，**是李宁跑鞋中少有的“大体重友好”型号**。
 
-![RZU001-14](/assets/other/shoes/RZU001-14.png)
+![RZU001-14](/assets/other/lining-shoes/RZU001-14.png)
 
 ### ARBS001-8
 
-+ 李宁超轻19减震透气专业竞速跑鞋
-+ + **定位**：**竞速 / 速度训练 / 马拉松**  
-
-- **核心科技**：
++ 李宁 超轻19 减震透气专业竞速跑鞋
++ **定位**：**竞速 / 速度训练 / 马拉松**  
++ **核心科技**：
   + 中底：**䨻（Bèng）轻弹科技**
   + 外底：**GCU 超临界发泡橡胶**（轻薄、高回弹）
   + 鞋面：**䨻丝 mono yarn + 轻量化纱**（单层透气）
@@ -192,4 +192,93 @@ tags: [选鞋, 李宁, Qwen3, Gemini3]
 
 > ⚠️ **劣势**：缓震弱、支撑差、不耐久，**大体重或低足弓用户极易受伤**。
 
-![ARBS001-8](/assets/other/shoes/ARBS001-8.png)
+![ARBS001-8](/assets/other/lining-shoes/ARBS001-8.png)
+
+### ARMS025-5
+
++ 李宁 赤兔5 Pro 跑步鞋
++ 赤兔5 Pro 是一款**专为跑步设计的竞速训练鞋**，它在跑鞋中属于“入门稳定型”（Pro 版带 Tuff RB 后跟支撑）。主打轻量、回弹、速度感，适合 5K–半马节奏跑。**  
++ **上市时间**：2023 年第四季度（2024–2025 年持续销售，2026 年仍在售）  
++ **定位**：**速度训练 / 节奏跑 / 入门竞速跑鞋**
++ 它**不是**缓震跑鞋，**不是**综训鞋，**不是**通勤鞋——它的全部设计都围绕“向前跑”展开。如果你**主要用途是跑步**，它值得考虑。
+
++ 核心技术参数
+
+| 项目 | 参数 |
+| ------ | ------ |
+| **中底科技** | **全掌䨻（Bèng）轻弹科技** + **后跟 Tuff RB 稳定框架**（Pro 版特有） |
+| **外底材质** | **GCU 超临界发泡橡胶**（轻量、高回弹、抓地强） |
+| **鞋面材质** | **工程网布 + 热熔膜支撑条**（䨻丝 mono yarn 结构，轻薄透气） |
+| **单只重量** | ≈ **210 克**（EU 42 码） |
+| **中底厚度** | 前掌 ≈ 22mm，后跟 ≈ 28mm |
+| **落差（Heel-to-Toe Drop）** | **6mm** |
+| **适用场景** | 5K–半马节奏跑、间歇训练、日常慢跑 |
+| **适合脚型** | 正常足弓 / 轻度内旋（低足弓可尝试，但非专为扁平足设计） |
+
+---
+
+#### 主要特点
+
+#### 1. **全掌䨻中底（Bèng）**
+
++ 李宁顶级回弹材料，能量反馈率高达 **80%+**；
++ 比 EVA 或云科技更轻、更弹，适合追求“推进感”的跑者；
++ ⚠️ 缓震偏弱，**大体重（>80kg）用户长距离可能感觉冲击明显**。
+
+#### 2. **Tuff RB 后跟稳定框架（Pro 版专属）**
+
++ 在普通赤兔5 基础上增加的**硬质 TPU 后跟杯**；
++ 提升后跟锁定性，对**轻度低足弓或入门跑者**更友好；
++ ❌ 但**无足弓支撑片或抗扭片**，稳定性仍弱于烈骏7等支撑系跑鞋。
+
+#### 3. **轻量化设计**
+
++ 鞋面采用单层工程网布，**透气性极佳**；
++ 整鞋重量控制在 210g 左右，属于**轻量训练鞋范畴**。
+
+#### 4. **GCU 外底**
+
++ 覆盖前掌和后跟关键区域；
++ 抓地力强（尤其塑胶跑道），但**耐磨性一般**，不适合粗糙水泥地长期使用。
+
+![ARMS025-5](/assets/other/lining-shoes/ARMS025-5.png)
+
+### AGLT131-2
+
++ 李宁灵动跑鞋（AGLT131），入门级轻量跑鞋
++ **它的“舒适感”来自柔软中底和轻量化设计，但缺乏支撑、稳定性和耐久性，无法满足大体重或长时间行走的生物力学需求**。
+
+#### 核心问题
+
++ **前30分钟，软鞋让你“踩在云上”；30分钟后，你的脚开始“找地”**。
++ **“软 ≠ 舒适”，“轻 ≠ 省力”**
+
+很多人误以为“鞋软就是舒服”，但对**大体重用户**来说：
+    - **过软的中底 = 缺乏支撑 = 足弓塌陷 + 小腿代偿发力**
+    - **过轻的鞋体 = 缺少结构 = 脚踝不稳定 = 肌肉持续紧张**
+
+#### 缺陷分析
+
+##### 1. **中底材质：普通EVA 或 Comfoma（非云科技）**
+
++ 商品页仅写“减震”，**未标注“云科技”或“轻云”** → 极可能为 **Comfoma 或基础EVA**；
++ 这类材料**初上脚柔软，但密度低、易压缩**；
++ **大体重下，中底迅速塌陷**，失去缓震能力，脚底直接感受地面冲击。
+
+##### 2. **无足弓支撑 & 无抗扭设计**
+
++ 鞋底是一整块软泡棉，**没有足弓隆起或TPU抗扭片**；
++ 低足弓用户走路时，**足弓过度拉伸**，引发足底筋膜疲劳；
++ 长时间行走后，**小腿、膝盖甚至腰部都会代偿受力**。
+
+##### 3. **鞋底过薄 + 外底耐磨差**
+
++ 中底厚度约 24–26mm（后跟），**低于通勤鞋标准（28mm+）**；
++ 外底橡胶覆盖率低，**水泥地行走几周就磨平**，进一步加剧疲劳感。
+
+##### 4. **鞋面过软，包裹不足**
+
++ 虽然“网面透气”，但**缺乏热熔膜或支撑条**；
++ 脚在鞋内轻微滑动，**每一步都需要脚趾抓地稳定**，累积疲劳。
+
+![AGLT131-2](/assets/other/lining-shoes/AGLT131-2.png)

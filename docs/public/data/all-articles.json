@@ -1,7 +1,14 @@
 [
   {
-    "url": "/other/pick-out-shoes",
-    "title": "AI挑鞋-休闲鞋",
+    "url": "/other/reebok-shoes",
+    "title": "Reebok 运动鞋的选择",
+    "date": "2026-01-15",
+    "tags": [],
+    "description": ""
+  },
+  {
+    "url": "/other/lining-shoes",
+    "title": "AI挑鞋-李宁休闲鞋",
     "date": "2026-01-13",
     "tags": [
       "选鞋",
@@ -9,7 +16,7 @@
       "Qwen3",
       "Gemini3"
     ],
-    "description": "本文借助Qwen3-Max和Gemini3-flash两款AI工具，为指定特征的用户挑选李宁休闲鞋。推荐月白3等鞋款，给出配色建议及购买验证，对比不同科技中底性能。"
+    "description": "本文介绍借助AI挑选李宁休闲鞋的方法，用Qwen3-Max分析性能推荐月白3、天迹2.0等鞋款，用Gemini3-flash选配色，最终选购月白3大地棕底款，并验证轻云科技缓震表现。"
   },
   {
     "url": "/think/eight-software-markets-ai-that-will",
@@ -195,6 +202,18 @@
       "PostgreSQL"
     ],
     "description": "记录在腾讯云部署 PostgreSQL 数据库的过程"
+  },
+  {
+    "url": "/other/second-hand-laptop",
+    "title": "二手Thinkpad t14s是否值得买",
+    "date": "2025-12-25",
+    "tags": [
+      "ThinkPad",
+      "二手笔记本",
+      "T14s",
+      "T480s"
+    ],
+    "description": "本文探讨了从ThinkPad T480s升级到T14s系列的选择，分析各代T14s的特点和Gen 3的卖点，以及二手笔记本的购买建议。"
   },
   {
     "url": "/fullstack/ci-cd",
