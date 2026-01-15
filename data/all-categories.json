@@ -2,18 +2,13 @@
   "other": {
     "name": "Other",
     "description": "关于Other的文章",
-    "count": 2,
+    "count": 4,
     "latestArticle": {
-      "url": "/other/pick-out-shoes",
-      "title": "AI挑鞋-休闲鞋",
-      "date": "2026-01-13",
-      "tags": [
-        "选鞋",
-        "李宁",
-        "Qwen3",
-        "Gemini3"
-      ],
-      "description": "本文借助Qwen3-Max和Gemini3-flash两款AI工具，为指定特征的用户挑选李宁休闲鞋。推荐月白3等鞋款，给出配色建议及购买验证，对比不同科技中底性能。"
+      "url": "/other/reebok-shoes",
+      "title": "Reebok 运动鞋的选择",
+      "date": "2026-01-15",
+      "tags": [],
+      "description": ""
     }
   },
   "think": {
