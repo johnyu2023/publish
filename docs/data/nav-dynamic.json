@@ -1,10 +1,10 @@
 [
   {
     "text": "人工智能",
-    "link": "/ai/function-calling-mcp",
+    "link": "/ai/audio-captioning",
     "category": "ai",
     "description": "关于人工智能的文章",
-    "count": 3,
+    "count": 5,
     "order": 50,
     "type": "dynamic"
   },

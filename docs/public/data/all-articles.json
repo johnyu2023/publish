@@ -1,5 +1,41 @@
 [
   {
+    "url": "/shanghai/audio-caption",
+    "title": "Audio Caption 项目标注",
+    "date": "2026-01-22",
+    "tags": [
+      "Audio Caption"
+    ],
+    "description": ""
+  },
+  {
+    "url": "/ai/audio-captioning",
+    "title": "Audio Captioning 简介",
+    "date": "2026-01-19",
+    "tags": [
+      "AI",
+      "编程"
+    ],
+    "description": ""
+  },
+  {
+    "url": "/ai/skill",
+    "title": "Skill",
+    "date": "2026-01-19",
+    "tags": [],
+    "description": ""
+  },
+  {
+    "url": "/other/agan-shoes",
+    "title": "阿甘鞋推荐",
+    "date": "2026-01-17",
+    "tags": [
+      "阿甘鞋",
+      "李宁"
+    ],
+    "description": ""
+  },
+  {
     "url": "/other/reebok-shoes",
     "title": "Reebok 运动鞋的选择",
     "date": "2026-01-15",
@@ -126,11 +162,11 @@
   },
   {
     "url": "/shanghai/xi-zang-nan-lu",
-    "title": "西藏南路",
+    "title": "西藏南路地铁站",
     "date": "2026-01-01",
     "tags": [
       "西藏南路",
-      "浦东",
+      "黄浦",
       "地铁"
     ],
     "description": ""

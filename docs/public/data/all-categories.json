@@ -1,13 +1,45 @@
 {
+  "shanghai": {
+    "name": "Shanghai",
+    "description": "关于Shanghai的文章",
+    "count": 4,
+    "latestArticle": {
+      "url": "/shanghai/audio-caption",
+      "title": "Audio Caption 项目标注",
+      "date": "2026-01-22",
+      "tags": [
+        "Audio Caption"
+      ],
+      "description": ""
+    }
+  },
+  "ai": {
+    "name": "人工智能",
+    "description": "关于人工智能的文章",
+    "count": 5,
+    "latestArticle": {
+      "url": "/ai/audio-captioning",
+      "title": "Audio Captioning 简介",
+      "date": "2026-01-19",
+      "tags": [
+        "AI",
+        "编程"
+      ],
+      "description": ""
+    }
+  },
   "other": {
     "name": "Other",
     "description": "关于Other的文章",
-    "count": 4,
+    "count": 5,
     "latestArticle": {
-      "url": "/other/reebok-shoes",
-      "title": "Reebok 运动鞋的选择",
-      "date": "2026-01-15",
-      "tags": [],
+      "url": "/other/agan-shoes",
+      "title": "阿甘鞋推荐",
+      "date": "2026-01-17",
+      "tags": [
+        "阿甘鞋",
+        "李宁"
+      ],
       "description": ""
     }
   },
@@ -21,21 +53,6 @@
       "date": "2026-01-13",
       "tags": [
         "AI"
-      ],
-      "description": ""
-    }
-  },
-  "ai": {
-    "name": "人工智能",
-    "description": "关于人工智能的文章",
-    "count": 3,
-    "latestArticle": {
-      "url": "/ai/function-calling-mcp",
-      "title": "Function Calling与MCP",
-      "date": "2026-01-10",
-      "tags": [
-        "Function Calling",
-        "MCP"
       ],
       "description": ""
     }
@@ -72,20 +89,6 @@
         "分层设计"
       ],
       "description": ""
-    }
-  },
-  "shanghai": {
-    "name": "Shanghai",
-    "description": "关于Shanghai的文章",
-    "count": 3,
-    "latestArticle": {
-      "url": "/shanghai/appen",
-      "title": "上海话项目示例",
-      "date": "2026-01-06",
-      "tags": [
-        "上海话"
-      ],
-      "description": "一个项目的示例"
     }
   },
   "foundation": {

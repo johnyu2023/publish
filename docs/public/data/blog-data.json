@@ -3,14 +3,14 @@
     "ai": {
       "name": "人工智能",
       "description": "关于人工智能的文章",
-      "count": 3,
+      "count": 5,
       "latestArticle": {
-        "url": "/ai/function-calling-mcp",
-        "title": "Function Calling与MCP",
-        "date": "2026-01-10",
+        "url": "/ai/audio-captioning",
+        "title": "Audio Captioning 简介",
+        "date": "2026-01-19",
         "tags": [
-          "Function Calling",
-          "MCP"
+          "AI",
+          "编程"
         ],
         "description": ""
       }
@@ -68,6 +68,20 @@
   },
   "latestArticles": [
     {
+      "category": "ai",
+      "categoryName": "人工智能",
+      "title": "Audio Captioning 简介",
+      "date": "2026-01-19",
+      "url": "/ai/audio-captioning"
+    },
+    {
+      "category": "ai",
+      "categoryName": "人工智能",
+      "title": "Skill",
+      "date": "2026-01-19",
+      "url": "/ai/skill"
+    },
+    {
       "category": "think",
       "categoryName": "观察思考",
       "title": "笔记-AI将重塑八大软件市场",
@@ -122,22 +136,8 @@
       "title": "数据迁移记录",
       "date": "2025-12-30",
       "url": "/fullstack/data-migration"
-    },
-    {
-      "category": "fullstack",
-      "categoryName": "全栈开发",
-      "title": "Python 多项目共享虚拟环境",
-      "date": "2025-12-30",
-      "url": "/fullstack/python-shared-venv"
-    },
-    {
-      "category": "fullstack",
-      "categoryName": "全栈开发",
-      "title": "开发环境的初始化",
-      "date": "2025-12-29",
-      "url": "/fullstack/env-init"
     }
   ],
-  "totalArticles": 61,
-  "generatedAt": "2026-01-15T23:48:32.308Z"
+  "totalArticles": 65,
+  "generatedAt": "2026-01-22T14:51:32.886Z"
 }
