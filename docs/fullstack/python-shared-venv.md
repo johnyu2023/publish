@@ -143,3 +143,37 @@ PS D:\2024-code\lesson2025\14-hotel_recommendation> .venv\Scripts\activate
 # 执行 py 文件
 (.venv) PS D:\2024-code\lesson2025\14-hotel_recommendation> python .\hotel_rec.py
 ```
+
+## 生成父库（共享库）的依赖库清单
+
+```powershell
+# 生成依赖库清单
+(shared-libs) PS D:\2025-code\ai-hub> pip freeze > requirements.txt
+```
+
+## 执行子库中的 py 文件
+
+```powershell
+# TRAE CN 中打开另一个终端，如果之前已经有个终端激活了父库的虚拟环境，则此时默认还在父库的虚拟环境下
+# 进入子库
+(shared-libs) PS D:\2025-code\ai-hub> cd .\00-api\
+# 发现此时还在父库的虚拟环境下，所以要先退出父库的虚拟环境
+(shared-libs) PS D:\2025-code\ai-hub\00-api> deactivate
+# 激活子库的虚拟环境
+PS D:\2025-code\ai-hub\00-api> .venv\Scripts\activate
+# 执行子库中的 py 文件
+(.venv) PS D:\2025-code\ai-hub\00-api> python .\1-情感分析-Qwen.py
+# 程序输出的结果
+正向
+```
+
+## 安装父库中缺失的依赖库
+
+```powershell
+# 安装依赖库
+(shared-libs) PS D:\2025-code\ai-hub> pip install IPython
+# 更新到 requirements.txt （强制使用 UTF-8 编码，否则 sourcetree 会无法识别为纯文本文件，进而无法比较版本的变化）
+# pip freeze > requirements.txt -- 这种方式生成的编码方式不是 UTF-8，sourcetree 中无法识别
+(shared-libs) PS D:\2025-code\ai-hub> pip freeze | Set-Content -Encoding UTF8 requirements2.txt
+```
+

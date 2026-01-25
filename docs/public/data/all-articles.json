@@ -504,6 +504,16 @@
     "description": "AI技术早期阶段，传统产品经理方法论失效。技术边界模糊时，用户需求需通过技术可行性重新翻译。建议由技术人员主导产品方向探索，产品经理需转型为懂技术的架构师，组织应打破传统分工边界。"
   },
   {
+    "url": "/ai/function-calling-vs-mcp",
+    "title": "Function Calling vs MCP",
+    "date": "2025-08-19",
+    "tags": [
+      "Function Calling",
+      "MCP"
+    ],
+    "description": "Function Calling 和 MCP 的关系和区别"
+  },
+  {
     "url": "/think/ai-coding-02",
     "title": "AI辅助编程02-注意事项",
     "date": "2025-08-18",
@@ -544,6 +554,15 @@
       "ISR"
     ],
     "description": "在一个 Web 应用中结合使用多种渲染策略，例如同时使用服务端渲染（SSR）、静态站点生成（SSG）和客户端渲染（CSR），并根据不同页面或组件的需求选择最合适的方式。"
+  },
+  {
+    "url": "/ai/function-calling",
+    "title": "Function Calling 的原始形态",
+    "date": "2025-07-16",
+    "tags": [
+      "Function Calling"
+    ],
+    "description": "探索大语言模型函数调用的基本实现方式"
   },
   {
     "url": "/think/ai-coding-01",

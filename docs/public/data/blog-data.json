@@ -3,7 +3,7 @@
     "ai": {
       "name": "人工智能",
       "description": "关于人工智能的文章",
-      "count": 5,
+      "count": 7,
       "latestArticle": {
         "url": "/ai/audio-captioning",
         "title": "Audio Captioning 简介",
@@ -138,6 +138,6 @@
       "url": "/fullstack/data-migration"
     }
   ],
-  "totalArticles": 65,
-  "generatedAt": "2026-01-22T14:51:32.886Z"
+  "totalArticles": 67,
+  "generatedAt": "2026-01-23T15:00:16.759Z"
 }

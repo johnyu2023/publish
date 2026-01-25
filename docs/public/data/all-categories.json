@@ -16,7 +16,7 @@
   "ai": {
     "name": "人工智能",
     "description": "关于人工智能的文章",
-    "count": 5,
+    "count": 7,
     "latestArticle": {
       "url": "/ai/audio-captioning",
       "title": "Audio Captioning 简介",
