@@ -1,8 +1,8 @@
 ---
 title: Reebok 运动鞋的选择
-description: 
+description: 本文介绍Reebok运动鞋选择，先讲1Y3501复古休闲鞋，再对比Nano X5、X4、Court三款专业鞋，给出性价比建议与最终推荐，还提及选购X4的渠道与价格。
 date: 2026-01-15
-tags: []
+tags: [Reebok, 运动鞋]
 ---
 
 ## 1Y3501

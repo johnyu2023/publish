@@ -1,10 +1,10 @@
 [
   {
     "text": "人工智能",
-    "link": "/ai/audio-captioning",
+    "link": "/ai/agent-01",
     "category": "ai",
     "description": "关于人工智能的文章",
-    "count": 7,
+    "count": 8,
     "order": 50,
     "type": "dynamic"
   },
@@ -19,10 +19,10 @@
   },
   {
     "text": "全栈开发",
-    "link": "/fullstack/fastapi",
+    "link": "/fullstack/agent-code-explanation",
     "category": "fullstack",
     "description": "全栈开发势不可挡",
-    "count": 27,
+    "count": 28,
     "order": 50,
     "type": "dynamic"
   },

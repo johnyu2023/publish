@@ -90,9 +90,11 @@ try {
   
   // 只有当解码后的字符串与原字符串不同，且解码后字符串有效时才使用
   if (decodedString !== mermaidCode && (decodedString.trim().startsWith('graph ') || 
+      decodedString.trim().startsWith('flowchart ') ||
       decodedString.trim().startsWith('sequenceDiagram') || 
       decodedString.trim().startsWith('gantt') ||
       decodedString.includes('graph ') ||
+      decodedString.includes('flowchart ') ||
       decodedString.includes('sequenceDiagram') ||
       decodedString.includes('gantt'))) {
     mermaidCode = decodedString
@@ -119,14 +121,16 @@ if (mermaidCode.includes('%7B') || mermaidCode.includes('%7D') || mermaidCode.in
       .replace(/\+/g, ' ')      // space
     
     // 验证解码结果是否为有效的 mermaid 语法
-    if (manualDecoded.startsWith('graph ') || 
-        manualDecoded.startsWith('sequenceDiagram') || 
-        manualDecoded.startsWith('gantt') ||
-        manualDecoded.includes('graph ') ||
-        manualDecoded.includes('sequenceDiagram') ||
-        manualDecoded.includes('gantt')) {
-      mermaidCode = manualDecoded
-    }
+  if (manualDecoded.startsWith('graph ') || 
+      manualDecoded.startsWith('flowchart ') ||
+      manualDecoded.startsWith('sequenceDiagram') || 
+      manualDecoded.startsWith('gantt') ||
+      manualDecoded.includes('graph ') ||
+      manualDecoded.includes('flowchart ') ||
+      manualDecoded.includes('sequenceDiagram') ||
+      manualDecoded.includes('gantt')) {
+    mermaidCode = manualDecoded
+  }
   } catch (e) {
     console.warn('Manual decoding failed:', e)
   }

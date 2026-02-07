@@ -1,4 +1,46 @@
 {
+  "other": {
+    "name": "Other",
+    "description": "关于Other的文章",
+    "count": 6,
+    "latestArticle": {
+      "url": "/other/proprioception-training-plan",
+      "title": "本体感觉训练计划",
+      "date": "2026-02-07",
+      "tags": [
+        "膝关节，训练"
+      ],
+      "description": "针对右膝术后左膝疼痛伴本体感觉缺失问题，分析其神经机制，提出4周渐进式本体感觉重建训练计划，涵盖基础感知、动态微调与扰动训练，结合神经可塑性原理，帮助恢复膝关节位置感知精度与大脑-肌肉反馈通路。"
+    }
+  },
+  "ai": {
+    "name": "人工智能",
+    "description": "关于人工智能的文章",
+    "count": 8,
+    "latestArticle": {
+      "url": "/ai/agent-01",
+      "title": "AI Agents 开发",
+      "date": "2026-01-27",
+      "tags": [
+        "Agents"
+      ],
+      "description": ""
+    }
+  },
+  "fullstack": {
+    "name": "全栈开发",
+    "description": "全栈开发势不可挡",
+    "count": 28,
+    "latestArticle": {
+      "url": "/fullstack/agent-code-explanation",
+      "title": "Agents 开发代码释疑",
+      "date": "2026-01-25",
+      "tags": [
+        "Agents"
+      ],
+      "description": ""
+    }
+  },
   "shanghai": {
     "name": "Shanghai",
     "description": "关于Shanghai的文章",
@@ -9,36 +51,6 @@
       "date": "2026-01-22",
       "tags": [
         "Audio Caption"
-      ],
-      "description": ""
-    }
-  },
-  "ai": {
-    "name": "人工智能",
-    "description": "关于人工智能的文章",
-    "count": 7,
-    "latestArticle": {
-      "url": "/ai/audio-captioning",
-      "title": "Audio Captioning 简介",
-      "date": "2026-01-19",
-      "tags": [
-        "AI",
-        "编程"
-      ],
-      "description": ""
-    }
-  },
-  "other": {
-    "name": "Other",
-    "description": "关于Other的文章",
-    "count": 5,
-    "latestArticle": {
-      "url": "/other/agan-shoes",
-      "title": "阿甘鞋推荐",
-      "date": "2026-01-17",
-      "tags": [
-        "阿甘鞋",
-        "李宁"
       ],
       "description": ""
     }
@@ -69,26 +81,6 @@
         "History"
       ],
       "description": "记录本站开发的重要节点"
-    }
-  },
-  "fullstack": {
-    "name": "全栈开发",
-    "description": "全栈开发势不可挡",
-    "count": 27,
-    "latestArticle": {
-      "url": "/fullstack/fastapi",
-      "title": "FastAPI 后端项目设计",
-      "date": "2026-01-06",
-      "tags": [
-        "Python",
-        "Conda",
-        "Pip",
-        "KISS",
-        "函数",
-        "FastAPI",
-        "分层设计"
-      ],
-      "description": ""
     }
   },
   "foundation": {

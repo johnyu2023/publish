@@ -3,14 +3,13 @@
     "ai": {
       "name": "人工智能",
       "description": "关于人工智能的文章",
-      "count": 7,
+      "count": 8,
       "latestArticle": {
-        "url": "/ai/audio-captioning",
-        "title": "Audio Captioning 简介",
-        "date": "2026-01-19",
+        "url": "/ai/agent-01",
+        "title": "AI Agents 开发",
+        "date": "2026-01-27",
         "tags": [
-          "AI",
-          "编程"
+          "Agents"
         ],
         "description": ""
       }
@@ -34,19 +33,13 @@
     "fullstack": {
       "name": "全栈开发",
       "description": "全栈开发势不可挡",
-      "count": 27,
+      "count": 28,
       "latestArticle": {
-        "url": "/fullstack/fastapi",
-        "title": "FastAPI 后端项目设计",
-        "date": "2026-01-06",
+        "url": "/fullstack/agent-code-explanation",
+        "title": "Agents 开发代码释疑",
+        "date": "2026-01-25",
         "tags": [
-          "Python",
-          "Conda",
-          "Pip",
-          "KISS",
-          "函数",
-          "FastAPI",
-          "分层设计"
+          "Agents"
         ],
         "description": ""
       }
@@ -67,6 +60,20 @@
     }
   },
   "latestArticles": [
+    {
+      "category": "ai",
+      "categoryName": "人工智能",
+      "title": "AI Agents 开发",
+      "date": "2026-01-27",
+      "url": "/ai/agent-01"
+    },
+    {
+      "category": "fullstack",
+      "categoryName": "全栈开发",
+      "title": "Agents 开发代码释疑",
+      "date": "2026-01-25",
+      "url": "/fullstack/agent-code-explanation"
+    },
     {
       "category": "ai",
       "categoryName": "人工智能",
@@ -122,22 +129,8 @@
       "title": "Pytest + TestClient 重构",
       "date": "2026-01-01",
       "url": "/fullstack/pytest-testclient"
-    },
-    {
-      "category": "fullstack",
-      "categoryName": "全栈开发",
-      "title": "DashScope API 配置",
-      "date": "2025-12-30",
-      "url": "/fullstack/dashscope"
-    },
-    {
-      "category": "fullstack",
-      "categoryName": "全栈开发",
-      "title": "数据迁移记录",
-      "date": "2025-12-30",
-      "url": "/fullstack/data-migration"
     }
   ],
-  "totalArticles": 67,
-  "generatedAt": "2026-01-23T15:00:16.759Z"
+  "totalArticles": 70,
+  "generatedAt": "2026-02-07T06:44:40.197Z"
 }
