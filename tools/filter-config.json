@@ -1,0 +1,14 @@
+{
+  "files": [
+    "docs/other/winter-food-storage.md"
+  ],
+  "rules": [
+    {
+      "id": "remove-references",
+      "name": "删除引用标记",
+      "description": "删除所有类似 [[1]] 的引用标记，包括前面的空格",
+      "pattern": "\\s*\\[\\[\\d+\\]\\]",
+      "replacement": ""
+    }
+  ]
+}

@@ -9,7 +9,8 @@
     "dev": "pnpm build:prepare && vitepress dev docs",
     "build": "pnpm build:prepare && vitepress build docs",
     "serve": "vitepress serve docs",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "filter-md": "node ./tools/filter-md.js"
   },
   "keywords": [],
   "author": "",
