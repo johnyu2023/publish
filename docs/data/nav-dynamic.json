@@ -1,10 +1,10 @@
 [
   {
     "text": "人工智能",
-    "link": "/ai/agent-01",
+    "link": "/ai/mcp",
     "category": "ai",
     "description": "关于人工智能的文章",
-    "count": 8,
+    "count": 9,
     "order": 50,
     "type": "dynamic"
   },
@@ -19,10 +19,10 @@
   },
   {
     "text": "全栈开发",
-    "link": "/fullstack/agent-code-explanation",
+    "link": "/fullstack/poetry",
     "category": "fullstack",
     "description": "全栈开发势不可挡",
-    "count": 28,
+    "count": 29,
     "order": 50,
     "type": "dynamic"
   },

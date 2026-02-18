@@ -16,7 +16,8 @@ function getDirectoryName(dirName) {
     think: '观察思考',
     other: '杂七杂八',
     shanghai: '上海上海',
-    system: '本站相关'
+    system: '本站相关',
+    trader: '交易相关'
   }
   return names[dirName] || dirName.charAt(0).toUpperCase() + dirName.slice(1)
 }
@@ -73,7 +74,7 @@ async function getSideBarData() {
   completeSidebar['/'] = getDefaultSideBar()
   
   // 特定目录的侧边栏（只对存在的目录生成）
-  const targetDirs = ['ai', 'foundation', 'fullstack', 'think', 'other', 'shanghai', 'system']
+  const targetDirs = ['ai', 'foundation', 'fullstack', 'think', 'other', 'shanghai', 'system', 'trader']
   for (const category of targetDirs) {
     const categoryDirPath = path.join(docsDir, category)
     if (fs.existsSync(categoryDirPath) && fs.statSync(categoryDirPath).isDirectory()) {

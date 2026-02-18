@@ -128,3 +128,4 @@ tags: [拖鞋]
 
 ![alt text](/assets/other/lined-slippers/004.webp)
 ![alt text](/assets/other/lined-slippers/005.webp)
+![alt text](/assets/other/lined-slippers/006.avif)
