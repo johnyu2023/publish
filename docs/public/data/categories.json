@@ -31,6 +31,22 @@
       "order": 4,
       "color": "#d35400",
       "enabled": true
+    },
+    "trader": {
+      "name": "证券交易",
+      "description": "证券市场分析与交易策略",
+      "icon": "📈",
+      "order": 5,
+      "color": "#27ae60",
+      "enabled": true
+    },
+    "other": {
+      "name": "七七八八",
+      "description": "其他杂项内容",
+      "icon": "📦",
+      "order": 6,
+      "color": "#9b59b6",
+      "enabled": true
     }
   }
 }

@@ -1,28 +1,28 @@
 {
-  "other": {
-    "name": "Other",
-    "description": "关于Other的文章",
-    "count": 6,
+  "trader": {
+    "name": "证券交易",
+    "description": "证券市场分析与交易策略",
+    "count": 4,
     "latestArticle": {
-      "url": "/other/proprioception-training-plan",
-      "title": "本体感觉训练计划",
-      "date": "2026-02-07",
+      "url": "/trader/basic-trading-terms",
+      "title": "交易员必备术语系统清单（程序员友好版）",
+      "date": "2026-02-23",
       "tags": [
-        "膝关节，训练"
+        "PSIF"
       ],
-      "description": "针对右膝术后左膝疼痛伴本体感觉缺失问题，分析其神经机制，提出4周渐进式本体感觉重建训练计划，涵盖基础感知、动态微调与扰动训练，结合神经可塑性原理，帮助恢复膝关节位置感知精度与大脑-肌肉反馈通路。"
+      "description": ""
     }
   },
   "ai": {
     "name": "人工智能",
     "description": "关于人工智能的文章",
-    "count": 8,
+    "count": 9,
     "latestArticle": {
-      "url": "/ai/agent-01",
-      "title": "AI Agents 开发",
-      "date": "2026-01-27",
+      "url": "/ai/mcp",
+      "title": "MCP 开发",
+      "date": "2026-02-10",
       "tags": [
-        "Agents"
+        "MCP"
       ],
       "description": ""
     }
@@ -30,15 +30,30 @@
   "fullstack": {
     "name": "全栈开发",
     "description": "全栈开发势不可挡",
-    "count": 28,
+    "count": 29,
     "latestArticle": {
-      "url": "/fullstack/agent-code-explanation",
-      "title": "Agents 开发代码释疑",
-      "date": "2026-01-25",
+      "url": "/fullstack/poetry",
+      "title": "Python 项目中使用 Poetry",
+      "date": "2026-02-10",
       "tags": [
-        "Agents"
+        "Python",
+        "Poetry"
       ],
       "description": ""
+    }
+  },
+  "other": {
+    "name": "七七八八",
+    "description": "其他杂项内容",
+    "count": 8,
+    "latestArticle": {
+      "url": "/other/lined-slippers",
+      "title": "冬季拖鞋推荐",
+      "date": "2026-02-10",
+      "tags": [
+        "拖鞋"
+      ],
+      "description": "因脚疼发现拖鞋塌陷问题，本文针对体重较大、有踝痛史人群，提供冬季棉拖鞋选购指南。核心要求：后跟硬质支撑杯、足弓基础隆起、中底厚度≥15mm。推荐30-50元区间国产支撑款（如南极人加厚防滑款），避开全软塌、人字拖式、超薄底等\"隐形杀手\"。最终29.9元拼多多购入合适款式。"
     }
   },
   "shanghai": {

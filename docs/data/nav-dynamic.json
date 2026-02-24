@@ -34,5 +34,23 @@
     "count": 10,
     "order": 50,
     "type": "dynamic"
+  },
+  {
+    "text": "证券交易",
+    "link": "/trader/basic-trading-terms",
+    "category": "trader",
+    "description": "证券市场分析与交易策略",
+    "count": 4,
+    "order": 50,
+    "type": "dynamic"
+  },
+  {
+    "text": "七七八八",
+    "link": "/other/lined-slippers",
+    "category": "other",
+    "description": "其他杂项内容",
+    "count": 8,
+    "order": 50,
+    "type": "dynamic"
   }
 ]
