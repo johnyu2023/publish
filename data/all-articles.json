@@ -1,10 +1,150 @@
 [
   {
+    "url": "/trader/basic-trading-terms",
+    "title": "交易员必备术语系统清单（程序员友好版）",
+    "date": "2026-02-23",
+    "tags": [
+      "PSIF"
+    ],
+    "description": ""
+  },
+  {
+    "url": "/trader/key-learning-for-future-traders",
+    "title": "交易员的岗前学习",
+    "date": "2026-02-18",
+    "tags": [
+      "PSIF"
+    ],
+    "description": ""
+  },
+  {
+    "url": "/trader/securities-basics",
+    "title": "证券基础知识",
+    "date": "2026-02-18",
+    "tags": [
+      "PSIF"
+    ],
+    "description": ""
+  },
+  {
+    "url": "/trader/private-securities-investment-funds",
+    "title": "私募证券投资基金释疑",
+    "date": "2026-02-17",
+    "tags": [
+      "PSIF"
+    ],
+    "description": ""
+  },
+  {
+    "url": "/ai/mcp",
+    "title": "MCP 开发",
+    "date": "2026-02-10",
+    "tags": [
+      "MCP"
+    ],
+    "description": ""
+  },
+  {
+    "url": "/fullstack/poetry",
+    "title": "Python 项目中使用 Poetry",
+    "date": "2026-02-10",
+    "tags": [
+      "Python",
+      "Poetry"
+    ],
+    "description": ""
+  },
+  {
+    "url": "/other/lined-slippers",
+    "title": "冬季拖鞋推荐",
+    "date": "2026-02-10",
+    "tags": [
+      "拖鞋"
+    ],
+    "description": "因脚疼发现拖鞋塌陷问题，本文针对体重较大、有踝痛史人群，提供冬季棉拖鞋选购指南。核心要求：后跟硬质支撑杯、足弓基础隆起、中底厚度≥15mm。推荐30-50元区间国产支撑款（如南极人加厚防滑款），避开全软塌、人字拖式、超薄底等\"隐形杀手\"。最终29.9元拼多多购入合适款式。"
+  },
+  {
+    "url": "/other/winter-food-storage",
+    "title": "冬季食物存储建议",
+    "date": "2026-02-09",
+    "tags": [
+      "食物",
+      "存储"
+    ],
+    "description": "本文针对冬季食物存储，详细介绍了三种常见食材的保存方法：散装油豆腐建议分装冷冻（可存半年）或短期冷藏（3-7天）；真空包装广式腊肠未开封冷藏、开封后尽快食用或冷冻；真空包装两头乌（生鲜肉）需全程低温保存，未开封看标签，开封后3天内吃完或分装冷冻。强调冬季室内有暖气时避免常温存放，食用前彻底加热。"
+  },
+  {
+    "url": "/other/proprioception-training-plan",
+    "title": "本体感觉训练计划",
+    "date": "2026-02-07",
+    "tags": [
+      "膝关节，训练"
+    ],
+    "description": "针对右膝术后左膝疼痛伴本体感觉缺失问题，分析其神经机制，提出4周渐进式本体感觉重建训练计划，涵盖基础感知、动态微调与扰动训练，结合神经可塑性原理，帮助恢复膝关节位置感知精度与大脑-肌肉反馈通路。"
+  },
+  {
+    "url": "/ai/agent-01",
+    "title": "AI Agents 开发",
+    "date": "2026-01-27",
+    "tags": [
+      "Agents"
+    ],
+    "description": ""
+  },
+  {
+    "url": "/fullstack/agent-code-explanation",
+    "title": "Agents 开发代码释疑",
+    "date": "2026-01-25",
+    "tags": [
+      "Agents"
+    ],
+    "description": ""
+  },
+  {
+    "url": "/shanghai/audio-caption",
+    "title": "Audio Caption 项目标注",
+    "date": "2026-01-22",
+    "tags": [
+      "Audio Caption"
+    ],
+    "description": ""
+  },
+  {
+    "url": "/ai/audio-captioning",
+    "title": "Audio Captioning 简介",
+    "date": "2026-01-19",
+    "tags": [
+      "AI",
+      "编程"
+    ],
+    "description": ""
+  },
+  {
+    "url": "/ai/skill",
+    "title": "Skill",
+    "date": "2026-01-19",
+    "tags": [],
+    "description": ""
+  },
+  {
+    "url": "/other/agan-shoes",
+    "title": "阿甘鞋推荐",
+    "date": "2026-01-17",
+    "tags": [
+      "阿甘鞋",
+      "李宁"
+    ],
+    "description": "针对大体重中年男士，推荐适配其需求的阿甘鞋，介绍阿甘鞋起源与特点，重点推荐李宁载物系列AGCV469-3，详解其缓震科技、适配性与注意事项，附网友好评。"
+  },
+  {
     "url": "/other/reebok-shoes",
     "title": "Reebok 运动鞋的选择",
     "date": "2026-01-15",
-    "tags": [],
-    "description": ""
+    "tags": [
+      "Reebok",
+      "运动鞋"
+    ],
+    "description": "本文介绍Reebok运动鞋选择，先讲1Y3501复古休闲鞋，再对比Nano X5、X4、Court三款专业鞋，给出性价比建议与最终推荐，还提及选购X4的渠道与价格。"
   },
   {
     "url": "/other/lining-shoes",
@@ -53,7 +193,7 @@
     "tags": [
       "灯泡"
     ],
-    "description": ""
+    "description": "作者因家中餐厅灯泡损坏，在选购替换灯泡过程中，通过与京东客服沟通及AI指导，了解到灯泡电压匹配、色温选择、瓦数与亮度关系等知识，最终根据AI建议选择了合适的LED灯泡。"
   },
   {
     "url": "/system/history",
@@ -126,11 +266,11 @@
   },
   {
     "url": "/shanghai/xi-zang-nan-lu",
-    "title": "西藏南路",
+    "title": "西藏南路地铁站",
     "date": "2026-01-01",
     "tags": [
       "西藏南路",
-      "浦东",
+      "黄浦",
       "地铁"
     ],
     "description": ""
@@ -468,6 +608,16 @@
     "description": "AI技术早期阶段，传统产品经理方法论失效。技术边界模糊时，用户需求需通过技术可行性重新翻译。建议由技术人员主导产品方向探索，产品经理需转型为懂技术的架构师，组织应打破传统分工边界。"
   },
   {
+    "url": "/ai/function-calling-vs-mcp",
+    "title": "Function Calling vs MCP",
+    "date": "2025-08-19",
+    "tags": [
+      "Function Calling",
+      "MCP"
+    ],
+    "description": "Function Calling 和 MCP 的关系和区别"
+  },
+  {
     "url": "/think/ai-coding-02",
     "title": "AI辅助编程02-注意事项",
     "date": "2025-08-18",
@@ -508,6 +658,15 @@
       "ISR"
     ],
     "description": "在一个 Web 应用中结合使用多种渲染策略，例如同时使用服务端渲染（SSR）、静态站点生成（SSG）和客户端渲染（CSR），并根据不同页面或组件的需求选择最合适的方式。"
+  },
+  {
+    "url": "/ai/function-calling",
+    "title": "Function Calling 的原始形态",
+    "date": "2025-07-16",
+    "tags": [
+      "Function Calling"
+    ],
+    "description": "探索大语言模型函数调用的基本实现方式"
   },
   {
     "url": "/think/ai-coding-01",

@@ -1,13 +1,72 @@
 {
-  "other": {
-    "name": "Other",
-    "description": "关于Other的文章",
+  "trader": {
+    "name": "证券交易",
+    "description": "证券市场分析与交易策略",
     "count": 4,
     "latestArticle": {
-      "url": "/other/reebok-shoes",
-      "title": "Reebok 运动鞋的选择",
-      "date": "2026-01-15",
-      "tags": [],
+      "url": "/trader/basic-trading-terms",
+      "title": "交易员必备术语系统清单（程序员友好版）",
+      "date": "2026-02-23",
+      "tags": [
+        "PSIF"
+      ],
+      "description": ""
+    }
+  },
+  "ai": {
+    "name": "人工智能",
+    "description": "关于人工智能的文章",
+    "count": 9,
+    "latestArticle": {
+      "url": "/ai/mcp",
+      "title": "MCP 开发",
+      "date": "2026-02-10",
+      "tags": [
+        "MCP"
+      ],
+      "description": ""
+    }
+  },
+  "fullstack": {
+    "name": "全栈开发",
+    "description": "全栈开发势不可挡",
+    "count": 29,
+    "latestArticle": {
+      "url": "/fullstack/poetry",
+      "title": "Python 项目中使用 Poetry",
+      "date": "2026-02-10",
+      "tags": [
+        "Python",
+        "Poetry"
+      ],
+      "description": ""
+    }
+  },
+  "other": {
+    "name": "七七八八",
+    "description": "其他杂项内容",
+    "count": 8,
+    "latestArticle": {
+      "url": "/other/lined-slippers",
+      "title": "冬季拖鞋推荐",
+      "date": "2026-02-10",
+      "tags": [
+        "拖鞋"
+      ],
+      "description": "因脚疼发现拖鞋塌陷问题，本文针对体重较大、有踝痛史人群，提供冬季棉拖鞋选购指南。核心要求：后跟硬质支撑杯、足弓基础隆起、中底厚度≥15mm。推荐30-50元区间国产支撑款（如南极人加厚防滑款），避开全软塌、人字拖式、超薄底等\"隐形杀手\"。最终29.9元拼多多购入合适款式。"
+    }
+  },
+  "shanghai": {
+    "name": "Shanghai",
+    "description": "关于Shanghai的文章",
+    "count": 4,
+    "latestArticle": {
+      "url": "/shanghai/audio-caption",
+      "title": "Audio Caption 项目标注",
+      "date": "2026-01-22",
+      "tags": [
+        "Audio Caption"
+      ],
       "description": ""
     }
   },
@@ -25,21 +84,6 @@
       "description": ""
     }
   },
-  "ai": {
-    "name": "人工智能",
-    "description": "关于人工智能的文章",
-    "count": 3,
-    "latestArticle": {
-      "url": "/ai/function-calling-mcp",
-      "title": "Function Calling与MCP",
-      "date": "2026-01-10",
-      "tags": [
-        "Function Calling",
-        "MCP"
-      ],
-      "description": ""
-    }
-  },
   "system": {
     "name": "System",
     "description": "关于System的文章",
@@ -52,40 +96,6 @@
         "History"
       ],
       "description": "记录本站开发的重要节点"
-    }
-  },
-  "fullstack": {
-    "name": "全栈开发",
-    "description": "全栈开发势不可挡",
-    "count": 27,
-    "latestArticle": {
-      "url": "/fullstack/fastapi",
-      "title": "FastAPI 后端项目设计",
-      "date": "2026-01-06",
-      "tags": [
-        "Python",
-        "Conda",
-        "Pip",
-        "KISS",
-        "函数",
-        "FastAPI",
-        "分层设计"
-      ],
-      "description": ""
-    }
-  },
-  "shanghai": {
-    "name": "Shanghai",
-    "description": "关于Shanghai的文章",
-    "count": 3,
-    "latestArticle": {
-      "url": "/shanghai/appen",
-      "title": "上海话项目示例",
-      "date": "2026-01-06",
-      "tags": [
-        "上海话"
-      ],
-      "description": "一个项目的示例"
     }
   },
   "foundation": {
