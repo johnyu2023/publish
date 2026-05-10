@@ -3,6 +3,8 @@ import { defineConfig } from 'vitepress'
 import fs from 'fs'
 import path from 'path'
 import { getSideBarData } from './sidebar-generator.js'
+import texmath from 'markdown-it-texmath'
+import katex from 'katex'
 
 // === 导出配置 ===
 export default defineConfig({
@@ -10,8 +12,10 @@ export default defineConfig({
   title: 'AI时代的技术分享',
   description: 'AI时代的技术分享和感悟',
 
-  // ⚠️ 注意：此处不设置顶层 locales（单语言中文站不需要）
+  head: [],
 
+  // ⚠️ 注意：此处不设置顶层 locales（单语言中文站不需要）
+  
   vite: {
     server: {
       fs: {
@@ -19,18 +23,14 @@ export default defineConfig({
       }
     }
   },
-
+  
   markdown: {
     config(md) {
-      import('markdown-it-katex').then(katex => {
-        md.use(katex.default, { 
-          throwOnError: false,
-          errorColor: '#cc0000'
-        })
-      }).catch(err => {
-        console.warn('Failed to load katex:', err)
+      md.use(texmath, {
+        engine: katex,
+        delimiters: 'dollars',
+        katexOptions: { throwOnError: false, errorColor: '#cc0000' }
       })
-
       const defaultFence = md.renderer.rules.fence
       md.renderer.rules.fence = (...args) => {
         const [tokens, idx] = args

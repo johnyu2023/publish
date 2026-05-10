@@ -8,11 +8,7 @@ import Mermaid from './components/Mermaid.vue'
 import CategoryLatestLink from './components/CategoryLatestLink.vue'
 import { initImageViewer } from './plugins/imageViewer'
 import './style.css'
-
-// 引入 KaTeX CSS
-if (typeof window !== 'undefined') {
-  import('katex/dist/katex.min.css')
-}
+import 'katex/dist/katex.css'
 
 export default {
   ...DefaultTheme,

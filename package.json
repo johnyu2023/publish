@@ -28,7 +28,7 @@
   "dependencies": {
     "gray-matter": "^4.0.3",
     "katex": "^0.16.27",
-    "markdown-it-katex": "^2.0.3",
+    "markdown-it-texmath": "^1.0.0",
     "viewerjs": "^1.11.7"
   }
 }

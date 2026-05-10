@@ -1,10 +1,10 @@
 [
   {
     "text": "人工智能",
-    "link": "/ai/mcp",
+    "link": "/ai/harness-engineering",
     "category": "ai",
     "description": "关于人工智能的文章",
-    "count": 9,
+    "count": 14,
     "order": 50,
     "type": "dynamic"
   },
@@ -28,28 +28,28 @@
   },
   {
     "text": "观察思考",
-    "link": "/think/eight-software-markets-ai-that-will",
+    "link": "/think/ai-and-productivity",
     "category": "think",
     "description": "洞察未来的趋势",
-    "count": 10,
+    "count": 11,
     "order": 50,
     "type": "dynamic"
   },
   {
     "text": "证券交易",
-    "link": "/trader/basic-trading-terms",
+    "link": "/trader/portfolio-management",
     "category": "trader",
     "description": "证券市场分析与交易策略",
-    "count": 4,
+    "count": 8,
     "order": 50,
     "type": "dynamic"
   },
   {
     "text": "七七八八",
-    "link": "/other/lined-slippers",
+    "link": "/other/situation-monitor",
     "category": "other",
     "description": "其他杂项内容",
-    "count": 8,
+    "count": 9,
     "order": 50,
     "type": "dynamic"
   }

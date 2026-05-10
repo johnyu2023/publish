@@ -33,3 +33,4 @@ docs/.vitepress/dist
 .env.*.local
 .wucai/
 .vitepress/cache/
+snaps/

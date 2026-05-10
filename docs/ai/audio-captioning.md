@@ -2,7 +2,7 @@
 title: Audio Captioning 简介
 description: 
 date: 2026-01-19
-tags: [AI, 编程]
+tags: [AI, 语音识别, 音频处理, 自然语言处理]
 ---
 
 > **Audio Captioning (音频字幕生成)** 是一项让机器用文字“听懂”并“描述”声音的技术。它超越了简单的语音转文字，旨在对整体声学场景进行**语义级的理解和概括**。
