@@ -28,7 +28,7 @@ export default defineConfig({
     config(md) {
       md.use(texmath, {
         engine: katex,
-        delimiters: 'dollars',
+        delimiters: ['dollars', 'brackets'],
         katexOptions: { throwOnError: false, errorColor: '#cc0000' }
       })
       const defaultFence = md.renderer.rules.fence

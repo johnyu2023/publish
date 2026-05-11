@@ -49,10 +49,10 @@
   },
   {
     "text": "证券交易",
-    "link": "/trader/portfolio-management",
+    "link": "/trader/fund-performance-evaluation",
     "category": "trader",
     "description": "证券市场分析与交易策略",
-    "count": 8,
+    "count": 9,
     "order": 50,
     "type": "dynamic"
   },

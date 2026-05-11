@@ -2,11 +2,11 @@
   "trader": {
     "name": "证券交易",
     "description": "证券市场分析与交易策略",
-    "count": 8,
+    "count": 9,
     "latestArticle": {
-      "url": "/trader/portfolio-management",
-      "title": "投资组合管理",
-      "date": "2026-05-09",
+      "url": "/trader/fund-performance-evaluation",
+      "title": "基金业绩评价",
+      "date": "2026-05-10",
       "tags": [],
       "description": ""
     }

@@ -44,14 +44,16 @@ tags: [LaTeX]
 
 - 输出内容为：
   - 1
-  $$
-  \frac{d}{dx}\left(\int_{0}^{x} f(t) dt\right) = f(x)
-  $$
+
+    $$
+    \frac{d}{dx}\left(\int_{0}^{x} f(t) dt\right) = f(x)
+    $$
 
   - 2
-  $$
-  \sum_{i=1}^{n} i = \frac{n(n+1)}{2}
-  $$
+
+    $$
+    \sum_{i=1}^{n} i = \frac{n(n+1)}{2}
+    $$
 
 ## 2. 常用数学符号
 
@@ -68,9 +70,10 @@ $$
   - 行内分数：$\frac{分子}{分母}$
 
   - 块级分数：
-  $$
-  \frac{d}{dx}\left(\int_{0}^{x} f(t) dt\right) = f(x)
-  $$
+
+    $$
+    \frac{d}{dx}\left(\int_{0}^{x} f(t) dt\right) = f(x)
+    $$
 
 ### 2.2 向量和矩阵
 
@@ -95,13 +98,14 @@ $$
     - $\textbf{v} = \begin{bmatrix} v_1 \\ v_2 \\ v_3 \end{bmatrix}$
 
   - 矩阵：
-  $$
-  \begin{bmatrix}
-  1 & 2 & 3 \\
-  4 & 5 & 6 \\
-  7 & 8 & 9
-  \end{bmatrix}
-  $$
+
+    $$
+    \begin{bmatrix}
+    1 & 2 & 3 \\
+    4 & 5 & 6 \\
+    7 & 8 & 9
+    \end{bmatrix}
+    $$
 
 ### 2.3 求和、积分、极限
 
@@ -124,19 +128,22 @@ $$
 
 - 输出内容为：
   - 求和：
-  $$
-  \sum_{i=1}^{n} i = \frac{n(n+1)}{2}
-  $$
+
+    $$
+    \sum_{i=1}^{n} i = \frac{n(n+1)}{2}
+    $$
 
   - 积分：
-  $$
-  \int_{a}^{b} f(x) dx
-  $$
+
+    $$
+    \int_{a}^{b} f(x) dx
+    $$
 
   - 极限：
-  $$
-  \lim_{x \to \infty} \frac{1}{x} = 0
-  $$
+
+    $$
+    \lim_{x \to \infty} \frac{1}{x} = 0
+    $$
 
 ### 2.4 数学函数
 
@@ -172,6 +179,7 @@ $e^{-(w^T x + b)}$、$2^x$
   ```
 
 - 输出内容为：
+
   $$
   \text{总输入} = \text{权重} \cdot \text{输入} + \text{偏置}
   $$
@@ -190,6 +198,7 @@ $e^{-(w^T x + b)}$、$2^x$
   ```
 
 - 输出内容为：
+
   $$
   \mathbf{a} = \begin{pmatrix} a_1 \\ a_2 \\ a_3 \end{pmatrix}, \quad
   \mathbf{b} = \begin{pmatrix} b_1 \\ b_2 \\ b_3 \end{pmatrix}
@@ -207,6 +216,7 @@ $e^{-(w^T x + b)}$、$2^x$
   ```
 
 - 输出内容为：
+
   $$
   \frac{d}{dx}\left(\int_{0}^{x} f(t) dt\right) = f(x)
   $$
@@ -234,19 +244,22 @@ $$
 
 - 输出内容为：
   - 条件概率：
-  $$
-  P(A|B) = \frac{P(A \cap B)}{P(B)}
-  $$
+
+    $$
+    P(A|B) = \frac{P(A \cap B)}{P(B)}
+    $$
 
   - 贝叶斯定理：
-  $$
-  P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}
-  $$
+
+    $$
+    P(A|B) = \frac{P(B|A) \cdot P(A)}{P(B)}
+    $$
 
   - 正态分布：
-  $$
-  f(x) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}
-  $$
+
+    $$
+    f(x) = \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}
+    $$
 
 ### 4.2 线性代数公式
 
@@ -269,19 +282,22 @@ $$
 
 - 输出内容为：
   - 点积：
-  $$
-  \mathbf{a} \cdot \mathbf{b} = a_1 b_1 + a_2 b_2 + a_3 b_3
-  $$
+
+    $$
+    \mathbf{a} \cdot \mathbf{b} = a_1 b_1 + a_2 b_2 + a_3 b_3
+    $$
 
   - 模长：
-  $$
-  \|\mathbf{a}\| = \sqrt{a_1^2 + a_2^2 + a_3^2}
-  $$
+
+    $$
+    \|\mathbf{a}\| = \sqrt{a_1^2 + a_2^2 + a_3^2}
+    $$
 
   - 余弦相似度：
-  $$
-  \text{cosine\_similarity}(\mathbf{a}, \mathbf{b}) = \frac{\mathbf{a} \cdot \mathbf{b}}{\|\mathbf{a}\| \cdot \|\mathbf{b}\|}
-  $$
+
+    $$
+    \text{cosine\_similarity}(\mathbf{a}, \mathbf{b}) = \frac{\mathbf{a} \cdot \mathbf{b}}{\|\mathbf{a}\| \cdot \|\mathbf{b}\|}
+    $$
 
 ### 4.3 机器学习公式
 
@@ -304,19 +320,22 @@ $$
 
 - 输出内容为：
   - sigmoid 函数：
-  $$
-  P(y=1|x) = \frac{1}{1 + e^{-(w^T x + b)}}
-  $$
+
+    $$
+    P(y=1|x) = \frac{1}{1 + e^{-(w^T x + b)}}
+    $$
 
   - 信息熵：
-  $$
-  \boxed{I(X = x_i) = -\log_2 P(x_i)}
-  $$
+
+    $$
+    \boxed{I(X = x_i) = -\log_2 P(x_i)}
+    $$
 
   - Softmax 函数：
-  $$
-  P(\text{word}_i) = \frac{e^{\text{logit}_i}}{\sum_{j=1}^{V} e^{\text{logit}_j}}
-  $$
+
+    $$
+    P(\text{word}_i) = \frac{e^{\text{logit}_i}}{\sum_{j=1}^{V} e^{\text{logit}_j}}
+    $$
 
 ## 5. 编写最佳实践
 
