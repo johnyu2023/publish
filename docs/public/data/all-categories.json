@@ -1,14 +1,26 @@
 {
+  "ai": {
+    "name": "人工智能",
+    "description": "关于人工智能的文章",
+    "count": 16,
+    "latestArticle": {
+      "url": "/ai/chunk-provenance-in-rag",
+      "title": "RAG 项目 Chunk 溯源方案选型指南",
+      "date": "2026-06-14",
+      "tags": [],
+      "description": ""
+    }
+  },
   "trader": {
     "name": "证券交易",
     "description": "证券市场分析与交易策略",
-    "count": 9,
+    "count": 14,
     "latestArticle": {
-      "url": "/trader/fund-performance-evaluation",
-      "title": "基金业绩评价",
-      "date": "2026-05-10",
+      "url": "/trader/quant-concepts",
+      "title": "量化交易基础知识",
+      "date": "2026-06-08",
       "tags": [],
-      "description": ""
+      "description": "一些零碎的知识"
     }
   },
   "think": {
@@ -20,20 +32,6 @@
       "title": "AI 和生产力",
       "date": "2026-04-28",
       "tags": [],
-      "description": ""
-    }
-  },
-  "ai": {
-    "name": "人工智能",
-    "description": "关于人工智能的文章",
-    "count": 14,
-    "latestArticle": {
-      "url": "/ai/harness-engineering",
-      "title": "Harness Engineering 初探",
-      "date": "2026-04-18",
-      "tags": [
-        "Harness Engineering"
-      ],
       "description": ""
     }
   },

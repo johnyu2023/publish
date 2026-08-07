@@ -1,10 +1,10 @@
 [
   {
     "text": "人工智能",
-    "link": "/ai/harness-engineering",
+    "link": "/ai/chunk-provenance-in-rag",
     "category": "ai",
     "description": "关于人工智能的文章",
-    "count": 14,
+    "count": 16,
     "order": 50,
     "type": "dynamic"
   },
@@ -37,10 +37,10 @@
   },
   {
     "text": "证券交易",
-    "link": "/trader/fund-performance-evaluation",
+    "link": "/trader/quant-concepts",
     "category": "trader",
     "description": "证券市场分析与交易策略",
-    "count": 9,
+    "count": 14,
     "order": 50,
     "type": "dynamic"
   },

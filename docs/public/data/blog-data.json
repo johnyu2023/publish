@@ -3,14 +3,12 @@
     "ai": {
       "name": "人工智能",
       "description": "关于人工智能的文章",
-      "count": 14,
+      "count": 16,
       "latestArticle": {
-        "url": "/ai/harness-engineering",
-        "title": "Harness Engineering 初探",
-        "date": "2026-04-18",
-        "tags": [
-          "Harness Engineering"
-        ],
+        "url": "/ai/chunk-provenance-in-rag",
+        "title": "RAG 项目 Chunk 溯源方案选型指南",
+        "date": "2026-06-14",
+        "tags": [],
         "description": ""
       }
     },
@@ -60,13 +58,13 @@
     "trader": {
       "name": "证券交易",
       "description": "证券市场分析与交易策略",
-      "count": 9,
+      "count": 14,
       "latestArticle": {
-        "url": "/trader/fund-performance-evaluation",
-        "title": "基金业绩评价",
-        "date": "2026-05-10",
+        "url": "/trader/quant-concepts",
+        "title": "量化交易基础知识",
+        "date": "2026-06-08",
         "tags": [],
-        "description": ""
+        "description": "一些零碎的知识"
       }
     },
     "other": {
@@ -85,6 +83,55 @@
     }
   },
   "latestArticles": [
+    {
+      "category": "ai",
+      "categoryName": "人工智能",
+      "title": "RAG 项目 Chunk 溯源方案选型指南",
+      "date": "2026-06-14",
+      "url": "/ai/chunk-provenance-in-rag"
+    },
+    {
+      "category": "ai",
+      "categoryName": "人工智能",
+      "title": "RAG基础知识",
+      "date": "2026-06-08",
+      "url": "/ai/rag"
+    },
+    {
+      "category": "trader",
+      "categoryName": "证券交易",
+      "title": "量化交易基础知识",
+      "date": "2026-06-08",
+      "url": "/trader/quant-concepts"
+    },
+    {
+      "category": "trader",
+      "categoryName": "证券交易",
+      "title": "股票基础知识",
+      "date": "2026-05-19",
+      "url": "/trader/stock-basics"
+    },
+    {
+      "category": "trader",
+      "categoryName": "证券交易",
+      "title": "投资管理基础知识",
+      "date": "2026-05-17",
+      "url": "/trader/basics-investment-management"
+    },
+    {
+      "category": "trader",
+      "categoryName": "证券交易",
+      "title": "基金基础知识",
+      "date": "2026-05-16",
+      "url": "/trader/fund-basics"
+    },
+    {
+      "category": "trader",
+      "categoryName": "证券交易",
+      "title": "债券基础",
+      "date": "2026-05-13",
+      "url": "/trader/bond"
+    },
     {
       "category": "trader",
       "categoryName": "证券交易",
@@ -105,57 +152,8 @@
       "title": "AI 和生产力",
       "date": "2026-04-28",
       "url": "/think/ai-and-productivity"
-    },
-    {
-      "category": "trader",
-      "categoryName": "证券交易",
-      "title": "投资管理基础知识",
-      "date": "2026-04-23",
-      "url": "/trader/fundamentals-of-investment-management"
-    },
-    {
-      "category": "ai",
-      "categoryName": "人工智能",
-      "title": "Harness Engineering 初探",
-      "date": "2026-04-18",
-      "url": "/ai/harness-engineering"
-    },
-    {
-      "category": "ai",
-      "categoryName": "人工智能",
-      "title": "AI Coding Agent 使用心得",
-      "date": "2026-04-17",
-      "url": "/ai/ai-coding-agent"
-    },
-    {
-      "category": "ai",
-      "categoryName": "人工智能",
-      "title": "Claude Code 使用心得",
-      "date": "2026-04-17",
-      "url": "/ai/claude-code"
-    },
-    {
-      "category": "trader",
-      "categoryName": "证券交易",
-      "title": "迅投投研版里的 Python 策略文件解析",
-      "date": "2026-03-30",
-      "url": "/trader/think-trader-file"
-    },
-    {
-      "category": "trader",
-      "categoryName": "证券交易",
-      "title": "迅投投研版里的 Python",
-      "date": "2026-03-27",
-      "url": "/trader/think-trader-py"
-    },
-    {
-      "category": "other",
-      "categoryName": "七七八八",
-      "title": "situation-monitor",
-      "date": "2026-03-04",
-      "url": "/other/situation-monitor"
     }
   ],
-  "totalArticles": 90,
-  "generatedAt": "2026-05-11T09:57:19.308Z"
+  "totalArticles": 97,
+  "generatedAt": "2026-06-14T04:04:26.771Z"
 }
