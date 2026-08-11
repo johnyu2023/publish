@@ -30,7 +30,7 @@ Get your free key at: https://finnhub.io/
 + 安装依赖包，执行 npm install
 + 将 .env.example 重命名为 .env 并填入你的 Key。
 + 执行 npm run dev 在本地启动
-+ 打开浏览器，访问 http://localhost:5173 即可查看效果
++ 打开浏览器，访问 `http://localhost:5173` 即可查看效果
 + 打开 VPN , 设置为全局代理
 + 刷新页面，即可看到效果
 + 在 chrome/edge 中打开，设置页面语言翻译成中文，即可看到中文翻译后的页面
