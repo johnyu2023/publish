@@ -1,5 +1,192 @@
 [
   {
+    "url": "/ai/llm-data-product-layered-architecture",
+    "title": "LLM数据产品的分层解耦架构",
+    "date": "2026-08-08",
+    "tags": [],
+    "description": "一些零碎的知识"
+  },
+  {
+    "url": "/trader/macd",
+    "title": "MACD",
+    "date": "2026-08-07",
+    "tags": [],
+    "description": "一些零碎的知识"
+  },
+  {
+    "url": "/ai/chunk-provenance-in-rag",
+    "title": "RAG 项目 Chunk 溯源方案选型指南",
+    "date": "2026-06-14",
+    "tags": [],
+    "description": ""
+  },
+  {
+    "url": "/ai/rag",
+    "title": "RAG基础知识",
+    "date": "2026-06-08",
+    "tags": [],
+    "description": "一些零碎的知识"
+  },
+  {
+    "url": "/trader/quant-concepts",
+    "title": "量化交易基础知识",
+    "date": "2026-06-08",
+    "tags": [],
+    "description": "一些零碎的知识"
+  },
+  {
+    "url": "/trader/stock-basics",
+    "title": "股票基础知识",
+    "date": "2026-05-19",
+    "tags": [],
+    "description": "一些零碎的知识"
+  },
+  {
+    "url": "/trader/basics-investment-management",
+    "title": "投资管理基础知识",
+    "date": "2026-05-17",
+    "tags": [],
+    "description": "一些零碎的知识"
+  },
+  {
+    "url": "/trader/fund-basics",
+    "title": "基金基础知识",
+    "date": "2026-05-16",
+    "tags": [],
+    "description": "一些零碎的知识"
+  },
+  {
+    "url": "/trader/bond",
+    "title": "债券基础",
+    "date": "2026-05-13",
+    "tags": [],
+    "description": ""
+  },
+  {
+    "url": "/trader/fund-performance-evaluation",
+    "title": "基金业绩评价",
+    "date": "2026-05-10",
+    "tags": [],
+    "description": ""
+  },
+  {
+    "url": "/trader/portfolio-management",
+    "title": "投资组合管理",
+    "date": "2026-05-09",
+    "tags": [],
+    "description": ""
+  },
+  {
+    "url": "/think/ai-and-productivity",
+    "title": "AI 和生产力",
+    "date": "2026-04-28",
+    "tags": [],
+    "description": ""
+  },
+  {
+    "url": "/trader/fundamentals-of-investment-management",
+    "title": "投资管理基础知识",
+    "date": "2026-04-23",
+    "tags": [],
+    "description": ""
+  },
+  {
+    "url": "/ai/harness-engineering",
+    "title": "Harness Engineering 初探",
+    "date": "2026-04-18",
+    "tags": [
+      "Harness Engineering"
+    ],
+    "description": ""
+  },
+  {
+    "url": "/ai/ai-coding-agent",
+    "title": "AI Coding Agent 使用心得",
+    "date": "2026-04-17",
+    "tags": [
+      "Coding Agent"
+    ],
+    "description": ""
+  },
+  {
+    "url": "/ai/claude-code",
+    "title": "Claude Code 使用心得",
+    "date": "2026-04-17",
+    "tags": [
+      "Claude Code"
+    ],
+    "description": ""
+  },
+  {
+    "url": "/trader/think-trader-file",
+    "title": "迅投投研版里的 Python 策略文件解析",
+    "date": "2026-03-30",
+    "tags": [
+      "ThinkTrader",
+      "Python"
+    ],
+    "description": ""
+  },
+  {
+    "url": "/trader/think-trader-py",
+    "title": "迅投投研版里的 Python",
+    "date": "2026-03-27",
+    "tags": [
+      "ThinkTrader",
+      "Python"
+    ],
+    "description": ""
+  },
+  {
+    "url": "/other/situation-monitor",
+    "title": "situation-monitor",
+    "date": "2026-03-04",
+    "tags": [
+      "situation-monitor"
+    ],
+    "description": ""
+  },
+  {
+    "url": "/ai/slm-in-finance",
+    "title": "小模型在金融领域的应用",
+    "date": "2026-02-28",
+    "tags": [
+      "AI",
+      "金融"
+    ],
+    "description": ""
+  },
+  {
+    "url": "/ai/the-ai-turning-point",
+    "title": "2026年 AI 变天了",
+    "date": "2026-02-27",
+    "tags": [
+      "AI",
+      "Agent"
+    ],
+    "description": ""
+  },
+  {
+    "url": "/ai/open-claw",
+    "title": "OpenClaw 介绍",
+    "date": "2026-02-26",
+    "tags": [
+      "AI",
+      "Agent"
+    ],
+    "description": ""
+  },
+  {
+    "url": "/ai/ai-in-finance",
+    "title": "AI 在金融领域的应用",
+    "date": "2026-02-25",
+    "tags": [
+      "AI",
+      "金融"
+    ],
+    "description": ""
+  },
+  {
     "url": "/trader/basic-trading-terms",
     "title": "交易员必备术语系统清单（程序员友好版）",
     "date": "2026-02-23",
@@ -115,7 +302,9 @@
     "date": "2026-01-19",
     "tags": [
       "AI",
-      "编程"
+      "语音识别",
+      "音频处理",
+      "自然语言处理"
     ],
     "description": ""
   },
@@ -374,19 +563,6 @@
       "SSG"
     ],
     "description": "总结了重构Vitepress项目的经验，涵盖版本选择、pnpm依赖管理、文件结构、GitHub Pages自动部署、静态资源配置等。重点介绍了文章信息汇总、搜索索引构建（使用MiniSearch和segmentit预分词）、导航动态配置等机制，以及自定义组件开发。项目采用模块化构建脚本，实现了全站搜索、分类导航等功能。"
-  },
-  {
-    "url": "/ai/future-of-ai",
-    "title": "人工智能的未来发展-2026-14",
-    "date": "2025-12-20",
-    "tags": [
-      "AI",
-      "未来科技",
-      "测试",
-      "新增标签",
-      "再次更新"
-    ],
-    "description": "这是一篇测试文档，验证多种内容的展示 - 已再次更新"
   },
   {
     "url": "/system/test-mermaid-modal",
@@ -731,16 +907,6 @@
       "Linear Algebra"
     ],
     "description": "文章介绍了线性代数的基本概念，强调其研究线性关系（成比例、可加性）和使用符号解决问题。阐述了线性与非线性对比，以及线性代数可理解为\"线的代数\"，涵盖向量、线性组合、矩阵变换等内容，并举例说明在方程组求解和计算机图形学中的应用。"
-  },
-  {
-    "url": "/ai/vibe-coding",
-    "title": "沉浸式编程体验",
-    "date": "2024-11-22",
-    "tags": [
-      "AI",
-      "编程"
-    ],
-    "description": "wucai-code 使用体验"
   },
   {
     "url": "/fullstack/ssh",

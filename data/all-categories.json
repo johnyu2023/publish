@@ -1,28 +1,50 @@
 {
-  "trader": {
-    "name": "证券交易",
-    "description": "证券市场分析与交易策略",
-    "count": 4,
-    "latestArticle": {
-      "url": "/trader/basic-trading-terms",
-      "title": "交易员必备术语系统清单（程序员友好版）",
-      "date": "2026-02-23",
-      "tags": [
-        "PSIF"
-      ],
-      "description": ""
-    }
-  },
   "ai": {
     "name": "人工智能",
     "description": "关于人工智能的文章",
+    "count": 17,
+    "latestArticle": {
+      "url": "/ai/llm-data-product-layered-architecture",
+      "title": "LLM数据产品的分层解耦架构",
+      "date": "2026-08-08",
+      "tags": [],
+      "description": "一些零碎的知识"
+    }
+  },
+  "trader": {
+    "name": "证券交易",
+    "description": "证券市场分析与交易策略",
+    "count": 15,
+    "latestArticle": {
+      "url": "/trader/macd",
+      "title": "MACD",
+      "date": "2026-08-07",
+      "tags": [],
+      "description": "一些零碎的知识"
+    }
+  },
+  "think": {
+    "name": "观察思考",
+    "description": "洞察未来的趋势",
+    "count": 11,
+    "latestArticle": {
+      "url": "/think/ai-and-productivity",
+      "title": "AI 和生产力",
+      "date": "2026-04-28",
+      "tags": [],
+      "description": ""
+    }
+  },
+  "other": {
+    "name": "七七八八",
+    "description": "其他杂项内容",
     "count": 9,
     "latestArticle": {
-      "url": "/ai/mcp",
-      "title": "MCP 开发",
-      "date": "2026-02-10",
+      "url": "/other/situation-monitor",
+      "title": "situation-monitor",
+      "date": "2026-03-04",
       "tags": [
-        "MCP"
+        "situation-monitor"
       ],
       "description": ""
     }
@@ -42,20 +64,6 @@
       "description": ""
     }
   },
-  "other": {
-    "name": "七七八八",
-    "description": "其他杂项内容",
-    "count": 8,
-    "latestArticle": {
-      "url": "/other/lined-slippers",
-      "title": "冬季拖鞋推荐",
-      "date": "2026-02-10",
-      "tags": [
-        "拖鞋"
-      ],
-      "description": "因脚疼发现拖鞋塌陷问题，本文针对体重较大、有踝痛史人群，提供冬季棉拖鞋选购指南。核心要求：后跟硬质支撑杯、足弓基础隆起、中底厚度≥15mm。推荐30-50元区间国产支撑款（如南极人加厚防滑款），避开全软塌、人字拖式、超薄底等\"隐形杀手\"。最终29.9元拼多多购入合适款式。"
-    }
-  },
   "shanghai": {
     "name": "Shanghai",
     "description": "关于Shanghai的文章",
@@ -66,20 +74,6 @@
       "date": "2026-01-22",
       "tags": [
         "Audio Caption"
-      ],
-      "description": ""
-    }
-  },
-  "think": {
-    "name": "观察思考",
-    "description": "洞察未来的趋势",
-    "count": 10,
-    "latestArticle": {
-      "url": "/think/eight-software-markets-ai-that-will",
-      "title": "笔记-AI将重塑八大软件市场",
-      "date": "2026-01-13",
-      "tags": [
-        "AI"
       ],
       "description": ""
     }

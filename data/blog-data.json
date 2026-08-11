@@ -3,15 +3,13 @@
     "ai": {
       "name": "人工智能",
       "description": "关于人工智能的文章",
-      "count": 9,
+      "count": 17,
       "latestArticle": {
-        "url": "/ai/mcp",
-        "title": "MCP 开发",
-        "date": "2026-02-10",
-        "tags": [
-          "MCP"
-        ],
-        "description": ""
+        "url": "/ai/llm-data-product-layered-architecture",
+        "title": "LLM数据产品的分层解耦架构",
+        "date": "2026-08-08",
+        "tags": [],
+        "description": "一些零碎的知识"
       }
     },
     "foundation": {
@@ -48,118 +46,114 @@
     "think": {
       "name": "观察思考",
       "description": "洞察未来的趋势",
-      "count": 10,
+      "count": 11,
       "latestArticle": {
-        "url": "/think/eight-software-markets-ai-that-will",
-        "title": "笔记-AI将重塑八大软件市场",
-        "date": "2026-01-13",
-        "tags": [
-          "AI"
-        ],
+        "url": "/think/ai-and-productivity",
+        "title": "AI 和生产力",
+        "date": "2026-04-28",
+        "tags": [],
         "description": ""
       }
     },
     "trader": {
       "name": "证券交易",
       "description": "证券市场分析与交易策略",
-      "count": 4,
+      "count": 15,
       "latestArticle": {
-        "url": "/trader/basic-trading-terms",
-        "title": "交易员必备术语系统清单（程序员友好版）",
-        "date": "2026-02-23",
-        "tags": [
-          "PSIF"
-        ],
-        "description": ""
+        "url": "/trader/macd",
+        "title": "MACD",
+        "date": "2026-08-07",
+        "tags": [],
+        "description": "一些零碎的知识"
       }
     },
     "other": {
       "name": "七七八八",
       "description": "其他杂项内容",
-      "count": 8,
+      "count": 9,
       "latestArticle": {
-        "url": "/other/lined-slippers",
-        "title": "冬季拖鞋推荐",
-        "date": "2026-02-10",
+        "url": "/other/situation-monitor",
+        "title": "situation-monitor",
+        "date": "2026-03-04",
         "tags": [
-          "拖鞋"
+          "situation-monitor"
         ],
-        "description": "因脚疼发现拖鞋塌陷问题，本文针对体重较大、有踝痛史人群，提供冬季棉拖鞋选购指南。核心要求：后跟硬质支撑杯、足弓基础隆起、中底厚度≥15mm。推荐30-50元区间国产支撑款（如南极人加厚防滑款），避开全软塌、人字拖式、超薄底等\"隐形杀手\"。最终29.9元拼多多购入合适款式。"
+        "description": ""
       }
     }
   },
   "latestArticles": [
     {
-      "category": "trader",
-      "categoryName": "证券交易",
-      "title": "交易员必备术语系统清单（程序员友好版）",
-      "date": "2026-02-23",
-      "url": "/trader/basic-trading-terms"
+      "category": "ai",
+      "categoryName": "人工智能",
+      "title": "LLM数据产品的分层解耦架构",
+      "date": "2026-08-08",
+      "url": "/ai/llm-data-product-layered-architecture"
     },
     {
       "category": "trader",
       "categoryName": "证券交易",
-      "title": "交易员的岗前学习",
-      "date": "2026-02-18",
-      "url": "/trader/key-learning-for-future-traders"
-    },
-    {
-      "category": "trader",
-      "categoryName": "证券交易",
-      "title": "证券基础知识",
-      "date": "2026-02-18",
-      "url": "/trader/securities-basics"
-    },
-    {
-      "category": "trader",
-      "categoryName": "证券交易",
-      "title": "私募证券投资基金释疑",
-      "date": "2026-02-17",
-      "url": "/trader/private-securities-investment-funds"
+      "title": "MACD",
+      "date": "2026-08-07",
+      "url": "/trader/macd"
     },
     {
       "category": "ai",
       "categoryName": "人工智能",
-      "title": "MCP 开发",
-      "date": "2026-02-10",
-      "url": "/ai/mcp"
-    },
-    {
-      "category": "fullstack",
-      "categoryName": "全栈开发",
-      "title": "Python 项目中使用 Poetry",
-      "date": "2026-02-10",
-      "url": "/fullstack/poetry"
-    },
-    {
-      "category": "other",
-      "categoryName": "七七八八",
-      "title": "冬季拖鞋推荐",
-      "date": "2026-02-10",
-      "url": "/other/lined-slippers"
-    },
-    {
-      "category": "other",
-      "categoryName": "七七八八",
-      "title": "冬季食物存储建议",
-      "date": "2026-02-09",
-      "url": "/other/winter-food-storage"
-    },
-    {
-      "category": "other",
-      "categoryName": "七七八八",
-      "title": "本体感觉训练计划",
-      "date": "2026-02-07",
-      "url": "/other/proprioception-training-plan"
+      "title": "RAG 项目 Chunk 溯源方案选型指南",
+      "date": "2026-06-14",
+      "url": "/ai/chunk-provenance-in-rag"
     },
     {
       "category": "ai",
       "categoryName": "人工智能",
-      "title": "AI Agents 开发",
-      "date": "2026-01-27",
-      "url": "/ai/agent-01"
+      "title": "RAG基础知识",
+      "date": "2026-06-08",
+      "url": "/ai/rag"
+    },
+    {
+      "category": "trader",
+      "categoryName": "证券交易",
+      "title": "量化交易基础知识",
+      "date": "2026-06-08",
+      "url": "/trader/quant-concepts"
+    },
+    {
+      "category": "trader",
+      "categoryName": "证券交易",
+      "title": "股票基础知识",
+      "date": "2026-05-19",
+      "url": "/trader/stock-basics"
+    },
+    {
+      "category": "trader",
+      "categoryName": "证券交易",
+      "title": "投资管理基础知识",
+      "date": "2026-05-17",
+      "url": "/trader/basics-investment-management"
+    },
+    {
+      "category": "trader",
+      "categoryName": "证券交易",
+      "title": "基金基础知识",
+      "date": "2026-05-16",
+      "url": "/trader/fund-basics"
+    },
+    {
+      "category": "trader",
+      "categoryName": "证券交易",
+      "title": "债券基础",
+      "date": "2026-05-13",
+      "url": "/trader/bond"
+    },
+    {
+      "category": "trader",
+      "categoryName": "证券交易",
+      "title": "基金业绩评价",
+      "date": "2026-05-10",
+      "url": "/trader/fund-performance-evaluation"
     }
   ],
-  "totalArticles": 78,
-  "generatedAt": "2026-02-24T05:47:17.944Z"
+  "totalArticles": 99,
+  "generatedAt": "2026-08-08T01:59:13.065Z"
 }
