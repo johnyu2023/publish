@@ -1,10 +1,10 @@
 [
   {
     "text": "人工智能",
-    "link": "/ai/chunk-provenance-in-rag",
+    "link": "/ai/llm-data-product-layered-architecture",
     "category": "ai",
     "description": "关于人工智能的文章",
-    "count": 16,
+    "count": 17,
     "order": 50,
     "type": "dynamic"
   },
@@ -37,10 +37,10 @@
   },
   {
     "text": "证券交易",
-    "link": "/trader/quant-concepts",
+    "link": "/trader/macd",
     "category": "trader",
     "description": "证券市场分析与交易策略",
-    "count": 14,
+    "count": 15,
     "order": 50,
     "type": "dynamic"
   },

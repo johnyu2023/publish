@@ -1,5 +1,19 @@
 [
   {
+    "url": "/ai/llm-data-product-layered-architecture",
+    "title": "LLM数据产品的分层解耦架构",
+    "date": "2026-08-08",
+    "tags": [],
+    "description": "一些零碎的知识"
+  },
+  {
+    "url": "/trader/macd",
+    "title": "MACD",
+    "date": "2026-08-07",
+    "tags": [],
+    "description": "一些零碎的知识"
+  },
+  {
     "url": "/ai/chunk-provenance-in-rag",
     "title": "RAG 项目 Chunk 溯源方案选型指南",
     "date": "2026-06-14",

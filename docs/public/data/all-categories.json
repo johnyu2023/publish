@@ -2,23 +2,23 @@
   "ai": {
     "name": "人工智能",
     "description": "关于人工智能的文章",
-    "count": 16,
+    "count": 17,
     "latestArticle": {
-      "url": "/ai/chunk-provenance-in-rag",
-      "title": "RAG 项目 Chunk 溯源方案选型指南",
-      "date": "2026-06-14",
+      "url": "/ai/llm-data-product-layered-architecture",
+      "title": "LLM数据产品的分层解耦架构",
+      "date": "2026-08-08",
       "tags": [],
-      "description": ""
+      "description": "一些零碎的知识"
     }
   },
   "trader": {
     "name": "证券交易",
     "description": "证券市场分析与交易策略",
-    "count": 14,
+    "count": 15,
     "latestArticle": {
-      "url": "/trader/quant-concepts",
-      "title": "量化交易基础知识",
-      "date": "2026-06-08",
+      "url": "/trader/macd",
+      "title": "MACD",
+      "date": "2026-08-07",
       "tags": [],
       "description": "一些零碎的知识"
     }
