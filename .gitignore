@@ -34,3 +34,4 @@ docs/.vitepress/dist
 .wucai/
 .vitepress/cache/
 snaps/
+.pnpm-store/

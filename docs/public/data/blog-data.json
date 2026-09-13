@@ -31,14 +31,13 @@
     "fullstack": {
       "name": "全栈开发",
       "description": "全栈开发势不可挡",
-      "count": 29,
+      "count": 31,
       "latestArticle": {
-        "url": "/fullstack/poetry",
-        "title": "Python 项目中使用 Poetry",
-        "date": "2026-02-10",
+        "url": "/fullstack/chatgpt-model-selection-guide",
+        "title": "ChatGPT 中精准选择大模型完成各类研发任务",
+        "date": "2026-09-13",
         "tags": [
-          "Python",
-          "Poetry"
+          "ChatGPT"
         ],
         "description": ""
       }
@@ -83,6 +82,20 @@
     }
   },
   "latestArticles": [
+    {
+      "category": "fullstack",
+      "categoryName": "全栈开发",
+      "title": "ChatGPT 中精准选择大模型完成各类研发任务",
+      "date": "2026-09-13",
+      "url": "/fullstack/chatgpt-model-selection-guide"
+    },
+    {
+      "category": "fullstack",
+      "categoryName": "全栈开发",
+      "title": "Python 代码解读的释疑",
+      "date": "2026-09-11",
+      "url": "/fullstack/python-code-01"
+    },
     {
       "category": "ai",
       "categoryName": "人工智能",
@@ -138,22 +151,8 @@
       "title": "基金基础知识",
       "date": "2026-05-16",
       "url": "/trader/fund-basics"
-    },
-    {
-      "category": "trader",
-      "categoryName": "证券交易",
-      "title": "债券基础",
-      "date": "2026-05-13",
-      "url": "/trader/bond"
-    },
-    {
-      "category": "trader",
-      "categoryName": "证券交易",
-      "title": "基金业绩评价",
-      "date": "2026-05-10",
-      "url": "/trader/fund-performance-evaluation"
     }
   ],
-  "totalArticles": 99,
-  "generatedAt": "2026-08-08T01:59:13.065Z"
+  "totalArticles": 101,
+  "generatedAt": "2026-09-13T03:47:08.779Z"
 }
