@@ -1,5 +1,23 @@
 [
   {
+    "url": "/fullstack/chatgpt-model-selection-guide",
+    "title": "ChatGPT 中精准选择大模型完成各类研发任务",
+    "date": "2026-09-13",
+    "tags": [
+      "ChatGPT"
+    ],
+    "description": ""
+  },
+  {
+    "url": "/fullstack/python-code-01",
+    "title": "Python 代码解读的释疑",
+    "date": "2026-09-11",
+    "tags": [
+      "Python"
+    ],
+    "description": ""
+  },
+  {
     "url": "/ai/llm-data-product-layered-architecture",
     "title": "LLM数据产品的分层解耦架构",
     "date": "2026-08-08",
