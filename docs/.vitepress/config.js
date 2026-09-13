@@ -6,6 +6,61 @@ import { getSideBarData } from './sidebar-generator.js'
 import texmath from 'markdown-it-texmath'
 import katex from 'katex'
 
+// `markdown-it` 会在少数中文标点边界（如 `”**`、`)**审核`）保留原始
+// `**`。这个规则只接管默认 emphasis 规则未能识别的、非空且不含换行的片段。
+function cjkStrongFallback(md) {
+  md.core.ruler.after('inline', 'cjk_strong_fallback', (state) => {
+    for (const token of state.tokens) {
+      if (token.type !== 'inline' || !token.children) continue
+
+      const nextChildren = []
+      for (const child of token.children) {
+        // 已正确解析的加粗、代码和链接不会是 text token，因此不受影响。
+        if (child.type !== 'text' || !child.content.includes('**')) {
+          nextChildren.push(child)
+          continue
+        }
+
+        const pattern = /\*\*([^\r\n]*?)\*\*/g
+        let cursor = 0
+        let match
+        while ((match = pattern.exec(child.content))) {
+          const [raw, content] = match
+          if (!content || /^\s|\s$/.test(content)) continue
+
+          if (match.index > cursor) {
+            const text = new child.constructor('text', '', 0)
+            text.content = child.content.slice(cursor, match.index)
+            nextChildren.push(text)
+          }
+
+          const open = new child.constructor('strong_open', 'strong', 1)
+          open.markup = '**'
+          nextChildren.push(open)
+
+          const contentTokens = []
+          state.md.inline.parse(content, state.md, state.env, contentTokens)
+          nextChildren.push(...contentTokens)
+
+          const close = new child.constructor('strong_close', 'strong', -1)
+          close.markup = '**'
+          nextChildren.push(close)
+          cursor = match.index + raw.length
+        }
+
+        if (cursor === 0) {
+          nextChildren.push(child)
+        } else if (cursor < child.content.length) {
+          const text = new child.constructor('text', '', 0)
+          text.content = child.content.slice(cursor)
+          nextChildren.push(text)
+        }
+      }
+      token.children = nextChildren
+    }
+  })
+}
+
 // === 导出配置 ===
 export default defineConfig({
   base: '/publish/',
@@ -26,6 +81,7 @@ export default defineConfig({
   
   markdown: {
     config(md) {
+      md.use(cjkStrongFallback)
       md.use(texmath, {
         engine: katex,
         delimiters: ['dollars', 'brackets'],
