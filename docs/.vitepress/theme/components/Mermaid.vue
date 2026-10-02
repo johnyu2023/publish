@@ -75,65 +75,31 @@ let mermaidCode = props.graph || props.code
 
 // 尝试解码 URL 编码的内容
 try {
-  // 循环解码直到不再发生变化，处理多重编码情况
-  let decodedString = mermaidCode
-  let previous = ''
-  while (decodedString !== previous) {
-    previous = decodedString
-    try {
-      decodedString = decodeURIComponent(decodedString)
-    } catch (e) {
-      // 如果解码出错，则停止循环
-      break
-    }
-  }
+  // 直接使用 decodeURIComponent 解码一次（避免多重编码导致的错误）
+  const decodedString = decodeURIComponent(mermaidCode)
   
-  // 只有当解码后的字符串与原字符串不同，且解码后字符串有效时才使用
-  if (decodedString !== mermaidCode && (decodedString.trim().startsWith('graph ') || 
-      decodedString.trim().startsWith('flowchart ') ||
-      decodedString.trim().startsWith('sequenceDiagram') || 
-      decodedString.trim().startsWith('gantt') ||
-      decodedString.includes('graph ') ||
-      decodedString.includes('flowchart ') ||
-      decodedString.includes('sequenceDiagram') ||
-      decodedString.includes('gantt'))) {
+  // 验证解码后的字符串是否为有效的 mermaid 语法
+  const trimmedDecoded = decodedString.trim()
+  const isValidMermaid = trimmedDecoded.startsWith('graph ') || 
+                         trimmedDecoded.startsWith('flowchart ') ||
+                         trimmedDecoded.startsWith('sequenceDiagram') || 
+                         trimmedDecoded.startsWith('gantt') ||
+                         trimmedDecoded.startsWith('classDiagram') ||
+                         trimmedDecoded.startsWith('stateDiagram') ||
+                         trimmedDecoded.startsWith('pie') ||
+                         trimmedDecoded.startsWith('journey') ||
+                         trimmedDecoded.startsWith('gitGraph') ||
+                         trimmedDecoded.startsWith('erDiagram') ||
+                         trimmedDecoded.includes('%%') ||  // Mermaid 注释标记
+                         (trimmedDecoded.length > 10 && !decodedString.includes('%'))  // 解码后不应包含 %
+  
+  if (isValidMermaid) {
     mermaidCode = decodedString
   }
 } catch (e) {
   console.warn('Failed to decode mermaid code:', e)
   // 如果解码失败，回退到原始值
   mermaidCode = props.graph || props.code
-}
-
-// 作为备选，如果仍然是编码格式，则手动解码一些常见的 URL 编码字符
-if (mermaidCode.includes('%7B') || mermaidCode.includes('%7D') || mermaidCode.includes('%0A')) {
-  try {
-    const manualDecoded = mermaidCode
-      .replace(/%7B/gi, '{')    // {
-      .replace(/%7D/gi, '}')    // }
-      .replace(/%0A/g, '\n')    // \n
-      .replace(/%0D/g, '\r')    // \r
-      .replace(/%22/g, '"')     // "
-      .replace(/%27/g, "'")     // '
-      .replace(/%3C/g, '<')     // <
-      .replace(/%3E/g, '>')     // >
-      .replace(/%20/g, ' ')     // space
-      .replace(/\+/g, ' ')      // space
-    
-    // 验证解码结果是否为有效的 mermaid 语法
-  if (manualDecoded.startsWith('graph ') || 
-      manualDecoded.startsWith('flowchart ') ||
-      manualDecoded.startsWith('sequenceDiagram') || 
-      manualDecoded.startsWith('gantt') ||
-      manualDecoded.includes('graph ') ||
-      manualDecoded.includes('flowchart ') ||
-      manualDecoded.includes('sequenceDiagram') ||
-      manualDecoded.includes('gantt')) {
-    mermaidCode = manualDecoded
-  }
-  } catch (e) {
-    console.warn('Manual decoding failed:', e)
-  }
 }
 
 const mermaidContainer = ref(null)
