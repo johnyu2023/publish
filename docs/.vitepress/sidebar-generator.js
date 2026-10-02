@@ -47,10 +47,11 @@ async function getCategorySideBar(docsDir, category) {
       const filePath = path.join(targetDir, file)
       const content = fs.readFileSync(filePath, 'utf8')
       const { data } = matter(content)
+      const sortDate = data.updateDate || data.date
       return {
         text: data.title || file.replace(/\.md$/, ''),
         link: `/${category}/${file.replace(/\.md$/, '')}`,
-        date: data.date ? new Date(data.date).getTime() : 0
+        date: sortDate ? new Date(sortDate).getTime() : 0
       }
     })
     .sort((a, b) => b.date - a.date)

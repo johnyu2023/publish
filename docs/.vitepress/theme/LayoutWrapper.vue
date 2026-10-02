@@ -22,6 +22,10 @@
           <strong>发布日期：</strong>
           <span>{{ formatDate(frontmatter.date) }}</span>
         </div>
+        <div v-if="frontmatter.updateDate" class="meta-item">
+          <strong>最后更新：</strong>
+          <span>{{ formatDate(frontmatter.updateDate) }}</span>
+        </div>
         <div v-if="frontmatter.tags" class="meta-item">
           <strong>标签：</strong>
           <div class="tags">

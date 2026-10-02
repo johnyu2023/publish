@@ -61,9 +61,9 @@ try {
   // 生成预定义分类的统计信息（保持现有逻辑不变）
   const categoriesInfo = {};
   Object.entries(categoryMap).forEach(([category, articles]) => {
-    // 按日期排序，获取最新的文章
+    // 按更新日期或撰写日期排序，获取最新的文章
     const sortedArticles = articles.sort((a, b) => 
-      new Date(b.date || '1970-01-01') - new Date(a.date || '1970-01-01')
+      new Date(b.updateDate || b.date || '1970-01-01') - new Date(a.updateDate || a.date || '1970-01-01')
     );
 
     // 从配置中获取描述，如果是新分类则使用默认格式
@@ -82,7 +82,7 @@ try {
   const allCategoriesLatest = {};
   Object.entries(allCategoryMap).forEach(([category, articles]) => {
     const sortedArticles = articles.sort((a, b) => 
-      new Date(b.date || '1970-01-01') - new Date(a.date || '1970-01-01')
+      new Date(b.updateDate || b.date || '1970-01-01') - new Date(a.updateDate || a.date || '1970-01-01')
     );
     
     // 获取分类名称，优先使用预定义名称，否则使用分类名本身
@@ -109,7 +109,7 @@ try {
   });
   
   const latestArticles = filteredArticles
-    .sort((a, b) => new Date(b.date || '1970-01-01') - new Date(a.date || '1970-01-01'))
+    .sort((a, b) => new Date(b.updateDate || b.date || '1970-01-01') - new Date(a.updateDate || a.date || '1970-01-01'))
     .slice(0, 10)
     .map(article => {
       // 从 URL 提取分类
@@ -121,6 +121,7 @@ try {
         categoryName: CATEGORY_NAMES[category] || category,
         title: article.title,
         date: article.date,
+        updateDate: article.updateDate,
         url: article.url
       };
     });

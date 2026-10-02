@@ -129,11 +129,19 @@ try {
       formattedDate = dateObj.toISOString().split('T')[0]; // 格式: YYYY-MM-DD
     }
 
+    // 将 updateDate 格式转换为 YYYY-MM-DD（可选字段）
+    let formattedUpdateDate = undefined;
+    if (data.updateDate) {
+      const updateDateObj = new Date(data.updateDate);
+      formattedUpdateDate = updateDateObj.toISOString().split('T')[0];
+    }
+
     // 清洗并构建文章对象
     const cleanedArticle = {
       url: cleanString(urlPath),
       title: cleanString(data.title) || 'Untitled',
       date: formattedDate,
+      updateDate: formattedUpdateDate,
       tags: cleanTags(data.tags),
       description: cleanString(data.description)
     };
@@ -141,10 +149,10 @@ try {
     articles.push(cleanedArticle);
   }
 
-  // 按 date 倒序排序（最新在前）
+  // 按更新日期或撰写日期倒序排序（最新在前）
   articles.sort((a, b) => {
-    const dateA = a.date ? new Date(a.date).getTime() : 0;
-    const dateB = b.date ? new Date(b.date).getTime() : 0;
+    const dateA = new Date(a.updateDate || a.date || '1970-01-01').getTime();
+    const dateB = new Date(b.updateDate || b.date || '1970-01-01').getTime();
     return dateB - dateA;
   });
 
