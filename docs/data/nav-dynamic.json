@@ -1,10 +1,10 @@
 [
   {
     "text": "人工智能",
-    "link": "/ai/llm-data-product-layered-architecture",
+    "link": "/ai/llamaindex-vs-langchain-agentic-evolution",
     "category": "ai",
     "description": "关于人工智能的文章",
-    "count": 17,
+    "count": 22,
     "order": 50,
     "type": "dynamic"
   },

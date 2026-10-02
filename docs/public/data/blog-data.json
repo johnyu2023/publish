@@ -3,13 +3,16 @@
     "ai": {
       "name": "人工智能",
       "description": "关于人工智能的文章",
-      "count": 17,
+      "count": 22,
       "latestArticle": {
-        "url": "/ai/llm-data-product-layered-architecture",
-        "title": "LLM数据产品的分层解耦架构",
-        "date": "2026-08-08",
-        "tags": [],
-        "description": "一些零碎的知识"
+        "url": "/ai/llamaindex-vs-langchain-agentic-evolution",
+        "title": "Agent的殊途同归",
+        "date": "2026-10-02",
+        "tags": [
+          "LangChain",
+          "LlamaIndex"
+        ],
+        "description": "为什么做 RAG 的 LlamaIndex 越长越像 LangChain"
       }
     },
     "foundation": {
@@ -37,7 +40,9 @@
         "title": "ChatGPT 中精准选择大模型完成各类研发任务",
         "date": "2026-09-13",
         "tags": [
-          "ChatGPT"
+          "ChatGPT",
+          "Prompt Engineering",
+          "AI Coding"
         ],
         "description": ""
       }
@@ -83,6 +88,41 @@
   },
   "latestArticles": [
     {
+      "category": "ai",
+      "categoryName": "人工智能",
+      "title": "Agent的殊途同归",
+      "date": "2026-10-02",
+      "url": "/ai/llamaindex-vs-langchain-agentic-evolution"
+    },
+    {
+      "category": "ai",
+      "categoryName": "人工智能",
+      "title": "智能体架构演进",
+      "date": "2026-10-01",
+      "url": "/ai/langchain-langgraph-deep-agents-evolution"
+    },
+    {
+      "category": "ai",
+      "categoryName": "人工智能",
+      "title": "大模型工具调用架构指南",
+      "date": "2026-09-25",
+      "url": "/ai/llm-tool-execution-function-call-mcp-skill-architecture"
+    },
+    {
+      "category": "ai",
+      "categoryName": "人工智能",
+      "title": "Codex + Claude 协作开发",
+      "date": "2026-09-23",
+      "url": "/ai/multi-agent-coding-with-codex-and-claude"
+    },
+    {
+      "category": "ai",
+      "categoryName": "人工智能",
+      "title": "LangChain 介绍 - 具备多轮记忆能力的对话链路",
+      "date": "2026-09-20",
+      "url": "/ai/langchain-basics-introduction"
+    },
+    {
       "category": "fullstack",
       "categoryName": "全栈开发",
       "title": "ChatGPT 中精准选择大模型完成各类研发任务",
@@ -116,43 +156,8 @@
       "title": "RAG 项目 Chunk 溯源方案选型指南",
       "date": "2026-06-14",
       "url": "/ai/chunk-provenance-in-rag"
-    },
-    {
-      "category": "ai",
-      "categoryName": "人工智能",
-      "title": "RAG基础知识",
-      "date": "2026-06-08",
-      "url": "/ai/rag"
-    },
-    {
-      "category": "trader",
-      "categoryName": "证券交易",
-      "title": "量化交易基础知识",
-      "date": "2026-06-08",
-      "url": "/trader/quant-concepts"
-    },
-    {
-      "category": "trader",
-      "categoryName": "证券交易",
-      "title": "股票基础知识",
-      "date": "2026-05-19",
-      "url": "/trader/stock-basics"
-    },
-    {
-      "category": "trader",
-      "categoryName": "证券交易",
-      "title": "投资管理基础知识",
-      "date": "2026-05-17",
-      "url": "/trader/basics-investment-management"
-    },
-    {
-      "category": "trader",
-      "categoryName": "证券交易",
-      "title": "基金基础知识",
-      "date": "2026-05-16",
-      "url": "/trader/fund-basics"
     }
   ],
-  "totalArticles": 101,
-  "generatedAt": "2026-09-13T03:47:08.779Z"
+  "totalArticles": 106,
+  "generatedAt": "2026-10-01T16:26:41.328Z"
 }

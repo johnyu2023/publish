@@ -1,4 +1,19 @@
 {
+  "ai": {
+    "name": "人工智能",
+    "description": "关于人工智能的文章",
+    "count": 22,
+    "latestArticle": {
+      "url": "/ai/llamaindex-vs-langchain-agentic-evolution",
+      "title": "Agent的殊途同归",
+      "date": "2026-10-02",
+      "tags": [
+        "LangChain",
+        "LlamaIndex"
+      ],
+      "description": "为什么做 RAG 的 LlamaIndex 越长越像 LangChain"
+    }
+  },
   "fullstack": {
     "name": "全栈开发",
     "description": "全栈开发势不可挡",
@@ -8,21 +23,11 @@
       "title": "ChatGPT 中精准选择大模型完成各类研发任务",
       "date": "2026-09-13",
       "tags": [
-        "ChatGPT"
+        "ChatGPT",
+        "Prompt Engineering",
+        "AI Coding"
       ],
       "description": ""
-    }
-  },
-  "ai": {
-    "name": "人工智能",
-    "description": "关于人工智能的文章",
-    "count": 17,
-    "latestArticle": {
-      "url": "/ai/llm-data-product-layered-architecture",
-      "title": "LLM数据产品的分层解耦架构",
-      "date": "2026-08-08",
-      "tags": [],
-      "description": "一些零碎的知识"
     }
   },
   "trader": {
