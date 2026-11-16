@@ -1,28 +1,33 @@
 {
-  "fullstack": {
-    "name": "全栈开发",
-    "description": "全栈开发势不可挡",
-    "count": 31,
+  "ai": {
+    "name": "人工智能",
+    "description": "关于人工智能的文章",
+    "count": 29,
     "latestArticle": {
-      "url": "/fullstack/chatgpt-model-selection-guide",
-      "title": "ChatGPT 中精准选择大模型完成各类研发任务",
-      "date": "2026-09-13",
+      "url": "/ai/langfuse-guide",
+      "title": "Langfuse 入门",
+      "date": "2026-11-16",
       "tags": [
-        "ChatGPT"
+        "Langfuse"
       ],
       "description": ""
     }
   },
-  "ai": {
-    "name": "人工智能",
-    "description": "关于人工智能的文章",
-    "count": 17,
+  "fullstack": {
+    "name": "全栈开发",
+    "description": "全栈开发势不可挡",
+    "count": 33,
     "latestArticle": {
-      "url": "/ai/llm-data-product-layered-architecture",
-      "title": "LLM数据产品的分层解耦架构",
-      "date": "2026-08-08",
-      "tags": [],
-      "description": "一些零碎的知识"
+      "url": "/fullstack/two-agent-workflow",
+      "title": "双 Agent 编程工作流",
+      "date": "2026-11-05",
+      "tags": [
+        "Agent",
+        "SDD",
+        "Codex",
+        "Claude Code"
+      ],
+      "description": "构建可验证的 AI 辅助编程工作流：规范驱动、角色分工与独立审核"
     }
   },
   "trader": {
