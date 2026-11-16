@@ -13,10 +13,10 @@
   },
   {
     "text": "人工智能",
-    "link": "/ai/llamaindex-vs-langchain-agentic-evolution",
+    "link": "/ai/langfuse-guide",
     "category": "ai",
     "description": "关于人工智能的文章",
-    "count": 22,
+    "count": 29,
     "order": 50,
     "type": "dynamic"
   },
@@ -31,10 +31,10 @@
   },
   {
     "text": "全栈开发",
-    "link": "/fullstack/chatgpt-model-selection-guide",
+    "link": "/fullstack/two-agent-workflow",
     "category": "fullstack",
     "description": "全栈开发势不可挡",
-    "count": 31,
+    "count": 33,
     "order": 50,
     "type": "dynamic"
   },

@@ -2,6 +2,7 @@
 title: Agent的殊途同归
 description: 为什么做 RAG 的 LlamaIndex 越长越像 LangChain。早期大模型开发中，“LlamaIndex 管数据检索、LangChain 管流程编排”是业内公认的黄金分工。然而随着技术演进，最新版的 LlamaIndex 不仅长出了完整的 Agent 体系，甚至在功能边界上与 LangChain/LangGraph 全面交汇。本文将深入拆解“RAG 的 Agent 化（Agentic RAG）”这一核心演进逻辑，并从底层架构视角对比 LangGraph 的“图状态机”与 LlamaIndex Workflows 的“事件驱动”范式，提供清晰的企业级选型指南。
 date: 2026-10-02
+updateDate: 2026-10-08
 tags: [LangChain, LlamaIndex]
 ---
 
@@ -198,3 +199,7 @@ flowchart LR
 ### 3. 强强联合的“现代混合架构”
 
 在大型企业级项目中，两者不仅不冲突，反而经常以更现代的方式结合：**以 LangGraph / Deep Agents 作为顶层的“大脑与长程任务调度容器”，而将 LlamaIndex（特别是 LlamaParse + 混合检索管线）封装为底层高精度的“深度知识检索引擎（作为 Tool 或专门的检索 Subagent）”**。这样既享受了 LlamaIndex 在数据解析与检索上的极致精度，又拥有了 Deep Agents 在长程任务规划与上下文隔离上的强大控制力。
+
+## 五、 三个框架的对比
+
+![三个框架的对比](/assets/ai/llamaindex-vs-langchain/three-framework-comparison.png)

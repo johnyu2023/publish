@@ -24,5 +24,14 @@ tags: [Claude Code]
 + **唯一不需要 `/clear` 的场景：**
 只有当你的新任务**强依赖**于刚完成的任务时（例如：“在刚刚写好的那个 SQL 语句基础上，再加一个 GROUP BY 条件”），才应该保留上下文。一旦开启全新的独立功能模块，果断清空是最佳策略。
 
+## `/usage`
 
-## 
++ 检查额度的使用量、重置时间
+
+![usage](/assets/ai/claude/claude-usage.png)
+
+## `/model`
+
++ 设置模型
+
+![model](/assets/ai/claude/claude-model.png)

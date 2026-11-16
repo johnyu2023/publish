@@ -2,32 +2,32 @@
   "ai": {
     "name": "人工智能",
     "description": "关于人工智能的文章",
-    "count": 22,
+    "count": 29,
     "latestArticle": {
-      "url": "/ai/llamaindex-vs-langchain-agentic-evolution",
-      "title": "Agent的殊途同归",
-      "date": "2026-10-02",
+      "url": "/ai/langfuse-guide",
+      "title": "Langfuse 入门",
+      "date": "2026-11-16",
       "tags": [
-        "LangChain",
-        "LlamaIndex"
+        "Langfuse"
       ],
-      "description": "为什么做 RAG 的 LlamaIndex 越长越像 LangChain"
+      "description": ""
     }
   },
   "fullstack": {
     "name": "全栈开发",
     "description": "全栈开发势不可挡",
-    "count": 31,
+    "count": 33,
     "latestArticle": {
-      "url": "/fullstack/chatgpt-model-selection-guide",
-      "title": "ChatGPT 中精准选择大模型完成各类研发任务",
-      "date": "2026-09-13",
+      "url": "/fullstack/two-agent-workflow",
+      "title": "双 Agent 编程工作流",
+      "date": "2026-11-05",
       "tags": [
-        "ChatGPT",
-        "Prompt Engineering",
-        "AI Coding"
+        "Agent",
+        "SDD",
+        "Codex",
+        "Claude Code"
       ],
-      "description": ""
+      "description": "构建可验证的 AI 辅助编程工作流：规范驱动、角色分工与独立审核"
     }
   },
   "trader": {

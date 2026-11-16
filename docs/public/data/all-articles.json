@@ -1,13 +1,115 @@
 [
   {
+    "url": "/ai/langfuse-guide",
+    "title": "Langfuse 入门",
+    "date": "2026-11-16",
+    "tags": [
+      "Langfuse"
+    ],
+    "description": ""
+  },
+  {
+    "url": "/fullstack/two-agent-workflow",
+    "title": "双 Agent 编程工作流",
+    "date": "2026-11-05",
+    "tags": [
+      "Agent",
+      "SDD",
+      "Codex",
+      "Claude Code"
+    ],
+    "description": "构建可验证的 AI 辅助编程工作流：规范驱动、角色分工与独立审核"
+  },
+  {
+    "url": "/ai/top-k-vs-top-p",
+    "title": "LLM 的 Top-K 与 Top-P",
+    "date": "2026-11-02",
+    "tags": [
+      "LLM",
+      "Top-K",
+      "Top-P"
+    ],
+    "description": "LLM 采样参数解析：Top-K 与 Top-P"
+  },
+  {
+    "url": "/ai/transformer",
+    "title": "透视 Transformer",
+    "date": "2026-11-02",
+    "tags": [
+      "Transformer"
+    ],
+    "description": ""
+  },
+  {
+    "url": "/ai/understanding-multi-agent-architecture",
+    "title": "为什么要多 Agent",
+    "date": "2026-10-24",
+    "tags": [
+      "多 Agent"
+    ],
+    "description": "多 Agent 架构：何时拆分、如何协作与工程实践"
+  },
+  {
+    "url": "/fullstack/python-javascript-java-oop",
+    "title": "面向对象的三种面孔",
+    "date": "2026-10-23",
+    "tags": [
+      "Python",
+      "JavaScript",
+      "Java"
+    ],
+    "description": "面向对象的三种面孔：Python、JavaScript 和 Java 到底差在哪？"
+  },
+  {
+    "url": "/ai/rag_retrieval_pipeline",
+    "title": "RAG 落地之痛",
+    "date": "2026-10-12",
+    "tags": [
+      "RAG"
+    ],
+    "description": "RAG 落地之痛 - 如何避免向量检索把“红富士”当成“苹果手机”？"
+  },
+  {
+    "url": "/ai/sparse_dense",
+    "title": "RAG 混合检索",
+    "date": "2026-10-12",
+    "tags": [
+      "RAG"
+    ],
+    "description": "混合检索 - Sparse与Dense的必然结合"
+  },
+  {
     "url": "/ai/llamaindex-vs-langchain-agentic-evolution",
     "title": "Agent的殊途同归",
     "date": "2026-10-02",
+    "updateDate": "2026-10-08",
     "tags": [
       "LangChain",
       "LlamaIndex"
     ],
-    "description": "为什么做 RAG 的 LlamaIndex 越长越像 LangChain"
+    "description": "为什么做 RAG 的 LlamaIndex 越长越像 LangChain。早期大模型开发中，“LlamaIndex 管数据检索、LangChain 管流程编排”是业内公认的黄金分工。然而随着技术演进，最新版的 LlamaIndex 不仅长出了完整的 Agent 体系，甚至在功能边界上与 LangChain/LangGraph 全面交汇。本文将深入拆解“RAG 的 Agent 化（Agentic RAG）”这一核心演进逻辑，并从底层架构视角对比 LangGraph 的“图状态机”与 LlamaIndex Workflows 的“事件驱动”范式，提供清晰的企业级选型指南。"
+  },
+  {
+    "url": "/ai/claude-code",
+    "title": "Claude Code 使用心得",
+    "date": "2026-04-17",
+    "updateDate": "2026-10-03",
+    "tags": [
+      "Claude Code"
+    ],
+    "description": ""
+  },
+  {
+    "url": "/ai/ai-coding-agent-automation-loops",
+    "title": "Code Agent 自动化范式",
+    "date": "2026-10-02",
+    "tags": [
+      "LangChain",
+      "/loop",
+      "/goal",
+      "/schedule"
+    ],
+    "description": "告别手动盯盘：AI 编程 Agent 的三大自动化范式"
   },
   {
     "url": "/ai/langchain-langgraph-deep-agents-evolution",
@@ -177,15 +279,6 @@
     "date": "2026-04-17",
     "tags": [
       "Coding Agent"
-    ],
-    "description": ""
-  },
-  {
-    "url": "/ai/claude-code",
-    "title": "Claude Code 使用心得",
-    "date": "2026-04-17",
-    "tags": [
-      "Claude Code"
     ],
     "description": ""
   },
